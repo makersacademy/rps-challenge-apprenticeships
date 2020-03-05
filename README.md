@@ -2,12 +2,19 @@
 
 Instructions
 -------
+* Challenge time: until the end of the day
+Feel free to use google, your notes, books etc but please work on your own
+* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
+* Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
+* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
+* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
 
-* Challenge time: rest of the day and weekend, until Monday 9am
-* Feel free to use google, your notes, books, etc. but work on your own
-* If you refer to the solution of another coach or student, please put a link to that in your README
-* If you have a partial solution, **still check in a partial solution**
-* You must submit a pull request to this repo with your code by 9am Monday morning
+Set up
+-----
+`bundle install`
+`rspec`
+Should see an output that includes this:
+`1 example, 0 failures`
 
 Task
 ----
@@ -42,6 +49,11 @@ As usual please start by
 * Forking this repo
 * TEST driving development of your app
 
+## Resources
+(HTML forms)[https://www.w3schools.com/html/html_forms.asp]
+(Capybara cheatsheet)[https://devhints.io/capybara]
+(Twitter bootstrap css library)[https://getbootstrap.com/]
+(Hosting on heroku)[https://heroku.com]
 
 ## Bonus level 1: Multiplayer
 
@@ -49,7 +61,8 @@ Change the game so that two marketeers can play against each other ( _yes there 
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_ )
+Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
+
 
 ## Basic Rules
 
@@ -62,6 +75,7 @@ In code review we'll be hoping to see:
 * All tests passing
 * High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
 * The code is elegant: every class has a clear responsibility, methods are short etc.
+* Commits and short and scoped
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
