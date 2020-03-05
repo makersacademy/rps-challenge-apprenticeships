@@ -14,7 +14,7 @@ Set up
 ```bundle install```\
 ```rspec```\
 Should see an output that includes this:\
-```1 example, 0 failures```\
+```1 example, 0 failures```
 
 Task
 ----
