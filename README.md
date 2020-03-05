@@ -11,10 +11,10 @@ Feel free to use google, your notes, books etc but please work on your own
 
 Set up
 -----
-```bundle install```
-```rspec```
-Should see an output that includes this:
-```1 example, 0 failures```
+```bundle install```\
+```rspec```\
+Should see an output that includes this:\
+```1 example, 0 failures```\
 
 Task
 ----
