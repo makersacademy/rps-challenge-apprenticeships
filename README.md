@@ -50,10 +50,10 @@ As usual please start by
 * TEST driving development of your app
 
 ## Resources
-(HTML forms)[https://www.w3schools.com/html/html_forms.asp]
-(Capybara cheatsheet)[https://devhints.io/capybara]
-(Twitter bootstrap css library)[https://getbootstrap.com/]
-(Hosting on heroku)[https://heroku.com]
+[HTML forms](https://www.w3schools.com/html/html_forms.asp)
+[Capybara cheatsheet](https://devhints.io/capybara)
+[Twitter bootstrap css library](https://getbootstrap.com/)
+[Hosting on heroku](https://heroku.com)
 
 ## Bonus level 1: Multiplayer
 
