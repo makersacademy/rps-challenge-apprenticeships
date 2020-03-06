@@ -26,7 +26,7 @@ class Game
     elsif @game_choice == "Scissors" && @player.choice == "Paper"
       @winner = "#{@game_choice} beats #{@player.choice}. You lose!"
     else
-      @winner = "#{@player.choice} beats #{@game_choice} . You win!"
+      @winner = "#{@player.choice} beats #{@game_choice}. You win!"
     end
   end
 end
