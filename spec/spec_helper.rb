@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-
+require 'features/web_helper.rb'
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
@@ -18,7 +18,6 @@ require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
 require 'capybara/dsl'
-
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
