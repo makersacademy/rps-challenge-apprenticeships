@@ -1,7 +1,19 @@
-You chose <%= @game.player.choice %> <br />
-Computer chose <%= @game_choice %><br />
-<%=@game.winner%>
+<body style="background-color: f5f0e1; color: #1e3d59">
+<div style="font-family: Arial, Helvetica, sans-serif; ">
+  <div style="font-weight: bold; text-align: center; padding: 50px 0 0px 0; display: inline-block; width: 45%; float:left; height:10%; background:#ff6e40; margin:2%">
+   You chose <%= @game.player.choice %>
+  </div>
+  <div style="font-weight: bold; text-align: center; padding: 50px 0 0px 0; display: inline-block; width: 45%; float:right; height:10%; background:#ffc13b; margin:2%">
+    Computer chose <%= @game_choice %><br />
+  </div>
 
-<form action="/">
-  <input type="submit" value="Start Again">
-</form>
+  <div style="text-align: center;  margin: 5% 20% 2% 20%">
+    <div style="margin: 10% 0 5% 0;">
+      <h1><%=@game.winner%></h1>
+    </div>
+    <form action="/">
+      <input type="submit" value="Start Again" style='font-weight: bold; color: f5f0e1; height: 40px; font-size: 18px; background-color: #1e3d59; width: 200px; border: 1px solid  #ffc13b;'>
+    </form>
+  </div>
+</div>
+</body>

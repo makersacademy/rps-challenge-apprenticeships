@@ -1,7 +1,9 @@
-Welcome <%=@player.name%>!
-Choose an option:
+<body style="font-family: Arial, Helvetica, sans-serif; background-color: f5f0e1; color: #1e3d59; text-align: center;">
+<h1 style="color: #ff6e40">Welcome <%=@player.name%>!</h1>
+<h2>Choose an option:</h2>
 <form action="/play" method="post">
-  <input type="submit" name="name" value="Rock">
-  <input type="submit" name="name" value="Paper">
-  <input type="submit" name="name" value="Scissors">
+  <input type="submit" name="name" value="Rock" style='font-weight: bold; color: f5f0e1; height: 40px; font-size: 18px; background-color: #1e3d59; width: 200px; border: 2px solid  #ffc13b;'>
+  <input type="submit" name="name" value="Paper" style='font-weight: bold; color: f5f0e1; height: 40px; font-size: 18px; background-color: #1e3d59; width: 200px; border: 2px solid  #ffc13b;'>
+  <input type="submit" name="name" value="Scissors" style='font-weight: bold; color: f5f0e1; height: 40px; font-size: 18px; background-color: #1e3d59; width: 200px; border: 2px solid  #ffc13b;'>
 </form>
+</body>
