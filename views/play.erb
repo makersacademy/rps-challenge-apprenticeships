@@ -1,12 +1,14 @@
 
-<h1>OK, <%= @player.player_name %>, let's play!
-Choose your weapon!</h1>
+<h1>OK, <%= @player.player_name %>, let's play - choose your weapon!</h1>
 
-<form>
-  <input type="radio" id="rock" name="rock" value="rock">
-  <label for="rock">Rock</label>
-  <input type="radio" id="paper" name="paper" value="paper">
-  <label for="paper">Paper</label>
-  <input type="radio" id="scissors" name="scissors" value="scissors">
-  <label for="scissors">Scissors</label>
+<h2>
+  <form>
+  <input type="radio" id="rock" name="choice" value="rock">
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="choice" value="paper">
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="choice" value="scissors">
+  <label for="scissors">Scissors</label><br>
+  <input type="submit" name="Submit">
   </form>
+</h2>
