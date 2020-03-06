@@ -2,9 +2,7 @@ require './app'
 
 feature 'Enter name' do
   scenario 'submit name' do
-    visit('/')
-    fill_in :player_name, with: 'Ion'
-    click_button 'Submit'
-    expect(page).to have_content 'Ion vs. Computer'
+    sign_in_and_play
+    expect(page).to have_content ', chose your weapon'
   end
 end
