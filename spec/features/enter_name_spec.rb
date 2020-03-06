@@ -12,3 +12,20 @@ feature 'Enter Name' do
     expect(page).to have_content('Aysha')
   end
 end
+
+feature 'Choose your weapon' do
+  scenario 'player submits weapon' do
+  visit ('/outcome')
+  fill_in 'weapon', with: 'Rock'
+  click_button 'submit and play'
+  #expect(page).to have_content('rock')
+end
+end 
+feature 'Display outcome' do
+  scenario 'display who wins' do
+  visit ('/outcome')
+  fill_in 'weapon', with: 'Rock'
+  expect("Rock" && "Paper").to have_content ("Paper wins mate")
+  #expect("Rock" && "Paper").not_to be eq(true)
+end
+end

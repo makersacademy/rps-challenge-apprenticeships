@@ -13,5 +13,11 @@ post '/name' do
   erb :play
 end
 
+post '/outcome' do
+  @weapon = params[:weapon]
+  #erb :play
+  erb :outcome
+end
+
    run! if app_file == $0
 end
