@@ -4,4 +4,8 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
    run! if app_file == $0
+
+   get '/' do
+    erb :index
+   end 
 end
