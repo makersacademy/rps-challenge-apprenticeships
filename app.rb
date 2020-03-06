@@ -25,6 +25,7 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @game = $game
     @player_choice = @game.choose(params[:player_choice])
+    @computer_choice = @game.computer_choice
     erb :result
   end
    run! if app_file == $0
