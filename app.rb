@@ -15,7 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do 
-  	'Hiya'
+  	erb :play
   end
    run! if app_file == $0
 end

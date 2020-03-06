@@ -7,9 +7,7 @@ feature 'form' do
 		page.should have_selector("input[type=text][name='name']")
 	end
 	scenario 'can redirect to game after submit' do
-		visit '/form'
-		fill_in 'name', with: 'Rita rita'
-		click_button 'Start game'
+		sign_in_and_play
 		expect(page).to have_current_path('/play')
 	end
 end
