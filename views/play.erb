@@ -1,8 +1,15 @@
-<%= @player_name %>, choose your weapon!!
-<br>
-<input type="radio" id="Rock" value="Rock">
+<br><br>
+<body style='background-color:rgb(225, 99, 71);text-align:center;font-family:verdana;font-size:20px;' >
+<div style='font-size:40px;'><%= $player_name %>, choose your weapon!!</div>
+<br><br><br>
+<!-- <input type="radio" id="Rock" value="Rock">
 <label for="Rock">Rock</label><br>
 <input type="radio" id="Paper" value="Paper">
 <label for="Paper">Paper</label><br>
 <input type="radio" id="Scissors" value="Scissors">
-<label for="Scissors">Scissors</label>
+<label for="Scissors">Scissors</label> -->
+<form action='/outcome'>
+<input style='font-size:40px;background-color:pink;'type="submit" value="Rock"><br><br>
+<input style='font-size:40px;background-color:green;'type="submit" value="Paper"><br><br>
+<input style='font-size:40px;background-color:yellow;'type="submit" value="Scissors"><br><br>
+</form>
