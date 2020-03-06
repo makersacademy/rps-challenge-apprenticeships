@@ -4,4 +4,4 @@ By running this program you should be able to play Rock Paper Scissors in your b
 Below is the diagram I created as part of this challenge:
 
 
-![alt text](http://github.com/noravdh/rps-challenge-apprenticeships/blob/master/Screenshot%202020-03-06%20at%2014.14.50.png)
+![alt text](https://github.com/noravdh/rps-challenge-apprenticeships/blob/master/img/Screenshot.png)
