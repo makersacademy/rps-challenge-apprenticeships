@@ -3,20 +3,22 @@ require_relative 'lib/player.rb'
 require_relative 'lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
-  attr_reader :player_1
+
   get '/' do
     erb :index
   end
 
   post '/names' do
     @player = Player.new(params[:player_name])
+    $game = Game.new(@player)
     erb :choice
   end
 
-  # get '/choice' do
-  #   @player = player_1
-  #   erb :choice
-  # end
+  post '/play' do
+    @game = $game
+    @choice = @game.player.choose(params[:name])
+    erb :winner
+  end
 
    run! if app_file == $0
 end
