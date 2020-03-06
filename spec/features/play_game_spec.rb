@@ -5,12 +5,12 @@ feature "player enters choice" do
     click_button "Submit"
     choose "Rock"
     click_button "Submit"
-    expect(player_choice).to eq("rock")
+    expect(page).to have_content("rock")
   end
 end
 
-feature "computer makes a choice" do
-  scenario "computer generates choice" do
-    expect(computer_choice).to have_content("rock") or have_content("paper") or have_content("scissors")
-  end
-end
+# feature "computer makes a choice" do
+#   scenario "computer generates choice" do
+#     expect(computer_choice).to have_content("rock") or have_content("paper") or have_content("scissors")
+#   end
+# end

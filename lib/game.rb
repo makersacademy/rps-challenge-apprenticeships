@@ -5,13 +5,13 @@ attr_reader :player_choice, :computer_choice
     @player = player_name
   end
 
-  def player_choice
-    @player_choice = player_choice
+  def choose(option)
+    @player_choice = option
   end
 
-  def computer_choice
-    @computer_choice = [:rock, :scissors, :paper].sample
-  end
+  # def computer_choice
+  #   @computer_choice = [:rock, :scissors, :paper].sample
+  # end
 end
 
 #   win_conditions = {
