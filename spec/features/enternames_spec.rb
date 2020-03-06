@@ -1,7 +1,8 @@
 feature 'Register name' do
   scenario 'submitting names' do
     visit '/'
-    fill_in 'name', with: 'Marketer'
-    expect(page).to have_content 'Welcome, Marketer, to the Rock, Paper, Scissors game!'
+    fill_in 'player_name', with: 'Marketer'
+    click_button 'start the game'
+    expect(page).to have_content 'Hello Marketer and welcome to the Rock, Paper, Scissors game!'
   end
 end

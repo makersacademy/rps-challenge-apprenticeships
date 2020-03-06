@@ -1,11 +1,10 @@
 
+<h1> Hello <%= @player_name %> and welcome to the Rock, Paper, Scissors game! </h1>
 
-<h1> Hello and welcome <%= player_name %> to the Rock, Paper, Scissors game! </h1>
-
-<h2> Please select your weapon from the following options </h2>
+<h2> Please select your weapon from the following options. </h2>
 
 <form action="/play" method="post">
-  <input type="submit" id="rock" name="item" value="rock">
-  <input type="submit" id="paper" name="item" value="paper">
-  <input type="submit" id="scissors" name="item" value="scissors">
+  <input type="submit" id="rock" name="weapon" value="rock">
+  <input type="submit" id="paper" name="weapon" value="paper">
+  <input type="submit" id="scissors" name="weapon" value="scissors">
 </form>
