@@ -4,6 +4,14 @@ class Game
     @player = player
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+  
+  def self.instance
+    @game
+  end
+
   def game_choice
     @game_choice = ["Rock","Paper","Scissors"].sample
   end

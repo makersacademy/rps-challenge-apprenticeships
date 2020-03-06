@@ -10,12 +10,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/names' do
     @player = Player.new(params[:player_name])
-    $game = Game.new(@player)
+    @game = Game.create(@player)
     erb :choice
   end
 
   post '/play' do
-    @game = $game
+    @game = Game.instance
     @choice = @game.player.choose(params[:name])
     p @game.winner
     erb :winner
