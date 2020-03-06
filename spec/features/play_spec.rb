@@ -25,7 +25,7 @@ feature 'game interface' do
 	end
 	scenario 'shows the opponent is the computer' do
 		sign_in_and_play
-		page.should have_content "You are playing with: Computer"
+		page.should have_content "Player 2: Computer"
 	end
 	scenario 'player can see computer move' do 
 		sign_in_and_play

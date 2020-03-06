@@ -4,6 +4,7 @@
 	<title>Rock Paper and Scissors</title>
 	<style type="text/css">
 		body {
+			text-align: center;
 			display: flex; 
 			flex-direction: row;
 			justify-content: center;
@@ -12,17 +13,19 @@
 		}
 		.player {
 			width: 45vw;
-
+		}
+		.player h2 {
+			color: hotpink;
 		}
 		.computer {
-			width: : 45vw;
+			width: 45vw;
 		}
 		.result {
 			text-align: center;
 			width: 100vw; 
 		}
 		.message {
-			font-size: 100px;
+			font-size: 50px;
 			padding-top: 100px;
 			color: green;
 			text-shadow: 2px pink;
@@ -48,7 +51,7 @@
 		<% end %>
 	</div>
 	<div class="computer">
-		<h2>You are playing with: Computer</h2>
+		<h2>Player 2: Computer</h2>
 		<% if @computer_move %>
 			Computer's move: <%= @computer_move %>
 		<% end %>

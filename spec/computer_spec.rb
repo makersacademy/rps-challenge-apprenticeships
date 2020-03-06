@@ -23,15 +23,15 @@ describe Computer do
 	end
 	it 'rock beats scissors' do
 		computer = Computer.new
-		expect(computer.the_winner_is(player1, 'rock', player2, 'scissors')).to eq "Rita won"
+		expect(computer.the_winner_is(player1, 'rock', player2, 'scissors')).to eq "Rita"
 	end
 	it 'scissors beats paper' do 
 		computer = Computer.new
-		expect(computer.the_winner_is(player1, 'paper', player2, 'scissors')).to eq "Edward won"
+		expect(computer.the_winner_is(player1, 'paper', player2, 'scissors')).to eq "Edward"
 	end
 	it 'paper beats rock' do 
 		computer = Computer.new
-		expect(computer.the_winner_is(player1, 'paper', player2, 'rock')).to eq "Rita won"
+		expect(computer.the_winner_is(player1, 'paper', player2, 'rock')).to eq "Rita"
 	end
 	it 'returns draw when same moves' do
 		computer = Computer.new

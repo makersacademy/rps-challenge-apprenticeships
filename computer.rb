@@ -10,23 +10,23 @@ class Computer
 		elsif  player1_move == 'rock'
 			case player2_move 
 			when 'scissors'
-				"#{player1} won"
+				"#{player1}"
 			when 'paper'
-				"#{player2} won"
+				"#{player2}"
 			end
 		elsif player1_move == "paper"
 			case player2_move
 			when 'scissors'
-				"#{player2} won"
+				"#{player2}"
 			when 'rock'
-				"#{player1} won"
+				"#{player1}"
 			end
 		else 
 			case player2_move
 			when "rock"
-				"#{player2} won"
+				"#{player2}"
 			when "paper"
-				"#{player1} won"
+				"#{player1}"
 			end
 		end
 	end
