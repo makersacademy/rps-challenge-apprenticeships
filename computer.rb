@@ -1,10 +1,16 @@
 class Computer 
 	MOVE = ['rock', 'paper', 'scissors']
+	def initialize
+		@player1 = nil
+		@player2 = nil
+	end
 	def random_move
 		MOVE.sample
 	end
 
 	def the_winner_is(player1, player1_move, player2, player2_move )
+		@player1 = player1
+		@player2 = player2
 		if player1_move == player2_move
 			return "No one, it's a draw"
 		elsif  player1_move == 'rock'
@@ -28,6 +34,17 @@ class Computer
 			when "paper"
 				"#{player1}"
 			end
+		end
+	end
+
+	def winner_color(winner)
+		case winner 
+		when @player1 
+		  "hotpink" 
+		when @player2
+			"black"
+		else
+			"green"
 		end
 	end
 end

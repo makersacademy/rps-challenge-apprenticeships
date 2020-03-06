@@ -29,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
   	@player_move = session[:player_move]
   	@computer_move = session[:computer_move]
   	@winner = computer.the_winner_is(@player_name, @player_move, 'Computer', @computer_move)
+    @color = computer.winner_color(@winner)
   	erb :play
   end
 

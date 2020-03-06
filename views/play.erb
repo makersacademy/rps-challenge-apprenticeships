@@ -58,7 +58,9 @@
 	</div>
 	<div class="result">
 		<% if @winner %>
-			<p class="message">The winner is:  <%= @winner %></p>
+			<p class="message">The winner is:  
+				<span style= "color:<%=@color%>;"><%= @winner %></span>
+			</p>
 			<p class="message">Now get on with your life</p>
 		<% end %>
 	</div>
