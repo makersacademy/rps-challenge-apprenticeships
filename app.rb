@@ -10,11 +10,13 @@ class RockPaperScissors < Sinatra::Base
     erb :homepage
   end
   post "/register_name" do
-    player_name = Player.new(params[:player_name])
+    $player = Player.new(params[:player_name])
     # $game = Game.new(player_name)
     redirect "/play"
   end
   get '/play' do
+    @player = $player
+    # "game will go here"
     # @game = $game
     erb :play
   end
