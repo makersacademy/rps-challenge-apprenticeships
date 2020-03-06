@@ -1,6 +1,7 @@
-feature 'Enter names' do
+feature 'Register name' do
   scenario 'submitting names' do
-
-    expect(page).to have_content 'Marketer vs. Computer'
+    visit '/'
+    fill_in 'name', with: 'Marketer'
+    expect(page).to have_content 'Welcome, Marketer, to the Rock, Paper, Scissors game!'
   end
 end
