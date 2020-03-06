@@ -13,6 +13,12 @@ feature 'game interface' do
 		sign_in_and_play
 		page.should have_button 'submit'
 	end
+	scenario 'hides the form after submit' do
+		sign_in_and_play
+		select 'scissors', from: 'player_move'
+		click_button 'submit'
+		page.should have_no_select('player_move')
+	end
 	scenario 'player can view their own move' do
 		sign_in_and_play
 		select 'scissors', from: 'player_move'

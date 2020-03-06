@@ -2,32 +2,62 @@
 <html>
 <head>
 	<title>Rock Paper and Scissors</title>
+	<style type="text/css">
+		body {
+			display: flex; 
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+		.player {
+			width: 45vw;
+
+		}
+		.computer {
+			width: : 45vw;
+		}
+		.result {
+			text-align: center;
+			width: 100vw; 
+		}
+		.message {
+			font-size: 100px;
+			padding-top: 100px;
+			color: green;
+			text-shadow: 2px pink;
+		}
+	</style>
 </head>
 <body>
 	<div class="player">
-		<p>Player 1: <%= @player_name %></p>
-		<form action='/play' method="post"> 
-			<label for="player_move">Make your move</label>
-			<select name="player_move">
-				<option value="rock">rock</option>
-				<option value="paper">paper</option>
-				<option value="scissors">scissors</option>
-			</select>
-			<input type="submit" value="submit">
-		</form>
+		<h2>Player 1: <%= @player_name %></h2>
+		<% if !@player_move %>
+			<form action='/play' method="post"> 
+				<label for="player_move">Make your move</label>
+				<select name="player_move">
+					<option value="rock">rock</option>
+					<option value="paper">paper</option>
+					<option value="scissors">scissors</option>
+				</select>
+				<input type="submit" value="submit">
+			</form>
+		<% end %>
 		<% if @player_move %>
 			<p>Your move: <%= @player_move %></p>
 		<% end %>
 	</div>
 	<div class="computer">
-		<p>You are playing with: Computer</p>
+		<h2>You are playing with: Computer</h2>
 		<% if @computer_move %>
 			Computer's move: <%= @computer_move %>
 		<% end %>
 	</div>
-	<% if @winner %>
-		<p>The winner is:  <%= @winner %></p>
-		<p>Now get on with your life</p>
-	<% end %>
+	<div class="result">
+		<% if @winner %>
+			<p class="message">The winner is:  <%= @winner %></p>
+			<p class="message">Now get on with your life</p>
+		<% end %>
+	</div>
 </body>
 </html>

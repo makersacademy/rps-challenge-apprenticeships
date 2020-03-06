@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper and Scissors</title>
+	<style type="text/css">
+		body {
+			display: flex; 
+			flex-direction: row;
+			justify-content: center;
+			align-items: flex-start;
+			flex-wrap: wrap;
+		}
+		.player {
+			width: 45vw;
+
+		}
+		.computer {
+			width: : 45vw;
+		}
+		.result {
+			text-align: center;
+			width: 100vw; 
+		}
+		.message {
+			font-size: 100px;
+			padding-top: 100px;
+			color: green;
+			text-shadow: 2px pink;
+		}
+	</style>
+</head>
+<body>
+	<div class="player">
+		<h2>Player 1: Rita Rita</h2>
+		
+		<form action='/play' method="post"> 
+			<label for="player_move">Make your move</label>
+			<select name="player_move">
+				<option value=""></option>
+				<option value="rock">rock</option>
+				<option value="paper">paper</option>
+				<option value="scissors">scissors</option>
+			</select>
+			<input type="submit" value="submit">
+		</form>
+		
+	</div>
+	<div class="computer">
+		<h2>You are playing with: Computer</h2>
+		
+	</div>
+	<div class="result">
+		
+	</div>
+</body>
+</html>
