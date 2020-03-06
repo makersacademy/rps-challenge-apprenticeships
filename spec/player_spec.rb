@@ -1,4 +1,5 @@
 require "player"
+# require "game"
 
 describe Player do
   subject(:jo) {Player.new("Jo") }

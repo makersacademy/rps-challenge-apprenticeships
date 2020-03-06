@@ -16,9 +16,14 @@ class RockPaperScissors < Sinatra::Base
   end
   get '/play' do
     @player = $player
-    # "game will go here"
     # @game = $game
     erb :play
+    # @player_choice = params[:player_choice]
+    # select(player_choice)
+  end
+
+  get '/result' do
+    erb :result
   end
    run! if app_file == $0
 end
