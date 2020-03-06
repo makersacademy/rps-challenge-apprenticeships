@@ -12,12 +12,11 @@ class Game
     @game
   end
 
-  def game_choice
+  def choose
     @game_choice = ["Rock","Paper","Scissors"].sample
   end
 
   def winner
-    game_choice
     if @game_choice == @player.choice
       @winner = "It's a tie"
     elsif @game_choice == "Paper" && @player.choice == "Rock"     
