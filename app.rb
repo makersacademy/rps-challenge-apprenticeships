@@ -23,6 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    # @computer_choice = computer_choice
     erb :result
   end
    run! if app_file == $0
