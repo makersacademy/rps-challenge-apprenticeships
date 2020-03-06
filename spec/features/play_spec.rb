@@ -15,14 +15,12 @@ feature 'game interface' do
 	end
 	scenario 'hides the form after submit' do
 		sign_in_and_play
-		select 'scissors', from: 'player_move'
-		click_button 'submit'
+		select_scissors
 		page.should have_no_select('player_move')
 	end
 	scenario 'player can view their own move' do
 		sign_in_and_play
-		select 'scissors', from: 'player_move'
-		click_button 'submit'
+		select_scissors
 		page.should have_content "Your move: "
 	end
 	scenario 'shows the opponent is the computer' do
@@ -31,20 +29,17 @@ feature 'game interface' do
 	end
 	scenario 'player can see computer move' do 
 		sign_in_and_play
-		select 'scissors', from: 'player_move'
-		click_button 'submit'
+		select_scissors
 		expect(page).to have_content "Computer's move: "
 	end
 	scenario 'player can see the game result' do 
 		sign_in_and_play
-		select 'scissors', from: 'player_move'
-		click_button 'submit'
+		select_scissors
 		page.should have_content 'The winner is: '
 	end
 	scenario 'player gets a friendly warning after the game' do
 		sign_in_and_play
-		select 'scissors', from: 'player_move'
-		click_button 'submit'
+		select_scissors
 		page.should have_content 'Now get on with your life'
 	end
 end
