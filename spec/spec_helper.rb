@@ -20,6 +20,7 @@ require 'rspec'
 require 'capybara/dsl'
 require 'web_helper'
 
+
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
