@@ -1,4 +1,8 @@
 Hello,<%= @name %>
-Rock
-Paper
-Scissors
+
+<form action="/play" method="post">
+   <input type="submit" name="item" value="Rock" />
+   <input type="submit" name="item" value="Paper" />
+   <input type="submit" name="item" value="Scissors" />
+
+</form>
