@@ -18,11 +18,11 @@ feature 'homepage' do
     fill_in 'name', with: 'Olivia'
     # click on the submit button
     click_button 'submit'
-    # fill in the name field form
-    choose 'Rock'
+    # visit the choose_weapon site
+    choose 'rock'
     # click on the submit button
     click_button 'submit'
     # See some content that tells us that it has taken the name in
-    expect(page).to have_content('You have chosen Rock!')
+    expect(page).to have_content('You have chosen rock')
   end
 end
