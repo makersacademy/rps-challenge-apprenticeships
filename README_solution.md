@@ -1,6 +1,6 @@
 # RPS Challenge
 
-By running this program you should be able to play Rock Paper Scissors in your browser, against a computer. The functionality all works, but the test to see whether the game ends properly isn't best practice. Test coverage is therefore below 95%.<br />
+By running this program you should be able to play Rock Paper Scissors in your browser, against a computer. The functionality all works, but the feature test to see whether the game ends properly isn't best practice.<br />
 
 I know the styling should ideally be in a separate stylesheet, but it was just something I was playing around with towards the end of the day. <br />
 
