@@ -17,6 +17,7 @@ class RockPaperScissors < Sinatra::Base
   post '/play' do
     @game = $game
     @choice = @game.player.choose(params[:name])
+    p @game.winner
     erb :winner
   end
 
