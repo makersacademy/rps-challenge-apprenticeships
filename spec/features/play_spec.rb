@@ -8,9 +8,14 @@ feature 'play game' do
   end
   
 
-  scenario 'see the choices i can play' do
+  scenario 'see the items i can play' do
     expect(page).to have_content 'Rock'
     expect(page).to have_content 'Paper'
     expect(page).to have_content 'Scissors'
+  end
+
+  scenario 'choose a item' do
+    click_button 'Rock'
+    expect(page).to have_content 'Player chose Rock'
   end
 end
