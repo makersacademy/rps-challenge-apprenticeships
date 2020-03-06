@@ -25,4 +25,9 @@ class Game
   def lose?
     result == :lose
   end
+
+  def result
+    COMBINATIONS[@player_weapon][@computer_weapon]
+  end
+
 end

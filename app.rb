@@ -22,9 +22,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
+
     session[:player_weapon] = params[:weapon]
-    return session[:player_weapon]
-    session[:computer_item] = Computer.new.item
+    @player_weapon = session[:player_weapon]
+    erb :play
+    session[:computer_weapon] = Computer.new.weapon
+    @computer_weapon = session[:computer_weapon]
+    erb :play
   end
 
    run! if app_file == $0
