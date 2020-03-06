@@ -1,6 +1,7 @@
 class Computer 
+	MOVE = ['rock', 'paper', 'scissors']
 	def random_move
-		['rock', 'paper', 'scissors'].sample
+		MOVE.sample
 	end
 
 	def the_winner_is(player1, player1_move, player2, player2_move )
