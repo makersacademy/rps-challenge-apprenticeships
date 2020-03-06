@@ -34,7 +34,7 @@
 		<h2>Player 1: <%= @player_name %></h2>
 		<% if !@player_move %>
 			<form action='/play' method="post"> 
-				<label for="player_move">Make your move</label>
+				<label for="player_move">Select your move: </label>
 				<select name="player_move">
 					<option value="rock">rock</option>
 					<option value="paper">paper</option>
