@@ -1,0 +1,15 @@
+<h1>Tada!</h1>
+<h2>Guess what...</h2>
+<h3>
+<%# Don't use '=' after '%'
+    '=' will print codes after
+    without '=' code will only be evaluated  %>
+<%= $player_name %> chose: <%= @player_option %> vs. Computer chose: <%= @computer_option %>
+<% if @tie %>
+It is a tie!
+<% elsif @win %>
+<%= $player_name %> won!
+<% else %>
+<%= $player_name %> lost!
+<% end %>
+</h3>

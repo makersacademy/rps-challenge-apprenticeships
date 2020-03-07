@@ -1,5 +1,8 @@
-<h1> Hello <%=@player_name%>!</h1>
+<h1> Hello <%=$player_name%>!</h1>
 <h2> Choose your move: </h2>
-<button type='submit'>Rock</button> 
-<button type='submit'>Paper</button>
-<button type='submit'>Scissors</button>
+<form action='/play' method='get'>
+  <button type='submit' name='option' value='Rock' >Rock</button> 
+  <button type='submit' name='option' value='Paper'>Paper</button>
+  <button type='submit' name='option' value='Scissors'>Scissors</button>
+</form>
+
