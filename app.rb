@@ -16,9 +16,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    #put logic for choosing computer's weapon
-    #put here logic for choosing winner
-    #redirect to result view page
+    
   end
 
   get '/result' do
