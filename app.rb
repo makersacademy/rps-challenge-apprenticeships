@@ -9,7 +9,7 @@ class RockPaperScissors < Sinatra::Base
   get "/" do
     erb :homepage
   end
-  post "/register_name" do
+  post "/play" do
     $player = Player.new(params[:player_name])
     $game = Game.new($player)
     redirect "/play"
@@ -28,5 +28,5 @@ class RockPaperScissors < Sinatra::Base
     @computer_choice = @game.computer_choice
     erb :result
   end
-   run! if app_file == $0
+  run! if app_file == $0
 end

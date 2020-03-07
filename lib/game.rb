@@ -1,5 +1,5 @@
 class Game
-attr_reader :player_choice, :computer_choice
+  attr_reader :player_choice
 
   def initialize(player_name)
     @player = player_name
@@ -12,6 +12,11 @@ attr_reader :player_choice, :computer_choice
   def computer_choice
     @computer_choice = [:rock, :scissors, :paper].sample
   end
+
+  # if @computer_choice == @player_choice
+  #   puts "It's a draw"
+  # else puts "someone won"
+  # end
 end
 
 #   win_conditions = {
