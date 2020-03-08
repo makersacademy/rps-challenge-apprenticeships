@@ -2,6 +2,7 @@ require 'game_choice'
 
 describe 'Game' do
 let (:game) { Game.new }
+let (:computer) { Computer.new }
   it 'can create a new instance' do
     expect(game).to be_a_kind_of Game
   end
@@ -12,6 +13,7 @@ end
 
   it 'start can print out statements' do
     choice = "rock"
-    expect(game.start(choice)).to eq("You lose")
+    expect(["rock","paper","scissors"]).to include(computer.c_start)
+
   end
 end

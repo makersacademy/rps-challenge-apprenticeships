@@ -11,7 +11,8 @@ feature 'options' do
     sign_in_and_play
     choose('rps', option: 'rock')
     click_button 'submit'
-   expect(page).to have_content ('You lose')
+    save_and_open_page
+   expect(page).to have_button('Play again?')
   end
 
 end

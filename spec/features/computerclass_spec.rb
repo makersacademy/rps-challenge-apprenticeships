@@ -9,9 +9,4 @@ describe 'Computer' do
   it 'can respond to c_start method' do
     expect(computer).to respond_to(:c_start)
   end
-
-  it "chooses a random sign" do
-  expect(["rock","paper","scissors"]).to include(computer.c_start)
-  end
-
 end
