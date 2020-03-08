@@ -18,6 +18,7 @@ require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
 require 'capybara/dsl'
+require './lib/game_choice.rb'
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|

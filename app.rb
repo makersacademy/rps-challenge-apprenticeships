@@ -1,9 +1,8 @@
 require 'sinatra/base'
+require './lib/game_choice.rb'
 class RockPaperScissors < Sinatra::Base
+
   enable :sessions
-  get '/test' do
-    'test page'
-  end
 
   get '/' do
     erb :index
@@ -14,5 +13,13 @@ class RockPaperScissors < Sinatra::Base
     erb :options
   end
 
-   run! if app_file == $0
-end
+  get '/names' do
+    @choice = params[:rps]
+    game = Game.new
+    @message = game.start(@choice)
+    erb :message
+ end
+
+  run! if app_file == $0
+
+  end
