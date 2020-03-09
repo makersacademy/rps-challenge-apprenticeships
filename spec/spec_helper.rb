@@ -18,6 +18,7 @@ require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
 require 'capybara/dsl'
+require 'features/web_helpers'
 
 Capybara.app = RockPaperScissors
 

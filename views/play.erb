@@ -1,0 +1,26 @@
+<h1>
+	Hello <%= @player.to_s.capitalize %> it is you vs. <%= 'Computer' %>
+</h1>
+
+<h2> Best hand wins: Rock, Paper or Scissors!</h2>
+<h3> Rules </h3>
+<ul style="list-style-type:square;">
+  <li>Rock beats scissors</li>
+  <li>Scissors beats paper</li>
+  <li>Paper beats rock </li>
+</ul> 
+
+<h4> Pick your weapon: </h4>
+
+ <form action="/play" method="post">
+ 	<input type="submit" name="weapon" value="Rock">
+ 	<input type="submit" name="weapon" value="Paper">
+ 	<input type="submit" name="weapon" value="Scissors">
+ </form>
+
+ <h4> Your weapon: <%= @weapon %>! </h4>
+
+<h4 id="computer"> 
+	Computer weapon: <%= @computer_weapon.to_s.capitalize %>!
+</h4>
+
