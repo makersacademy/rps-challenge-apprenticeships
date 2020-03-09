@@ -15,7 +15,10 @@ class RockPaperScissors < Sinatra::Base
     $player_name = params[:player_name]
     erb :play
   end
-
+  
+  #4 After user chose move, the control will go to model 'Game'
+  #  the 'win?' method will compare values of player_option and computer_option against rules defined
+  #  and return the winner to result.erb
   get '/play' do 
     $player_name
     $player_option = params[:option]
