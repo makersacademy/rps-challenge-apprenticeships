@@ -1,5 +1,5 @@
 <h1>
-	Hello <%= @player.capitalize %> it is you vs. <%= 'Computer' %>
+	Hello <%= @player.to_s.capitalize %> it is you vs. <%= 'Computer' %>
 </h1>
 
 <h2> Best hand wins: Rock, Paper or Scissors!</h2>
@@ -18,5 +18,9 @@
  	<input type="submit" name="weapon" value="Scissors">
  </form>
 
- Your weapon: <%= @weapon %>!
+ <h4> Your weapon: <%= @weapon %>! </h4>
+
+<h4 id="computer"> 
+	Computer weapon: <%= @computer_weapon.to_s.capitalize %>!
+</h4>
 

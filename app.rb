@@ -17,11 +17,13 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do 
   	@player = session[:player]
   	@weapon = session[:weapon]
+  	@computer_weapon = session[:computer_weapon]
   	erb(:play)
   end
 
   post '/play' do 
   	session[:weapon] = params[:weapon]
+  	session[:computer_weapon] = :Rock 
   	redirect '/play'
   end
 
