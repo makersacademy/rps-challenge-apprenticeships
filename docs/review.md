@@ -61,7 +61,7 @@ If the structure does not have an `/app` folder:
 
 ```
 ├── lib
-│   ├── game.rb
+│   ├── game.rb 
 │   ├── computer.rb
 │   └── player.rb
 ├── spec

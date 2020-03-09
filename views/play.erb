@@ -1,0 +1,15 @@
+<h1> Welcome </h1> <%= @name %>
+<h1> It's time to choose your weapon</h1>
+<h2> Your options are:</h2>
+<ul>
+  <li>Rock</li>
+  <li>Paper</li>
+  <li>Scissors</li>
+</ul>
+<form action="/outcome" method="post">
+<label for="weapon">
+  weapon
+<input type="text" id="weapon" name="weapon">
+<input type="submit" value="submit and play">
+</form>
+ <%= @weapon %>
