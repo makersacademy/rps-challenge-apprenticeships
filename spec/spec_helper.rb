@@ -12,13 +12,14 @@ SimpleCov.start
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
 ENV['RACK_ENV'] = 'test'
-
+require './lib/outcome'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara/rspec'
 require 'capybara'
 require 'rspec'
 require 'capybara/dsl'
-
+#require './lib/outcome'
+#the above do not seem to be working
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|

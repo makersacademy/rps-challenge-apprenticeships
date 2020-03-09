@@ -6,10 +6,10 @@
   <li>Paper</li>
   <li>Scissors</li>
 </ul>
-<form action="/outcome" method="post>"
+<form action="/outcome" method="post">
 <label for="weapon">
   weapon
-<input type="text" name="weapon">
+<input type="text" id="weapon" name="weapon">
 <input type="submit" value="submit and play">
 </form>
-<h1> <%= @weapon %> </h1>
+ <%= @weapon %>
