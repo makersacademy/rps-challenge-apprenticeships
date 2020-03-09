@@ -4,12 +4,14 @@
 <%# Don't use '=' after '%'
     '=' will print codes after
     without '=' code will only be evaluated  %>
-<%= $player_name %> chose: <%= @player_option %> vs. Computer chose: <%= @computer_option %>
-<% if @tie %>
-It is a tie!
-<% elsif @win %>
-<%= $player_name %> won!
-<% else %>
-<%= $player_name %> lost!
+<%= $player_name %> chose: <%= $player_option %> vs. Computer chose: <%= $computer_option %>
+</h3>
+<h3>
+<% if $tie == true %>
+	It is a tie!
+	<% elsif $win == true %>
+	<%= $player_name %> won!
+	<% else %>
+	<%= $player_name %> lost!
 <% end %>
 </h3>

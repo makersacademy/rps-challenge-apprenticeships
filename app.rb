@@ -18,9 +18,10 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do 
     $player_name
-    @player_option = params[:option]
-    @compter_option = ['Rock','Paper', 'Scissors'].sample
-    @game = Game.new(@player_option,@compter_option)
+    $player_option = params[:option]
+    $computer_option = ['Rock', 'Paper', 'Scissors'].sample
+    @game = Game.new($player_option,$computer_option)
+    @game.win?
     erb :result
   end 
 
