@@ -1,0 +1,14 @@
+
+<h1>OK, <%= @player.player_name %>, let's play - choose your weapon!</h1>
+
+<h2>
+  <form action="/result" method="get">
+  <input type="radio" id="rock" name="player_choice" value="rock">
+  <label for="rock">Rock</label><br>
+  <input type="radio" id="paper" name="player_choice" value="paper">
+  <label for="paper">Paper</label><br>
+  <input type="radio" id="scissors" name="player_choice" value="scissors">
+  <label for="scissors">Scissors</label><br>
+  <input type="submit" name="Submit">
+  </form>
+</h2>
