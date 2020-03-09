@@ -1,23 +1,24 @@
 # RPS Challenge
 
-Instructions
--------
+## Instructions
+
 * Challenge time: until the end of the day
-Feel free to use google, your notes, books etc but please work on your own
+* Feel free to use google, your notes, books etc but please work on your own
 * Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
 * Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
 * There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
 * If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
 
-Set up
------
-```bundle install```\
-```rspec```\
-Should see an output that includes this:\
-```1 example, 0 failures```
+## Set up
 
-Task
-----
+```bash
+$ bundle install
+$ rspec
+# You should output that includes:
+# 1 example, 0 failures
+```
+
+## Task
 
 Knowing how to build web applications is getting us almost there as web developers!
 
@@ -43,17 +44,17 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
-
-As usual please start by
+As usual please start by:
 
 * Forking this repo
-* TEST driving development of your app
+* Test-driving development of your app
 
 ## Resources
-[HTML forms](https://www.w3schools.com/html/html_forms.asp)
-[Capybara cheatsheet](https://devhints.io/capybara)
-[Twitter bootstrap css library](https://getbootstrap.com/)
-[Hosting on heroku](https://heroku.com)
+
+* [HTML forms](https://www.w3schools.com/html/html_forms.asp)
+* [Capybara cheatsheet](https://devhints.io/capybara)
+* [Twitter bootstrap css library](https://getbootstrap.com/)
+* [Hosting on heroku](https://heroku.com)
 
 ## Bonus level 1: Multiplayer
 
@@ -62,7 +63,6 @@ Change the game so that two marketeers can play against each other ( _yes there 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
-
 
 ## Basic Rules
 
@@ -79,11 +79,9 @@ In code review we'll be hoping to see:
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
-Notes on test coverage
-----------------------
+## Notes on test coverage
 
-Please ensure you have the following **AT THE TOP** of your spec_helper.rb in order to have test coverage stats generated
-on your pull request:
+Please ensure you have the following **AT THE TOP** of your `spec/spec_helper.rb` in order to have test coverage stats generated on your pull request:
 
 ```ruby
 require 'simplecov'
