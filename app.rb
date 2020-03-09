@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/computer'
+
 class RockPaperScissors < Sinatra::Base
 	enable :sessions
 
@@ -13,7 +16,13 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do 
   	@player = session[:player]
+  	@weapon = session[:weapon]
   	erb(:play)
+  end
+
+  post '/play' do 
+  	session[:weapon] = params[:weapon]
+  	redirect '/play'
   end
 
 
