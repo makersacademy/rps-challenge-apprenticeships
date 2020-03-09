@@ -16,11 +16,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    
+
   end
 
   get '/result' do
-    @weapon = params[:weapon]
+    @player_weapon = params[:player_weapon]
     erb :result
   end
 
