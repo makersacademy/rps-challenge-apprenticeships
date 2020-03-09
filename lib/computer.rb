@@ -1,8 +1,10 @@
 
 class Computer
 
+	WEAPONS = ["rock", "paper", "scissors"]
+
 	def auto_weapon
-		['rock', 'paper', 'scissors'].sample
+		WEAPONS.sample
 	end
 
 end

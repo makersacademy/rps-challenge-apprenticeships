@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/computer'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 	enable :sessions
@@ -23,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do 
   	session[:weapon] = params[:weapon]
-  	session[:computer_weapon] = :Rock 
+  	session[:computer_weapon] = 'scissors'
   	redirect '/play'
   end
 
