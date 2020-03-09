@@ -1,8 +1,10 @@
-<h1> Hello <%=$player_name%>!</h1>
-<h2> Choose your move: </h2>
-<form action='/play' method='get'>
-  <button type='submit' name='option' value='Rock' >Rock</button> 
-  <button type='submit' name='option' value='Paper'>Paper</button>
-  <button type='submit' name='option' value='Scissors'>Scissors</button>
-</form>
-
+<div style="display: flex; justify-content: center; align-items: center; flex-direction: column; font-family: monospace;">
+  <h1>Rock Paper Scissors!</h1>
+  <h1> Hello <%=$player_name%>!</h1>
+  <h2> Choose your move: </h2>
+  <form action='/play' method='get'>
+    <button type='submit' name='option' value='Rock' style='font-family: monospace' >Rock</button> 
+    <button type='submit' name='option' value='Paper' style='font-family: monospace'>Paper</button>
+    <button type='submit' name='option' value='Scissors' style='font-family: monospace'>Scissors</button>
+  </form>
+</div>
