@@ -17,7 +17,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player_name = session[:player_name]
-    @game = $game
     erb :play
   end
 
@@ -25,9 +24,9 @@ class RockPaperScissors < Sinatra::Base
 
     session[:player_weapon] = params[:weapon]
     @player_weapon = session[:player_weapon]
-    erb :play
     session[:computer_weapon] = Computer.new.weapon
     @computer_weapon = session[:computer_weapon]
+    @game = Game.new(@player_weapon.to_sym, @computer_weapon) #must convert user input (player_weapon, stored as a string) to symbol, otherwise cannot be called
     erb :play
   end
 

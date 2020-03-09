@@ -8,10 +8,10 @@ class Game
 
   attr_reader :player_name, :player_weapon, :computer_weapon
 
-  def initialize
-    @player_name = ["player_name"]
-    @player_weapon = ["player_weapon"]
-    @computer_weapon = ["computer_weapon"]
+  def initialize(player_weapon, computer_weapon)
+    @player_name = ["player_name"] #perfectly valid when stored in a hash - however, cannot be accessed when called in template
+    @player_weapon = player_weapon
+    @computer_weapon = computer_weapon
   end
 
   def draw?
@@ -27,7 +27,8 @@ class Game
   end
 
   def result
-    COMBINATIONS[@player_weapon][@computer_weapon]
+
+    COMBINATIONS[player_weapon][computer_weapon] #can be called here - not stored as strings
   end
 
 end
