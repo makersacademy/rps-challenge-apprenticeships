@@ -11,8 +11,14 @@ feature 'options' do
     sign_in_and_play
     choose('rps', option: 'rock')
     click_button 'submit'
-    save_and_open_page
    expect(page).to have_button('Play again?')
   end
 
+  scenario 'it can give you a result' do
+    srand 1234
+    sign_in_and_play
+    choose('rps', option: 'rock')
+    click_button 'submit'
+    expect(page).to have_content "You win"
+  end
 end
