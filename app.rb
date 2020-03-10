@@ -28,20 +28,14 @@ end
   #end
 
 post '/outcome' do
-  #set player one move
-  session[:weapon] = params[:weapon]
+ session[:weapon] = params[:weapon]
+  weapon = Outcome.new
+ #$computer_choice
   #$weapon = Outcome.new(params[:weapon])
+  @results = weapon.results(session[:weapon])
+  @computer_choice = weapon.computer_choice
 
-  $weapon.results
-
-  #response = redirect('/outcome_final')
-  #response
-  #generate random move
-  #compare moves
-  #winner
-  #@weapon = Outcome.new(params[:weapon])
-  #when i use @weapon it says unanisalised constant
-  erb :outcome_final
+erb :outcome_final
 end
 
    run! if app_file == $0
