@@ -14,33 +14,33 @@ RSpec.describe Game do
 		end 
 	end 
 
-	describe '#win?' do 
+	describe '#play' do 
 		it 'let rock defeated by paper' do
-			r_vs_p.win?
-			expect($win).to eq false
+			r_vs_p.play
+			expect(r_vs_p.win).to eq false
 		end 
 
 		it 'let paper defeated by paper' do
-			p_vs_s.win?
-			expect($win).to eq false
+			p_vs_s.play
+			expect(p_vs_s.win).to eq false
 		end
 
 		it 'let scissors defeated by rock' do
-			s_vs_r.win?
-			expect($win).to eq false 
+			s_vs_r.play
+			expect(s_vs_r.win).to eq false 
 		end
 
 		# This test is just to make the coverage to 100%
 		it 'let paper beats rock' do 
 			game = Game.new('Paper','Rock')
-			game.win?
-			expect($win).to eq true
+			game.play
+			expect(game.win).to eq true
 		end 
 
 		it 'tells a tie' do
 			game = Game.new('Rock','Rock')
-			game.win?
-			expect($tie).to eq true
+			game.play
+			expect(game.tie).to eq true
 		end
 	end 
 end 

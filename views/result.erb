@@ -9,9 +9,9 @@
 	<%= $player_name %> chose: <%= $player_option %> vs. Computer chose: <%= $computer_option %>
 	</h3>
 	<h3>
-	<% if $tie == true %>
+	<% if @tie == true %>
 		It is a tie!
-		<% elsif $win == true %>
+		<% elsif @win == true %>
 		<%= $player_name %> won!
 		<% else %>
 		<%= $player_name %> lost!
