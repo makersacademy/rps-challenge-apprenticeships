@@ -11,12 +11,22 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     @player = Player.new(params[:player_name])
     @game = Game.create(@player)
+    redirect '/choice'
+  end
+
+  get '/choice' do
+    @game = Game.instance
     erb :choice
   end
 
   post '/play' do
     @game = Game.instance
     @choice = @game.player.choose(params[:name])
+    redirect '/winner'
+  end
+
+  get '/winner' do
+    @game = Game.instance
     @game_choice = @game.choose
     erb :winner
   end
