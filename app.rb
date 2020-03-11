@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
@@ -10,17 +11,23 @@ class RockPaperScissors < Sinatra::Base
     erb :choose_weapon
   end
 
-  get '/choose_weapon' do
-    #pass the weapon chosen to the instance variable
-
-  end
-
-  get '/play' do
-
-  end
-
   get '/result' do
     @player_weapon = params[:player_weapon]
+    game = Game.new(@player_weapon)
+
+    p "*********"
+    p $player_weapon
+    p "*********"
+
+    @computer_weapon = game.choose_weapon
+    p "*********"
+    p @computer_weapon
+    p "*********"
+
+    @winner = game.choose_winner
+    p "*********"
+    p @winner
+    p "*********"
     erb :result
   end
 
