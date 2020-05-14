@@ -28,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    'You chose rock'
+    erb :rock 
   end
 
   get '/paper' do
