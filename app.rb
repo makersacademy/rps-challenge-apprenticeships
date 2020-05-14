@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -17,11 +19,24 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    $game = Game.new
     erb :play
   end
 
   get '/start' do
-    erb :start 
+    erb :start
+  end
+
+  get '/rock' do
+    'You chose rock'
+  end
+
+  get '/paper' do
+    'You chose paper'
+  end
+
+  get '/scissors' do
+    'You chose scissors'
   end
 
   run! if app_file == $0
