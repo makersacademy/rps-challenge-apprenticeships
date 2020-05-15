@@ -3,19 +3,19 @@ require_relative 'player'
 class Game
   def play(player_choice, computer_choice)
     if player_choice.downcase == computer_choice
-      "It's a draw!"
+      "it's a draw!"
     elsif player_choice.downcase == 'rock' && computer_choice == 'scissors'
-      "You win!"
+      "you win!"
     elsif player_choice.downcase == 'paper' && computer_choice == 'rock'
-      "You win!"
+      "you win!"
     elsif player_choice.downcase == 'scissors' && computer_choice == 'paper'
-      "You win!"
+      "you win!"
     elsif player_choice.downcase == 'rock' && computer_choice == 'paper'
-      "You lose!"
+      "you lose!"
     elsif player_choice.downcase == 'paper' && computer_choice == 'scissors'
-      "You lose!"
+      "you lose!"
     elsif player_choice.downcase == 'scissors' && computer_choice == 'rock'
-      "You lose!"
+      "you lose!"
     end 
   end
 

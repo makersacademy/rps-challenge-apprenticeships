@@ -19,7 +19,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    puts "param is #{params[:choice]}"
     session[:choice] = params[:choice]
     redirect '/result'
   end
@@ -27,6 +26,8 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @choice = session[:choice]
     @player = session[:name].name
+    game = Game.new
+    @result = game.play(@choice,game.generate_computer_choice)
     erb :result
   end
   run! if app_file == $0

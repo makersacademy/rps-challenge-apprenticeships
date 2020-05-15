@@ -20,7 +20,7 @@ RSpec.describe Game do
     allow(game).to receive(:generate_computer_choice).and_return('scissors')
     computer_choice = game.generate_computer_choice
 
-    expect(game.play(choice,computer_choice)).to eq("You win!")
+    expect(game.play(choice,computer_choice)).to eq("you win!")
   end
 
   it 'can return the result when the player loses' do
@@ -30,6 +30,6 @@ RSpec.describe Game do
     allow(game).to receive(:generate_computer_choice).and_return('paper')
     computer_choice = game.generate_computer_choice
 
-    expect(game.play(choice,computer_choice)).to eq("You lose!")
+    expect(game.play(choice,computer_choice)).to eq("you lose!")
   end
 end
