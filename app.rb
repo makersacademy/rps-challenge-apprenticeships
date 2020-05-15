@@ -4,10 +4,6 @@ require './lib/game'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
-  get '/test' do
-    'test page'
-  end
-
   get '/' do
     erb :index
   end
@@ -19,7 +15,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    $game = Game.new
     erb :play
   end
 
@@ -28,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    @game = $game
+    @game = Game.new
     @choice = 'rock'
     @opponent = @game.randomize
     @winner = @game.win(@choice, @opponent)
@@ -36,7 +31,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/paper' do
-    @game = $game
+    @game = Game.new
     @choice = 'paper'
     @opponent = @game.randomize
     @winner = @game.win(@choice, @opponent)
@@ -44,7 +39,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/scissors' do
-    @game = $game
+    @game = Game.new
     @choice = 'scissors'
     @opponent = @game.randomize
     @winner = @game.win(@choice, @opponent)

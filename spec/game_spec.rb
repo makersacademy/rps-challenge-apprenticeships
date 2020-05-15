@@ -12,5 +12,11 @@ describe 'game determines a winner' do
     player = double(:player, initialize: "paper")
     expect(game.win("rock", "paper")).to eq 'Player wins!'
   end
+
+  it 'asks to try again if choices as the same' do
+    game = double(:game, randomize: "paper", win: "Try again")
+    player = double(:player, initialize: "paper")
+    expect(game.win("paper", "paper")).to eq "Try again"
+  end
 end
 end

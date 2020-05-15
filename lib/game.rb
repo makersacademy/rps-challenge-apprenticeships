@@ -1,7 +1,7 @@
 require_relative 'player'
 
 class Game
-  
+
   def randomize
     ['rock', 'paper', 'scissors'].sample
   end
@@ -23,6 +23,4 @@ class Game
       'Try again'
     end
   end
-
-
 end
