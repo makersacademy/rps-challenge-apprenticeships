@@ -1,0 +1,19 @@
+<h1>Welcome <%= @player_1 %> </h1>
+
+<h2>What is your choice</h2>
+
+<form action="/move" method="post"> 
+<label style="background: #D9D9D9; border: solid 1px black; text-align: center;"for="rock">
+  Rock
+</label>
+<input type="radio" name="move" value="rock" id="rock">
+<label style="background: #D9D9D9; border: solid 1px black; text-align: center;"for="paper">
+  Paper
+</label>
+<input type="radio" name="move" value="paper" id="paper">
+<label style="background: #D9D9D9; border: solid 1px black; text-align: center; margin-top: 5px;"for="scissors">
+  Scissors
+</label>
+<input type="radio" name="move" value="scissors" id="scissors">
+<input type="submit" value="submit">
+</form>
