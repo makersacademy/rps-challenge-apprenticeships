@@ -8,8 +8,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
   <body>
-    <div>
-    <%= "#{@player}"%>
+    <div class="container display:flex pt-20">
+      <div class="row">
+        <p class ="text-center"><%=@player%>, select your weapon!</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <form class="text-center" action="/choice" method="post">
+            <button class="btn btn-primary" type="submit" name="choice" value="rock">Rock</button>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <form class="text-center" action="/choice" method="post">
+            <button class="btn btn-primary" type="submit" name="choice" value="paper">Paper</button>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <form class="text-center" action="/choice" method="post">
+            <button class="btn btn-primary" type="submit" name="choice" value="scissors">Scissors</button>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
 </html>

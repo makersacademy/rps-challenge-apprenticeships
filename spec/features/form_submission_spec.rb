@@ -1,9 +1,7 @@
+require 'spec_helper.rb'
 feature 'Name submission' do
   scenario 'can submit name with form' do
-    visit '/'
-    fill_in('name', :with => 'Joe')
-    click_on('Fight!')
-    save_and_open_page
-    expect(page).to have_content 'Joe'
+    sign_in_and_play
+    expect(page).to have_content 'Joe, select your weapon!'
   end
 end
