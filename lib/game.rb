@@ -22,5 +22,4 @@ class Game
   def generate_computer_choice
     ["rock", "paper", "scissors"].sample
   end
-
 end
