@@ -1,0 +1,21 @@
+<head>
+  <style>
+    body {
+      text-align: center;
+      background: black;
+      color: white;
+      font-family: helvetica;
+    }
+  </style>
+</head>
+<h1>Hello, <%= "#{@player}" %></h1>
+<h2>Choose your weapon</h2>
+<form action="/rock" method="get">
+  <input type="submit" value="Rock">
+</form>
+<form action="/scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
+<form action="/paper" method="post">
+  <input type="submit" value="Paper">
+</form>
