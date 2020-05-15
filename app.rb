@@ -16,10 +16,21 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
-
   get '/play' do
     @player_1_name = session[:player_1_name]
     erb :play
+  end
+
+  post '/rock' do
+    "You chose Rock"
+  end
+
+  post '/paper' do
+    "You chose Paper"
+  end
+
+  post '/scissors' do
+    "You chose Scissors"
   end
 
   run! if app_file == $0

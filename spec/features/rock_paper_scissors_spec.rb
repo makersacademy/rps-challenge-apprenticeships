@@ -5,9 +5,17 @@ feature 'home page' do
   end
 end
 
-feature 'home page' do
+feature 'enter game' do
   scenario 'User can click play and enter game' do
     sign_in_and_play
-    expect(page).to have_content('Hello Dave, welcome to Rock Paper Scissors. Lets Play!')
+    expect(page).to have_content('Hello Dave. Welcome to Rock Paper Scissors. Lets Play!')
+  end
+end
+
+feature 'select rock' do
+  scenario 'User can click rock, paper or scissors' do
+    sign_in_and_play
+    click_button 'Rock'
+    expect(page).to have_content('You chose Rock')
   end
 end
