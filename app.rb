@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/game.rb'
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
@@ -21,16 +22,16 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/rock' do
-    "You chose Rock"
+  get '/rock' do
+    erb :rock
   end
 
-  post '/paper' do
-    "You chose Paper"
+  get '/paper' do
+    erb :paper
   end
 
-  post '/scissors' do
-    "You chose Scissors"
+  get '/scissors' do
+    erb :scissors
   end
 
   run! if app_file == $0

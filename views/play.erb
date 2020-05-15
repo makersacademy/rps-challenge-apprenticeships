@@ -3,7 +3,7 @@ Hello <%= @player_1_name %>. Welcome to Rock Paper Scissors. Lets Play!
 <p> Select your move!
 
 <p>
-  <form action="/rock" method="post">
+  <form action="/rock" method="get">
   <label for="player_1_Rock">
     </label>
   <input type="submit" value="Rock">
@@ -11,7 +11,7 @@ Hello <%= @player_1_name %>. Welcome to Rock Paper Scissors. Lets Play!
 </p>
 
 <p>
-  <form action="/paper" method="post">
+  <form action="/paper" method="get">
   <label for="player_1_paper">
     </label>
   <input type="submit" value="Paper">
@@ -19,7 +19,7 @@ Hello <%= @player_1_name %>. Welcome to Rock Paper Scissors. Lets Play!
 </p>
 
 <p>
-  <form action="/scissors" method="post">
+  <form action="/scissors" method="get">
   <label for="player_1_paper">
     </label>
   <input type="submit" value="Scissors">
