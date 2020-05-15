@@ -6,9 +6,8 @@ feature 'home page' do
 end
 
 feature 'home page' do
-  scenario 'user can enter name on home page' do
-    visit '/'
-    click_button 'Play'
-    expect(page).to have_content('Welcome to Rock Paper Scissors!')
+  scenario 'User can click play and enter game' do
+    sign_in_and_play
+    expect(page).to have_content('Hello Dave, welcome to Rock Paper Scissors. Lets Play!')
   end
 end
