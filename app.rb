@@ -28,15 +28,21 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rock' do
-    erb :rock 
+    @game = $game
+    @opponent = @game.randomize
+    erb :rock
   end
 
   get '/paper' do
-    'You chose paper'
+    @game = $game
+    @opponent = @game.randomize
+    erb :paper
   end
 
   get '/scissors' do
-    'You chose scissors'
+    @game = $game
+    @opponent = @game.randomize
+    erb :scissors
   end
 
   run! if app_file == $0
