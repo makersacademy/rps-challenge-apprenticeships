@@ -8,8 +8,12 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
-    @player_1_name = params[:player_1_name
+  post '/name' do
+    session[:name] = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
     erb :play
   end
 
