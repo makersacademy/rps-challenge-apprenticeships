@@ -29,19 +29,25 @@ class RockPaperScissors < Sinatra::Base
 
   get '/rock' do
     @game = $game
+    @choice = 'rock'
     @opponent = @game.randomize
+    @winner = @game.win(@choice, @opponent)
     erb :rock
   end
 
   get '/paper' do
     @game = $game
+    @choice = 'paper'
     @opponent = @game.randomize
+    @winner = @game.win(@choice, @opponent)
     erb :paper
   end
 
   get '/scissors' do
     @game = $game
+    @choice = 'scissors'
     @opponent = @game.randomize
+    @winner = @game.win(@choice, @opponent)
     erb :scissors
   end
 
