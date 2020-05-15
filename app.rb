@@ -7,12 +7,21 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
 
-  get '/enter-name'do
+
+  get '/enter-name' do
+    @name = params[:name]
     erb :index
   end
 
-  get '/choose-your-weapon' do
+  get '/weapon-choice' do
+    @rock = params[:rock]
+    @paper = params[:paper]
+    @scissors = params[:scissors]
     erb :weapon
+  end
+
+  get '/fight' do
+    erb :fight
   end
 
 

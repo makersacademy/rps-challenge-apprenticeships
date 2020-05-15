@@ -1,15 +1,16 @@
 class Game
+
   def initialize
-  @player_1 = player_1
-  @opponent = opponent
-end
+    @player_1 = player_1
+    @player_2 = player_2
+  end
 
   def player_1
     @player_1 = 'Player 1'
   end
 
-  def opponent
-    @opponent = 'Computer'
+  def player_2
+    @player_2 = 'Computer'
   end
 
   def fight
