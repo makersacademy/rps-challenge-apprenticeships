@@ -1,9 +1,8 @@
 class Player 
-  def initialize(move)
-    @move = move
-  end
-
-  def move
-    @move
+  attr_reader :name
+  attr_accessor :move
+  def initialize(name)
+    @name = name
+    @move = nil
   end
 end

@@ -9,22 +9,26 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $player_1 = params[:player_name]
+    @player_1 = Player.new(params[:player_name])
+    @computer = Computer.new
+    $game = Game.new(@player_1, @computer)
     redirect '/play'
   end
 
   get '/play' do
-    @player_1 = $player_1
+    @player_1 = $game.player_1.name
     erb :play
   end
 
   post '/move' do
-    $move=params[:move]
+    p params[:move]
+    $game.player_1.move = params[:move]
     redirect '/who_won'
   end
 
   get '/who_won' do
-    @move = $move
+    @move = $game.player_1.move
+    @winning = $game.winning
     erb :your_move
   end
 
