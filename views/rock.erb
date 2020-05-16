@@ -1,5 +1,5 @@
 You chose Rock
 
-<p> Your enemy chose <%= @enemy = Game.new.randomize %> </p>
+<p> Your enemy chose <%= enemy = Game.new.randomize %> </p>
 
- <p>  <%= Game.new.result('Rock', @enemy) %> </p>
+ <p>  <%= Game.new.result('Rock', enemy) %> </p>

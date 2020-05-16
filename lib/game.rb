@@ -6,9 +6,6 @@ class Game
 
   def result(turn, enemy)
 
-    @turn = turn
-    @enemy = enemy
-
     if turn == 'Rock' && enemy == 'Rock'
       'You draw..'
     elsif turn == 'Rock' && enemy == 'Scissors'

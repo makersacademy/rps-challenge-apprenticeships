@@ -13,9 +13,25 @@ feature 'enter game' do
 end
 
 feature 'select rock' do
-  scenario 'User can click rock, paper or scissors' do
+  scenario 'User can click rock' do
     sign_in_and_play
     click_button 'Rock'
     expect(page).to have_content('You chose Rock')
+  end
+end
+
+feature 'select paper' do
+  scenario 'User can click paper' do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content('You chose Paper')
+  end
+end
+
+feature 'select paper' do
+  scenario 'User can click scissors' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content('You chose Scissors')
   end
 end
