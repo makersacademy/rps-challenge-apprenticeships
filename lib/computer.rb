@@ -1,10 +1,6 @@
 class Computer
 
-  def initialize
-    @move = ['Rock', 'Paper', 'Scissors']
+  def randomize
+    ['Rock', 'Paper', 'Scissors'].sample
   end
-
-  def move
-    @move.rand
-  end 
 end

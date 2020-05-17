@@ -1,6 +1,6 @@
 feature 'Weapon choice page' do
-  scenario 'Allows players to choose their weapon' do
-    visit ('/weapon-choice')
-    expect(page).to have_content ('Choose your weapon')
+  scenario 'Let players see what was chosen' do
+    visit ('/')
+    expect(page).to have_content ('CJ chose Rock and Computer chose Scissors')
   end
 end
