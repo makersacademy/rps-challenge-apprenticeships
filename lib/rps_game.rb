@@ -2,13 +2,12 @@ require_relative 'computer'
 require_relative 'human'
 
 class Game
-
   def win(move, computer)
     if move == 'Rock' && computer == 'Scissors'
       'Human wins!'
     elsif move == 'Rock' && computer == 'Paper'
       'Computer wins!'
-    elsif move == 'Rock' && comouter == 'Rock'
+    elsif move == 'Rock' && computer == 'Rock'
       'Its a draw, try again!'
     elsif move == 'Paper' && computer == 'Rock'
       'Human wins!'

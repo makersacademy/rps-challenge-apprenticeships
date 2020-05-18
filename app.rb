@@ -26,6 +26,7 @@ class RockPaperScissors < Sinatra::Base
   get '/rock' do
     @game = Game.new
     @move = 'Rock'
+    @computer = Computer.new
     @computer = @computer.randomize
     @results = @game.win(@move, @computer)
     erb :rock
@@ -34,6 +35,7 @@ class RockPaperScissors < Sinatra::Base
   get '/paper' do
     @game = Game.new
     @move = 'Paper'
+    @computer = Computer.new
     @computer = @computer.randomize
     @results = @game.win(@move, @computer)
     erb :paper
@@ -42,6 +44,7 @@ class RockPaperScissors < Sinatra::Base
   get '/scissors' do
     @game = Game.new
     @move = 'Scissors'
+    @computer = Computer.new
     @computer = @computer.randomize
     @results = @game.win(@move, @computer)
     erb :scissors
