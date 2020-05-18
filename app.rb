@@ -1,6 +1,5 @@
 require 'sinatra/base'
 require './lib/player'
-require './lib/player_choice'
 require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
@@ -22,7 +21,7 @@ class RockPaperScissors < Sinatra::Base
   end 
 
   post '/choice' do
-    choice = PlayerChoice.new(params[:rps])
+    choice =params[:rps]
     player = $player
     $game = Game.new(player,choice)
     redirect '/result'

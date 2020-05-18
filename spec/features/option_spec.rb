@@ -6,8 +6,7 @@ feature 'options' do
     sign_in_and_play
     choose('rps', option: 'Rock')
     click_button 'Submit'
-    save_and_open_page
-   expect(page).to have_content('Glen you have choosen: Rock')
+    expect(page).to have_content('Glen you have choosen: Rock')
   end
 
 end
