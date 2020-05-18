@@ -1,0 +1,15 @@
+<h1>You are: <%= @player.name %> </h1>
+
+<body>
+<p>Click an option and press submit!</p>
+
+<form action="/choice" method="post">
+  <input type="radio" id="choice1" name="rps" value="Rock">
+  <label for="Rock">Rock</label><br>
+  <input type="radio" id="choice2" name="rps" value="Paper">
+  <label for="Paper">Paper</label><br>
+  <input type="radio" id="choice3" name="rps" value="Scissors">
+  <label for="Scissors">Scissors</label>
+  <input type="submit" value="Submit">
+</form>
+</body>
