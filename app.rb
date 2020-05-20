@@ -22,22 +22,12 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/play/rock' do
+  post '/play' do
     @player_1 = $player_1
-    @outcome = (@player_1.player_vs_computer('rock'))
-    erb :rock
-  end
-
-  get '/play/paper' do
-    @player_1 = $player_1
-    @outcome = (@player_1.player_vs_computer('paper'))
-    erb :paper
-  end
-
-  get '/play/scissors' do
-    @player_1 = $player_1
-    @outcome = (@player_1.player_vs_computer('scissors'))
-    erb :scissors
+    $shape = params[:shape].downcase
+    @comp = @player_1.computer
+    @outcome = (@player_1.player_vs_computer($shape))
+    erb :outcome
   end
 
   run! if app_file == $0

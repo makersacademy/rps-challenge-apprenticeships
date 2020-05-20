@@ -16,4 +16,8 @@ describe Game do
     expect(subject.computer_choice).to eq('scissors')
   end
 
+  it 'returns a random choice from the array' do
+    expect(subject.options).to include subject.computer_choice
+  end
+
 end

@@ -12,7 +12,7 @@ class Player
 
   def player_vs_computer(choice)
     if computer == choice
-      @outcome = draw
+      @outcome = 'draw'
     elsif (computer == 'rock') && (choice == 'scissors')
       @outcome = 'lose'
     elsif (computer == 'rock') && (choice == 'paper')

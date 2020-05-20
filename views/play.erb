@@ -1,5 +1,9 @@
 <h1> <%= @player_1_name %> </h1>
 
-<a href="play/rock">Rock</a>
-<a href="play/paper">Paper</a>
-<a href="play/scissors">Scissors</a>
+<h2> Choose your weapon </h2>
+
+<form method="POST" action"/play">
+  <input type="submit" name="shape" value="Rock" />
+  <input type="submit" name="shape" value="Paper" />
+  <input type="submit" name="shape" value="Scissors" />
+</form>

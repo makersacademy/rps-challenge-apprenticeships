@@ -2,10 +2,7 @@ class Game
   attr_reader :options
 
   def initialize
-    @options = []
-    @options << 'rock'
-    @options << 'paper'
-    @options << 'scissors'
+    @options = ['rock', 'paper', 'scissors']
   end
 
   def computer_choice
