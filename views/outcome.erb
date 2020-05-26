@@ -1,0 +1,13 @@
+<h1> You chose <%= $shape %> </h1>
+
+<h1> Opponent chose <%= @comp %> </h1>
+
+<% if @outcome == 'win' %>
+<h2> You won! </h2>
+<% elsif @outcome == 'lose' %>
+<h2> You lost! </h2>
+<% elsif @outcome == 'draw' %>
+<h2> It was a draw! </h2>
+<% end %>
+
+<h2><a href="/play">Play again</a></h2>
