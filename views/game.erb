@@ -1,0 +1,36 @@
+<p>Player 1: <%= @game.player1.name %></p>
+<p>Score: <%= @game.player1.score %></p>
+
+<form action="/selection" method="POST">
+  <input type="hidden" name="selection" value="rock">
+  <input type="submit" value="Rock">
+</form>
+
+<form action="/selection" method="POST">
+  <input type="hidden" name="selection" value="paper">
+  <input type="submit" value="Paper">
+</form>
+
+<form action="/selection" method="POST">
+  <input type="hidden" name="selection" value="scissors">
+  <input type="submit" value="Scissors">
+</form>
+
+<form action="/selection" method="POST">
+  <input type="hidden" name="selection" value="lizard">
+  <input type="submit" value="Lizard">
+</form>
+
+<form action="/selection" method="POST">
+  <input type="hidden" name="selection" value="spock">
+  <input type="submit" value="Spock">
+</form>
+
+<p>Player 2: <%= @game.player2.name %></p>
+<p>Score: <%= @game.player2.score %></p>
+
+<% if @game_over_text %>
+  <p><%= @game_over_text %></p>
+<% else %>
+  <p><%= @summary_text %></p>
+<% end %>
