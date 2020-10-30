@@ -18,9 +18,12 @@ end
 
 feature 'play' do
   scenario 'once the user submits their name a new page is loaded' do
-    visit '/home'
-    fill_in :name, with: 'Jack'
-    click_button 'submit'
+    sign_in_and_play
     expect(page).to have_content 'Please select your move'
+  end
+  scenario 'The user can select a move and it will move the user to the result page' do
+    sign_in_and_play
+    click_button :Rock
+    expect(page).to have_content 'You selected: Rock'
   end
 end

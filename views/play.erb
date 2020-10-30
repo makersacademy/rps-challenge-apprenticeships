@@ -3,4 +3,22 @@
 <h2> Welcome <%= @player.player_name %> </h2>
 <h2> Please select your move: </h2>
 
-<form action = '/result' >
+<form action = '/result' method = 'post'  >
+  <input type = 'radio' id = 'rock' name = 'move' value = 'Rock' checked = 'checked'>
+  <label for = 'rock' >
+    Rock
+  </label>
+  <br>
+  <input type = 'radio' id = 'paper' name = 'move' value = 'Paper' >
+  <label for = 'paper' >
+    Paper
+  </label>
+  <br>
+  <input type = 'radio' id = 'scissors' name = 'move' value = 'Scissors' >
+  <label for = 'scissors' >
+    Scissors
+  </label>
+  <br>
+  <br>
+  <input type = 'submit' value = 'Make move' >
+</form>
