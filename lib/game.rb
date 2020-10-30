@@ -4,14 +4,22 @@ class Game
   def initialize(player1, player2)
     @player_one = player1
     @player_two = player2
-
+    @rock = ["Scissors", "Lizard"]
+    @paper = ["Rock", "Spock"]
+    @scissor = ["Paper", "Lizard"]
+    @lizard = ["Paper", "Spock"]
+    @spock = ["Rock", "Scissors"]
   end
 
   def who_won(move1, move2)
+    p "Move 1 is #{move1}"
+    p "Move 2 is #{move2}"
     return @winner = 'Nobody' if move1 == move2
-    return @winner = @player_one if move1 == "Rock" && move2 == "Scissors"
-    return @winner = @player_one if move1 == "Paper" && move2 == "Rock"
-    return @winner = @player_one if move1 == "Scissors" && move2 == "Paper"
+    return @winner = @player_one if move1 == "Rock" && @rock.include?(move2)
+    return @winner = @player_one if move1 == "Paper" && @paper.include?(move2)
+    return @winner = @player_one if move1 == "Scissors" && @scissor.include?(move2)
+    return @winner = @player_one if move1 == "Lizard" && @lizard.include?(move2)
+    return @winner = @player_one if move1 == "Spock" && @spock.include?(move2)
 
     return @winner = @player_two
   end

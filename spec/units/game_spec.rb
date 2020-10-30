@@ -13,7 +13,7 @@ describe Game do
 
   describe '#who_won' do
     it 'selects a winner depending on the moves made' do
-      expect(subject.who_won("Rock", "Scizzors")).to eq "Josh"
+      expect(subject.who_won("Paper", "Scizzors")).to eq "Josh"
     end
   end
 end
