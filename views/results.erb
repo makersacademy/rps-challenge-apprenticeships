@@ -1,0 +1,117 @@
+<!-- STYLES -->
+<style>
+  /* SAY SCREEN IS SPLIT */
+  .split {
+    /* Full height, half width, never moves no matter the scroll */
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    overflow-x: hidden;
+
+    /* If z-index is greater, then it'll be in front. */
+    z-index: -1;
+
+    /* Start at the top, pad a little bit */
+    top: 0;
+    padding-top: 20px;
+  }
+
+  .spaces {
+    white-space: pre;
+  }
+
+  /* LEFT OVERALL SPACE */
+  .left {
+    /* Sets left margain to 0, and sets colour */
+    left: 0;
+  }
+
+  /* RIGHT OVERALL SPACE */
+  .right {
+    /* Sets right margain to 0, and sets colour */
+    right: 0;
+  }
+
+  /* CENTER of ALLOCATED SPACE */
+  .centered {
+
+    /* Gets pos of middle of the screen, no matter the size or scroll. */
+    position: absolute;
+
+    /* Set Margain */
+    top: 50%;
+    left: 50%;
+
+    /* This moves the objects */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  /* COLOUR SETTING */
+  .win {
+    background-color: #fea02f
+  }
+
+  .lost {
+    background-color: #ebd9c8
+  }
+
+  .cyan {
+    background-color: #007a7a
+  }
+</style>
+
+<!-- WINNING STATEMENT -->
+<div class="split left win">
+  <div class="centered">
+
+    <h1 style="color:#228B22">
+      WINNER
+    </h1>
+
+    <!-- Name Display -->
+    <h1>
+      <%=@game.winner.instance_of?(String) ? @game.winner : @game.winner.name  %>
+    </h1>
+
+    <!-- Action -->
+    <h2 style="color:purple">
+      <%= @game.winner.instance_of?(String) ? @game.player_1.selection : @game.winner.selection %>
+    </h2>
+
+  </div>
+</div>
+
+<!-- LOSING STATEMENT -->
+<div class="split right lost">
+  <div class="centered">
+
+    <h1 style="color:#bf0000">
+      LOST
+    </h1>
+
+    <!-- Name Display -->
+    <h1>
+      <%=@game.loser.instance_of?(String) ? @game.loser : @game.loser.name %>
+    </h1>
+
+    <!-- Action -->
+    <h2 style="color:purple">
+      <%= @game.loser.instance_of?(String) ?  @game.player_1.selection : @game.loser.selection%>
+    </h2>
+
+  </div>
+</div>
+
+<!-- Title -->
+<div class="centered cyan" style="padding:20px">
+
+  <!-- Include Spaces -->
+  <h1 class="spaces">G A M E   O V E R</h1>
+
+
+  <form action="/">
+    <input type="submit" value="Restart Game" style="padding: 9px 11px; font-size:16px">
+  </form>
+
+</div>

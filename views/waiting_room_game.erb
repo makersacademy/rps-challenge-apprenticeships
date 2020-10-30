@@ -1,0 +1,56 @@
+
+<style>
+  .centered {
+
+    /* Gets pos of middle of the screen, no matter the size or scroll. */
+    position: absolute;
+
+    /* Set Margain */
+    top: 50%;
+    left: 50%;
+
+    /* This moves the objects */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .off_centered {
+
+    /* Gets pos of middle of the screen, no matter the size or scroll. */
+    position: absolute;
+
+    /* Set Margain */
+    top: 35%;
+    left: 50%;
+
+    /* This moves the objects */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+</style>
+
+
+<!-- Refresh every second -->
+<meta http-equiv="refresh" content="2">
+
+<div class=centered>
+  <%if @@game.player_1.selection.nil? %>
+    <h1> Waiting for player 1 to select... </h1>
+    <h2> <%= @@game.player_2.selection %> </h2>
+
+  <%elsif @@game.player_2.selection.nil? %>
+    <h1> Waiting for player 2 to select... </h1>
+    <h2> <%= @@game.player_1.selection %> </h2>
+
+  <%elsif !@@game.player_1.selection.nil? && !@@game.player_2.selection.nil?%>
+    <% redirect '/results' %>
+
+  <%end%>
+</div>
+
+<form action="/play" >
+  <div>
+    <h3> If you are playing couch co-op, you may wish to use this button. </h3>
+    <input type="submit" value="Other's Choice" style="padding: 9px 11px; font-size:18px">
+  </div>
+</form>
