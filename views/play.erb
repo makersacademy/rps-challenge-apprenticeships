@@ -1,1 +1,11 @@
 Welcome to the game, <%= @game.player1.name %>
+
+<form action="/choice" = method="post">
+  <button type="submit" name="choice" value='rock'>Rock</button>
+</form>
+<form action="/choice" = method="post">
+  <button type="submit" name="choice" value='paper'>Paper</button>
+</form>
+<form action="/choice" = method="post">
+  <button type="submit" name="choice" value='scissors'>Scissors</button>
+</form>
