@@ -28,3 +28,5 @@ Rock paper scizzor logic established, but it seems to be very long hand. This lo
 
 Lizard and spock integrated into logic and view.
 Emojis and image addded.
+
+Image added to a separate help page
