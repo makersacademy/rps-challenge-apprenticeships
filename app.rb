@@ -9,7 +9,9 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/select_move' do
+    erb :select_move
+  end
   
-
   run! if app_file == $0
 end
