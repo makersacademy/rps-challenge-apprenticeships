@@ -11,6 +11,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     $player = Player.new(params[:name])
+    $opponent = Player.new("Opponent")
     redirect '/play'
   end
 
@@ -21,13 +22,16 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     @player = $player
-    p params[:name]
     @player.move_made(params[:move])
+    @opponent = $opponent
+    @opponent.move_made(@opponent.available_move.sample)
+    
     redirect '/result'
   end
 
   get '/result' do
     @player = $player
+    @opponent = $opponent
     erb :result
   end
 

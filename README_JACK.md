@@ -21,3 +21,5 @@ Web_helpers file created to minimise the repetition in the code.
 
 The user can now select a move and the saves that move and reports it back to the user.
 This can move be used with logic to determine the winner/loser
+
+There is now also a computer player that can select a random move which has been red-green'd.
