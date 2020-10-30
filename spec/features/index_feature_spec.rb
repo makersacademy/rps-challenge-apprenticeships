@@ -1,4 +1,4 @@
-feature 'Webpage loading correctly' do
+feature 'Webpages loading correctly' do
   scenario 'Webpage returns status code 200' do
     visit '/'
     expect(page.status_code).to eq(200)
@@ -10,5 +10,12 @@ feature 'Webpage loading correctly' do
     expect(page).to have_content('Enter name below to start:')
     expect(page).to have_field('name')
     expect(page).to have_button('Submit')
+  end
+
+  scenario 'Clicking submit button on index should redirect to play' do
+    visit '/'
+    fill_in "name", with: 'Bob'
+    click_button 'Submit'
+    expect(page).to have_content("Click button to take turn")
   end
 end
