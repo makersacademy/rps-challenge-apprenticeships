@@ -10,7 +10,7 @@ class Game
   # that creates @game as an instance of the Class Game
   # As the @game object exists at the same level the below method can see and return it.
   # Therefore we can use it in all our routes by calling @game = Game.instance
-  
+
   def self.instance
     @game
   end
@@ -18,5 +18,9 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
+  end
+
+  def computer_attack
+    ['rock', 'paper', 'scissors'].sample
   end
 end

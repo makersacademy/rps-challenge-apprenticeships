@@ -29,6 +29,7 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     p params[:choice]
     @game.player1.pick = params[:choice]
+    @game.player2.pick = @game.computer_attack
     redirect '/result'
   end
 
