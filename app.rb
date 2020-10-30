@@ -17,6 +17,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
+    $game.player.choice= (params[:action]).downcase.to_sym
   end
 
 
