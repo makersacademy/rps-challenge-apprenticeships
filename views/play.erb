@@ -1,0 +1,142 @@
+
+<!-- STYLES -->
+
+<style>
+  /* Split the screen in half */
+  .split {
+    /* Full height, half width, never moves no matter the scroll */
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    overflow-x: hidden;
+
+    /* If z-index is greater, then it'll be in front. */
+    z-index: 1;
+
+    /* Start at the top, pad a little bit */
+    top: 0;
+    padding-top: 20px;
+  }
+
+  .left {
+    /* Sets left margain to 0, and sets colour */
+    left: 0;
+  }
+
+  .right {
+    /* Sets right margain to 0, and sets colour */
+    right: 0;
+  }
+
+  .centered {
+
+    /* Gets pos of middle of the screen, no matter the size or scroll. */
+    position: absolute;
+
+    /* Set Margain */
+    top: 50%;
+    left: 50%;
+
+    /* This moves the objects */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .is_turn {
+    background-color: yellow
+  }
+
+  .not_turn {
+    background-color: gray
+  }
+</style>
+
+<!-- ACTUAL CODE NOT STYLES -->
+
+<!-- Refresh Page -->
+<meta http-equiv="refresh" content="5">
+
+<!-- PLAYER ONE -->
+<div class="split left not_turn">
+    <div class="centered">
+      <!-- Print Name -->
+      <h1> <%= @game.player_1.name %> </h1>
+
+      <!-- If not already selected, show our options -->
+      <% if @@game.player_1.selection.nil? %>
+        <form action="/action" method="post">
+
+          <!-- Normal -->
+          <div>
+            <!-- Rock -->
+            <input type="hidden" name="player" value="p1"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p1-rock" name="action" value="Rock" >
+
+            <!-- Paper -->
+            <input type="hidden" name="player" value="p1"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p1-paper" name="action" value="Paper" >
+
+            <!-- Scissors -->
+            <input type="hidden" name="player" value="p1"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p1-scissors" name="action" value="Scissors" >
+          </div>
+
+          <!-- Extended -->
+          <div>
+            <!-- Lizard -->
+            <input type="hidden" name="player" value="p1"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p1-lizard" name="action" value="Lizard" >
+
+            <!-- Spock -->
+            <input type="hidden" name="player" value="p1"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p1-spock" name="action" value="Spock" >
+          </div>
+
+        </form>
+
+      <!-- Otherwise inform you can't choose -->
+      <% else %>
+        <h2> [Selection Chosen] </h2>
+      <% end %>
+    </div>
+</div>
+
+<!-- PLAYER TWO -->
+<div class="split right">
+    <div class="centered">
+      <!-- Print Name -->
+      <h1> <%= @game.player_2.name %> </h1>
+      <% if @@game.player_2.selection.nil? %>
+        <form action="/action" method="post">
+
+          <!-- Normal -->
+          <div>
+            <!-- Rock -->
+            <input type="hidden" name="player" value="p2"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p2-rock" name="action" value="Rock" >
+
+            <!-- Paper -->
+            <input type="hidden" name="player" value="p2"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p2-paper" name="action" value="Paper" >
+
+            <!-- Scissors -->
+            <input type="hidden" name="player" value="p2"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p2-scissors" name="action" value="Scissors" >
+          </div>
+
+          <!-- Extended -->
+          <div>
+            <!-- Lizard -->
+            <input type="hidden" name="player" value="p2"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p2-lizard" name="action" value="Lizard" >
+
+            <!-- Spock -->
+            <input type="hidden" name="player" value="p2"/>
+            <input type="submit" style="padding: 18px 22px; font-size:24px" id="p2-spock" name="action" value="Spock" >
+          </div>
+        </form>
+      <% else %>
+        <h2> [Selection Chosen] </h2>
+      <% end %>
+    </div>
+</div>

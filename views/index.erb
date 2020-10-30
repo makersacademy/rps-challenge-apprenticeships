@@ -1,0 +1,152 @@
+<style>
+  /* Split the screen in half */
+  .split {
+    /* Full height, half width, never moves no matter the scroll */
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    overflow-x: hidden;
+
+    /* If z-index is greater, then it'll be in front. */
+    z-index: 0;
+
+    /* Start at the top, pad a little bit */
+    top: 0;
+    padding-top: 20px;
+  }
+
+  .spaces {
+    white-space: pre;
+  }
+
+  .left {
+    /* Sets left margain to 0, and sets colour */
+    left: 0;
+  }
+
+  .right {
+    /* Sets right margain to 0, and sets colour */
+    right: 0;
+  }
+
+  .centered {
+
+    /* Gets pos of middle of the screen, no matter the size or scroll. */
+    position: absolute;
+
+    /* Set Margain */
+    top: 50%;
+    left: 50%;
+
+    /* This moves the objects */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .off_centered {
+
+    /* Gets pos of middle of the screen, no matter the size or scroll. */
+    position: absolute;
+
+    /* Set Margain */
+    top: 35%;
+    left: 50%;
+
+    /* This moves the objects */
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  .gray {
+    background-color: #C0C0C0
+  }
+
+  .black {
+    background-color: black
+  }
+
+  .white {
+    background-color: white
+  }
+
+  .cyan {
+    background-color: #007a7a
+  }
+
+  .submissionfield { width: 200; height: 50px; padding: 5px; font-size: 18px;}
+
+</style>
+
+
+
+<!-- Player Two Pos-->
+<div class="split right white">
+  <div class="centered">
+
+    <!-- Player Two -->
+    <% if @@game.player_2.nil? %>
+      <form action="/waiting-room-2" method="post">
+        <!-- Title -->
+        <h1 style="color:Black">
+          Player Two
+        </h1>
+        <!-- Buttons and labels -->
+        <input type="text" class="gray submissionfield" size=30 maxlength=29 name="player_2_name" placeholder="Player 2 Name">
+        <!-- Spacer -->
+        <div>
+          &nbsp;
+        </div>
+        <!-- Submit -->
+        <div>
+          <input type="submit" value="Player Two Enter" style="padding: 9px 11px; font-size:18px">
+        </div>
+      </form>
+    <% end %>
+  </div>
+</div>
+
+
+<div class="split left black">
+  <!-- Center down the page -->
+  <div class="centered">
+      <!-- Player One -->
+      <% if @@game.player_1.nil? %>
+        <form action="/waiting-room-1" method="post">
+
+          <!-- Title -->
+          <h1 style="color:white">
+            Player One
+          </h1>
+          <!-- Buttons and labels -->
+          <input type="text" class="gray submissionfield" size=30 maxlength=29 name="player_1_name" placeholder="Player 1 Name">
+          <!-- Spacer -->
+          <div>
+            &nbsp;
+          </div>
+          <!-- Submit -->
+          <div>
+            <input type="submit" value="Player One Enter" style="padding: 9px 11px; font-size:18px">
+          </div>
+        </form>
+      <% end %>
+    </div>
+</div>
+
+<!-- Title -->
+<div class="off_centered cyan" style="padding:20px;">
+  <div>
+    <h1 style="font-size:50px; color:#BEC2CB">
+      RPSLS
+    </h1>
+    <h2> Enter your name</h2>
+  </div>
+
+  <!-- Reset Button -->
+  <div>
+  <% if (defined?(@@game)) != nil %>
+    <form action="/reset" method="post">
+      <input type="submit" value="Reset" style="padding: 9px 11px; font-size:18px">
+    </form>
+  <% end %>
+  </div>
+</div>
