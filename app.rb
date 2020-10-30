@@ -20,5 +20,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  get '/move_rock' do
+    @player_name = session[:player_name]
+    erb :move_rock
+  end
+
   run! if app_file == $0
 end
