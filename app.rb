@@ -10,8 +10,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/select_move' do
-    erb :select_move
+    @player = params[:player]    
+    erb :play
   end
-  
+
   run! if app_file == $0
 end
