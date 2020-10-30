@@ -14,7 +14,6 @@ class GameController
   def play_round(selection1, selection2 = nil)
     @player1.selection = selection1
     @player2.selection = selection2 || computer_selection
-    response = ""
     winner = check_winner
     response = process_results(winner)
     return response
@@ -30,7 +29,6 @@ class GameController
   end
 
   def check_game_over
-    p @player1.score
     @game_over = @player1.score == @winning_score || @player2.score == @winning_score
   end
 
@@ -51,20 +49,18 @@ class GameController
   end
   
   def check_winner
-    return "draw" if @player1.selection == @player2.selection
+    return "draw" if player1.selection == player2.selection
 
     winning_selection = ""
+    # use our win conditions array to work out which choice won
     @win_conditions.each do |condition|
-      if condition[:selections].include?(@player1.selection) && condition[:selections].include?(@player2.selection)
+      if condition[:selections].include?(player1.selection) && condition[:selections].include?(player2.selection)
         winning_selection = condition[:winner]
         break
       end
     end
-    if @player1.selection == winning_selection
-      return @player1
-    else
-      return @player2
-    end
+    # use a ternary to work out which of our players made the winning choice, and return their player object
+    return player1.selection == winning_selection ? player1 : player2
   end
   
   def computer_selection
@@ -78,8 +74,7 @@ class GameController
     else
       winner.increment_score
       check_game_over
-      response = "#{@player1.name} chose #{@player1.selection}, #{@player2.name} chose #{@player2.selection}.\n
-      #{winner.name} wins!"
+      response = "#{@player1.name} chose #{@player1.selection}, #{@player2.name} chose #{@player2.selection}. #{winner.name} wins!"
     end
     return response
   end
