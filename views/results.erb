@@ -1,0 +1,15 @@
+<link rel="stylesheet" type="text/css" href="/css/results_page.css"/>
+<h1> Results... </h1>
+<div id="p1move">
+  <h2> Player 1 chose... <%= @p1move %> </h2>
+</div>
+<br>
+<div id="p2move">
+  <h2> Player 2 chose... <%= @p2move %> </h2>
+</div>
+<div id="result">
+  <h2> <%= @result %> </h2>
+</div>
+<form action="/game" method="get">
+  <input type="submit" id="ok_button" value="Ok">
+</form>
