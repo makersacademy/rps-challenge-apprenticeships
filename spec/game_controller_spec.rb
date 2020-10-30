@@ -64,5 +64,30 @@ describe GameController do
       expect(player2).to receive(:increment_score)
       subject.play_round("rock")
     end
+
+    describe "#reset" do
+      before(:each) do
+        allow(player1).to receive(:reset_score)
+        allow(player2).to receive(:reset_score)
+      end
+
+      it "calls reset_score on player 1" do  
+        expect(player1).to receive(:reset_score)
+        subject.reset
+      end
+
+      it "calls reset_score on player 2" do
+        expect(player2).to receive(:reset_score)
+        subject.reset
+      end
+
+      it "sets game_over to false" do
+        allow(player1). to receive(:score).and_return(3)
+        # sets game over to true
+        subject.check_game_over
+        subject.reset
+        expect(subject.game_over?).to eq false
+      end
+    end
   end
 end

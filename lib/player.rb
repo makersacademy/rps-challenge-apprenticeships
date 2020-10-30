@@ -11,4 +11,8 @@ class Player
   def increment_score
     @score += 1
   end
+
+  def reset_score
+    @score = 0
+  end
 end

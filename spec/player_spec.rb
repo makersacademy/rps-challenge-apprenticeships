@@ -18,4 +18,12 @@ describe Player do
       expect { subject.increment_score }.to change { subject.score }.by(1)
     end
   end
+
+  describe "#reset_score" do
+    it "should set the player score to 0" do
+      subject.increment_score
+      subject.reset_score
+      expect(subject.score).to eq 0
+    end
+  end
 end

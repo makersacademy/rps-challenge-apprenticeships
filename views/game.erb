@@ -1,11 +1,13 @@
 <p>Player 1: <%= @game.player1.name %></p>
 <p>Score: <%= @game.player1.score %></p>
 <%# iterate through options array and make a button for each one %>
-<% @options.each do |option| %>
-  <form action="/selection" method="POST">
-    <input type="hidden" name="selection" value=<%= option %>>
-    <input type="submit" value=<%= option.capitalize %>>
-  </form>
+<% unless @game.game_over? %>
+  <% @options.each do |option| %>
+    <form action="/selection" method="POST">
+      <input type="hidden" name="selection" value=<%= option %>>
+      <input type="submit" value=<%= option.capitalize %>>
+    </form>
+  <% end %>
 <% end %>
 
 <p>Player 2: <%= @game.player2.name %></p>
@@ -13,6 +15,9 @@
 <%# display correct feedback message %>
 <% if @game_over_text %>
   <p><%= @game_over_text %></p>
+  <form action="/reset" method="POST">
+    <input type="submit" value="Play Again">
+  </form>
 <% else %>
   <p><%= @summary_text %></p>
 <% end %>

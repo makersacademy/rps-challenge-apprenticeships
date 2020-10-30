@@ -2,7 +2,6 @@ describe "game page", type: :feature do
   context "single player" do
     before(:each) do
       enter_name
-      
     end
 
     it "should initially display the intro message" do
@@ -75,6 +74,26 @@ describe "game page", type: :feature do
     it "should display correct message when player 2 wins match" do
       player2_wins_match
       expect(page).to have_content("Bill wins the match! Congratulations!")
+    end
+  end
+
+  context "game is over" do
+    before(:each) do
+      enter_names
+      player1_wins_match
+    end
+
+    it "should hide the selection buttons" do
+      expect(page).to_not have_content("Rock")
+    end
+
+    it "should display the play again button" do
+      expect(page).to_not have_content("Play Again")
+    end
+
+    it "should reset the game page when the play again button is clicked" do
+      click_button("Play Again")
+      expect(page).to have_content("Player 1: Bob\nScore: 0\nPlayer 2: Bill\nScore: 0\n")
     end
   end
 end

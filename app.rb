@@ -56,6 +56,12 @@ class RockPaperScissors < Sinatra::Base
     end
     redirect to '/game'
   end
+
+  post '/reset' do
+    session[:game].reset
+    session[:summary_text] = nil
+    redirect to '/game'
+  end
   
   run! if app_file == $0
 end

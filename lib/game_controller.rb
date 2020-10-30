@@ -32,6 +32,12 @@ class GameController
     @game_over = @player1.score == @winning_score || @player2.score == @winning_score
   end
 
+  def reset
+    player1.reset_score
+    player2.reset_score
+    @game_over = false
+  end
+
   private
   def generate_win_conditions
     return [
