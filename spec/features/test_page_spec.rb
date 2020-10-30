@@ -15,3 +15,12 @@ feature 'homepage' do
     expect(page).to have_content('Enter your name')
   end
 end
+
+feature 'play' do
+  scenario 'once the user submits their name a new page is loaded' do
+    visit 'home'
+    fill_in :player_name, with: 'Jack'
+    click_button 'submit'
+    expect(page).to have_content 'Please select your move'
+  end
+end
