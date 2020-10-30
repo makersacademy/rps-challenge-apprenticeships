@@ -1,0 +1,29 @@
+Player's name: <%= @turn.name %> <br>
+
+<form action="/play" method="post">
+
+  <input type="radio" id="rock" name="option" value="rock">
+  <label for="rock">Rock</label><br>
+
+  <input type="radio" id="paper" name="option" value="paper">
+  <label for="paper">Paper</label><br>
+
+  <input type="radio" id="scissors" name="option" value="scissors">
+  <label for="scissors">Scissors</label><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+You chose <%= @turn.player_option %>! <br>
+
+<div id="opponent">
+  The computer chose <%= @turn.computer_option %>!
+</div>
+
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
+<% end %>
