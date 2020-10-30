@@ -9,7 +9,7 @@ enable :sessions
       end
 
       post '/names' do
-        $player_1 = Player.new(params[:user_name])
+        $player_1 = Player.new(params[:player_1_name])
         $player_2 = Player.new("Computer")
         redirect '/game'
       end
@@ -22,8 +22,14 @@ enable :sessions
         @player_1_points = session[:player_1_points]
         @player_2_points = session[:player_2_points]
         @player_1_choice = $player_1c
-        p @player_1_choice
-
+        if @player_1_choice
+        @player_2_choice =["rock", "paper", "scissors"].sample
+end
+        if (@player_1_choice == "rock" && @player_2_choice == "rock" ||
+          @player_1_choice == "paper" && @player_2_choice == "paper" ||
+          @player_1_choice == "scissors" && @player_2_choice == "scissors")
+          @result = "Draw!"
+  end
         erb(:game)
       end
 
@@ -32,7 +38,6 @@ enable :sessions
 
       post "/choice" do
        $player_1c = params[:user_choice]
-       p $player_1c
       redirect '/game'
       end
 

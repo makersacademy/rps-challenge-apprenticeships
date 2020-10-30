@@ -49,3 +49,21 @@ h2{
 img {
   width: 200px;
 }
+
+#showMe {
+  animation: cssAnimation 0s 1s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
+
+#delay {
+  animation: cssAnimation 0s 2s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
