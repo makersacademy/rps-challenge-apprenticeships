@@ -3,10 +3,23 @@
 <div id="p1move">
   <h2> Player 1 chose... <%= @p1move %> </h2>
 </div>
-<br>
 <div id="p2move">
   <h2> Player 2 chose... <%= @p2move %> </h2>
 </div>
+<%if @p1move == "rock"%>
+  <img src="/rock.gif">
+<%elsif @p1move == "paper"%>
+  <img src="/paper.gif">
+<%elsif @p1move == "scissors"%>
+  <img src="/scissors.gif">
+<%end%>
+<%if @p2move == "rock"%>
+  <img src="/rock2.gif">
+<%elsif @p2move == "paper"%>
+  <img src="/paper2.gif">
+<%elsif @p2move == "scissors"%>
+  <img src="/scissors2.gif">
+<%end%>
 <div id="result">
   <h2> <%= @result %> </h2>
 </div>
