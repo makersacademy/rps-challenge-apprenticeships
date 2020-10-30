@@ -1,1 +1,11 @@
 <h1>Welcome, <%= @player_name %> - what is your move?</h1>
+<!-- <form action='/play' method='post'>
+  <input type='submit' value='Rock'>
+  <input type='submit' value='Paper'>
+  <input type='submit' value='Scissors'>
+</form> -->
+<form action='/move' method='post'>
+  <button type='submit' name='move' value='rock'>Rock</button>
+  <button type='submit' name='move' value='paper'>Paper</button>
+  <button type='submit' name='move' value='scissors'>Scissors</button>
+</form>
