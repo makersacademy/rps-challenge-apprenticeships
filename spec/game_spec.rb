@@ -20,4 +20,14 @@ describe Game do
       expect(['rock', 'paper', 'scissors']).to include(subject.computer_attack)
     end
   end
+
+  describe '#result' do
+    it { is_expected.to respond_to(:result) }
+
+    it 'expects winner to be player_1' do
+      allow(player_1).to receive(:pick).and_return('rock')
+      allow(player_2).to receive(:pick).and_return('scissors')
+      expect(subject.result).to eq "Human is the winner!"
+    end
+  end
 end

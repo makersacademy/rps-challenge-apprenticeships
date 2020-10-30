@@ -23,4 +23,18 @@ class Game
   def computer_attack
     ['rock', 'paper', 'scissors'].sample
   end
+
+  def result
+    if @player1.pick == "rock" && @player2.pick == "scissors"
+      return "#{@player1.name} is the winner!"
+    elsif @player1.pick == "paper" && @player2.pick == "rock"
+      return "#{@player1.name} is the winner!"
+    elsif @player1.pick == "scissors" && @player2.pick == "paper"
+      return "#{@player1.name} is the winner!"
+    elsif @player1.pick == @player2.pick
+      return "It's a draw"
+    else
+      return "#{@player2.name} is the winner!"
+    end
+  end
 end
