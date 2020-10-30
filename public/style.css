@@ -20,14 +20,32 @@ font-family: 'Pacifico', cursive;
   text-align: center;
 }
 
-
+.container{
+  margin: 0 auto;
+}
  label{
   font-size: 30px;
 }
 
-btn{
+button{
   margin: 0 auto;
   width: 200px;
   padding-top: 100px;
   text-align: center;
+  padding-left: 50px;
+
+}
+
+.buttons{
+  padding-top: 50px;
+  padding-left: 200px;
+}
+
+h2{
+  font-size: 40px;
+  text-align: center;
+}
+
+img {
+  width: 200px;
 }

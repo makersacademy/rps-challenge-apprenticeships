@@ -23,19 +23,17 @@
   </nav>
 </div>
 <div class="container">
-<div class="row">
-  <div class="col-sm">
-    One of three columns
-  </div>
-  <div class="col-sm">
-    One of three columns
-  </div>
-  <div class="col-sm">
-    One of three columns
-  </div>
+  <h2>Click on your choice:</h2>
+
+<form action="/choice" method="post" id="user_choice">
+  <input type="submit" class="btn btn-primary" name="user_choice" value="rock" id="rock">
+  <input type="submit" class="btn btn-info" name="user_choice" value="paper" id="paper">
+  <input type="submit" class="btn btn-warning" name="user_choice" value="scissors" id="scissors">
+</form>
+
 </div>
-</div>
-<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<%= erb :action %>
+
 
 
   </body>
