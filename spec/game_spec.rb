@@ -28,5 +28,4 @@ describe Game do
       expect(Game.instance_of_game).to eq game
     end
   end
-
 end

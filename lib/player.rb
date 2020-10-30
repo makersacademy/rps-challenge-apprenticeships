@@ -1,6 +1,6 @@
 class Player
  attr_reader :name, :figure
- def initialize(name)
+ def initialize(name = "Computer")
    @name = name
    @figure = nil
  end
