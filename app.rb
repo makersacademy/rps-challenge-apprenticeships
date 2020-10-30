@@ -4,7 +4,9 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
 
-end
+  get '/home' do
+    erb :home
+  end
 
   run! if app_file == $0
 end
