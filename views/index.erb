@@ -1,0 +1,38 @@
+<h1>Welcome!</h1>
+<p>Enter your name below to get started.</p>
+
+<% if @two_player %>
+
+  <form action="enter-names" method="POST">
+    <p>
+      <label for="player1">Player 1 Name:<label>
+      <input type="text" id="player1" name="player1">
+    </p>
+    <p>
+      <label for="player2">Player 2 Name:<label>
+      <input type="text" id="player2" name="player2">
+    </p>
+    <p><input type="submit" value="Submit"></p>
+  </form>
+
+  <form action="/">
+    <input type="hidden" name="two_player" value="false">
+    <input type="submit" value="Play 1 Player">
+  </form>
+
+<% else %>
+
+  <form action="enter-name" method="POST">
+    <p>
+      <label for="name">Player Name:<label>
+      <input type="text" id="name" name="name">
+    </p>
+    <input type="submit" value="Submit">
+  </form>
+
+  <form action="/">
+    <input type="hidden" name="two_player" value="true">
+    <input type="submit" value="Play 2 Player">
+  </form>
+
+<% end %>
