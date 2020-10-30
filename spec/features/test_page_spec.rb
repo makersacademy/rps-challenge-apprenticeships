@@ -1,6 +1,8 @@
-feature 'test page' do
-  scenario 'visit test page' do
-    visit '/test'
-    expect(page).to have_content('test page')
+feature 'Home page' do
+  scenario 'User can Register name' do
+    visit '/'
+    fill_in :player1, with: 'Joe'
+    click_button 'Submit'
+    expect(page).to have_content "Joe entered the game!"
   end
 end
