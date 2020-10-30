@@ -21,5 +21,16 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/submit' do
+    session[:move1] = params[:move1]
+    redirect '/results'
+  end
+
+  get '/results' do
+    @player = session[:move1]
+    #@results = Game.who_wins(@move1)
+    erb :results
+  end
+
   run! if app_file == $0
 end

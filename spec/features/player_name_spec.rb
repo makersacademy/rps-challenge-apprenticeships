@@ -3,6 +3,6 @@ feature "Player name" do
     visit ('/')
     fill_in :name, with: 'Bhups'
     click_button 'Submit'
-    expect(page).to have_content "Bhups"
+    expect(page).to have_content 'Bhups'
   end
 end
