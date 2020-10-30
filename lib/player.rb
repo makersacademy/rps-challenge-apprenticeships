@@ -3,7 +3,7 @@ class Player
 
   def initialize(player)
     @player_name = player.capitalize
-    @available_move = ["Rock", "Paper", "Scissors"]
+    @available_move = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   end
 
   def move_made(move)

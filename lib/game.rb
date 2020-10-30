@@ -12,8 +12,6 @@ class Game
   end
 
   def who_won(move1, move2)
-    p "Move 1 is #{move1}"
-    p "Move 2 is #{move2}"
     return @winner = 'Nobody' if move1 == move2
     return @winner = @player_one if move1 == "Rock" && @rock.include?(move2)
     return @winner = @player_one if move1 == "Paper" && @paper.include?(move2)

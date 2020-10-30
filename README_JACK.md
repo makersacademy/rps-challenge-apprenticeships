@@ -1,7 +1,7 @@
 
-                    Welcome user                Request/response from server
-LocalHost 4567  --> ask user for their name --> load new page
-                    Wish them luck              Ask the user for R/P/S
+                    Welcome user                Request/response from server  -->
+LocalHost 4567  --> ask user for their name --> load new page                     help page
+                    Wish them luck              Ask the user for R/P/S        <--
                                                     ^      |
                                                 yes |      |
                                                     |      v
@@ -24,9 +24,11 @@ This can move be used with logic to determine the winner/loser
 
 There is now also a computer player that can select a random move which has been red-green'd.
 
-Rock paper scizzor logic established, but it seems to be very long hand. This logic has now been integrated into the app and works. There is now also an option of a rematch.
+Rock paper scissor logic established, but it seems to be very long hand. This logic has now been integrated into the app and works. There is now also an option of a rematch.
 
 Lizard and spock integrated into logic and view.
-Emojis and image addded.
+Emojis and image added.
 
 Image added to a separate help page
+
+Slight refactoring completedS
