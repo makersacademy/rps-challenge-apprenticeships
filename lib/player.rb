@@ -2,7 +2,7 @@ class Player
  attr_reader :name, :figure
  def initialize(name)
    @name = name
-   @figure = ""
+   @figure = nil
  end
 
  def receive_figure(figure)
