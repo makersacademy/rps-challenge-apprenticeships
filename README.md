@@ -1,4 +1,8 @@
 # RPS Challenge
+=======================
+
+- rackup : to run app
+
 
 ## Instructions
 
