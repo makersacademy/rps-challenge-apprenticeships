@@ -1,5 +1,5 @@
 class Player
-  attr_reader :player_name, :move, :available_move
+  attr_accessor :player_name, :move, :available_move
 
   def initialize(player)
     @player_name = player.capitalize

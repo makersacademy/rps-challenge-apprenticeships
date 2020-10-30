@@ -23,14 +23,12 @@ feature 'play' do
   end
   scenario 'The user can select a move and it will move the user to the result page' do
     sign_in_and_play
-    choose 'rock'
-    click_button 'Make move'
-    expect(page).to have_content 'You selected: Rock'
+    make_move
+    expect(page).to have_content 'Jack selected: Rock'
   end
   scenario 'The user can select a move and it will show the computer move' do
     sign_in_and_play
-    choose 'rock'
-    click_button 'Make move'
+    make_move
     expect(page).to have_content 'Your opponent selected:'
   end
 end

@@ -23,3 +23,5 @@ The user can now select a move and the saves that move and reports it back to th
 This can move be used with logic to determine the winner/loser
 
 There is now also a computer player that can select a random move which has been red-green'd.
+
+Rock paper scizzor logic established, but it seems to be very long hand. This logic has now been integrated into the app and works. There is now also an option of a rematch. 

@@ -1,4 +1,10 @@
 <h1> Welcome to Rock Paper Scissors </h1>
-You selected: <%= @player.move %>
+<%= @game.player_one.player_name %> selected: <%= @game.player_one.move %>
 <br>
-Your opponent selected: <%= @opponent.move %>
+Your opponent selected: <%= @game.player_two.move %>
+<br>
+<h2> <%= @winner %> </h2>
+<h3> Do you want a rematch? </h3>
+<form action = '/play'>
+  <input type = 'submit' value = 'Yes' >
+</form>
