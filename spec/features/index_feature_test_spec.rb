@@ -5,7 +5,7 @@ feature 'front page with list of options `/`' do
   end
   scenario 'visit front page' do
     visit '/'
-    page.has_button?('1. Instructions')
+    expect(page).to have_button("1.    Instructions   ")
   end
   scenario 'visit front page' do
     visit '/'
@@ -13,6 +13,6 @@ feature 'front page with list of options `/`' do
   end
   scenario 'visit front page' do
     visit '/'
-    expect(page).to have_button("3. Player vs Player")
+    expect(page).to have_button("3.  Player vs Player ")
   end
 end

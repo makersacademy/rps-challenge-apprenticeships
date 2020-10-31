@@ -1,0 +1,14 @@
+<link rel="stylesheet" type="text/css" href="my.css"/>
+<h1> ROCK PAPER SCISSORS LIZARD SPOCK! </h1>
+
+<h3> Chose your figure <%= @player2 %>! </h3>
+
+
+<form action='/multigame2post' method="post">
+
+<button class="unstyled-button" name="figures" type="submit" value="rock"><img src="rock.png" alt="Rock" width="128" height="128"></button>
+<button class="unstyled-button" name="figures" type="submit" value="paper"><img src="paper.png" alt="Paper" width="128" height="128"></button>
+<button class="unstyled-button" name="figures" type="submit" value="scissors"><img src="scissors.png" alt="Scissors" width="128" height="128"></button>
+<button class="unstyled-button" name="figures" type="submit" value="lizard"><img src="lizard.png" alt="Lizard" width="128" height="128"></button>
+<button class="unstyled-button" name="figures" type="submit" value="spock"><img src="spock.png" alt="Spock" width="128" height="128"></button>
+</form>

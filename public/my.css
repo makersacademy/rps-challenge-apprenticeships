@@ -1,0 +1,43 @@
+.unstyled-button {
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+body  {
+ text-align: center;
+ background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+}
+
+h1 {
+   font-family:'Courier New';
+ }
+
+ h3 {
+    font-family:'Courier New';
+  }
+
+  button {
+    font-family :'Courier New';
+    font-size: 1em;
+}
+
+input[type=submit]{
+    font-family: 'Courier New';
+    width:210px;
+}
+
+input[type=text]{
+    font-family: 'Courier New';
+}
+
+input[type="text"], textarea {
+
+  background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  border-color: 'black';
+  text-align: center;
+  width:200px;
+}
