@@ -3,6 +3,7 @@ require_relative './lib/player.rb'
 require_relative './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
+  set :public_folder, 'public'
   get '/' do
     erb :index
   end
@@ -18,7 +19,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game' do
     $game.player.choice= (params[:action]).downcase.to_sym
-    @result = $game.calculate_result
+    @result = ($game.calculate_result.upcase) << "!"
     erb :result
   end
 

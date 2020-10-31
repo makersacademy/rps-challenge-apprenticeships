@@ -16,7 +16,7 @@ feature 'Webpages loading correctly' do
     visit '/'
     fill_in "name", with: 'Bob'
     click_button 'Submit'
-    expect(page).to have_content("Click button to take turn")
+    expect(page).to have_content("Click icon to take turn")
   end
 
   scenario 'Play view displays all expected content' do
@@ -24,7 +24,7 @@ feature 'Webpages loading correctly' do
     fill_in "name", with: 'Bob'
     click_button 'Submit'
     expect(page).to have_content('Rock Paper Scissors')
-    expect(page).to have_content("Click button to take turn")
+    expect(page).to have_content("Click icon to take turn")
     expect(page).to have_button("Rock")
     expect(page).to have_button("Paper")
     expect(page).to have_button("Scissors")

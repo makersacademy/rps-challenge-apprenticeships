@@ -8,7 +8,7 @@ describe Game do
       player.instance_variable_set(:@choice, :rock)
       game.instance_variable_set(:@comp_choice, :rock)
 
-      expect(game.calculate_result).to eq("Its a draw")
+      expect(game.calculate_result).to eq("It's a draw")
     end
 
     it 'returns computer wins if user selects rock and computer selects paper' do

@@ -4,7 +4,7 @@ feature 'Displays users selection correctly to the screen' do
     fill_in "name", with: 'Bob'
     click_button 'Submit'
     click_button 'Rock'
-    expect(page).to have_content('Bob chose: rock')
+    expect(page).to have_content('Bob chose: Rock')
   end
 
   scenario 'User clicks paper' do
@@ -12,7 +12,7 @@ feature 'Displays users selection correctly to the screen' do
     fill_in "name", with: 'Bob'
     click_button 'Submit'
     click_button 'Paper'
-    expect(page).to have_content('Bob chose: paper')
+    expect(page).to have_content('Bob chose: Paper')
   end
 
   scenario 'User clicks scissors' do
@@ -20,7 +20,7 @@ feature 'Displays users selection correctly to the screen' do
     fill_in "name", with: 'Bob'
     click_button 'Submit'
     click_button 'Scissors'
-    expect(page).to have_content('Bob chose: scissors')
+    expect(page).to have_content('Bob chose: Scissors')
   end
 end
 
@@ -39,6 +39,6 @@ feature 'User can play again' do
     click_button 'Submit'
     click_button 'Scissors'
     click_button 'Play Again'
-    expect(page).to have_content('Click button to take turn')
+    expect(page).to have_content('Click icon to take turn')
   end
 end

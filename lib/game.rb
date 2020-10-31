@@ -13,9 +13,9 @@ class Game
 
   def calculate_result
     actions = {
-      :scissors => {:rock => "Computer wins", :paper => "#{@player.name} wins", :scissors => "Its a draw"},
-      :rock => {:rock => "Its a draw", :paper => "Computer wins", :scissors => "#{@player.name} wins"},
-      :paper => {:rock => "#{@player.name} wins", :paper => "Its a draw", :scissors => "Computer wins"}
+      :scissors => {:rock => "Computer wins", :paper => "#{@player.name} wins", :scissors => "It's a draw"},
+      :rock => {:rock => "It's a draw", :paper => "Computer wins", :scissors => "#{@player.name} wins"},
+      :paper => {:rock => "#{@player.name} wins", :paper => "It's a draw", :scissors => "Computer wins"}
     }
 
     actions[@player.choice][@comp_choice]
