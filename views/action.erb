@@ -2,7 +2,7 @@
 
 <div class="col-sm middle_page">
 <h2> <%= @player_1_name%> </h2>
-<h2 id="delay"><%=@player_1_points %></h2>
+<h2 id="delay"><%=session[:player_1_points]%></h2>
 <div class="middle_page"></div>
 <h3><%=@player_1_choice %></h3>
 
@@ -15,7 +15,7 @@
 
 <div class="col-sm middle_page">
   <h2><%= @player_2_name %> </h2>
-  <h2 id="delay"><%=@player_2_points %> </h2>
+  <h2 id="delay"><%=session[:player_2_points]%> </h2>
   <div class="middle_page"></div>
 
   <div id="showMe"><h3><%= @player_2_choice %> </h3></div>
