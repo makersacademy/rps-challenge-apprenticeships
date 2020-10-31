@@ -28,3 +28,29 @@ Hints on functionality
 - the game will choose a random option
 - a winner will be declared
 
+
+## Outcomes
+
+- Testing and coverage:
+Task has been completed in a TDD manner, feature testing with Capybara and unit testing with RSpec was involved. 
+The coverage of 100% was achieved. 
+Additionally, `rubocop` accepts the code as clean. 
+
+- Reflection on blockers:
+The biggest blocker I have encountered while working on the project, was getting to know enough of `CSS` to be able to speed up my `HTML` editing. 
+It took me some time to understand and execute proper external styling with `CSS`. 
+
+- Code quality:
+Classes for the game: `Game` and `Player` were tested in isolation with the usage of appropriate stubbing and doubling. 
+App controllers were ketp "skinny" and all the logic was kept in classes. 
+`HTML` views werre not involved in logic as advised.
+
+- Extension:
+As an extension, app lets user either play with computer or against another user locally (in the same browser window). Aditionally, the app has been successfully deplyed via [Heroku](https://www.heroku.com/).
+
+
+## The app 
+
+The deployed app can be found here: [https://rps1s.herokuapp.com/](https://rps1s.herokuapp.com/).
+
+
