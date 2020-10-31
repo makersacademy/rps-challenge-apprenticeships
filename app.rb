@@ -9,18 +9,21 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:name])
+    @game = Game.create(Player.new(params[:name]))
     redirect '/play'
   end
 
+  before do
+    @game = Game.instance
+  end
+
   get '/play' do
-    $game = Game.new($player)
     erb :play
   end
 
   post '/game' do
-    $game.player.choice= (params[:action]).downcase.to_sym
-    @result = ($game.calculate_result.upcase)
+    @game.player.choice= (params[:action]).downcase.to_sym
+    @result = (@game.calculate_result.upcase)
     erb :result
   end
 

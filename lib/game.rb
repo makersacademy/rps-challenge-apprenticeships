@@ -6,6 +6,14 @@ class Game
     @comp_choice = choose
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   def calculate_result
     actions = {
       :scissors => {:rock => "Computer wins", :paper => "#{@player.name} wins", :scissors => "It's a draw"},
