@@ -1,12 +1,12 @@
 class Game
-  attr_reader :player
+  attr_reader :player, :comp_choice
 
   def initialize(player)
     @player = player
-    @comp_choice = comp_choice
+    @comp_choice = choose
   end
 
-  def comp_choice
+  def choose
     options = [:rock, :paper, :scissors]
     @comp_choice = options[rand(2)]
   end
