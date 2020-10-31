@@ -6,11 +6,6 @@ class Game
     @comp_choice = choose
   end
 
-  def choose
-    options = [:rock, :paper, :scissors]
-    @comp_choice = options[rand(3)]
-  end
-
   def calculate_result
     actions = {
       :scissors => {:rock => "Computer wins", :paper => "#{@player.name} wins", :scissors => "It's a draw"},
@@ -19,6 +14,11 @@ class Game
     }
 
     actions[@player.choice][@comp_choice]
+  end
+
+  private
+  def choose
+    [:rock, :paper, :scissors].sample
   end
 
 end

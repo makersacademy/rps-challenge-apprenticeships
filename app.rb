@@ -20,7 +20,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game' do
     $game.player.choice= (params[:action]).downcase.to_sym
-    @result = ($game.calculate_result.upcase) << "!"
+    @result = ($game.calculate_result.upcase)
     erb :result
   end
 
