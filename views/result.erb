@@ -6,7 +6,7 @@
   <h2><%= @result %>! </h2>
 
   <form action="/names" method="POST">
-    <input type="hidden" name="name" value= "<% @game.player.name %>"/>
+    <input type="hidden" name="name" value= "<%= @game.player.name %>"/>
     <input type="submit" value="Play Again"/>
   </form>
 
