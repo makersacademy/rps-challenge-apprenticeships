@@ -9,47 +9,69 @@ body{
 
 h1 {
 font-family: 'Pacifico', cursive;
-  color: red;
+  color:#263c94;
   font-size: 40px;
 }
 
 .intro{
   margin: 0 auto;
-  padding-top: 150px;
-  width: 300px;
   text-align: center;
+  width: 400px;
+}
+
+.giphy{
+  margin-right: 100px;
 }
 
 .container{
   margin: 0 auto;
+  width: 400px;
 }
  label{
   font-size: 30px;
 }
 
+.buffer{
+  margin-top: 50px;
+}
 button{
   margin: 0 auto;
   width: 200px;
   padding-top: 100px;
   text-align: center;
-  padding-left: 50px;
-
 }
-
+.middle_page{
+  margin-top: 100px;
+}
 .buttons{
   padding-top: 50px;
   padding-left: 200px;
 }
 
 h2{
-  font-size: 40px;
+  font-size: 30px;
   text-align: center;
 }
+h3{
+  font-size: 40px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
 
+}
+#form{
+  width: 300px;
+  margin-bottom: 50px;
+  text-align: center;
+}
 img {
   width: 200px;
 }
 
+.button_block{
+  margin: 0 auto;
+  width: 300px;
+  text-align: center;
+}
 #showMe {
   animation: cssAnimation 0s 1s forwards;
   visibility: hidden;
@@ -62,6 +84,11 @@ img {
 #delay {
   animation: cssAnimation 0s 2s forwards;
   visibility: hidden;
+  text-align: center;
+}
+
+.center{
+  margin-top: 100px;
 }
 
 @keyframes cssAnimation {

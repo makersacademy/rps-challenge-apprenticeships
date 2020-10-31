@@ -1,18 +1,24 @@
-<div class="row">
+<div class="row buffer">
 
-<div class="col-sm">
-<h2> <%= @player_1_name%> <%=@player_1_points %> </h2>
-<%= @player_1_choice %>
+<div class="col-sm middle_page">
+<h2> <%= @player_1_name%> </h2>
+<h2 id="delay"><%=@player_1_points %></h2>
+<div class="middle_page"></div>
+<h3><%=@player_1_choice %></h3>
+
 </div>
-<div class="col-sm">
-  <div id="delay"><%= @result %></div>
+<div class="col-sm middle_page">
+  <div class="middle_page center"></div>
+  <div id="delay" class="text-center" style="color: red"><h1><%= @result %></h1></div>
 
 </div>
 
-<div class="col-sm">
-  <h2><%= @player_2_name %> <%=@player_2_points %> </h2>
+<div class="col-sm middle_page">
+  <h2><%= @player_2_name %> </h2>
+  <h2 id="delay"><%=@player_2_points %> </h2>
+  <div class="middle_page"></div>
 
-  <div id="showMe"><%= @player_2_choice %> </div>
+  <div id="showMe"><h3><%= @player_2_choice %> </h3></div>
 
 
 </div>
