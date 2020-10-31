@@ -8,7 +8,7 @@ class Game
 
   def choose
     options = [:rock, :paper, :scissors]
-    @comp_choice = options[rand(2)]
+    @comp_choice = options[rand(3)]
   end
 
   def calculate_result
