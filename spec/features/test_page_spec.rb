@@ -5,18 +5,19 @@ feature 'test page' do
   end
 end
 
+
 feature 'enter_name' do
   scenario 'submit name' do
-    visit ('/')
-    fill_in :player, with: 'Eunice'
-    click_button 'Submit'
+    sign_in_and_play
     expect(page).to have_content 'Eunice'
   end
 end
 
-# feature 'submit your choice' do
-#   scenario 'submitted choice' do
-#     visit ('/')
-#     fill_in :player, with
-#   end
-# end
+feature 'choose_a_pick' do
+  scenario 'submit choice' do
+    visit ('/play')
+    fill_in :rock, with: 'Rock'
+    click_button 'Submit'
+    expect(page).to have_content 'Rock'
+  end
+end
