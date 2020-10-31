@@ -22,11 +22,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/game' do
-    @game.player.choice= (params[:action]).downcase.to_sym
-    @result = (@game.calculate_result.upcase)
+    @game.player.choice = params[:action].downcase.to_sym
+    @result = @game.calculate_result.upcase
     erb :result
   end
-
 
   run! if app_file == $0
 end
