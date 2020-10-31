@@ -1,4 +1,4 @@
-require_relative  '../lib/player'
+require_relative '../lib/player'
 
 describe Player do
   subject { described_class.new("Name") }
@@ -11,7 +11,7 @@ describe Player do
 
   describe ".receive_figure" do
     it "sets players choice of figure to play" do
-      expect { subject.receive_figure("rock")}.to change { subject.figure}.to("rock")
+      expect { subject.receive_figure("rock") }.to change { subject.figure }.to("rock")
     end
   end
 

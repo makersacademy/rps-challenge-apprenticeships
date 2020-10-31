@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require  './lib/game'
+require './lib/game'
 class RockPaperScissors < Sinatra::Base
   ['/sologame', '/sologameresult', '/multigame1', '/multigame2', '/multigameresult'].each do |path|
     before path do
@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    Game.set_a_game(Player.new(params[:player1]),Player.new())
+    Game.set_a_game(Player.new(params[:player1]), Player.new())
     redirect '/sologame'
   end
 
@@ -48,7 +48,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    Game.set_a_game(Player.new(params[:player1]),Player.new(params[:player2]))
+    Game.set_a_game(Player.new(params[:player1]), Player.new(params[:player2]))
     redirect '/multigame1'
   end
 
