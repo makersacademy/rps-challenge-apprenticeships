@@ -3,17 +3,6 @@
 
 - rackup : to run app
 
-The marketeer should be able to enter their name before the game
-	
-The marketeer will be presented the choices (rock, paper and scissors)
-	
-The marketeer can choose one option
-	
-The game will choose a random option
-	
-A winner will be declared
-	
-
 ## Instructions
 
 * Challenge time: until the end of the day
