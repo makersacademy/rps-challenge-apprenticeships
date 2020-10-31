@@ -1,7 +1,7 @@
 def play_game
 
-@player_1_name = $player_1.name
-@player_2_name = $player_2.name
+erb(:game)
+
 @player_1_choice = $player_1c
 if @player_1_choice
 @player_2_choice =["rock", "paper", "scissors"].sample
@@ -21,5 +21,4 @@ elsif (@player_2_choice == "rock" && @player_1_choice == "scissors" ||
   @result = @player_2_name + " wins!"
   session[:player_2_points] += 1
  end
-
  end

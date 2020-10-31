@@ -30,6 +30,29 @@
 </form>
 
 </div>
+
+
+
+
+<div class="row">
+
+<div class="col-sm">
+<h2> <%= @player_1_name%> </h2>
+<h2><%=session[:player_1_points]%></h2>
+
+</div>
+<div class="col-sm">
+  <div class="center"></div>
+</div>
+
+<div class="col-sm ">
+  <h2><%= @player_2_name %> </h2>
+  <h2><%=session[:player_2_points]%> </h2>
+  <div class="middle_page"></div>
+
+</div>
+
+</div>
 <%= erb(:action) %>
 
 

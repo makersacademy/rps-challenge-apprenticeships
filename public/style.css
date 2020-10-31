@@ -83,7 +83,7 @@ img {
 
 #delay {
   animation: cssAnimation 0s 2s forwards;
-  visibility: hidden;
+  visibility: visible;
   text-align: center;
 }
 
