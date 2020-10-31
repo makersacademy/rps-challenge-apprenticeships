@@ -1,5 +1,7 @@
-# RPS Challenge
+# RPSLS Challenge
 
+
+![](rules.png)
 
 
 ## Task
