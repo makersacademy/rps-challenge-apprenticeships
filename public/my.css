@@ -6,7 +6,7 @@
 
 body  {
  text-align: center;
- background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+ background-image : url("background.png");
 }
 
 h1 {
@@ -33,7 +33,7 @@ input[type=text]{
 
 input[type="text"], textarea {
 
-  background-image : url(http://api.thumbr.it/whitenoise-361x370.png?background=ffffffff&noise=5c5c5c&density=13&opacity=62);
+  background-image : url("background.png");
   border-top-style: hidden;
   border-right-style: hidden;
   border-left-style: hidden;
