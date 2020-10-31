@@ -1,0 +1,12 @@
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel ="stylesheet" type="text/css" href="/css/results.css"/>
+<h1> Results</h1>
+<body>
+    <% if @results == "Player 1 wins"%>
+        <h2><%=@player_1.name%> wins</h2>
+    <%elsif @results == "Player 2 wins"%>
+        <h2><%=@player_2.name%> wins</h2>
+    <%else%>
+        <h2>It's a draw</h2>
+    <%end%>
+</body>
