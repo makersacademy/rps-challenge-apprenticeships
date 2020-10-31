@@ -1,13 +1,18 @@
-Welcome to the game, <%= @game.player1.name %>
-
-Please pick a weapon:
-
+<center>
+<h1>Welcome to the game, <%= @game.player1.name %></h1>
+<p>
+<h2>Please pick a weapon:</h2>
+<p>
 <form action="/choice" = method="post">
+  <img src="http://beta.ems.ladbiblegroup.com/s3/content/a87d98d35f68c2fc94b0604a44d2e0dc.png" width="300" alt="">
   <button type="submit" name="choice" value='rock'>Rock</button>
 </form>
 <form action="/choice" = method="post">
+  <img src="https://www.savedtheparty.com/wp-content/uploads/2019/04/how-to-play-wrap-the-mummy-party-game-paper-696x313.jpg" width="300" alt="">
   <button type="submit" name="choice" value='paper'>Paper</button>
 </form>
 <form action="/choice" = method="post">
+  <img src="https://swsca-production.s3.amazonaws.com/uploads/attachments/17/edward-final-blog-post.jpg?1337098664" width="300" alt="">
   <button type="submit" name="choice" value='scissors'>Scissors</button>
 </form>
+</center>

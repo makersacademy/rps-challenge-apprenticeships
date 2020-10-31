@@ -1,5 +1,9 @@
-<%= @game.player1.name %> picked <%= @game.player1.pick.capitalize %>
-<p>
-The computer picked: <%= @game.player2.pick.capitalize %>
-<p>
-<%= @game.result %>
+<center>
+  <h1>The results are...</h1>
+    <h3><%= @game.player1.name %> picked: <%= @game.player1.pick.capitalize %></h3>
+    <p>
+      <h3><%= @game.player2.name %> picked: <%= @game.player2.pick.capitalize %></h3>
+    <p>
+      <h2><span style="color:red"><%= @game.result %></span></h2>
+
+    <a href="/play">Play again</a>
