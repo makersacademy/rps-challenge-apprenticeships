@@ -1,0 +1,23 @@
+#p1move{
+  animation:show 2s 2s;
+  animation-delay: 0ms;
+}
+
+#p2move{
+  color: transparent;
+  animation:show 2s 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+#result{
+  color: transparent;
+  animation:show 2s 2s;
+  animation-fill-mode: forwards;
+  animation-delay: 4s;
+}
+
+@keyframes show{
+  from {color: transparent;}
+  to {color: black;}
+}
