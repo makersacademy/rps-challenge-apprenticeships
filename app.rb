@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player_1_name = session[:player_1_name]
     @move = session[:move]
+    @game_move = session[:game_move]
     erb :play
   end
 
@@ -23,6 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     session[:move] = params[:move]
+    session[:game_move] = :Scissors
     redirect '/play'
   end
 

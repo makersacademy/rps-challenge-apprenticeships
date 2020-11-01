@@ -24,3 +24,12 @@ feature 'Player choosing their move' do
   expect(page).to have_content 'You have chosen Rock'
   end
 end
+
+feature 'Game choosing a move' do
+  scenario 'chooses Scissors' do
+    visit('/play')
+    click_button 'Scissors'
+    expect(page).to have_content 'You have chosen Scissors! The game chose Scissors'
+
+  end
+end
