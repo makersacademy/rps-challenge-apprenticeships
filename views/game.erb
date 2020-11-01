@@ -8,12 +8,14 @@
       <option value="paper">Paper</option>
       <option value="scissors">Scissors</option>
     </select>
-    <label for="p2move">Player 2 move:</label>
-    <select name="p2move">
-      <option value="rock">Rock</option>
-      <option value="paper">Paper</option>
-      <option value="scissors">Scissors</option>
-    </select>
+    <%if !@single_player%>
+      <label for="p2move">Player 2 move:</label>
+      <select name="p2move">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+      </select>
+    <%end%>
     <input type="submit" value="Submit moves">
   </form>
 </div>

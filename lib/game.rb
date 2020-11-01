@@ -1,12 +1,13 @@
 class Game
-  attr_reader :players
+  attr_reader :players, :single_player
 
-  def initialize(player1, player2)
+  def initialize(player1, player2, sp)
     @players = [player1, player2]
+    @single_player = sp
   end
 
-  def self.create(player1, player2)
-    @game = Game.new(player1, player2)
+  def self.create(player1, player2, sp)
+    @game = Game.new(player1, player2, sp)
   end
 
   def self.instance
