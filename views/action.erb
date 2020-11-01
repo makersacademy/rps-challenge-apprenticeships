@@ -1,20 +1,34 @@
-<div class="row">
 
-<div class="col-sm middle_page">
-<div class="middle_page"></div>
-<h3><%=@player_1_choice %></h3>
+
+<div class="row justify-content-center">
+
+<div class="col-sm middle_page" id="move-1">
+<div class="middle_page text-center"></div>
+<% if @player_1_choice == 'rock' %>
+<img src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/rock_hqk5rc.svg" class="delayChange">
+<% elsif @player_1_choice == 'paper' %>
+<img src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/paper_n5tj2g.svg" class="delayChange">
+<% else %>
+<img src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/scissors_necnyz.svg" class="delayChange">
+<% end %>
 
 </div>
 <div class="col-sm middle_page">
   <div class="middle_page center"></div>
-  <div class="text-center" style="color: red !important"><h1><%= @result %></h1></div>
+  <div class="text-center delayChange" style="color: red !important"><h1><%= @result %></h1></div>
 
 </div>
 
-<div class="col-sm middle_page">
-  <div class="middle_page"></div>
+<div class="col-sm middle_page delayChange" id="move-2">
+  <div class="middle_page text-center"></div>
 
-  <div><h3><%= @player_2_choice %> </h3></div>
+  <% if @player_2_choice == 'rock' %>
+  <img src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/rock_hqk5rc.svg" class="delayChange">
+  <% elsif @player_2_choice == 'paper' %>
+  <img src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/paper_n5tj2g.svg" class="delayChange">
+  <% else %>
+  <img src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/scissors_necnyz.svg" class="delayChange">
+  <% end %>
 
 
 </div>

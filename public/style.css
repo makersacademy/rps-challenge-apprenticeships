@@ -40,9 +40,7 @@ button{
   padding-top: 100px;
   text-align: center;
 }
-.middle_page{
-  margin-top: 100px;
-}
+
 .buttons{
   padding-top: 50px;
   padding-left: 200px;
@@ -87,10 +85,28 @@ img {
   text-align: center;
 }
 
+#move-1{
+  width: 150px;
+  text-align: center;
+}
+
+#move-2{
+  width: 150px;
+  text-align: center;
+}
 .center{
   margin-top: 100px;
 }
+@-webkit-keyframes delayChange { from { opacity:1; } to { opacity:1; } }
+@-moz-keyframes delayChange { from { opacity:1; } to { opacity:1; } }
+@keyframes delayChange { from { opacity:1; } to { opacity:1; } }
+.delayChange {
 
-@keyframes cssAnimation {
-  to   { visibility: visible; }
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-duration:1s;
+
+    -webkit-animation-delay: 2s;
+-moz-animation-delay: 2s;
+animation-delay: 2s;
 }
