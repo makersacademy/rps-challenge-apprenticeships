@@ -1,3 +1,5 @@
+<body>
+
 <h1>Welcome <%= @player %>!!!</h1>
 
 <p> Lets Play Rock Paper Scissors :</p>
@@ -8,12 +10,19 @@
 <select>
   <input name= "choice" type="submit" value = "Rock">Rock</input>
   <input name= "choice" type="submit" value = "Paper">Paper</input>
-  <input name= "choice" type="submit" value = "scissors">Scissors</input>
+  <input name= "choice" type="submit" value = "Scissors">Scissors</input>
 </select>
 </form>
 
 
-<h1> You have picked <%= @choice %>, WELL DONE!!!</h1>
+<h4> <%= @player %> has picked <%= @choice %>, WELL DONE!!!</h4>
+
+<h4> Lets see what computer has chosen ... </h4>
+
+
+<h4> <%= @computer_choice %>
+
+</body>
 
 
 
