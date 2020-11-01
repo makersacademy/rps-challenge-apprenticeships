@@ -1,17 +1,17 @@
 def play_game
 
+
 erb(:game)
 
-$stdout.sync = true
 
 @player_1_choice = $player_1c
-$stdout.flush
-sleep 1
+
+
 if @player_1_choice
-@player_2_choice =["rock", "paper", "scissors"].sample
+  @player_2_choice =["rock", "paper", "scissors"].sample
 end
-$stdout.flush
-sleep 1
+
+
 if (@player_1_choice == "rock" && @player_2_choice == "rock" ||
   @player_1_choice == "paper" && @player_2_choice == "paper" ||
   @player_1_choice == "scissors" && @player_2_choice == "scissors")

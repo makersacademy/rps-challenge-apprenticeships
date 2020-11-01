@@ -97,16 +97,20 @@ img {
 .center{
   margin-top: 100px;
 }
-@-webkit-keyframes delayChange { from { opacity:1; } to { opacity:1; } }
-@-moz-keyframes delayChange { from { opacity:1; } to { opacity:1; } }
-@keyframes delayChange { from { opacity:1; } to { opacity:1; } }
-.delayChange {
+#showMe {
+  animation: cssAnimation 0s 2s forwards;
+  visibility: hidden;
+}
 
-    -webkit-animation-duration:1s;
-    -moz-animation-duration:1s;
-    animation-duration:1s;
+@keyframes cssAnimation {
+  to   { visibility: visible; }
+}
 
-    -webkit-animation-delay: 2s;
--moz-animation-delay: 2s;
-animation-delay: 2s;
+#delay {
+  animation: cssAnimation 0s 1s forwards;
+  visibility: hidden;
+}
+
+@keyframes cssAnimation {
+  to   { visibility: visible; }
 }
