@@ -13,11 +13,3 @@ feature 'enter_name' do
   end
 end
 
-feature 'choose_a_pick' do
-  scenario 'submit choice' do
-    visit ('/play')
-    fill_in :rock, with: 'Rock'
-    click_button 'Submit'
-    expect(page).to have_content 'Rock'
-  end
-end
