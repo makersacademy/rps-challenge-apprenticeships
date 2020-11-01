@@ -6,6 +6,7 @@ class Turn
   }
 
 attr_reader :player_name, :player_move, :computer_move
+
   def initialize(options)
     @player_name = options["player_name"]
     @player_move = options["player_move"]
