@@ -2,17 +2,18 @@
 
 <p> Lets Play Rock Paper Scissors :</p>
 
-<form action ='/picked_choice' method ='post'>
+<form action ='/play' method ='post'>
 
 <label for="game"> Pick your choice:</label>
 <select>
-  <option value="rock">Rock</option>
-  <option value="paper">Paper</option>
-  <option value="scissors">Scissors</option>
-  <input type="submit" value="Submit">
+  <input name= "choice" type="submit" value = "Rock">Rock</input>
+  <input name= "choice" type="submit" value = "Paper">Paper</input>
+  <input name= "choice" type="submit" value = "scissors">Scissors</input>
 </select>
 </form>
 
+
+<h1> You have picked <%= @choice %>, WELL DONE!!!</h1>
 
 
 
