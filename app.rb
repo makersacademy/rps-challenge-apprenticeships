@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -26,6 +27,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @throw = $throw
+    game = Game.new
+    @computer_option = game.random_option
     erb :result
   end
 
