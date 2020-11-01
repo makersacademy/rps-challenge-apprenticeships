@@ -27,7 +27,6 @@ class RockPaperScissors < Sinatra::Base
     session[:choice] = params[:choice]
     session[:computer_choice] = :Rock    
     redirect '/play'
-    # erb :picked_choice
   end
 
   run! if app_file == $0
