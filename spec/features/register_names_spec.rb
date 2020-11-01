@@ -29,7 +29,11 @@ feature 'Game choosing a move' do
   scenario 'chooses Scissors' do
     visit('/play')
     click_button 'Scissors'
-    expect(page).to have_content 'You have chosen Scissors! The game chose Scissors'
-
+    option = find(:css, "#move_message").text.strip
+    expect(move_options).to include option
   end
+end
+
+def move_options
+  [:Rock, :Paper, :Scissors].map { |option| "You have chosen Scissors! The game chose #{option}"}
 end
