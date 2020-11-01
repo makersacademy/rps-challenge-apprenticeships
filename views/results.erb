@@ -1,28 +1,30 @@
 <link rel="stylesheet" type="text/css" href="/css/results_page.css"/>
-<h1> Results... </h1>
-<div id="p1move">
-  <h2> Player 1 chose... <%= @p1move %> </h2>
-</div>
-<div id="p2move">
-  <h2> Player 2 chose... <%= @p2move %> </h2>
-</div>
-<%if @p1move == "rock"%>
-  <img src="/rock.gif">
-<%elsif @p1move == "paper"%>
-  <img src="/paper.gif">
-<%elsif @p1move == "scissors"%>
-  <img src="/scissors.gif">
-<%end%>
-<%if @p2move == "rock"%>
-  <img src="/rock2.gif">
-<%elsif @p2move == "paper"%>
-  <img src="/paper2.gif">
-<%elsif @p2move == "scissors"%>
-  <img src="/scissors2.gif">
-<%end%>
-<div id="result">
-  <h2> <%= @result %> </h2>
-</div>
-<form action="/game" method="get">
-  <input type="submit" id="ok_button" value="Ok">
-</form>
+<body>
+  <h1> Results... </h1>
+  <div id="p1move">
+    <h2> Player 1 chose... <%= @p1move %> </h2>
+  </div>
+  <div id="p2move">
+    <h2> Player 2 chose... <%= @p2move %> </h2>
+  </div>
+  <%if @p1move == "rock"%>
+    <img src="/rock.gif">
+  <%elsif @p1move == "paper"%>
+    <img src="/paper.gif">
+  <%elsif @p1move == "scissors"%>
+    <img src="/scissors.gif">
+  <%end%>
+  <%if @p2move == "rock"%>
+    <img src="/rock2.gif">
+  <%elsif @p2move == "paper"%>
+    <img src="/paper2.gif">
+  <%elsif @p2move == "scissors"%>
+    <img src="/scissors2.gif">
+  <%end%>
+  <div id="result">
+    <h2> <%= @result %> </h2>
+  </div>
+  <form action="/game" method="get">
+    <input type="submit" id="ok_button" value="Ok">
+  </form>
+</body>
