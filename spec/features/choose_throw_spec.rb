@@ -4,6 +4,6 @@ feature "Choose throw" do
     fill_in :player_name, with: "player"
     click_button "Submit"
     click_button "Rock"
-    expect(page).to have_content("You chose Rock")
+    expect(page).to have_content("You played Rock Computer played ")
   end
 end
