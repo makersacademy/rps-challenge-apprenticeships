@@ -12,27 +12,28 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player = Player.new(params[:player_name])
+    session[:name] = params[:name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = $player.name
+    @player_name = session[:name]
+    @move = session[:move]
     erb :play
   end
 
-  get '/move_rock' do
-    @player_name = $player.name
-    erb :move_rock
+  post '/play' do
+    session[:move] = params[:move]
+    redirect '/play'
   end
 
   get '/move_paper' do
-    @player_name = $player.name
+    @player_name = session[:name]
     erb :move_paper
   end
 
   get '/move_scissors' do
-    @player_name = $player.name
+    @player_name = session[:name]
     erb :move_scissors
   end
 
