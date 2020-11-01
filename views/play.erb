@@ -1,4 +1,4 @@
-<%= @player_name %> vs. Computer
+<%= @turn.player_name %> vs. Computer
 
 Please click on the move you would like to make:
 
@@ -8,8 +8,16 @@ Please click on the move you would like to make:
   <input type="submit" name="move" value="Scissors">
 </form>
 
-You chose <%= @move %>
+You chose <%= @turn.player_move.to_s.capitalize %>
 
 <div id="computer">
-  The computer chose <%= @computer_move.to_s.capitalize %>!
+  The computer chose <%= @turn.computer_move.to_s.capitalize %>!
 </div>
+
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
+<% end %>

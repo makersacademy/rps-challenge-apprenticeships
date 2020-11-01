@@ -12,20 +12,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:name] = params[:player_name]
+    session[:player_name] = params[:player_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:name]
-    @move = session[:move]
-    @computer_move = session[:computer_move]
+    @turn = Turn.new(session)
     erb :play
   end
 
   post '/play' do
-    session[:move] = params[:move]
-    session[:computer_move] = :Rock
+    session[:player_move] = params[:move].downcase.to_sym
+    session[:computer_move] = Computer.new.move
     redirect '/play'
   end
 
