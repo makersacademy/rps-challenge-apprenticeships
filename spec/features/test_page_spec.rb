@@ -35,9 +35,22 @@ feature 'Rock, Paper or Scissors' do
     click_button 'Submit'
   end 
   scenario 'pick one choice' do
-    click_button "Submit"
+    # click_button "Submit"
   expect(page).to have_content 'Rock'
   expect(page).to have_content 'Paper'
   expect(page).to have_content 'Scissor'
+end
+end
+
+feature 'Choose random choice against player' do
+  
+  before do
+    visit ('/')
+    fill_in 'player', with: 'Eunice'
+    click_button 'Submit'
+  end 
+  scenario 'random choice' do
+    click_button "Rock"
+  expect(page).to have_content 'Rock'
 end
 end
