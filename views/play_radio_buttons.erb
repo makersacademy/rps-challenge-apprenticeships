@@ -1,0 +1,10 @@
+Hello <%= @player_name %>, what will you choose?
+<form action="/throw" method="post">
+  <input type="radio" id='rock' name="throw" value='rock'>
+  <label for="rock">Rock</label><br>
+  <input type="radio" id='paper' name="throw" value='paper'>
+  <label for="paper">Paper</label><br>
+  <input type="radio" id='scissors' name="throw" value='scissors'>
+  <label for="scissors">Scissors</label><br>
+  <input type="submit" value="Play">
+</form>

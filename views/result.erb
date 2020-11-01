@@ -1,0 +1,9 @@
+<% if @throw == @computer_option %>
+<h2>Draw.</h2>
+<% elsif @throw == "Rock" && @computer_option == "Scissors" || @throw == "Scissors" && @computer_option == "Paper" || @throw == "Paper" && @computer_option == "Rock" %>
+<h2>YAY You Win!</h2>
+<% else %>
+<h2>Oh no the computer won</h2>
+<% end %>
+You played <%= @throw %> Computer played <%= @computer_option %><br>
+<a href='/play'>play again</a>
