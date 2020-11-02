@@ -1,5 +1,34 @@
 # RPS Challenge
 
+I approached the challenge using the worked we did on the paring exercise. I knew I needed to tackle the issue that using a global variable had created early on so I planned the game and player classes from the beginning.
+
+I ran out of time before implementing the multiplayer element but I think my approach has meant this will be easy to add.
+
+Running the app using rackup will run the game at http://localhost:9292
+
+Part of the challenge was to diagram the process of the client and server:
+
+In initial testing:
+client makes a get request to "/testing"
+server responds with 200 and page content text.
+
+During play:
+Client makes a get request to "/"
+Server responds with 200 response code, the page header and the html body (including a form)
+  User completes for and hits submit.
+Client sends a post request with the form data as parameters to "/add_name"
+Server responds with 200 response code, stores the parameters and redirects to "/play"
+Server responds with 200 response code, the page header and the html body (including a number of forms)
+  User chooses a button
+Client sends a post request with the button value as a parameter to "/choice"
+Server responds with 200 response code, stores the parameters and redirects to "/result"
+Server responds with 200 response code, the page header and the html body
+
+Additionally there is a play again link which will make the client request /play again.
+
+
+
+
 ## Instructions
 
 * Challenge time: until the end of the day
