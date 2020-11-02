@@ -1,0 +1,10 @@
+<h2><%= @player_1_name %> the marketeer,
+ what will you choose? Rock, Paper or Scissors.. </h2>
+<form method="post" action="/play">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
+</form>
+<div id="move_message"
+  <h3> You have chosen <%= @move %>! The game chose <%= @game_move %> </h3>
+</div>
