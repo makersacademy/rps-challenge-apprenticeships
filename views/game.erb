@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/style.css"
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="#"><h1>RockPaperScissors</h1></a>
+        <div id="navbarNav">
+      <ul class="navbar-nav">
+          <a class="nav-link" href="/">Home </a>
+        </ul>
+    </div>
+  </nav>
+</div>
+<div class="container">
+  <h2>Click on your choice:</h2>
+
+<form action="/choice" method="post" id="user_choice" style="padding-left: 75px">
+  <input type="submit" class="btn btn-primary" name="user_choice" value="rock" id="rock">
+  <input type="submit" class="btn btn-info" name="user_choice" value="paper" id="paper">
+  <input type="submit" class="btn btn-warning" name="user_choice" value="scissors" id="scissors">
+</form>
+
+</div>
+
+
+
+
+<div class="row">
+
+<div class="col-sm">
+<h2> <%= @player_1_name%> </h2>
+<h2 id="showMe"><%=session[:player_1_points]%></h2>
+
+</div>
+<div class="col-sm">
+  <div class="center"></div>
+</div>
+
+<div class="col-sm ">
+  <h2><%= @player_2_name %> </h2>
+  <h2 id="showMe"><%=session[:player_2_points]%> </h2>
+  <div class="middle_page"></div>
+
+</div>
+
+</div>
+<%= erb(:action) %>
+
+
+
+  </body>
+</html>

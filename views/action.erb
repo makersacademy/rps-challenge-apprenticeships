@@ -1,0 +1,36 @@
+
+
+<div class="row justify-content-center">
+
+<div class="col-sm middle_page" id="move-1">
+<div class="middle_page text-center"></div>
+<% if @player_1_choice == 'rock' %>
+<img id="pl1rock" src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/rock_hqk5rc.svg" class="delayChange">
+<% elsif @player_1_choice == 'paper' %>
+<img id="p1paper" src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/paper_n5tj2g.svg" class="delayChange">
+<% else %>
+<img id="p1scissors" src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/scissors_necnyz.svg" class="delayChange">
+<% end %>
+
+</div>
+<div class="col-sm middle_page">
+  <div class="middle_page center"></div>
+  <div class="text-center" id="showMe" style="color: red !important"><h1><%= @result %></h1></div>
+
+</div>
+
+<div class="col-sm middle_page" id="delay">
+  <div class="middle_page text-center"></div>
+
+  <% if @player_2_choice == 'rock' %>
+  <img id="p2rock" src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/rock_hqk5rc.svg" class="delayChange">
+  <% elsif @player_2_choice == 'paper' %>
+  <img id="p2paper" src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/paper_n5tj2g.svg" class="delayChange">
+  <% else %>
+  <img id="p2scissors" src="https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/scissors_necnyz.svg" class="delayChange">
+  <% end %>
+
+
+</div>
+
+</div>
