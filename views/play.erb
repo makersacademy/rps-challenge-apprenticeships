@@ -1,0 +1,64 @@
+<h1> Welcome to Rock, Paper, Scissors, Lizard, Spock </h1>
+<p style="font-size:100px">&#128511; &#128209; &#9986; &#129422; &#128406</p>
+
+<h2> <%= @game.player_one.player_name %> vs. <%= @game.player_two.player_name %></h2>
+<h2> <%= @game.player_one.player_name %>, please select your move: </h2>
+
+<form id = "move" action = '/result' method = 'post'  >
+  <input type = 'radio' id = 'rock' name = 'move' value = 'Rock' checked = 'checked'>
+  <label for = 'rock' >
+    Rock
+  </label>
+  <br>
+  <input type = 'radio' id = 'paper' name = 'move' value = 'Paper' >
+  <label for = 'paper' >
+    Paper
+  </label>
+  <br>
+  <input type = 'radio' id = 'scissors' name = 'move' value = 'Scissors' >
+  <label for = 'scissors' >
+    Scissors
+  </label>
+  <br>
+  <input type = 'radio' id = 'lizard' name = 'move' value = 'Lizard'>
+  <label for = 'lizard' >
+    Lizard
+  </label>
+  <br>
+  <input type = 'radio' id = 'spock' name = 'move' value = 'Spock' >
+  <label for = 'Spock' >
+    Spock
+  </label>
+<h2> <%= @game.player_two.player_name %>, please select your move: </h2>
+    <input type = 'radio' id = 'rock2' name = 'move2' value = 'Rock' checked = 'checked'>
+    <label for = 'rock2' >
+      Rock
+    </label>
+    <br>
+    <input type = 'radio' id = 'paper2' name = 'move2' value = 'Paper' >
+    <label for = 'paper2' >
+      Paper
+    </label>
+    <br>
+    <input type = 'radio' id = 'scissors2' name = 'move2' value = 'Scissors' >
+    <label for = 'scissors2' >
+      Scissors
+    </label>
+  <br>
+  <input type = 'radio' id = 'lizard2' name = 'move2' value = 'Lizard'>
+  <label for = 'lizard2' >
+    Lizard
+  </label>
+  <br>
+  <input type = 'radio' id = 'spock2' name = 'move2' value = 'Spock' >
+  <label for = 'Spock2' >
+    Spock
+  </label>
+  <br>
+  <br>
+  <input type = 'submit' value = 'Make moves' >
+</form>
+
+<form  action = '/explain' >
+  <input type = 'submit' value = 'Help' >
+</form>
