@@ -14,5 +14,4 @@ feature 'Choice of attack' do
     click_button 'scissors'
     expect(page.find('#p1scissors')['src']).to have_content 'https://res.cloudinary.com/dytmcam8b/image/upload/v1604218421/scissors_necnyz.svg'
   end
-
 end

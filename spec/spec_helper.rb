@@ -9,11 +9,7 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
-
-
-
 # add this to spec/spec_helper.rb
-
 ENV['RACK_ENV'] = 'test'
 
 # require our Sinatra app file
