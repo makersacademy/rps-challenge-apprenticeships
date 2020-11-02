@@ -1,4 +1,6 @@
+require './gamechoice'
 
+SEED = 7654
 feature 'Register names' do
   scenario 'name registered before playing' do
     visit('/')
@@ -31,6 +33,15 @@ feature 'Game choosing a move' do
     click_button 'Scissors'
     option = find(:css, "#move_message").text.strip
     expect(move_options).to include option
+  end
+end
+
+feature 'Game randomises move' do
+  scenario 'chooses random option' do
+    visit ('/play')
+    srand(SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'You have chosen Rock'
   end
 end
 

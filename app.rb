@@ -24,7 +24,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     session[:move] = params[:move]
-    session[:game_move] = :Scissors
+    session[:game_move] = GameChoice.new.moves
     redirect '/play'
   end
 
