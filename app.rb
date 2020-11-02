@@ -3,10 +3,6 @@ require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
-  get '/test' do
-    'test page'
-  end
-
   get '/' do
     erb :index
   end
@@ -18,19 +14,20 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
+    @move = session[:move]
     erb :play
   end
 
-  post '/submit' do
-    session[:move1] = params[:move1]
-    redirect '/results'
+  post '/play' do
+    session[:move] = params[:move]
+    redirect '/play'
   end
 
-  get '/results' do
-    @player = session[:move1]
-    #@results = Game.who_wins(@move1)
-    erb :results
-  end
+  # get '/results' do
+  #   @player = session[:move]
+  #   @results = Game.who_wins(@move)
+  #   erb :results
+  # end
 
   run! if app_file == $0
 end
