@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="my.css"/>
+
+<h1> ROCK PAPER SCISSORS LIZARD SPOCK! </h1>
+<h3><%=@player1%>      <%= @verdict%> with      <%=@player2%></h3>
+<h1> <img src="<%= Game.instance_of_game.player1.figure %>.png" alt="Figure" width="128" height="128"> VS.
+   <img src="<%= Game.instance_of_game.player2.figure %>.png" alt="Figure" width="128" height="128"></h1>
+<style>
+  form { display: inline; }
+</style>
+
+<form action="/">
+  <input type="submit" value="Back to Main Menu">
+</form>
+
+<form action="/sologame">
+  <input type="submit" value="Play again!">
+</form>
