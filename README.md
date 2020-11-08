@@ -1,4 +1,4 @@
-## Airport Challenge ###
+## RPS Challenge ###
 
 This project is a sinatra web application that allows the user to play rock paper scissors against the computer. It satisfies both of the user stories mentioned below:
 
