@@ -1,0 +1,44 @@
+body{
+  color: #02075d;
+  background-color: #afeeee;
+  font-family: arial;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+
+input, select{
+  font-size: 0.8em;
+}
+
+input[type=submit] {
+  padding:5px 15px;
+  background:#02075d;
+  color:white;
+  border:0 none;
+  cursor:pointer;
+}
+
+button{
+  background-color: transparent;
+  border: none;
+}
+
+img{
+  height: 10vh;
+}
+
+div {
+  margin-bottom: 2vh;
+}
+
+#allcontent {
+  margin: 0;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding: 3vw;
+  border: 3px double #02075d;
+}

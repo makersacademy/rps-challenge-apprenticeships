@@ -1,0 +1,13 @@
+<link rel="stylesheet" type="text/css" href="/style.css"/>
+<div id="allcontent">
+  <h1>Rock Paper Scissors<h1>
+  <h4><%= @game.player.name %> chose: <%= @game.player.choice.capitalize %></h4>
+  <h4>Computer chose: <%= @game.comp_choice.capitalize %></h4>
+  <h2><%= @result %>! </h2>
+
+  <form action="/names" method="POST">
+    <input type="hidden" name="name" value= "<%= @game.player.name %>"/>
+    <input type="submit" value="Play Again"/>
+  </form>
+
+</div>
