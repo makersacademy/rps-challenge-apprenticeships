@@ -24,4 +24,19 @@ feature 'game' do
     click_button 'Play Again'
     expect(page).to have_content('Choose your weapon')
   end
+
+  context 'clicking Quit returns to the initial screen' do
+    scenario 'on the selection screen' do
+      fill_in_name_and_choose_rock
+      click_button 'Play Again'
+      click_button 'Quit'
+      expect(page).to have_field('name', type: 'text')
+    end
+
+    scenario 'on the results screen' do
+      fill_in_name_and_choose_rock
+      click_button 'Quit'
+      expect(page).to have_field('name', type: 'text')
+    end
+  end
 end
