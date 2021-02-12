@@ -6,12 +6,20 @@ describe Scissors do
   end
 
   describe "#win_status" do
-    it "beats paper" do
+    it "cuts paper" do
       expect(subject.win_status('paper')).to eq true
     end
+    
+    it "decapitates lizard" do
+      expect(subject.win_status('lizard')).to eq true
+    end
 
-    it "loses against rock" do
+    it "is crushed by rock" do
       expect(subject.win_status('rock')).to eq false
+    end
+    
+    it "is smashed by spock" do
+      expect(subject.win_status('spock')).to eq false
     end
   end
 end

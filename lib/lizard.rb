@@ -1,11 +1,11 @@
-class Rock
+class Lizard
   attr_reader :value
   def initialize
-    @value = 'rock'
+    @value = 'lizard'
   end
 
   def win_status(opponent_choice)
-    if [@value, Paper.new.value, Spock.new.value].include?(opponent_choice)
+    if [@value, Rock.new.value, Scissors.new.value].include?(opponent_choice)
       false
     else
       true

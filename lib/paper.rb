@@ -5,7 +5,7 @@ class Paper
   end
 
   def win_status(opponent_choice)
-    if [@value, Scissors.new.value].include?(opponent_choice)
+    if [@value, Scissors.new.value, Lizard.new.value].include?(opponent_choice)
       false
     else
       true

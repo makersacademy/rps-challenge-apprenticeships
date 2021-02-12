@@ -5,7 +5,7 @@ class Scissors
   end
 
   def win_status(opponent_choice)
-    if [@value, Rock.new.value].include?(opponent_choice)
+    if [@value, Rock.new.value, Spock.new.value].include?(opponent_choice)
       false
     else
       true
