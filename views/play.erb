@@ -1,1 +1,16 @@
-<h1><%= @name %></h1>
+<h1><%= @name %> vs. Computer</h1>
+<h2>Make your move!</h2>
+<form action='/outcome' method='post'> 
+  <input type='hidden' name='choice' value='rock'>
+  <input type='submit' value='rock'>
+</form>
+
+<form action='/outcome' method='post'> 
+  <input type='hidden' name='choice' value='paper'>
+  <input type='submit' value='paper'>
+</form>
+
+<form action='/outcome' method='post'> 
+  <input type='hidden' name='choice' value='scissors'>
+  <input type='submit' value='scissors'>
+</form>

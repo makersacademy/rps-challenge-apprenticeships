@@ -1,4 +1,10 @@
 require 'sinatra/base'
+require_relative './lib/rock.rb'
+require_relative './lib/paper.rb'
+require_relative './lib/scissors.rb'
+require_relative './lib/player_choice.rb'
+require_relative './lib/random_choice.rb'
+
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
@@ -16,6 +22,24 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @name = $name
     erb(:play)
+  end
+
+  post '/outcome' do
+    @player_choice = PlayerChoice.new(params[:choice]).choice
+    @computer_choice = RandomChoice.new.choice
+
+    @player_score = @player_choice.win_status(@computer_choice.value)
+    @computer_score = @computer_choice.win_status(@player_choice.value)
+
+    if @player_score == true && @computer_score == false
+      @result = 'You win!'
+    elsif @computer_score == true && @player_score == false
+      @result = 'you lose'
+    else
+      @result = 'Draw'
+    end
+
+    erb(:outcome)
   end
 
   run! if app_file == $0
