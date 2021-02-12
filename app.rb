@@ -4,5 +4,19 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
 
+  get '/' do
+    erb(:index)
+  end
+
+  post '/start' do
+    $name = params[:name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @name = $name
+    erb(:play)
+  end
+
   run! if app_file == $0
 end
