@@ -12,8 +12,8 @@ feature 'play page' do
     click_link 'Play'
     choose 'rock'
     click_button 'Submit'
-    expect(page).to have_content('You chose rock')
-    expect(page.text).to match(/You chose (rock|paper|scissors)/)
+    expect(page).to have_content('Meg chose rock')
+    expect(page.text).to match(/Meg chose (rock|paper|scissors)/)
   end
 
 

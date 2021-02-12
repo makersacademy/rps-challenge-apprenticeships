@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player'
 require_relative './lib/computer_player'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -29,6 +30,7 @@ class RockPaperScissors < Sinatra::Base
     @computer_player = ComputerPlayer.new()
     @computer_player.random_weapon
     @player.set_weapon(params[:weapon])
+    @game = Game.new(@player, @computer_player)
     erb(:result)
   end
 
