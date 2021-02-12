@@ -20,7 +20,7 @@ class RockPaperScissors < Sinatra::Base
     computer_weapon = ["Rock", "Paper", "Scissors"].sample
     @result = battle(player_weapon, computer_weapon)
     erb :selection
-end
+  end
 
   def battle(player_weapon, computer_weapon)
     if player_weapon == "Rock" && computer_weapon == "Scissors"
