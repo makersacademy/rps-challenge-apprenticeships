@@ -9,7 +9,7 @@ feature 'name' do
     expect(page).to have_button('Submit')
   end
 
-  scenario 'entering a name return the name as a paramater' do
+  scenario 'entering a name return the names as a paramater' do
     fill_in_name
     expect(page).to have_content 'JoJo'
   end

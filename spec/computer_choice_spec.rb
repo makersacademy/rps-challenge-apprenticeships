@@ -1,5 +1,4 @@
 require 'computer_choice'
-
 describe ComputerChoice do
   
   describe 'the computer can return \'Rock\'' do

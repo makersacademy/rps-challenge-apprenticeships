@@ -8,6 +8,8 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  # the below get/posts are for the single player experience
+
   post '/name' do
     session[:name] = params[:name]
     redirect '/game'
