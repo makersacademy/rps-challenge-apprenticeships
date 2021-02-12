@@ -17,15 +17,14 @@ class RPSGame
 
   private
 
-  def player_win?
-    if player_choice == "Rock" && computer_choice == "Scissors"       
-      true
-    elsif player_choice == "Paper" && computer_choice == "Rock"
-      true
-    elsif player_choice == "Scissors" && computer_choice == "Paper"
-      true
-    else
-      false
-    end
+  def convert(choice)
+    ['Rock', 'Paper', 'Scissors'].index(choice)
   end
+
+  def player_win?
+    player = convert(player_choice)
+    computer = convert(computer_choice)
+    ((3 + player - computer) % 3) < 2
+  end
+
 end
