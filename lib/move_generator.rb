@@ -1,6 +1,6 @@
 class MoveGenerator
 
   def move
-    true
+    %w[rock paper scissors].sample
   end
 end

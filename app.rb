@@ -21,6 +21,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
+    p params
+    p session
     session[:move] = params[:move]
     redirect '/results'
   end
