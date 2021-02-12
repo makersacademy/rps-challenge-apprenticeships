@@ -1,7 +1,6 @@
 require 'computer_choice'
 
 describe ComputerChoice do
-  subject(:computer_choice) { described_class.new }
   
   describe 'the computer can return \'Rock\'' do
     it 'returns Rock' do
