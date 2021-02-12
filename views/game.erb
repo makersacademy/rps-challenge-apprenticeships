@@ -1,1 +1,12 @@
-<%= @name %>
+<br>
+Choose your weapon, <%= @name %>!<br><br>
+
+<form action='/choice' method='post'>
+  <input type='radio' id= 'rock' name='weapon' value='Rock'>
+  <label for='rock'>Rock</label><br>
+  <input type='radio' id='paper' name='weapon' value='Paper'>
+  <label for='paper'>Paper</label><br>
+  <input type='radio' id= 'scissors' name='weapon' value='Scissors'>
+  <label for='scissors'>Scissors</label><br><br>
+  <input type='submit' value='Submit'>
+</form>

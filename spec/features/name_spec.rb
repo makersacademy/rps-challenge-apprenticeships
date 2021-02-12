@@ -10,9 +10,7 @@ feature 'name' do
   end
 
   scenario 'entering a name return the name as a paramater' do
-    visit '/'
-    fill_in :name, with: 'JoJo'
-    click_button 'Submit'
+    fill_in_name
     expect(page).to have_content 'JoJo'
   end
 end
