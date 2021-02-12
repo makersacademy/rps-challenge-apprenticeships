@@ -6,14 +6,20 @@ class ComputerChoice
     @choice = ""
   end
 
+  def make_decision
+    @choice = rock_paper_scissors
+  end
+
+  private
+
   def rock_paper_scissors
     num = rand(1..3)
     if num == 1
-      @choice = 'rock'
+      'rock'
     elsif num == 2
-      @choice = 'paper'
+      'paper'
     else
-      @choice = 'scissors'
+      'scissors'
     end  
   end
 

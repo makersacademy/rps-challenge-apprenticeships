@@ -28,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
   get '/rock' do
     @player = session[:player]
     @player_choice = @player.rock_paper_scissors('rock')
-    @computer_choice = ComputerChoice.new.rock_paper_scissors
+    @computer_choice = ComputerChoice.new.make_decision
     @result = Game.new(@player_choice, @computer_choice).play
     erb :result
   end
@@ -36,7 +36,7 @@ class RockPaperScissors < Sinatra::Base
   get '/paper' do
     @player = session[:player]
     @player_choice = @player.rock_paper_scissors('paper')
-    @computer_choice = ComputerChoice.new.rock_paper_scissors
+    @computer_choice = ComputerChoice.new.make_decision
     @result = Game.new(@player_choice, @computer_choice).play
     erb :result
   end
@@ -44,7 +44,7 @@ class RockPaperScissors < Sinatra::Base
   get '/scissors' do
     @player = session[:player]
     @player_choice = @player.rock_paper_scissors('scissors')
-    @computer_choice = ComputerChoice.new.rock_paper_scissors
+    @computer_choice = ComputerChoice.new.make_decision
     @result = Game.new(@player_choice, @computer_choice).play
     erb :result
   end
