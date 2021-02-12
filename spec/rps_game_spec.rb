@@ -17,17 +17,22 @@ describe RPS_Game do
     end
   end
 
-  describe '#draw' do
-    let(:computer_choice) {'Rock'}
-
-    it 'returns a draw when player and computer choice is the same' do
-      expect(subject.result).to eq 'Draw'
+  context 'the player chooses rock' do
+    describe 'and the computer chooses rock' do
+      let(:computer_choice) {'Rock'}
+      it { expect(subject.result).to eq 'Draw' }
     end
-  end
 
-  describe '#player_win?' do
-    it 'determines if the player has won a round' do
-      expect(subject.result).to eq true
+    describe 'and the computer chooses scissors, does the player win?' do
+      let(:computer_choice) {'Scissors'}
+      it { expect(subject.result).to eq true}
+    end
+
+    describe 'the computer chooses paper, does the player win?' do
+      let(:computer_choice) {'Paper'}
+      it { expect(subject.result).to eq false}
     end
   end
 end
+
+#context blocks for all draws, then win and lose block for other choices
