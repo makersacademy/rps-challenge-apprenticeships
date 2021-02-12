@@ -33,6 +33,42 @@ describe RPS_Game do
       it { expect(subject.result).to eq false}
     end
   end
+
+  context 'the player chooses paper' do
+    let(:player_choice) {'Paper'}
+    describe 'and the computer chooses paper' do
+      let(:computer_choice) {'Paper'}
+      it { expect(subject.result).to eq 'Draw' }
+    end
+
+    describe 'and the computer chooses scissors, does the player win?' do
+      let(:computer_choice) {'Scissors'}
+      it { expect(subject.result).to eq false}
+    end
+
+    describe 'the computer chooses rock, does the player win?' do
+      let(:computer_choice) {'Rock'}
+      it { expect(subject.result).to eq true}
+    end
+  end
+
+  context 'the player chooses scissors' do
+    let(:player_choice) {'Scissors'}
+    describe 'and the computer chooses scissors' do
+      let(:computer_choice) {'Scissors'}
+      it { expect(subject.result).to eq 'Draw' }
+    end
+
+    describe 'and the computer chooses paper, does the player win?' do
+      let(:computer_choice) {'Paper'}
+      it { expect(subject.result).to eq true}
+    end
+
+    describe 'the computer chooses rock, does the player win?' do
+      let(:computer_choice) {'Rock'}
+      it { expect(subject.result).to eq false}
+    end
+  end
 end
 
 #context blocks for all draws, then win and lose block for other choices
