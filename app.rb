@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/rps_game'
+require './lib/computer_choice'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -23,7 +25,14 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @choice = session[:choice]
+    @computer_choice = Computer_Choice.new.choice
+    @result = RPS_Game.new(@choice,@computer_choice).result
     erb :result
+  end
+
+  post '/play_again' do
+    @name = session[:name]
+    redirect '/game'
   end
 
   run! if app_file == $0

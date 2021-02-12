@@ -1,1 +1,15 @@
-You selected <%= @choice %>
+You selected <%= @choice %><br>
+The computer selected <%= @computer_choice %><br>
+<br>
+<% if @result == 'Draw' %>
+It's a Draw!
+<% elsif @result %>
+You win!
+<% else %>
+You lose, sorry!
+<% end %>
+<br>
+<br>
+<form action='/play_again' method='post'>
+  <input type='submit' value='Play Again'>
+</form>
