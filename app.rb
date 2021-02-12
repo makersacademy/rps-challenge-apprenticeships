@@ -25,8 +25,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @choice = session[:choice]
-    @computer_choice = Computer_Choice.new.choice
-    @result = RPS_Game.new(@choice,@computer_choice).result
+    @computer_choice = ComputerChoice.new.choice
+    @result = RPSGame.new(@choice, @computer_choice).result
     erb :result
   end
 
@@ -37,8 +37,3 @@ class RockPaperScissors < Sinatra::Base
 
   run! if app_file == $0
 end
-
-# EZ DEBUGGER :D
-# p '*' * 10
-# p
-# p '*' * 10

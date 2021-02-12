@@ -1,4 +1,4 @@
-class RPS_Game
+class RPSGame
   
   attr_reader :player_choice, :computer_choice
  

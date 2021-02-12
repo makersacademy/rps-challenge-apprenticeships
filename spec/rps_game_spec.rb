@@ -1,6 +1,6 @@
 require 'rps_game'
 
-describe RPS_Game do
+describe RPSGame do
   subject(:game) { described_class.new(player_choice, computer_choice) }
   let(:player_choice) { 'Rock' }
   let(:computer_choice) { 'Scissors' }
@@ -19,56 +19,54 @@ describe RPS_Game do
 
   context 'the player chooses rock' do
     describe 'and the computer chooses rock' do
-      let(:computer_choice) {'Rock'}
+      let(:computer_choice) { 'Rock' }
       it { expect(subject.result).to eq 'Draw' }
     end
 
     describe 'and the computer chooses scissors, does the player win?' do
-      let(:computer_choice) {'Scissors'}
-      it { expect(subject.result).to eq true}
+      let(:computer_choice) { 'Scissors' }
+      it { expect(subject.result).to eq true }
     end
 
     describe 'the computer chooses paper, does the player win?' do
-      let(:computer_choice) {'Paper'}
-      it { expect(subject.result).to eq false}
+      let(:computer_choice) { 'Paper' }
+      it { expect(subject.result).to eq false }
     end
   end
 
   context 'the player chooses paper' do
-    let(:player_choice) {'Paper'}
+    let(:player_choice) { 'Paper' }
     describe 'and the computer chooses paper' do
-      let(:computer_choice) {'Paper'}
+      let(:computer_choice) { 'Paper' }
       it { expect(subject.result).to eq 'Draw' }
     end
 
     describe 'and the computer chooses scissors, does the player win?' do
-      let(:computer_choice) {'Scissors'}
-      it { expect(subject.result).to eq false}
+      let(:computer_choice) { 'Scissors' }
+      it { expect(subject.result).to eq false }
     end
 
     describe 'the computer chooses rock, does the player win?' do
-      let(:computer_choice) {'Rock'}
-      it { expect(subject.result).to eq true}
+      let(:computer_choice) { 'Rock' }
+      it { expect(subject.result).to eq true }
     end
   end
 
   context 'the player chooses scissors' do
-    let(:player_choice) {'Scissors'}
+    let(:player_choice) { 'Scissors' }
     describe 'and the computer chooses scissors' do
-      let(:computer_choice) {'Scissors'}
+      let(:computer_choice) { 'Scissors' }
       it { expect(subject.result).to eq 'Draw' }
     end
 
     describe 'and the computer chooses paper, does the player win?' do
-      let(:computer_choice) {'Paper'}
-      it { expect(subject.result).to eq true}
+      let(:computer_choice) { 'Paper' }
+      it { expect(subject.result).to eq true }
     end
 
     describe 'the computer chooses rock, does the player win?' do
-      let(:computer_choice) {'Rock'}
-      it { expect(subject.result).to eq false}
+      let(:computer_choice) { 'Rock' }
+      it { expect(subject.result).to eq false }
     end
   end
 end
-
-#context blocks for all draws, then win and lose block for other choices

@@ -1,9 +1,9 @@
-class Computer_Choice
+class ComputerChoice
 
   attr_reader :choice
 
   def initialize
-    @choice = ['Rock','Paper','Scissors'].sample
+    @choice = ['Rock', 'Paper', 'Scissors'].sample
   end
 
 end
