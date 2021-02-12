@@ -1,10 +1,15 @@
-<h1><%= @result %></h1>
+
+<font size="+70"><%=@result%></font>
+
+<h2>You selected <%=@player_weap%></h2>
+<h2>The computer selected <%=@computer_weap%> </h2>
 
 <form action='/play'>
    <input type='submit' value='Have another go!'>
  </form>
 
- <style>
- body {
- background-image: url('https://projects-static.raspberrypi.org/projects/rock-paper-scissors/53e3d7650eb63c856515c59aa623eac4497c067f/en/images/rock-paper-scissors.png');
- }
+  <style>
+  body {
+  background-image: url('https://projects-static.raspberrypi.org/projects/rock-paper-scissors/53e3d7650eb63c856515c59aa623eac4497c067f/en/images/rock-paper-scissors.png');
+  }
+  </style>
