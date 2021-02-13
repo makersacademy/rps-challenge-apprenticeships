@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/game'
+
 class RockPaperScissors < Sinatra::Base
 
   enable :sessions
@@ -21,14 +23,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/move' do
-    p params
-    p session
     session[:move] = params[:move]
     redirect '/results'
   end
 
   get '/results' do
     @move = session[:move]
+    @pc = Game.new
+    
+
     erb :results
   end
   run! if app_file == $0
