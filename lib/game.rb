@@ -1,23 +1,35 @@
 class Game
 
-  attr_reader :player_choice, :computer_choice
-
-  def initialize(player_choice, computer_choice)
-    @player_choice = player_choice.downcase.capitalize
-    @computer_choice = computer_choice.downcase.capitalize
+  def initialize(player_1_choice, player_2_choice)
+    @player_1_choice = player_1_choice.downcase.capitalize
+    @player_2_choice = player_2_choice.downcase.capitalize
   end
 
   def play
-    if @player_choice == @computer_choice
-      "Draw! #{@player_choice} against #{@computer_choice}!"
-    elsif @player_choice == 'Rock' && @computer_choice == 'Scissors'
-      "You win! #{@player_choice} beats #{@computer_choice}!"
-    elsif @player_choice == 'Scissors' && @computer_choice == 'Paper'
-      "You win! #{@player_choice} beats #{@computer_choice}!"
-    elsif @player_choice == 'Paper' && @computer_choice == 'Rock'
-      "You win! #{@player_choice} beats #{@computer_choice}!"
+    if @player_1_choice == @player_2_choice
+      "Draw! #{@player_1_choice} against #{@player_2_choice}!"
+    elsif @player_1_choice == 'Rock' && @player_2_choice == 'Scissors'
+      "You win! #{@player_1_choice} beats #{@player_2_choice}!"
+    elsif @player_1_choice == 'Scissors' && @player_2_choice == 'Paper'
+      "You win! #{@player_1_choice} beats #{@player_2_choice}!"
+    elsif @player_1_choice == 'Paper' && @player_2_choice == 'Rock'
+      "You win! #{@player_1_choice} beats #{@player_2_choice}!"
     else
-      "You lose! #{@computer_choice} beats #{@player_choice}!"
+      "You lose! #{@player_2_choice} beats #{@player_1_choice}!"
+    end
+  end
+
+  def multiplayer_play(player_1, player_2)
+    if @player_1_choice == @player_2_choice
+      "Draw! #{player_1} & #{player_2} both chose #{@player_1_choice}!"
+    elsif @player_1_choice == 'Rock' && @player_2_choice == 'Scissors'
+      "#{player_1} wins! #{@player_1_choice} beats #{@player_2_choice}!"
+    elsif @player_1_choice == 'Scissors' && @player_2_choice == 'Paper'
+      "#{player_1} wins! #{@player_1_choice} beats #{@player_2_choice}!"
+    elsif @player_1_choice == 'Paper' && @player_2_choice == 'Rock'
+      "#{player_1} wins! #{@player_1_choice} beats #{@player_2_choice}!"
+    else
+      "#{player_2} wins! #{@player_2_choice} beats #{@player_1_choice}!"
     end
   end
 
