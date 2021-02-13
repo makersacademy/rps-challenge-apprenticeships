@@ -21,10 +21,6 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/test' do
-    'test page'
-  end
-
   get '/rock' do
     @player = session[:player]
     @player_choice = @player.rock_paper_scissors('rock')
