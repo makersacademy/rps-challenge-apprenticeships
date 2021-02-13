@@ -1,0 +1,43 @@
+html {
+  height: 100%;
+  background: linear-gradient(90deg, rgba(227,54,50,1) 0%, rgba(227,54,50,1) 50%, rgba(5,60,215,1) 50%);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 50px;
+  color: black;
+  position: relative;
+  left: 10px;
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  color: black;
+  position: relative;
+  left: 10px;
+  font-size: 50px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  color: black;
+  font-size: 30px;
+  position: relative;
+  left: 10px;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  color: black;
+  position: relative;
+  left: 10px;
+}
+
+#player_2_form {
+  padding-left: 40px;
+}
