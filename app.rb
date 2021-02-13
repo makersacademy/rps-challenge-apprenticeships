@@ -34,11 +34,11 @@ class RockPaperScissors < Sinatra::Base
     @computer_score = @computer_choice.win_status(@player_choice.value)
 
     if @player_score == true && @computer_score == false
-      @result = 'You win!'
+      @result = '<h1 style="color:green">You win!</h1>'
     elsif @computer_score == true && @player_score == false
-      @result = 'you lose'
+      @result = '<h1 style="color:red">you lose</h1>'
     else
-      @result = 'Draw'
+      @result = '<h1 style="color:blue">Draw</h1>'
     end
 
     erb(:outcome)

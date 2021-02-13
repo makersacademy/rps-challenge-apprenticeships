@@ -1,0 +1,16 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.option {
+  border-radius: 50px;
+}
+
+.float-container {
+  padding: 20px;
+}
+
+.float-child {
+  float: left;
+  padding: 20px;
+}

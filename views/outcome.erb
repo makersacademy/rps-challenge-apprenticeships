@@ -1,7 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href= "/style.css" />
+</head>
+
 <h1>Your move: <%= @player_choice.value %></h1>
 <h1>Computer's move: <%= @computer_choice.value  %></h1>
-<h1><%= @result %></h1>
+<%= @result %>
+
 <form action='/play'>
   <input type='submit' value='Go again'>
 </form>
-<a href='/'>Home</a>
+
+<form action='/'>
+  <input type='submit' value='Home'>
+</form>
+
+</html>
