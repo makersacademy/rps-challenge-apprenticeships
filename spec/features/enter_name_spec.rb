@@ -1,8 +1,10 @@
+require_relative 'web_helpers'
+
 feature 'player name' do
+
   scenario 'allows a player to enter their name' do
-    visit('/')
-    fill_in :name, with: 'Harry'
-    click_button 'Submit'
+    sign_in
     expect(page).to have_content 'Harry'
   end
+  
 end
