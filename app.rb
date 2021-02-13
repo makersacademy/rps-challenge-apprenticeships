@@ -38,7 +38,7 @@ class RockPaperScissors < Sinatra::Base
   get '/multiplayer-play' do
     @player_1 = session[:player_1]
     @player_2 = session[:player_2]
-    @result = Game.new(session[:player_1_choice], params[:choice]).play
+    @result = Game.new(session[:player_1_choice], params[:choice]).multiplayer_play(@player_1.name, @player_2.name)
     erb :result
   end
 
