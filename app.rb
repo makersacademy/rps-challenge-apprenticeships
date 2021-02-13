@@ -16,6 +16,32 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/multiplayer' do
+    session[:player_1] = Player.new(params[:player_1_name])
+    session[:player_2] = Player.new(params[:player_2_name])
+    redirect '/player-1-choice'
+  end
+
+  get '/player-1-choice' do
+    @player_1 = session[:player_1]
+    p params[:choice]
+    @player_1_choice = params[:choice]
+    erb :player_1_choice
+  end
+
+  get '/player-2-choice' do
+    @player_2 = session[:player_2]
+    session[:player_1_choice] = params[:choice]
+    erb :player_2_choice
+  end
+
+  get '/multiplayer-play' do
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    @result = Game.new(session[:player_1_choice], params[:choice]).play
+    erb :result
+  end
+
   get '/play' do
     @player = session[:player]
     erb :play
@@ -23,25 +49,22 @@ class RockPaperScissors < Sinatra::Base
 
   get '/rock' do
     @player = session[:player]
-    @player_choice = @player.rock_paper_scissors('rock')
     @computer_choice = ComputerChoice.new.make_decision
-    @result = Game.new(@player_choice, @computer_choice).play
+    @result = Game.new('rock', @computer_choice).play
     erb :result
   end
 
   get '/paper' do
     @player = session[:player]
-    @player_choice = @player.rock_paper_scissors('paper')
     @computer_choice = ComputerChoice.new.make_decision
-    @result = Game.new(@player_choice, @computer_choice).play
+    @result = Game.new('paper', @computer_choice).play
     erb :result
   end
 
   get '/scissors' do
     @player = session[:player]
-    @player_choice = @player.rock_paper_scissors('scissors')
     @computer_choice = ComputerChoice.new.make_decision
-    @result = Game.new(@player_choice, @computer_choice).play
+    @result = Game.new('scissors', @computer_choice).play
     erb :result
   end
 
