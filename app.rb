@@ -47,24 +47,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/rock' do
+  get '/result' do
     @player = session[:player]
     @computer_choice = ComputerChoice.new.make_decision
-    @result = Game.new('rock', @computer_choice).play
-    erb :result
-  end
-
-  get '/paper' do
-    @player = session[:player]
-    @computer_choice = ComputerChoice.new.make_decision
-    @result = Game.new('paper', @computer_choice).play
-    erb :result
-  end
-
-  get '/scissors' do
-    @player = session[:player]
-    @computer_choice = ComputerChoice.new.make_decision
-    @result = Game.new('scissors', @computer_choice).play
+    @result = Game.new(params[:choice], @computer_choice).play
     erb :result
   end
 

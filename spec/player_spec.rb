@@ -10,10 +10,4 @@ describe Player do
     end
   end
 
-  describe '#rock_paper_scissors' do
-    it 'chooses rock paper or scissors' do
-      expect(player.rock_paper_scissors('rock')).to eq('rock')
-    end
-  end
-
 end
