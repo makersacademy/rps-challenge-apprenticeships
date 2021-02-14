@@ -12,6 +12,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:instructions)
   end
 
+  get '/single-player' do
+    erb(:single_player)
+  end
+
   
   run! if app_file == $0
 end
