@@ -1,8 +1,7 @@
 require 'sinatra/base'
+require_relative './lib/player'
 class RockPaperScissors < Sinatra::Base
-  get '/test' do
-    'test page'
-  end
+  enable :sessions
 
   get '/' do
     erb(:index)
@@ -14,6 +13,16 @@ class RockPaperScissors < Sinatra::Base
 
   get '/single-player' do
     erb(:single_player)
+  end
+
+  post '/name' do
+    session[:player_name] = Player.new(params[:player])
+    redirect '/single-player-game'
+  end
+
+  get '/single-player-game' do
+    @player = session[:player_name]
+    erb(:single_player_game)
   end
 
   
