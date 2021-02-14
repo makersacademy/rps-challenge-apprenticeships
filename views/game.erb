@@ -1,7 +1,36 @@
 <br>
 Choose your weapon, <%= @name %>!<br><br>
 
-<form action='/choice' method='post'>
+if multiplayer is true AND player one hasn't chosen
+  load a button that goes to player two choice
+if multiplayer is true
+  load a button that runs the game
+if it isn't
+  do the usual
+
+<% if session[:multiplayer] == true && session[:player_1_weapon] == nil %>
+  <form action="/player_1_choice" method="post">
+  <input type='radio' id= 'rock' name='weapon' value='Rock'>
+  <label for='rock'>Rock</label><br>
+  <input type='radio' id='paper' name='weapon' value='Paper'>
+  <label for='paper'>Paper</label><br>
+  <input type='radio' id= 'scissors' name='weapon' value='Scissors'>
+  <label for='scissors'>Scissors</label><br>
+  <br>
+  <input type="submit" value="Submit">
+</form>
+<% elsif session[:multiplayer] == true %>
+  <form action="/player_2_choice" method="post">
+  <input type='radio' id= 'rock' name='weapon' value='Rock'>
+  <label for='rock'>Rock</label><br>
+  <input type='radio' id='paper' name='weapon' value='Paper'>
+  <label for='paper'>Paper</label><br>
+  <input type='radio' id= 'scissors' name='weapon' value='Scissors'>
+  <label for='scissors'>Scissors</label><br>
+  <br>
+  <input type="submit" value="Submit">
+<% else %>
+  <form action='/choice' method='post'>
   <input type='radio' id= 'rock' name='weapon' value='Rock'>
   <label for='rock'>Rock</label><br>
   <input type='radio' id='paper' name='weapon' value='Paper'>
@@ -11,6 +40,7 @@ Choose your weapon, <%= @name %>!<br><br>
   <br>
   <input type='submit' value='Submit'>
 </form>
+<% end%>
 <form action="/" method="get">
   <input type="submit" value="Quit">
 </form>

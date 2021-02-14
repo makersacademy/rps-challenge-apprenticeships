@@ -26,5 +26,4 @@ class RPSGame
     player_2 = convert(player_2_choice)
     ((3 + player_1 - player_2) % 3) < 2
   end
-
 end
