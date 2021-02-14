@@ -24,9 +24,19 @@ I wanted to try to improve my tests and I feel that these are a lot better, I am
 
 This challenge was a lot of fun!
 
-===========================================================================
-
 Original README below
+
+
+
+
+
+
+
+
+
+
+
+================================================================================
 
 # RPS Challenge
 
