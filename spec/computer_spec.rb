@@ -19,16 +19,16 @@ RSpec.describe Computer do
       computer.random_character
       expect(computer.choice).to eq('scissors')
     end
-    it 'returns lizard' do
-      allow(computer).to receive(:rand) { 4 }
-      computer.random_character
-      expect(computer.choice).to eq('lizzard')
-    end
-    it 'returns spock' do
-      allow(computer).to receive(:rand) { 5 }
-      computer.random_character
-      expect(computer.choice).to eq('spock')
-    end
+    # it 'returns lizard' do
+    #   allow(computer).to receive(:rand) { 4 }
+    #   computer.random_character
+    #   expect(computer.choice).to eq('lizzard')
+    # end
+    # it 'returns spock' do
+    #   allow(computer).to receive(:rand) { 5 }
+    #   computer.random_character
+    #   expect(computer.choice).to eq('spock')
+    # end
   end
 
 end

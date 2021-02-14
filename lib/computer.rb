@@ -13,17 +13,17 @@ class Computer
   private
 
   def rock_paper_scissors_lizard_spock
-    random_num = rand(1..5)
+    random_num = rand(1..3)
     if random_num == 1
       'rock'
     elsif random_num == 2
       'paper'
     elsif random_num == 3
       'scissors'
-    elsif random_num == 4
-      'lizzard'
-    else 
-      'spock'
+    # elsif random_num == 4
+    #   'lizzard'
+    # else 
+    #   'spock'
     end
   end
 end

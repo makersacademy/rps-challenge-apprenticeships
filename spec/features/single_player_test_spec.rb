@@ -31,7 +31,7 @@ feature 'single player' do
     click_button("2. Player vs Computer")
     fill_in("player", with: "Vincenzo")
     click_button("Play Game!")
-    click_button("spock")
+    click_button("rock")
     click_button("Return to main menu")
     expect(page).to have_current_path("/")
   end
