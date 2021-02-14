@@ -1,13 +1,6 @@
 <br>
 Choose your weapon, <%= @name %>!<br><br>
 
-if multiplayer is true AND player one hasn't chosen
-  load a button that goes to player two choice
-if multiplayer is true
-  load a button that runs the game
-if it isn't
-  do the usual
-
 <% if session[:multiplayer] == true && session[:player_1_weapon] == nil %>
   <form action="/player_1_choice" method="post">
   <input type='radio' id= 'rock' name='weapon' value='Rock'>

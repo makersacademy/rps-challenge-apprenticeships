@@ -34,4 +34,13 @@ feature 'can choose to play a single player or two player game' do
     expect(page).to have_content('Dio selected Scissors')
     expect(page).to have_content('JoJo wins!')
   end
+
+  scenario 'can play multiple rounds of two player games' do
+    play_a_two_player_round
+    click_button 'Play Again'
+    play_a_two_player_round
+    expect(page).to have_content('JoJo selected Rock')
+    expect(page).to have_content('Dio selected Scissors')
+    expect(page).to have_content('JoJo wins!')
+  end
 end

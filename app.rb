@@ -5,6 +5,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
 
   get '/' do
+    session[:multiplayer] = false
     erb :index
   end
 
@@ -36,6 +37,11 @@ class RockPaperScissors < Sinatra::Base
     redirect '/one_player_game'
   end
 
+  post '/play_again_two_player' do
+    session[:player_1_weapon] = nil
+    redirect '/player_1_choose'
+  end
+
   get '/two_player_game' do
     session[:multiplayer] = true
     erb :two_player_game
@@ -53,7 +59,8 @@ class RockPaperScissors < Sinatra::Base
   end
   
   post '/player_1_choice' do
-    session[:player_1] = Player.new(session[:player_1_name], params[:weapon])
+    session[:player_1_weapon] = params[:weapon]
+    session[:player_1] = Player.new(session[:player_1_name], session[:player_1_weapon])
     redirect '/player_2_choose'
   end
 
@@ -63,9 +70,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_2_choice' do
-    session[:player_2] = Player.new(session[:player_2_name], params[:weapon])
+    session[:player_2_weapon] = params[:weapon]
+    session[:player_2] = Player.new(session[:player_2_name], session[:player_2_weapon])
     redirect '/result'
   end
-
+  
   run! if app_file == $0
 end
