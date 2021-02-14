@@ -1,12 +1,12 @@
-You selected <%= @choice %><br>
-The computer selected <%= @computer_choice %><br>
+You selected <%= @player_1.choice %><br>
+The computer selected <%= @player_2.choice %><br>
 <br>
 <% if @result == 'Draw' %>
 It's a Draw!
 <% elsif @result %>
-You win!
+<%= @player_1.name %> wins!
 <% else %>
-You lose, sorry!
+<%= @player_2.name %> wins!
 <% end %>
 <br>
 <br>
