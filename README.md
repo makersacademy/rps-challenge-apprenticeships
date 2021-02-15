@@ -1,3 +1,43 @@
+Rock, Paper, Scissors Challenge Attempt
+==========================
+
+The original README text is retained below.
+
+
+Current Issues
+--------------
+
+- The web application is rendering in standard, not styled HTML and doesn't look too exciting - I could try adding a layout.erb file to see I can make things more interesting
+- I haven't been able to get around to creating the extended game logic - it might be possible to add this logic to the current rps class, but it might be better to have a seperate class for it?
+- Would it be better to create seperate game views for the different game mode? Or use a similar conditional approach to the multiplayer session variable? I feel new views on the whole are probably clearer.
+
+
+Approach
+--------
+
+Divide responsibilities up between classes, keep methods short, use private methods when appropriate, use a strict TDD approach to develop classes, methods and feature testss, make sure tests are independent, stick to the Single Responsibility Principle as much as possible. Use webhelpers to reduce clutter in tests and try to make output as human readable as possible.
+
+I have tried to use conditionals to reduce the number of POST/redirect/GETS and therefore use some of the same pages twice. I'm not sure if that is the best way to do things in the end, it might be better
+to have specific views for all two player interactions that are distinct from one player views.
+
+I wanted to try to improve my tests and I feel that these are a lot better, I am starting to get to grips with using mocks and tried experimenting with contexts blocks to aid readability.
+
+This challenge was a lot of fun!
+
+Original README below
+
+
+
+
+
+
+
+
+
+
+
+================================================================================
+
 # RPS Challenge
 
 ## Instructions

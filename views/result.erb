@@ -1,0 +1,39 @@
+<% if session[:multiplayer] == false %>
+  <%= @player_1.name %> selected <%= @player_1.choice %><br>
+  <%= @player_2.name %> selected <%= @player_2.choice %><br>
+  <br>
+  <% if @result == 'Draw' %>
+    It's a Draw!
+  <% elsif @result %>
+    <%= @player_1.name %> wins!
+  <% else %>
+    <%= @player_2.name %> wins!
+  <% end %>
+  <br>
+  <br>
+  <form action='/play_again' method='post'>
+    <input type='submit' value='Play Again'>
+  </form><br>
+  <form action="/" method="get">
+    <input type="submit" value="Quit">
+  </form>
+<% else %>
+  <%= @player_1.name %> selected <%= @player_1.choice %><br>
+  <%= @player_2.name %> selected <%= @player_2.choice %><br>
+  <br>
+  <% if @result == 'Draw' %>
+    It's a Draw!
+  <% elsif @result %>
+    <%= @player_1.name %> wins!
+  <% else %>
+    <%= @player_2.name %> wins!
+  <% end %>
+  <br>
+  <br>
+  <form action='/play_again_two_player' method='post'>
+    <input type='submit' value='Play Again'>
+  </form><br>
+  <form action="/" method="get">
+    <input type="submit" value="Quit">
+  </form>
+<% end %>
