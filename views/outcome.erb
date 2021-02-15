@@ -6,7 +6,19 @@
 
 <h1>Your move: <%= @player_choice.value %></h1>
 <h1>Computer's move: <%= @computer_choice.value  %></h1>
+
+<% if @player_score == true && @computer_score == false
+      @result = '<h1 style="color:green">You win!</h1>'
+    elsif @computer_score == true && @player_score == false
+      @result = '<h1 style="color:red">you lose</h1>'
+    else
+      @result = '<h1 style="color:blue">Draw</h1>'
+    end 
+%>
+
 <%= @result %>
+
+
 
 <form action='/play'>
   <input type='submit' value='Go again'>
