@@ -4,14 +4,13 @@ class Game
     %w[rock paper scissors].sample
   end
 
-  def battle(move)
-    computer = move_generator
-   
-    if move == computer
+  def battle(move, pc_move)
+       
+    if move == pc_move
       'You draw'
-    elsif  move == 'rock' && computer ==  'scissors'
+    elsif  move == 'rock' && pc_move ==  'scissors'
       'You win'
-    elsif move == 'scissors' && computer == 'paper'
+    elsif move == 'scissors' && pc_move == 'paper'
       'You win'
     else
       'You lose'

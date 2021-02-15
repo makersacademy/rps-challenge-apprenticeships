@@ -12,7 +12,7 @@ describe Game do
       it 'compares player move with computer move' do
         move = 'rock'
         allow(subject).to receive(:move_generator).and_return('scissors')
-        expect(subject.battle(move)).to eq('You win')
+        expect(subject.battle(move, subject.move_generator)).to eq('You win')
     end
   end
 

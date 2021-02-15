@@ -24,14 +24,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/move' do
     session[:move] = params[:move]
+    session[:pc] = Game.new
     redirect '/results'
   end
 
   get '/results' do
     @move = session[:move]
-    @pc = Game.new
-    
-
+    @pc = session[:pc]
     erb :results
   end
   run! if app_file == $0
