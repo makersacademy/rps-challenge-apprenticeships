@@ -4,8 +4,8 @@
 <link rel="stylesheet" type="text/css" href= "/style.css" />
 </head>
 
-<h1>Your move: <%= @player_choice.value %></h1>
-<h1>Computer's move: <%= @computer_choice.value  %></h1>
+<h1>Your move: <%= @player_choice.choice %></h1>
+<h1>Computer's move: <%= @computer_choice.choice  %></h1>
 
 <% if @player_score == true && @computer_score == false
       @result = '<h1 style="color:green">You win!</h1>'
