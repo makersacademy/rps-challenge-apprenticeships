@@ -16,11 +16,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/selection' do
-    player_weapon = params[:weapon]
-    computer_weapon = ["Rock", "Paper", "Scissors"].sample
-    @computer_weap = computer_weapon
-    @player_weap = player_weapon
-    @result = battle(player_weapon, computer_weapon)
+    @player_weapon = params[:weapon]
+    @computer_weapon = ["Rock", "Paper", "Scissors"].sample
+    @result = battle(@player_weapon, @computer_weapon)
     erb :selection
   end
 
