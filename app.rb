@@ -1,11 +1,4 @@
 require 'sinatra/base'
-# require_relative './lib/rock.rb'
-# require_relative './lib/paper.rb'
-# require_relative './lib/scissors.rb'
-# require_relative './lib/lizard.rb'
-# require_relative './lib/spock.rb'
-# require_relative './lib/player_choice.rb'
-# require_relative './lib/random_choice.rb'
 
 require_relative './lib/weapon.rb'
 
