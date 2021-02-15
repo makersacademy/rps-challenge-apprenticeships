@@ -1,0 +1,29 @@
+<style>
+body {
+    background-color: #cce6ff;
+}
+
+h1 {
+    text-align: center;
+    color: white; 
+    text-shadow: 2px 2px 4px purple;
+    font-size: 80px;
+}
+
+form {
+    width: 550px;
+    height:450px;
+    margin: auto;
+    position: relative;
+}
+</style>
+
+
+<h1> Please register your name to play!</h1>
+<form action="/name" method="post" id="form">
+<label for="player_1">
+  Player 1 
+  <input type="text" name="player_1">
+</label>
+  <input type="submit" value="Start game">
+</form>
