@@ -1,5 +1,5 @@
-feature 'shows winner' do
-  scenario 'check battle results' do
+feature 'shows player choice' do
+  scenario 'check players choice is shown' do
     fill_in_name
     choose "rock"
     click_button "Play"
