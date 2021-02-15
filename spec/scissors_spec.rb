@@ -1,3 +1,5 @@
+require 'scissors.rb'
+
 describe Scissors do
   describe "#init" do
     it "inits with value of 'scissors'" do

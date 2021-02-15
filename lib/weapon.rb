@@ -19,6 +19,6 @@ class Weapon
   private
 
   def random_choice
-    CHART.map { |k, v| k }.sample
+    CHART.map { |k, _v| k }.sample
   end
 end

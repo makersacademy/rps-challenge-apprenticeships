@@ -1,3 +1,5 @@
+require 'paper.rb'
+
 describe Paper do
   describe "#init" do
     it "inits with value of 'paper'" do
