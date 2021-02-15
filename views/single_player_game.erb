@@ -1,0 +1,17 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<h1>ROCK PAPER SCISSORS LIZARD SPOCK!</h1>
+
+<h3> Please choose your character <%= @player %>! </h3>
+
+<form post="/gameresult">
+  <input type="submit" name="choice" value="rock">
+  <input type="submit" name="choice" value="paper">
+  <input type="submit" name="choice" value="scissors">
+  <%# <input type="submit" name="choice" value="lizard">
+  <input type="submit" name="choice" value="spock"> %>
+</form>
+
+<form action="/">
+  <input type="submit" value="Return to main menu">
+</form>
