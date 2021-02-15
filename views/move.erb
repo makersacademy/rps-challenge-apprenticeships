@@ -1,0 +1,11 @@
+<h2> Welcome <%= @name.capitalize %> </h2>
+<h3>Please choose a move</h3>
+<form action="/move" method="post">
+<label for="rock">Rock
+<input id="rock" type="radio"  name="move" value="rock"></label>
+<label for="paper">Paper
+<input id="paper" type="radio" name="move" value="paper"></label>
+<label for="scissors">Scissors
+<input id="scissors" type="radio" name="move" value="scissors"></label>
+<input type="submit" value="Play">
+</form>

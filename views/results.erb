@@ -1,0 +1,4 @@
+<% @pc_move = @pc.move_generator %>
+You chose <%= @move %></br>
+Computer chose <%= @pc_move%></br>
+<%= @pc.battle(@move, @pc_move) %>
