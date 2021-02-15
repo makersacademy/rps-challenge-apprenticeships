@@ -1,11 +1,11 @@
 class Weapon
   attr_reader :choice
   CHART = {
-    :rock => [:scissors, :lizard],
-    :paper => [:rock, :spock],
-    :scissors => [:paper, :lizard],
-    :lizard => [:paper, :spock],
-    :spock => [:rock, :scissors]
+    rock: [:scissors, :lizard],
+    paper: [:rock, :spock],
+    scissors: [:paper, :lizard],
+    lizard: [:paper, :spock],
+    spock: [:rock, :scissors]
   }
 
   def initialize(choice = random_choice)
