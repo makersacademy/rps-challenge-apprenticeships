@@ -1,4 +1,4 @@
-<%= @name %>
+<%= @game.player_name %>
 
 <h2>Choose</h2>  
 <form action='/play' method="post">
@@ -13,5 +13,9 @@
   </label> 
 </form>
 
-You chose <%= @weapon %>
-Opponent chose <%= @opponent_weapon.to_s.capitalize%> 
+You chose <%= @game.player_weapon %>
+Opponent chose <%= @game.computer_weapon %> 
+
+<% if @game.win? %>
+  You win!
+<% end %>

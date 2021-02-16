@@ -26,6 +26,11 @@ feature 'weapon choices' do
       srand(221563)
       click_button 'Rock'
       expect(page).to have_content 'Opponent chose Scissors'
+    end
 
+    scenario 'you win' do
+      srand(221563)
+      click_button 'Rock'
+      expect(page).to have_content 'You win!'
     end
 end
