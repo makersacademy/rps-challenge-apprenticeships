@@ -1,4 +1,7 @@
 # RPS Challenge
+## Domain Model
+
+![RPS domain model](./client-server.jpg)
 
 ## Instructions
 
