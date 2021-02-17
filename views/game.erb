@@ -1,0 +1,27 @@
+<header>
+<link rel ="stylesheet" type="text/css" href="/style.css"/>
+</header>
+
+<body>
+<br>
+<%= @player1.name %> plays against <%= @player2.name %>
+<p>------------------------------------------------------------</p>
+<br>
+
+<form action="/submit" method="post">
+  make your move, <%= @player1.name %>:
+  <select name="choice1">
+    <option value="rock">rock</option>
+    <option value="paper">paper</option>
+    <option value="scissors">scissors</option>
+  </select>
+<br>
+  make your move, <%= @player2.name %>:
+  <select name="choice2">
+    <option value="rock">rock</option>
+    <option value="paper">paper</option>
+    <option value="scissors">scissors</option><br>
+    <input class="btn" type="submit" value="who wins?">
+  </select>
+</form>
+</body>

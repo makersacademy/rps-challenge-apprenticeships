@@ -1,0 +1,15 @@
+<header>
+<link rel ="stylesheet" type="text/css" href="/style.css"/>
+</header>
+
+<body>
+<h1>so here we are:</h1>
+
+    <% if @result == "player 1 is winning" %>
+        <h2><%= @player1.name %> WON!!</h2>
+    <% elsif @result == "player 2 is winning" %>
+        <h2><%= @player2.name %> WON!!</h2>
+    <% else %>
+        <h2>it's a draw</h2>
+    <% end %>
+</body>
