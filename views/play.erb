@@ -1,0 +1,15 @@
+<h1>Welcome <%=@player_name.capitalize%>! Let us battle! </h1>
+<h3>Please pick rock, paper or scissors.</h3>
+<div>
+
+  <style>
+body {
+  background-image: url('https://projects-static.raspberrypi.org/projects/rock-paper-scissors/53e3d7650eb63c856515c59aa623eac4497c067f/en/images/rock-paper-scissors.png');
+}
+
+</style>
+  <form action="/selection" method="post">
+    <input type="submit" value="Rock" name="weapon">
+    <input type="submit" value="Paper" name="weapon">
+      <input type="submit" value="Scissors" name="weapon">
+    </form>
