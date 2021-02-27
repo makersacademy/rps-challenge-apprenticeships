@@ -22,7 +22,7 @@ class RockPaperScissors < Sinatra::Base
     erb :selection
   end
 
-  def battle(jimmy, jessica)
+  def battle(player_weapon, computer_weapon)
     if player_weapon == "Rock" && computer_weapon == "Scissors"
       "You Win!"
     elsif player_weapon == "Scissors" && computer_weapon == "Rock"
