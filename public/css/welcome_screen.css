@@ -1,0 +1,17 @@
+#name_form{
+    text-align: center;
+    font-family: 'Black Ops One', cursive;
+    position: fixed;
+    top: 35%;
+    left: 35%;
+  
+  }
+  
+  body{
+    background-color: rgb(134, 182, 236);
+  }
+  
+  h1 {
+    text-decoration: underline
+  }
+  

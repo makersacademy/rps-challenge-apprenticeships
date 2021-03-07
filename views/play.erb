@@ -1,0 +1,28 @@
+<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap" rel="stylesheet">
+<link rel ="stylesheet" type="text/css" href="/css/play.css"/>
+<div id="game_details">
+  <body>
+  <%= @player_1.name %> vs. <%= @player_2.name %>
+  <br>
+  
+  <form action="/submit" method="post">
+    <%= @player_1.name %>'s turn
+    <select name="option1">
+      <option value="r">Rock</option>
+      <option value="p">Paper</option>
+      <option value="s">Scissors</option>
+    </select>
+
+    <%= @player_2.name %>'s turn  
+    <select name="option2">
+      <option value="r">Rock</option>
+      <option value="p">Paper</option>
+      <option value="s">Scissors</option>
+      <br>
+      <input type="submit" value="Submit">
+    </select>
+    <br>
+  </form>
+  </body>
+  <br>
+</div>

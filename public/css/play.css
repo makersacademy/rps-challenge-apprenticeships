@@ -1,0 +1,15 @@
+#game_details{
+    text-align: center;
+    font-family: 'Black Ops One', cursive;
+    font-size: 30px;
+    position: fixed;
+    left: 35%;
+    top: 35%;
+  }
+
+body{
+    background-color: rgb(212, 183, 228);
+  }
+  
+  
+  
