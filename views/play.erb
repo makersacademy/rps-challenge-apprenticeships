@@ -1,0 +1,28 @@
+<body>
+
+<h1>Welcome <%= @player %>!!!</h1>
+
+<p> Lets Play Rock Paper Scissors :</p>
+
+<form action ='/play' method ='post'>
+
+<label for="game"> Pick your choice:</label>
+
+  <input name= "choice" type="submit" value = "Rock">Rock</input>
+  <input name= "choice" type="submit" value = "Paper">Paper</input>
+  <input name= "choice" type="submit" value = "Scissors">Scissors</input>
+
+</form>
+
+
+<h4> <%= @player %> has picked <%= @choice %>, WELL DONE!!!</h4>
+
+<h4> Lets see what computer has chosen ... </h4>
+
+</body>
+
+
+
+
+
+
