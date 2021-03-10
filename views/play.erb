@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href= "/style.css" />
+</head>
+
+<h1><%= @name %> vs. Computer</h1>
+<h2>Make your move!</h2>
+<div class="float-container">
+<form action='/outcome' method='post'> 
+  <img class="option" src='https://images.pexels.com/photos/2363901/pexels-photo-2363901.jpeg?cs=srgb&dl=pexels-peter-d%C3%B6pper-2363901.jpg&fm=jpg' height='100px' width='100px'>
+  <input type='hidden' name='choice' value='rock'>
+  <input type='submit' value='rock'>
+</form>
+
+<form action='/outcome' method='post'> 
+  <img class="option" src='https://images.pexels.com/photos/159510/book-bible-page-prayer-159510.jpeg?cs=srgb&dl=pexels-pixabay-159510.jpg&fm=jpg' height='100px' width='100px'>
+  <input type='hidden' name='choice' value='paper'>
+  <input type='submit' value='paper'>
+</form>
+
+<form action='/outcome' method='post'> 
+  <img class="option" src='https://images.pexels.com/photos/4226910/pexels-photo-4226910.jpeg?cs=srgb&dl=pexels-karolina-grabowska-4226910.jpg&fm=jpg' height='100px' width='100px'>
+  <input type='hidden' name='choice' value='scissors'>
+  <input type='submit' value='scissors'>
+</form>
+
+<form action='/outcome' method='post'> 
+  <img class="option" src='https://images.pexels.com/photos/312826/pexels-photo-312826.jpeg?cs=srgb&dl=pexels-nandhu-kumar-312826.jpg&fm=jpg' height='100px' width='100px'>
+  <input type='hidden' name='choice' value='lizard'>
+  <input type='submit' value='lizard'>
+</form>
+
+<form action='/outcome' method='post'> 
+  <img class="option" src='https://images.pexels.com/photos/1142950/pexels-photo-1142950.jpeg?cs=srgb&dl=pexels-jacub-gomez-1142950.jpg&fm=jpg' height='100px' width='100px'>
+  <input type='hidden' name='choice' value='spock'>
+  <input type='submit' value='spock'>
+</form>
+</div>
+
+<form action='/'>
+  <input type='submit' value='Home'>
+</form>
+
+</html>
