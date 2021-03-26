@@ -4,5 +4,14 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
 
+  get '/' do
+    erb :index
+  end
+
+  post '/players' do
+    @player_one_name = params[:player_one_name]
+    erb :players
+  end
+
   run! if app_file == $0
 end
