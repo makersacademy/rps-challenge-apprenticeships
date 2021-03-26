@@ -1,1 +1,13 @@
 <h1>Welcome <%= @player_one_name %>! </h1>
+
+<h2><%= @player_one_name %> Select Rock, Paper or Scissors</h2>
+
+<form action="/result" method="get">
+  <input type="radio" id="Rock" value="Rock" name="p1_selection">
+  <label for="Rock">Rock</label>
+  <input type="radio" id="Paper" value="Paper" name="p1_selection">
+  <label for="Paper">Paper</label>
+  <input type="radio" id="Scissors" value="Scissors" name="p1_selection">
+  <label for="Scissors">Scissors</label>
+  <input type="submit" value="Play">
+</form>
