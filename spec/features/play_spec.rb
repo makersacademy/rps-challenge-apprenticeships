@@ -1,4 +1,5 @@
 feature 'play' do
+  
   scenario 'select rock' do
     register_and_play
     
