@@ -29,7 +29,7 @@ class RockPaperScissors < Sinatra::Base
     $cpu = Player.new("CPU")
     @cpu_name = $cpu.name
     @cpu_selection = $cpu.picks(RandomSelection.new.rps)
-    @game = Game.new(@p1_selection, @cpu_selection)
+    @game = Game.new($player_one, $cpu)
     @message = @game.result
     erb :result
   end
