@@ -18,12 +18,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/play" do
+    session[:play] = params[:play]
     redirect '/winner'
   end
 
   get "/winner" do
     @name = session[:name]
+    @play = session[:play]
     @computer = ["Rock", "Paper", "Scissors"].sample
+    erb :winner
   end
 
 
