@@ -23,4 +23,13 @@ feature 'play' do
     expect(page).to have_content "Mark selected: Scissors"
   end
 
+  scenario 'cpu selects rock' do
+    allow_any_instance_of(RandomSelection).to receive(:rps) { "Rock" }
+    register_and_play
+    
+    choose "Scissors"
+    click_button 'Play'
+    expect(page).to have_content "CPU selected: Rock"
+  end
+
 end

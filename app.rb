@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/random_selection'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -23,9 +25,9 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @player_one_name = session[:player_one_name]
     @p1_selection = params[:p1_selection]
+    @cpu_selection = RandomSelection.new.rps
     erb :result
   end
-
 
   run! if app_file == $0
 end
