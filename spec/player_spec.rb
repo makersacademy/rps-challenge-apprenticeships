@@ -8,12 +8,4 @@ describe Player do
             expect(player1.name).to eq 'Rob'
         end
     end
-
-    describe '#make_move' do
-        it 'the player can make a move' do
-            move = :scissors
-            expect(player1.make_move(move)).to eq :scissors
-        end
-    end
-
 end

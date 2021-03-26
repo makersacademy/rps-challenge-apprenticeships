@@ -1,3 +1,5 @@
+require_relative 'rules.rb'
+
 class ComputerPlayer
 
     attr_reader :name, :moves

@@ -1,0 +1,11 @@
+<h2>Hi, <%= @game.player_1.name %>, please make your move.</h2>
+<h3>Choose: Rock, Paper or Scissors</h3>
+
+<form action="/make-move" method="post">
+    <select name="move">
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
+    </select>
+    <input type="submit" value="OK">
+</form>
