@@ -1,0 +1,41 @@
+<%=if #player input == Rock && @computer == Scissors%>
+    <div>
+        <h3> <%= @name%> is the Winner!</h3>
+    </div>
+<%=elsif #player input == Rock && @computer == Paper%>
+    <div>
+        <h3> Computer Wins!</h3>
+    </div>
+<%=elsif #player input == Rock && @computer == Rock%>
+    <div>
+        <h3> Its A Draw!</h3>
+    </div>
+<%= end %>
+
+<%=if #player input == Paper && @computer == Rock%>
+    <div>
+        <h3> <%= @name%> is the Winner!</h3>
+    </div>
+<%=elsif #player input == Paper && @computer == Scissors%>
+    <div>
+        <h3> Computer Wins!</h3>
+    </div>
+<%=elsif #player input == Paper && @computer == Paper%>
+    <div>
+        <h3> Its A Draw!</h3>
+    </div>
+<%= end %>
+
+<%=if #player input == Scissors && @computer == Paper%>
+    <div>
+        <h3> <%= @name%> is the Winner!</h3>
+    </div>
+<%=elsif #player input == Scissors && @computer == Rock%>
+    <div>
+        <h3> Computer Wins!</h3>
+    </div>
+<%=elsif #player input == Scissors && @computer == Scissors%>
+    <div>
+        <h3> Its A Draw!</h3>
+    </div>
+<%= end %>
