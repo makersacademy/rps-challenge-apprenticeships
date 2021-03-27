@@ -41,9 +41,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/results' do
-    p @game.player1_move
-    p @game.player2_move
-    p @game.result(@game.player1_move, @game.player2_move)
     erb @game.result(@game.player1_move, @game.player2_move)
   end
 

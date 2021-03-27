@@ -1,11 +1,11 @@
 class Rules
-    MOVES = [:rock, :paper, :scissors]
-    BEATS = {rock: :scissors, paper: :rock, scissors: :paper }
+  MOVES = [:rock, :paper, :scissors]
+  BEATS = { rock: :scissors, paper: :rock, scissors: :paper }
 
-    attr_reader :moves, :beats
+  attr_reader :moves, :beats
 
-    def initialize
-        @moves = MOVES
-        @beats = BEATS
-    end
+  def initialize
+    @moves = MOVES
+    @beats = BEATS
+  end
 end

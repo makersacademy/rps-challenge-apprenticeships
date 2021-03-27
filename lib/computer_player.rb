@@ -2,14 +2,14 @@ require_relative 'rules.rb'
 
 class ComputerPlayer
 
-    attr_reader :name, :moves
+  attr_reader :name, :moves
 
-    def initialize(rules = Rules.new)
-        @name = 'Computer'
-        @moves = rules.moves
-    end
+  def initialize(rules = Rules.new)
+    @name = 'Computer'
+    @moves = rules.moves
+  end
 
-    def make_move
-        @moves.sample
-    end
+  def make_move
+    @moves.sample
+  end
 end
