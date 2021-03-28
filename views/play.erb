@@ -1,0 +1,23 @@
+<%= @turn.player_name %> vs. Computer
+
+Please click on the move you would like to make:
+
+<form method="POST" action="/play">
+  <input type="submit" name="move" value="Rock">
+  <input type="submit" name="move" value="Paper">
+  <input type="submit" name="move" value="Scissors">
+</form>
+
+You chose <%= @turn.player_move.to_s.capitalize %>
+
+<div id="computer">
+  The computer chose <%= @turn.computer_move.to_s.capitalize %>!
+</div>
+
+<% if @turn.win? %>
+  You win!
+<% elsif @turn.lose? %>
+  You lose!
+<% elsif @turn.draw? %>
+  You draw!
+<% end %>

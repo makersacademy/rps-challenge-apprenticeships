@@ -1,5 +1,14 @@
 # RPS Challenge
 
+I initially started this challenge using the pair programming challenge (Battleships) as a basis.
+Part way through doing this I came to a problem whereby I had many different pages opening (e.g. one for choosing rock etc),
+and it got very confusing, and I then became unsure on how to loop back in order to have the computer give a move.
+When Eddie posted the walkthrough on Saturday, I used it also a basis, but found it was completely different to how I had done mine (based off of battleships).
+After watching the walkthrough, that solution made more sense to me as it didn't involve a lot of different pages, and instead was all within one page. This is what I originally thought should be the case, but the Battleships game made it seem as though many different pages had to be made.
+I went through and changed my code to be similar to the walkthrough, but still had some errors coming up. I was able to fix these myself, which felt like a great achievement, and get all tests passing.
+I found, after all the tests were green, that the programme didn't run and got stuck when trying it on the browser. This was due to a few little things, such as not requiring the correct files, and having a couple of accidental different parameter names. So I quickly found these and sorted them so that now it works on the browser too.
+Overall, I did enjoy the challenge, but definitely found it easier to navigate using the video walkthrough, rather than going along with the Battleships technique and having many different pages.
+
 ## Instructions
 
 * Challenge time: until the end of the day
