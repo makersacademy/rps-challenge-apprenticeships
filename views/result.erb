@@ -1,0 +1,11 @@
+<div class="wrapper">
+<h1><%=@player_one_name %>, you picked: <%= @move %> </h1>
+
+<h1> The computer picked: <%= @computer_move %> </h1>
+<h1> <%= @result %> </h1>
+
+<form action="/play_again">
+  <input  type="submit" name="play_again" value="Play_again"  class="btn btn-outline-danger btn-rounded"
+  data-mdb-ripple-color="dark">
+</form>
+</div>

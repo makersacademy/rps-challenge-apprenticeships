@@ -1,0 +1,15 @@
+<div class="wrapper">
+
+<% if @player_one_name %>
+<h1> <%= @player_one_name.capitalize%>, make your move.</h1>
+<% end %>
+<br>
+
+<form class=size action="/move" method="post">
+  <input type="submit" name="move" value="Rock"  class="btn btn-outline-danger btn-rounded btn-lg"
+  data-mdb-ripple-color="dark">
+  <input type="submit" name="move" value="Paper" class="btn btn-outline-warning btn-lg" data-mdb-ripple-color="dark">
+  <input type="submit" name="move" value="Scissors" class="btn btn-outline-success btn-lg" data-mdb-ripple-color="dark">
+</form>
+
+</div>
