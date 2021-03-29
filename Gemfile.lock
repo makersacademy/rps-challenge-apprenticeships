@@ -13,11 +13,13 @@ GEM
       rack-test (>= 0.6.3)
       regexp_parser (>= 1.5, < 3.0)
       xpath (~> 3.2)
+    childprocess (3.0.0)
     diff-lcs (1.4.4)
     docile (1.3.5)
     jaro_winkler (1.5.4)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
+    multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.11.1)
@@ -59,6 +61,10 @@ GEM
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.11.0)
     ruby2_keywords (0.0.4)
+    rubyzip (2.3.0)
+    selenium-webdriver (3.142.7)
+      childprocess (>= 0.5, < 4.0)
+      rubyzip (>= 1.2.2)
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -74,10 +80,17 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
+    sinatra-contrib (2.1.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.1.0)
+      sinatra (= 2.1.0)
+      tilt (~> 2.0)
     terminal-table (3.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     tilt (2.0.10)
     unicode-display_width (1.6.1)
+    webrick (1.7.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -89,9 +102,12 @@ DEPENDENCIES
   capybara
   rspec
   rubocop (= 0.79.0)
+  selenium-webdriver
   simplecov
   simplecov-console
   sinatra
+  sinatra-contrib
+  webrick
 
 BUNDLED WITH
-   2.2.3
+   2.2.14

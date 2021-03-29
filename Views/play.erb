@@ -1,0 +1,13 @@
+<font face = "Courier New" size =" 4">
+<h1> Rock, Paper, Scissors </h1>
+<div style='border: 4px dotted purple'>
+<%= @username %> vs. Computer
+</div>
+<form action="/result" method="post">
+<label for="player_move">
+    Player Move - 
+  <input type="text" name="player_move">
+  </label>
+  <input type="submit" value="Submit">
+</form>
+</font><br />
