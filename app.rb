@@ -9,18 +9,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    @player_name = params[:player_name]
+    $player_name = Player.new(params[:player_name])
     erb :play
   end
 
   post '/choice' do
-    player_name = params[:player_name]
+    @player_name = $player_name
     @player_choice = params[:player_choice]
     erb :result
-  end
-
-  post '/result' do
-    'Hello World'
   end
 
   run! if app_file == $0
