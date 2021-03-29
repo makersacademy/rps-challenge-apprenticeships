@@ -29,8 +29,6 @@ class RockPaperScissors < Sinatra::Base
     erb :winner
   end
 
-
-  #post "/winner" do - this page displays winners name in lights
   get '/test' do
     'test page'
   end
