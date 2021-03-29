@@ -4,7 +4,7 @@ require './lib/rps.rb'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   # set :sessions, true
-  # set :sessions_secret, "bloop"
+  # set :sessions_secret, "secret"
 
   get '/' do
     erb :index
