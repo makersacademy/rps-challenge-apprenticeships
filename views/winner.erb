@@ -1,0 +1,41 @@
+<h3> <%= @play%> vs <%= @computer%>
+<%if @play == 'Rock' && @computer == 'Scissors'%>
+    <div>
+        <h3> <%= @name%> is the Winner!</h3>
+    </div>
+<%elsif @play == 'Rock' && @computer == 'Paper'%>
+    <div>
+        <h3> Computer Wins!</h3>
+    </div>
+<%elsif @play == 'Rock' && @computer == 'Rock'%>
+    <div>
+        <h3> Its A Draw!</h3>
+    </div>
+
+<%elsif @play == 'Paper' && @computer == 'Rock'%>
+    <div>
+        <h3> <%= @name%> is the Winner!</h3>
+    </div>
+<%elsif @play == 'Paper' && @computer == 'Scissors'%>
+    <div>
+        <h3> Computer Wins!</h3>
+    </div>
+<%elsif @play == 'Paper' && @computer == 'Paper'%>
+    <div>
+        <h3> Its A Draw!</h3>
+    </div>
+<%elsif @play == 'Scissors' && @computer == 'Paper'%>
+    <div>
+        <h3> <%= @name%> is the Winner!</h3>
+    </div>
+<%elsif @play == 'Scissors' && @computer == 'Rock'%>
+    <div>
+        <h3> Computer Wins!</h3>
+    </div>
+<%elsif @play == 'Scissors' && @computer == 'Scissors'%>
+    <div>
+        <h3> Its A Draw!</h3>
+    </div>
+<%else%>
+    <h3> Error! Sorry <%= @name%> </h3>
+<% end %>
