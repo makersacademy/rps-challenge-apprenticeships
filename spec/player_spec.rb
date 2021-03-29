@@ -11,7 +11,4 @@ describe Player do
   it 'accepts the player move method' do 
     expect(subject).to respond_to(:player_move)
   end
-  it 'accepts the move method' do 
-  end 
-
 end
