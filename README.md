@@ -1,5 +1,30 @@
 # RPS Challenge
 
+## Homepage
+
+![Screenshot](screenshot_homepage.png)
+
+* Enter name and click Submit
+
+## Play Screen
+
+![Screenshot](screenshot_play.png)
+
+* Select an option
+
+## Scenarios
+
+![Screenshot](screenshot_win.png)
+![Screenshot](screenshot_lose.png)
+![Screenshot](screenshot_draw.png)
+
+* Win, lose or draw depending on the outcome of the game.
+* You can replay as many times as you like by hitting Play Again
+
+![Screenshot](screenshot_replay.png)
+
+* The computers selection is reset so you can play again.
+
 ## Instructions
 
 * Challenge time: until the end of the day

@@ -4,7 +4,7 @@
 <h1 style="font-family: monospace; text-align: center"> Your oponent chose <%= @game.opponent_choice %>! </h1>
 <br>
 <% if @game.opponent_choice == "ROCK" %>
-  <h1 style="font-family: monospace; text-align: center"> ROCK smashes SCISSORS,<%= @game.player.name %>, you LOSE!  </h1>
+  <h1 style="font-family: monospace; text-align: center"> ROCK smashes SCISSORS, <%= @game.player.name %>, you LOSE!  </h1>
   <center><img src="https://thumbs.gfycat.com/HastySecondaryAtlanticspadefish-size_restricted.gif" width="400" height="400"></center>
 <% elsif @game.opponent_choice == "SCISSORS" %>
   <h1 style="font-family: monospace; text-align: center"> It's a Draw! </h1>
