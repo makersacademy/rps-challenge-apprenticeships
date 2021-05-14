@@ -67,11 +67,25 @@ SCISSORS_SEED = 69
 
   # As a marketeer
   # So I can play a game
-  # I want to see if I win
-  scenario 'I win' do
+  # I want to see a winner
+  context 'end game'
+  before do
     srand(SCISSORS_SEED)
+    end
+
+  scenario 'I win' do
     click_button 'Rock'
     expect(page).to have_content 'You win!'
+  end
+
+  scenario 'I lose' do
+    click_button 'Paper'
+    expect(page).to have_content 'You lose!'
+  end
+
+  scenario 'I draw' do
+    click_button 'Scissors'
+    expect(page).to have_content 'You draw!'
   end
 
 

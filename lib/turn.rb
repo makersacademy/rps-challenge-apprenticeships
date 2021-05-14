@@ -17,6 +17,14 @@ class Turn
     result == :win
   end
 
+  def lose?
+    result == :lose
+  end
+
+  def draw?
+    result == :draw
+  end
+
   private
 
   def result
