@@ -29,3 +29,11 @@ feature 'Oponents move' do
     expect(page).to have_content 'Your oponent chose'
   end
 end
+
+feature 'Result' do
+  scenario 'automatic response to players move is displayed' do
+    sign_in_and_play
+    click_button 'Paper'
+    expect(page).to have_content 'Your oponent chose'
+  end
+end

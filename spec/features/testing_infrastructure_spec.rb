@@ -15,3 +15,12 @@ feature 'Register player name' do
     expect(page).to have_content 'Welcome Liam, get ready to play!'
   end
 end
+
+feature 'Play again' do
+  scenario 'after a game, the player can play again' do
+    sign_in_and_play
+    click_button 'Rock'
+    click_button 'Play Again'
+    expect(page).to have_content 'Welcome Liam, get ready to play!'
+  end
+end
