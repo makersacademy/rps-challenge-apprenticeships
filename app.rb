@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/turn.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -12,20 +13,19 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/player_name' do
-    session[:player_name] = params[:player_name]
+  post '/name' do
+    session[:player_name] = params[:name]
     redirect '/play'
+
   end
 
   get '/play' do
-    @player_name = session[:player_name]
-    @weapon = session[:weapon]
-    @opponent_weapon = session[:opponent_weapon]
+    @turn = Turn.new(session)
     erb :play
   end
 
   post '/play' do
-    session[:weapon] = params[:weapon]
+    session[:player_weapon] = params[:weapon]
       session[:opponent_weapon] = :rock
     redirect '/play'
   end

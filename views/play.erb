@@ -1,4 +1,4 @@
-Welcome <%= @player_name.to_s.capitalize %>!
+Welcome <%= @turn.player_name.to_s.capitalize %>!
 <br><br>
 
 <form style="text-align: center" action="/play" method="post">
@@ -9,10 +9,10 @@ Welcome <%= @player_name.to_s.capitalize %>!
 
 <br><br>
 
-You chose <%= @weapon %>!
+You chose <%= @turn.player_weapon.to_s.capitalize %>!
 
 <div id="opponent">
-Opponent chose <%= @opponent_weapon.to_s.capitalize %>!
+Opponent chose <%= @turn.opponent_weapon.to_s.capitalize %>!
 </div>
 
 <body style="background-color: #ffea00"></body>
