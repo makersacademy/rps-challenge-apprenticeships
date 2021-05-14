@@ -1,11 +1,28 @@
-<h1> <%= @player_1_name %> vs Computer </h1>
+<style>
 
-<form action="/rock" method="get">
-  <p> Rock </p><input type="submit" value="Rock">
-</form>
+  .content{
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+  }
+  .title {
+    padding-left: 80px;
+  }
+  .buttons {
+    padding-left: 120px;
+  }
+</style>
+<div class="content">
+<div class="title"> <h1> <%= @player_1_name %> vs Computer </h1> </div>
+<h1> Please make your choice below </h1> 
+<div class="buttons"><form action="/rock" method="get" >
+  <input type="submit" value="Rock">
+
 <form action="/paper" method="get">
-  <p> Paper </p><input type="submit" value="Paper">
-</form>
+  <input type="submit" value="Paper">
+
 <form action="/scissors" method="get">
-  <p> Scissors </p><input type="submit" value="Scissors">
-</form>
+  <input type="submit" value="Scissors">
+</form></div>
+</div>

@@ -1,6 +1,46 @@
-<h1>Welcome to Rock, Paper, Scissors Game</h1>
+<style>
+.content {
+  max-width: 500px;
+  margin: auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+.box {
+   margin: auto;
+  width: 50%;}
+.button {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);}
 
+
+.box div {
+  width: 100px;
+  height: 100px;
+  
+}
+.buttons {
+  padding-left: 100px;
+}
+</style>
+
+
+<body>
+<div class="content">
+<h1>Welcome to Rock, Paper, Scissors</h1>
+<div class="box">
 <form action="/names" method="post">
-  <p> Player 1 </p><input type="text" name="player_1_name">
-  <input type="submit" value="Submit">
+  <label for ="name">Player 1</label>
+  <input type="text" name="player_1_name" id="name">
+  <div class="buttons">
+  <input type="submit" value="Submit" name="button">
+  </div>
+  </div>
 </form>
+</div>
+</body>
