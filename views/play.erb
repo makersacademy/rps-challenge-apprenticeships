@@ -1,5 +1,15 @@
-Welcome <%= @name %>!
+Welcome <%= @player_name %>!
+<br><br>
 
-Rock
-Paper
-Scissors
+<form style="text-align: center" action="/play" method="post">
+  <input type="submit" name="weapon" value="Rock">
+  <input type="submit" name="weapon" value="Paper">
+  <input type="submit" name="weapon" value="Scissors">
+</form>
+
+<br><br>
+
+You chose <%= @weapon %>!
+
+<body style="background-color: #ffea00"></body>
+<center><img src='https://www.esquireme.com/public/styles/full_img/public/images/2017/05/29/rock_paper_scissors__2x.png?itok=7H3NxSxN'><center>
