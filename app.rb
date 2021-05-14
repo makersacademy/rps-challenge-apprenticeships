@@ -1,19 +1,33 @@
 require 'sinatra/base'
+require './lib/game'
+require './lib/player'
 class RockPaperScissors < Sinatra::Base
   
   get '/' do
     erb :index
   end
 
-  post '/name' do
-    player = Player.new(params[:player_1_name])
-    # Need to add a global variable to store the player in the rock paper scissor class
-    redirect '/play'
+  post '/option' do
+    $player = Player.new(params[:player_1_name])
+    @player = $player
+    erb :option
   end
 
-  get '/play' do
+  post '/play' do
+    @player = $player
+    @player.choice = params[:choice]
+    @game = Game.new(@player)
+
     erb :play
   end
+
+  get '/option' do
+    @player = $player
+    erb :option
+  end
+
+  # potential feature:
+  # win and lose counter
 
 
   run! if app_file == $0

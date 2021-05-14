@@ -102,9 +102,5 @@ describe Game do
         expect(subject.play).to eq "You lose!"
       end
     end
-
-
   end
-
-
 end

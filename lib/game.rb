@@ -2,12 +2,13 @@ class Game
 
   def initialize(player)
     @player = player
+    @move = nil
   end
 
-  attr_reader :player
+  attr_reader :player, :move
   
   def random_number
-    result = 1 + rand(3)
+    1 + rand(3)
   end
 
   def decision
@@ -23,15 +24,15 @@ class Game
   end
 
   def play
-    computer = decision
+    @move = decision
     
-    if @player.choice == computer
+    if @player.choice == @move
       "It's a draw!"
-    elsif @player.choice == 'rock' && computer == 'scissors'
+    elsif @player.choice == 'rock' && @move == 'scissors'
       'You win!'
-    elsif @player.choice == 'paper' && computer == 'rock'
+    elsif @player.choice == 'paper' && @move == 'rock'
       'You win!'
-    elsif @player.choice == 'scissors' && computer == 'paper'
+    elsif @player.choice == 'scissors' && @move == 'paper'
       'You win!'
     else
       'You lose!'

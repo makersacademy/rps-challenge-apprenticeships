@@ -1,0 +1,14 @@
+
+<h1>Welcome <%= @player.name %></h1>
+
+<h3>Please choose and option:</h3>
+
+<form action='/play' method='post'>
+<label for='rock'>Rock:</label>
+<input type='radio' name='choice' id='rock' value='rock'>
+<label for='paper'>Paper:</label>
+<input type='radio' name='choice' id='paper' value='paper'>
+<label for='scissors'>Scissors:</label>
+<input type='radio' name='choice' id='scissors' value='scissors'>
+<input type='submit' value='Play'>
+</form>
