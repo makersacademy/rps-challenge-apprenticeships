@@ -58,16 +58,4 @@ describe Game do
       end
     end
   end
-
-
 end
-
-
-# game = Game.new
-# ----
-# game.player_weapon = "rock"
-# return winner
-# game.determine_winner
-# ----
-# return winner
-# game.play('rock')

@@ -2,7 +2,7 @@ class Game
   attr_reader :result
   attr_reader :computer
   def initialize
-    @computer = ["paper","scissor","rock"].sample
+    @computer = ["paper", "scissor", "rock"].sample
     @result = result
   end
 
@@ -22,7 +22,6 @@ class Game
     else 
       @result = "its a draw"
     end
-
   end
 
 end
