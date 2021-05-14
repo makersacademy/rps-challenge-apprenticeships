@@ -24,6 +24,8 @@ end
 # So I can play a game
 # I want to see the weapon choices: Rock, Paper, Scissors
 feature 'playing a game' do
+SCISSORS_SEED = 69
+
   before do
     register_and_play
   end
@@ -52,6 +54,15 @@ feature 'playing a game' do
     message = find(:css, "#opponent").text
 
     expect(message_options).to include message
+  end
+
+  # As a marketeer
+  # So I can play a game
+  # I want the computer's weapon to be randomly chosen'
+  scenario 'computer chooses random weapon' do
+    srand(SCISSORS_SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'Opponent chose Scissors!'
   end
 
   def message_options

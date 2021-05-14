@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require './lib/turn.rb'
+require './lib/opponent.rb'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -26,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     session[:player_weapon] = params[:weapon]
-      session[:opponent_weapon] = :rock
+      session[:opponent_weapon] = Opponent.new.weapon
     redirect '/play'
   end
 
