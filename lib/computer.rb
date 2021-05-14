@@ -6,5 +6,4 @@ class Computer
     WEAPONS.sample
   end
 
-
 end
