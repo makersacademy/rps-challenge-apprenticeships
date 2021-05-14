@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/play' do
-    session[:player_weapon] = params[:weapon]
+    session[:player_weapon] = params[:weapon].downcase.to_sym
       session[:opponent_weapon] = Opponent.new.weapon
     redirect '/play'
   end

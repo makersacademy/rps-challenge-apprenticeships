@@ -65,6 +65,16 @@ SCISSORS_SEED = 69
     expect(page).to have_content 'Opponent chose Scissors!'
   end
 
+  # As a marketeer
+  # So I can play a game
+  # I want to see if I win
+  scenario 'I win' do
+    srand(SCISSORS_SEED)
+    click_button 'Rock'
+    expect(page).to have_content 'You win!'
+  end
+
+
   def message_options
     [:rock, :paper, :scissors].map { |weapon| "Opponent chose #{weapon.to_s.capitalize}!"}
   end
