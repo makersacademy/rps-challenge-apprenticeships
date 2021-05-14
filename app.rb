@@ -16,17 +16,25 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/rock' do
-    erb :rock
-
+  get '/rock' do 
+    player_weapon = 'rock'
+    game = Game.new
+    @winner = game.play(player_weapon)
+    erb :result
   end
 
   get '/paper' do
-    erb :paper
+    player_weapon = 'paper'
+    game = Game.new
+    @winner = game.play(player_weapon)
+    erb :result
   end
 
   get '/scissors' do
-    erb :scissors
+    player_weapon = 'scissors'
+    game = Game.new
+    @winner = game.play(player_weapon)
+    erb :result
   end
 
   post '/names' do
