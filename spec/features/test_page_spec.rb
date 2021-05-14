@@ -58,7 +58,7 @@ SCISSORS_SEED = 69
 
   # As a marketeer
   # So I can play a game
-  # I want the computer's weapon to be randomly chosen'
+  # I want the computer's weapon to be randomly chosen
   scenario 'computer chooses random weapon' do
     srand(SCISSORS_SEED)
     click_button 'Rock'
