@@ -1,4 +1,4 @@
-Welcome <%= @player_name %>!
+Welcome <%= @player_name.to_s.capitalize %>!
 <br><br>
 
 <form style="text-align: center" action="/play" method="post">
@@ -10,6 +10,10 @@ Welcome <%= @player_name %>!
 <br><br>
 
 You chose <%= @weapon %>!
+
+<div id="opponent">
+Opponent chose <%= @opponent_weapon.to_s.capitalize %>!
+</div>
 
 <body style="background-color: #ffea00"></body>
 <center><img src='https://www.esquireme.com/public/styles/full_img/public/images/2017/05/29/rock_paper_scissors__2x.png?itok=7H3NxSxN'><center>
