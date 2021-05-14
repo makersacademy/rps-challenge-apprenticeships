@@ -15,6 +15,18 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  get '/rock' do
+    erb :rock
+  end
+
+  get '/paper' do
+    erb :paper
+  end
+
+  get '/scissors' do
+    erb :scissors
+  end
+
   post '/names' do
     session[:player_1_name] = params[:player_1_name]
     session[:player_2_name] = params[:player_2_name]
