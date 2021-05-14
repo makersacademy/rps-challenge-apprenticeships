@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player.rb'
+require_relative 'lib/game.rb'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   get '/test' do
@@ -17,6 +18,7 @@ class RockPaperScissors < Sinatra::Base
 
   get '/rock' do
     erb :rock
+
   end
 
   get '/paper' do
