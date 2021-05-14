@@ -1,0 +1,17 @@
+<h1 style="font-family: monospace; text-align: center"> Welcome <%= @game.player.name %>, get ready to play!</h1>
+<br>
+<h3 style="font-family: monospace; text-align: center">Choose your move: </h3>
+<br>
+<form style="text-align: center" action="/rock" method="post">
+  <input type="submit" value="Rock">
+</form>
+<br>
+<form style="text-align: center" action="/paper" method="post">
+  <input type="submit" value="Paper">
+</form>
+<br>
+<form style="text-align: center" action="/scissors" method="post">
+  <input type="submit" value="Scissors">
+</form>
+<br>
+<center><img src="https://i.pinimg.com/originals/3b/f2/f4/3bf2f45865bc4a63a663611ea357de4c.gif" width="400" height="400"></center>

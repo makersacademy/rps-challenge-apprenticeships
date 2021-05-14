@@ -1,0 +1,19 @@
+
+<h1 style="font-family: monospace; text-align: center"> <%= @game.player.name %>, you chose SCISSORS! </h1>
+<br>
+<h1 style="font-family: monospace; text-align: center"> Your oponent chose <%= @game.opponent_choice %>! </h1>
+<br>
+<% if @game.opponent_choice == "ROCK" %>
+  <h1 style="font-family: monospace; text-align: center"> ROCK smashes SCISSORS, <%= @game.player.name %>, you LOSE!  </h1>
+  <center><img src="https://thumbs.gfycat.com/HastySecondaryAtlanticspadefish-size_restricted.gif" width="400" height="400"></center>
+<% elsif @game.opponent_choice == "SCISSORS" %>
+  <h1 style="font-family: monospace; text-align: center"> It's a Draw! </h1>
+  <center><img src="https://media.tenor.com/images/c51d80c0a35399d72c37058bce88d02c/tenor.gif" width="400" height="400"></center>
+<% else %>
+  <h1 style="font-family: monospace; text-align: center"> SCISSORS cut PAPER, <%= @game.player.name %> WINS! </h1>
+  <center><img src="https://i.imgur.com/lmmBt.gif" width="400" height="400"></center>
+<% end %>
+<br><br>
+<form style="text-align: center" action="/play_again" method = "post">
+  <input type="submit" value="Play Again">
+</form>
