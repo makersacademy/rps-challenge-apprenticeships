@@ -14,3 +14,22 @@ feature 'register name' do
     expect(page).to have_content 'Jay'
   end
 end
+
+# As a marketeer
+# So that I can enjoy myself away from the daily grind
+# I would like to be able to play rock/paper/scissors
+
+# As a marketeer
+# So I can play a game
+# I want to see the choices: Rock, Paper, Scissors
+feature 'playing a game' do
+  before do
+    register_and_play
+  end
+  scenario 'see options' do
+    expect(page).to have_content 'Rock'
+    expect(page).to have_content 'Paper'
+    expect(page).to have_content 'Scissors'
+
+  end
+end
