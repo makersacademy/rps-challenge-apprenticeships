@@ -1,0 +1,10 @@
+<h2><%=@game.player1.name.capitalize%> played <%=@game.player1.choice.capitalize%></h2>
+<h2><%=@game.player2.name.capitalize%> played <%=@game.player2.choice.capitalize%></h2>
+<%if @game.win_logic == "draw"%>
+It's A Draw!
+<br>
+<%else%>
+<h1><%=@game.win_logic.name.capitalize%> Wins!!!</h1>
+<%end%>
+<br>
+<a href="/">Play Again?</a>

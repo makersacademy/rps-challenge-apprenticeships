@@ -1,0 +1,7 @@
+<h1><%=@game.player2.name.capitalize%>, it's your turn!</h1>
+<form action="/saveturn" method="post">
+  <%@game.settings.weapon_list.each { |btn| %>
+<input type="submit" name="choice" value="<%=btn.capitalize%>">
+<% } %>
+<input type="hidden" name="round" value="2">
+</form>
