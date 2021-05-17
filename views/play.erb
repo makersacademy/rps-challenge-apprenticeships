@@ -1,0 +1,10 @@
+<h1>Welcome to Rock Paper Scissors, <%=@game.player1.name.capitalize%><%if @game.gametype == "Multiplayer"%> and <%=@game.player2.name%><%end%>!</h1>
+<%if @game.gametype == "Multiplayer"%>
+<%=@game.player1.name.capitalize%>, it's your turn
+<%end%>
+<form class="box_location" action="/saveturn" method="post">
+  <%@game.settings.weapon_list.each { |btn| %>
+<input type="submit" name="choice" value="<%=btn.capitalize%>">
+<% } %>
+<input type="hidden" name="round" value="1">
+</form>

@@ -1,0 +1,11 @@
+<form class='box_location' action="/register-process" method="post">
+<h2>Enter your name Player 1</h2>
+<input name="name" type="text">
+<%if @gametype == "Multiplayer"%>
+<h2>Enter your name Player 2</h2>
+<input name="name2" type="text">
+<%end%>
+<input type="submit" value="Play">
+<input type="hidden" name="gametype" value="<%=@gametype%>">
+<input type="hidden" name="gamevariant" value="<%=@gamevariant%>">
+</form>
