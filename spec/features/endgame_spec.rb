@@ -5,9 +5,9 @@ feature 'endgame page' do
 
   feature 'it tells you the computer choice' do
     scenario 'computer chooses scissors' do
-    allow_any_instance_of(Game).to receive(:computer_move).and_return('Scissors')
-    click_button "Rock"
-    expect(page).to have_content "The computer chose Scissors."
+      allow_any_instance_of(Game).to receive(:computer_move).and_return('Scissors')
+      click_button "Rock"
+      expect(page).to have_content "The computer chose Scissors."
     end
   end
 
