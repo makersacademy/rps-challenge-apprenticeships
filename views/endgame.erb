@@ -1,0 +1,11 @@
+<h1> <%= @name %>, you have chosen... <%= @player_choice %>. </h1>
+<br>
+<h2> The computer chose <%= @game.computer_move %>. </h2>
+<br>
+<%if @game.winner == 'player' %>
+You have bested fate. Leave with your life while the gods allow it.
+<%elsif @game.winner == 'computer' %>
+You chose poorly. You are sentenced to rot in the outlands.
+<%elsif @game.winner == 'neither' %>
+You draw! Do you dare tempt fate again?
+<%end%>
