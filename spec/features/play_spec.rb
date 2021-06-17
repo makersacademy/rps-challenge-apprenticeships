@@ -4,13 +4,21 @@
 
 feature 'play game rock-paper-scissors' do
 
-  # the marketeer will be presented the choices (rock, paper and scissors)
-  scenario 'enter name in home page' do
+  scenario 'player is presented the choices (rock, paper and scissors)' do
     visit '/'
-    fill_in :name, with: "Super Mario"
+    fill_in :name, with: 'Super Mario'
     click_button 'Start Game'
     expect(page).to have_selector(:link_or_button, 'ROCK')
     expect(page).to have_selector(:link_or_button, 'PAPER')
     expect(page).to have_selector(:link_or_button, 'SCISSORS')
+  end
+
+  scenario 'player can choose one option' do
+    visit '/'
+    fill_in :name, with: 'Super Mario'
+    click_button 'Start Game'
+    random_pick = ["ROCK", "PAPER", "SCISSORS"].sample
+    click_button random_pick
+    expect(page).to have_content("You picked #{random_pick}")
   end
 end

@@ -2,13 +2,18 @@
 <br>
 <br>
 <br>
-<h4>Pick one option:</h4>
-<form action="/rock" method="POST">
-  <input type="submit" value="ROCK">
-</form>
-<form action="/paper" method="POST">
-  <input type="submit" value="PAPER">
-</form>
-<form action="/scissors" method="POST">
-  <input type="submit" value="SCISSORS">
-</form>
+
+<% if @option %>
+  <h4>You picked <%= @option%>
+<% else %>
+  <h4>Pick one option:</h4>
+  <form action="/option" method="POST">
+    <input type="submit" name="option" value="ROCK">
+  </form>
+  <form action="/option" method="POST">
+    <input type="submit" name="option" value="PAPER">
+  </form>
+  <form action="/option" method="POST">
+    <input type="submit" name="option" value="SCISSORS">
+  </form>
+<% end %>
