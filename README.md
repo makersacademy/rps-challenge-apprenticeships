@@ -1,5 +1,30 @@
 # RPS Challenge
 
+## Notes
+
+## Mermaid code
+
+```
+sequenceDiagram
+User->>+Browser: types 'http://localhost:4567/'
+Browser->>+Controller: GET /
+
+
+Controller->>-Browser: 200 OK, body HTML
+Browser->>-User: see homepage
+
+
+User->>+Browser: fills in name form + clicks 'submit'
+Browser->>+Controller: POST /name-form formdata
+Controller->>+Model: session[:name]
+Model->>-Controller: :name
+Controller->>+View: render :name in :layout
+View->>-Controller: HTML
+Controller->>-Browser: 303 Redirect, '/welcome-page'
+Browser->>-User: Sees personanlised greeting and game mode select
+
+```
+
 ## Instructions
 
 * Challenge time: until the end of the day
