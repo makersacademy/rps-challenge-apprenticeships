@@ -3,16 +3,15 @@
     Hi, <%= @name_one %>! Rock, Paper, or Scissors?
     </h3>
 
-  <select name="options" id="options">
-    <option value="..">Select option ...</option>
-    <option value="rock">Rock</option>
-    <option value="paper">Paper</option>
-    <option value="scissors">Scissors</option>
-  </select>
-  
-  <form>
+  <form action = '/play' method ="post">
+    <input type="submit" value="Rock" >
     <br>
-    <input type="submit" value="Play">
+    <br>
+    <input type="submit" value="Paper">
+    <br> 
+    <br> 
+    <input type="submit" value="Scissors">
+
   </form>
 
 </div>
