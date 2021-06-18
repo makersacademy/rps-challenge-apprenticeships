@@ -8,8 +8,7 @@ end
 feature 'Select choice' do
   scenario 'player chooses rock, paper or scissors' do
     sign_in
-    fill_in :choice, with: 'Rock'
-    click_button('Submit')
+    click_button('Rock')
     expect(page).to have_content('You chose Rock')
   end
 end
