@@ -5,7 +5,6 @@ class Game
   def initialize(player_choice, comp_choice)
     @player_choice = player_choice
     @comp_choice = comp_choice
-    # @winner
   end
 
   def result

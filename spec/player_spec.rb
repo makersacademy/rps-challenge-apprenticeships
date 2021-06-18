@@ -8,4 +8,9 @@ describe Player do
     expect(player.name).to eq('Hannah')
   end
 
+  it 'stores player choice' do
+    player.make_choice("Rock")
+    expect(player.choice).to eq("Rock")
+  end
+
 end
