@@ -3,8 +3,9 @@ require_relative '../../lib/game'
 describe Game do
 subject(:object) { described_class.new(player_1) }
 let(:player_1) { double(:player_1)}
+let(:player_2) { double(:player_2)}
 let(:computer) { class_double(Computer) }
-# let(:pve_game) { Game.new(player_1, computer) }
+let(:pvp_game) { Game.new(player_1, player_2) }
 
   it "starts a game" do
     expect(Game).to respond_to(:new)
@@ -58,6 +59,12 @@ let(:computer) { class_double(Computer) }
         object.set_player_1_choice("rock")
         object.set_player_2_choice("rock")
         expect(object.return_winner).to eq("It's a tie!")
+      end
+
+      it "returns a player 2 victory case correctly" do
+        pvp_game.set_player_1_choice("paper")
+        pvp_game.set_player_2_choice("scissors")
+        expect(pvp_game.return_winner).to eq(player_2)
       end
     end
   end

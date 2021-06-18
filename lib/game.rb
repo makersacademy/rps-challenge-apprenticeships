@@ -15,9 +15,13 @@ class Game
   end
 
   def return_winner
-    return @player_1 if player1_wins?
-    return "It's a tie!" if draw?
-    return @player2
+    if draw?
+      return "It's a tie!"
+    elsif player1_wins?
+      return @player_1
+    else
+      return @player_2
+    end
   end
 
   private
