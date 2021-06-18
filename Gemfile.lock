@@ -18,6 +18,7 @@ GEM
     jaro_winkler (1.5.4)
     mini_mime (1.0.2)
     mini_portile2 (2.5.0)
+    multi_json (1.15.0)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
     nokogiri (1.11.1)
@@ -74,10 +75,17 @@ GEM
       rack (~> 2.2)
       rack-protection (= 2.1.0)
       tilt (~> 2.0)
+    sinatra-contrib (2.1.0)
+      multi_json
+      mustermann (~> 1.0)
+      rack-protection (= 2.1.0)
+      sinatra (= 2.1.0)
+      tilt (~> 2.0)
     terminal-table (3.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     tilt (2.0.10)
     unicode-display_width (1.6.1)
+    webrick (1.7.0)
     xpath (3.2.0)
       nokogiri (~> 1.8)
 
@@ -92,6 +100,8 @@ DEPENDENCIES
   simplecov
   simplecov-console
   sinatra
+  sinatra-contrib
+  webrick
 
 BUNDLED WITH
-   2.2.3
+   2.2.19
