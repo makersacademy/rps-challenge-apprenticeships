@@ -2,9 +2,9 @@ require 'game'
 
 describe Game do
 
-  let(:comp_choice) { "Paper" }
-  let(:player_choice) { "Rock" }
-  let(:game) { Game.new(player_choice, comp_choice) }
+  let(:opponent) { double :opponent_double, comp_choice: "Paper" }
+  let(:player) { double :player_double, choice: "Rock" }
+  let(:game) { Game.new(player, opponent) }
 
 
   it 'accepts player choice' do

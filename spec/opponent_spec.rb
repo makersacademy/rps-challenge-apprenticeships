@@ -1,8 +1,8 @@
-require 'computer-choice'
+require 'opponent'
 
-describe ComputerChoice do
+describe Opponent do
 
-  let(:opponent) { ComputerChoice.new }
+  let(:opponent) { Opponent.new }
 
   it 'randomly returns either rock, paper or scissors' do
     expect(opponent.comp_choice).to be_a_kind_of(String)

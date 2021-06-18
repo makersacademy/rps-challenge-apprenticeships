@@ -2,9 +2,10 @@ class Game
 
   attr_reader :player_choice, :comp_choice
 
-  def initialize(player_choice, comp_choice)
-    @player_choice = player_choice
-    @comp_choice = comp_choice
+  def initialize(player, opponent)
+    @player = player
+    @player_choice = player.choice
+    @comp_choice = opponent.comp_choice
   end
 
   def result
@@ -13,7 +14,7 @@ class Game
       (@player_choice == "Rock" && @comp_choice == "Scissors") ||
       (@player_choice == "Paper" && @comp_choice == "Rock") ||
       (@player_choice == "Scissors" && @comp_choice == "Paper")
-      return "Player wins"
+      return "#{@player.name} wins"
     when 
       (@player_choice == "Scissors" && @comp_choice == "Rock") ||
       (@player_choice == "Rock" && @comp_choice == "Paper") ||

@@ -1,4 +1,4 @@
-class ComputerChoice
+class Opponent
 
   def comp_choice
     ["Rock", "Paper", "Scissors"].sample
