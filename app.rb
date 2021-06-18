@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/mechanics'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -22,22 +23,23 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player = $player
+    @play = $play
     erb(:play)
   end
 
   post '/choice_rock' do
-    @player_choice = :rock
+    @rock = Mechanics.new.game_play(:rock, Mechanics.new.ai_side)
     erb(:rock)
   end
 
   post '/choice_paper' do
-    @player_choice = :paper
+    @paper = Mechanics.new.game_play(:paper, Mechanics.new.ai_side)
     erb(:paper)
   end
 
   post '/choice_scissors' do
-    @player_choice = :scissors
-      erb(:scissors)
+    @scissors = Mechanics.new.game_play(:scissors, Mechanics.new.ai_side)
+    erb(:scissors)
   end
 
   run! if app_file == $0
