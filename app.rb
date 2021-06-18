@@ -27,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
     game = Game.new
     @name = session[:name]
     @option = session[:option]
-    @computer_option = ["ROCK", "PAPER", "SCISSORS"].sample
+    @computer_option = game.computer_option
     @final_message = game.final_message(@option, @computer_option)
     erb :play
   end

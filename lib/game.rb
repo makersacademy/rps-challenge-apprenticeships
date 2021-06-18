@@ -8,6 +8,10 @@ class Game
     end
   end
 
+  def computer_option
+    ["ROCK", "PAPER", "SCISSORS"].sample
+  end
+
   private
   def calc_winner(player, computer)
     if player == computer
