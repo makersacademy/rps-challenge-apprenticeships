@@ -10,7 +10,7 @@ body {
 }
 
 .black-border {
-  border: 3px solid rgb(26, 26, 26);
+  border: 3px solid rgb(32, 32, 32);
 }
 
 .container h1 {
@@ -30,6 +30,11 @@ form > * {
   padding-bottom: 1em;
 }
 
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
 label span {
   font-size: 24px;
 }
@@ -37,7 +42,7 @@ label span {
 input,
 select {
   padding: 0.5em;
-  border: 2px solid black;
+  border: 2px solid rgb(32, 32, 32);
   outline: none;
 }
 
@@ -45,6 +50,8 @@ input[type="submit"] {
   background-color: rgb(32, 32, 32);
   color: #fdfdfd;
   transition: 0.25s ease;
+  border: 3px solid rgb(32, 32, 32);
+  letter-spacing: 0.15em;
 }
 
 input[type="submit"]:hover, button:hover{
@@ -79,4 +86,8 @@ button {
   border: none;
   transition: 0.25s ease;
   padding: 1em 2em;
+}
+
+select {
+  margin-right: 1em;
 }

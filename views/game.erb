@@ -9,7 +9,14 @@
     </section>
     <section class="container buttons">
         <h3>Select your move</h3>
-        <p><%= @move %></p>
+        <form action="/result" method="post" class = "row">
+          <select name="player1_move">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+          </select>
+          <input type="submit" value="confirm">
+        </form>
     </section>
   </body>
 </html>
