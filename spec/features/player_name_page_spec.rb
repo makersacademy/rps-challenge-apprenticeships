@@ -1,10 +1,8 @@
 describe RockPaperScissors do
   feature 'pre game' do
     scenario 'entering player name' do
-      visit('/')
-      fill_in :player_name, with: 'Kelvin'
-      click_button 'Submit'
-      expect(page).to have_content('Player name is Kelvin')
+      enter_name
+      expect(page).to have_content('Player is Kelvin, Enjoy the game')
     end
   end
 end

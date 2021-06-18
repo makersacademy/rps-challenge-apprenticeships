@@ -25,5 +25,20 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/choice_rock' do
+    @player_choice = :rock
+    erb(:rock)
+  end
+
+  post '/choice_paper' do
+    @player_choice = :paper
+    erb(:paper)
+  end
+
+  post '/choice_scissors' do
+    @player_choice = :scissors
+      erb(:scissors)
+  end
+
   run! if app_file == $0
 end
