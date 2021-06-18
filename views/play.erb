@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>R P S</title>
+  </head>
+
+  <body>
+    <h2><%=@name%> is playing Rock-Paper-Scissors</h2>
+    
+    <br>
+    <br>
+    <br>
+
+    <% if @option %>
+      <h4>You picked <%= @option%> and Darth Vader picked <%= @computer_option%></h4>
+      <br>
+      <h4><%= @final_message%></h4>
+      <br>
+      <form action="/new_game" method="POST">
+        <input type="submit" value="Play Again">
+      </form>
+
+    <% else %>
+      <h4>Pick one option:</h4>
+      <form action="/option" method="POST">
+        <input type="submit" name="option" value="ROCK">
+      </form>
+      <form action="/option" method="POST">
+        <input type="submit" name="option" value="PAPER">
+      </form>
+      <form action="/option" method="POST">
+        <input type="submit" name="option" value="SCISSORS">
+      </form>
+    <% end %>
+
+  </body>
+</html>
