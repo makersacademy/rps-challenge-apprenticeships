@@ -1,5 +1,18 @@
 <div>
     <h3>
-    Player One: <%= @name_one %> 
+    Hi, <%= @name_one %>! Rock, Paper, or Scissors?
     </h3>
+
+  <select name="options" id="options">
+    <option value="..">Select option ...</option>
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+  </select>
+  
+  <form>
+    <br>
+    <input type="submit" value="Play">
+  </form>
+
 </div>

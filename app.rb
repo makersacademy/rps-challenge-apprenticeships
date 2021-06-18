@@ -21,7 +21,6 @@ class RockPaperScissors < Sinatra::Base
     @name_one = session[:name_one]
     erb :start_game
   end
-
-
+  
   run! if app_file == $0
 end
