@@ -37,5 +37,10 @@ class RockPaperScissors < Sinatra::Base
     redirect '/play'
   end
 
+  post '/new_game' do
+    session[:option] = nil
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end

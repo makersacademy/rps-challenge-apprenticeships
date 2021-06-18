@@ -7,6 +7,11 @@
   <h4>You picked <%= @option%> and Darth Vader picked <%= @computer_option%></h4>
   <br>
   <h4><%= @final_message%></h4>
+  <br>
+  <form action="/new_game" method="POST">
+    <input type="submit" value="Play Again">
+  </form>
+
 <% else %>
   <h4>Pick one option:</h4>
   <form action="/option" method="POST">

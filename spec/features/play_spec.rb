@@ -48,4 +48,23 @@ feature 'play game rock-paper-scissors' do
     click_button "ROCK"
     expect(page).to have_content("It's a DRAW!")
   end
+
+  scenario 'player can see Play Again button' do
+    visit '/'
+    fill_in :name, with: 'Super Mario'
+    click_button 'Start Game'
+    click_button "ROCK"
+    expect(page).to have_selector(:link_or_button, 'Play Again')
+  end
+
+  scenario 'player can play again' do
+    visit '/'
+    fill_in :name, with: 'Super Mario'
+    click_button 'Start Game'
+    click_button "ROCK"
+    click_button "Play Again"
+    expect(page).to have_selector(:link_or_button, 'ROCK')
+    expect(page).to have_selector(:link_or_button, 'PAPER')
+    expect(page).to have_selector(:link_or_button, 'SCISSORS')
+  end
 end
