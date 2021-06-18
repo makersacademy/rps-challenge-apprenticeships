@@ -1,0 +1,31 @@
+sequenceDiagram
+    User->>+Browser: type `http://localhost:4567/`
+    Browser->>+Controller: GET /
+    Controller->>+View: render :index
+    View->>-Controller: HTML
+    Controller->>-Browser: 200 OK, body HTML
+    Browser->>-User: see home page
+
+    User->>+Browser: input `name` and click `Start Game`
+    Browser->>+Controller: POST /play formdata
+    Controller->>+Model: save params[:name] in session[:name]
+    Controller->>+Browser: 303 Redirect `/play`
+    Browser->>+Controller: GET /play
+    Controller->>+Model: request session[:name]
+    Model->>+Controller: send session[:name]
+    Controller->>+View: render :play
+    View->>-Controller: HTML
+    Controller->>-Browser: 200 OK, body HTML
+    Browser->>-User: see game page
+
+    User->>+Browser: click `option`
+    Browser->>+Controller: POST /option formdata
+    Controller->>+Model: save params[:option] in session[:option]
+    Controller->>+Browser: 303 Redirect `/play`
+    Browser->>+Controller: GET /play
+    Controller->>+Model: request session[:name], session[:option], Game.computer_option and Game.final_message
+    Model->>+Controller: send session[:name], session[:option], Game.computer_option and Game.final_message
+    Controller->>+View: render :play
+    View->>-Controller: HTML
+    Controller->>-Browser: 200 OK, body HTML
+    Browser->>-User: see game page with winner message
