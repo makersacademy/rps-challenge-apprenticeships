@@ -13,8 +13,10 @@ class Game
     if draw?
       return "It's a tie!"
     elsif player1_wins?
+      @player_1.win!
       return "#{@player_1.name} wins!"
     else
+      @player_2.win!
       return "#{@player_2.name} wins!"
     end
   end
@@ -28,6 +30,9 @@ class Game
   end
 
   def draw?
-    @player_1.choice == @player_2.choice
+    (@player_1.choice == @player_2.choice) ||
+    # Evaluating invalid move entry edge cases as ties for zero score
+    ( !["rock", "paper", "scissors"].include?(@player_2.choice) ) ||
+    ( !["rock", "paper", "scissors"].include?(@player_1.choice) )
   end
 end

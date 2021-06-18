@@ -7,7 +7,7 @@
   <body>
     <header>
       <h2>This match:</h2>
-    <h1><%= @game.player_1.name %> V Computer</h1>
+    <h1><%= @game.player_1.name %> V <%= @game.player_2.name %></h1>
     </header>
     <main>
       <br>
@@ -20,11 +20,11 @@
       <form action="/move-submit" method="post" class="row g-3">
         <div class="col-md-6">
           <label for="player_1_choice" class="form-label"><%= @game.player_1.name %>'s Move:</label>
-          <input type="password" class="form-control" id="player_1_choice">
+          <input type="password" class="form-control" name="player_1_choice" placeholder="Enter roc / pap / sci">
         </div>
         <div class="col-md-6">
           <label for="player_2_choice" class="form-label"><%= @game.player_2.name %>'s Move:</label>
-          <input type="password" class="form-control" id="player_2_choice">
+          <input type="password" class="form-control" name="player_2_choice" placeholder="roc / pap / sci">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary" name="player_choices">Go!</button>

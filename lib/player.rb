@@ -1,8 +1,9 @@
 class Player
-  attr_reader :name, :choice
+  attr_reader :name, :choice, :score
 
   def initialize (name)
     @name = name
+    @score = 0
   end
 
   def set_move(move)
@@ -11,10 +12,16 @@ class Player
       "pap" => "paper",
       "sci" => "scissors",
     }
-    if move == "roc" || move == "pap" || move == "sci"
+    if options.include?(move)
       @choice = options[move]
-    else
+    elsif options.has_value?(move)
       @choice = move
+    else
+      @choice = "an invalid move"
     end
+  end
+
+  def win!
+    @score += 1
   end
 end
