@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/computer-choice.rb'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   
@@ -20,7 +21,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choices' do
-    $game = Game.new(params[:choice])
+    $opponent = ComputerChoice.new
+    comp_choice = $opponent.comp_choice
+    $game = Game.new(params[:choice], comp_choice)
     redirect '/result'
   end
 
