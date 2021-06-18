@@ -6,9 +6,11 @@
   </head>
   <body>
     <div>
-      <h1>Welcome, <%= @name %>!</h1>
+      <h1><%= @player1 %> vs <%= @player2 %></h1>
       <br>
-      
+      <form action="/game" method="get">
+        <input type="submit" name="Start" value="Begin!">
+      </form>
     </div>
   </body>
 </html>

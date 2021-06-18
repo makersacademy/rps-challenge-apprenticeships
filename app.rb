@@ -26,8 +26,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/welcome' do
-    @name = session[:name]
+    @player1 = session[:name]
+    @player2 = "Computer"
     erb :welcome_screen
+  end
+
+  get '/game' do
+    erb :game
   end
 
 
