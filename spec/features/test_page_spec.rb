@@ -1,6 +1,6 @@
-feature 'test page' do
-  scenario 'visit test page' do
-    visit '/test'
-    expect(page).to have_content('test page')
+feature 'index page is OK' do
+  scenario 'visit index page' do
+    visit '/'
+    expect(page.status_code).to eq(200)
   end
 end
