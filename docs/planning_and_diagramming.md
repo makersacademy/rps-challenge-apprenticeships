@@ -12,11 +12,10 @@ I would like to register my name before playing an online game
 ```
 
 Requirements:
-- Class(es): RockPaperScissors
-- Variable(s):
-- Method(s):
+- Class(es): RockPaperScissors, Player
+- Variable(s): @name (player)
 
-#### 2 
+#### 2 ✅
 
 ```
 As a marketeer
@@ -26,9 +25,8 @@ I would like to be able to play rock/paper/scissors
 ```
 
 Requirements:
-- Class(es): Player, Game
-- Variable(s):
-- Method(s):
+- Class(es): Game
+- Method(s): random_weapon (game)
 
 ### Bonus
 
