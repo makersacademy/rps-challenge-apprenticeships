@@ -37,7 +37,7 @@ class RockPaperScissors < Sinatra::Base
     @move = @possible_moves[params["player_choice"]].new
     @random_move = @possible_moves.values.sample(1)[0].new
     if @move > @random_move
-      @winner_message = @player_name + "wins"
+      @winner_message = @player_name + " wins"
     elsif @random_move > @move
       @winner_message = "computer wins"
     else @winner_message = "It's a draw!"
