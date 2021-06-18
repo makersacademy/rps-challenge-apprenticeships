@@ -10,4 +10,8 @@ class Paper
   def > (other)
     return other.instance_of? Rock
   end
+
+  def to_s
+    return "Paper"
+  end
 end

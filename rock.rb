@@ -11,4 +11,8 @@ class Rock
     return other.instance_of? Scissors
   end
 
+  def to_s
+    return "Rock"
+  end
+
 end

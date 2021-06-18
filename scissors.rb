@@ -10,4 +10,8 @@ class Scissors
   def > (other)
     return other.instance_of? Paper
   end
+
+  def to_s
+    return "Scissors"
+  end
 end
