@@ -31,9 +31,13 @@ class RockPaperScissors < Sinatra::Base
     redirect('/result')
   end
 
+  def computer_weapon
+    ['Rock', 'Paper', 'Scissors'].sample
+  end
+
   get '/result' do
     @weapon1 = session[:weapon]
-    @weapon2 = ['Rock', 'Paper', 'Scissors'].sample
+    @weapon2 = computer_weapon
     if @weapon1 == @weapon2
       @message = "It's a draw!"
     elsif @weapon1 == 'Rock' && @weapon2 == 'Paper'
