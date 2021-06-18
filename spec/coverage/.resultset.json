@@ -1,0 +1,29 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/mikeconnolly/Desktop/Projects/Web/rock_paper_scissors/rps-challenge-apprenticeships/app.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/mikeconnolly/Desktop/Projects/Web/rock_paper_scissors/rps-challenge-apprenticeships/spec/features/test_page_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1624009439
+  }
+}

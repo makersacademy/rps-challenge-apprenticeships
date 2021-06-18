@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'bootstrap', '~> 5.0.1'
 gem 'sinatra'
+gem 'sinatra-contrib'
 
 group :test do
   gem 'capybara'
