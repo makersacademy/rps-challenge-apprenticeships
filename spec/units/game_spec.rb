@@ -30,12 +30,19 @@ let(:computer) { class_double(Computer) }
 
   end
 
-  context "when playing any game" do
+  context "when playing either 1 or 2 player game" do
 
     describe '#set_player_1_choice' do
       it 'can set player 1 choice as scissors' do
         object.set_player_1_choice("scissors")
         expect(object.player_1_choice).to eq("scissors")
+      end
+    end
+
+    describe '#set_player_2_choice' do
+      it 'can set player 2 choice as scissors' do
+        object.set_player_2_choice("scissors")
+        expect(object.player_2_choice).to eq("scissors")
       end
     end
 

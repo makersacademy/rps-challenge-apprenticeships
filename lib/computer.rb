@@ -1,13 +1,13 @@
 class Computer
 
-  attr_reader :name
+  attr_reader :name, :choice
 
   def initialize
     @name = ["Deep Thought"].sample
   end
 
   def make_move
-    ["Rock", "Paper", "Scissors"].sample
+    @choice = ["Rock", "Paper", "Scissors"].sample
   end
 
 
