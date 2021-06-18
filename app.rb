@@ -16,11 +16,6 @@ class RockPaperScissors < Sinatra::Base
     elsif session[:number_of_players] == 1
       redirect('/one-player')
     end
-    # if params[:name] == "2P"
-    #   redirect('/two-player')
-    # elseif params[:name] == "1P"
-    #   redirect('/one-player')
-    # end
   end
 
   get '/one-player' do
@@ -45,13 +40,16 @@ class RockPaperScissors < Sinatra::Base
 
   get '/welcome' do
     @game = session[:game]
-    # @player1 = @game.player_1
-    # @player2 = @game.player_2
     erb :welcome_screen
   end
 
-  post '/begin' do
-    redirect('/game')
+  get '/begin' do
+    @players = session[:number_of_players]
+    if @players == 1
+      redirect('/game')
+    elsif @players == 2
+      redirect('/multiplayer-game')
+    end
   end
 
   get '/game' do
@@ -59,10 +57,15 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  get '/multiplayer-game' do
+    @game = session[:game]
+    erb :multiplayer_game
+  end
+
   post '/move-submit' do
     @game = session[:game]
-    @game.player_1.set_move(params[:player_choice])
-    @game.player_2.make_move
+    @game.player_1.set_move(params[:player_1_choice])
+    @game.player_2.set_move(params[:player_2_choice])
     redirect('/results')
   end
 

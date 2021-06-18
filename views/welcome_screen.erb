@@ -8,7 +8,7 @@
     <div>
       <h1><%= @game.player_1.name %> vs <%= @game.player_2.name %></h1>
       <br>
-      <form action="/begin" method="post">
+      <form action="/begin" method="get">
         <input type="submit" name="Start" value="Begin!">
       </form>
     </div>

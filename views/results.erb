@@ -5,9 +5,19 @@
     <title></title>
   </head>
   <body>
-    <%= @game.player_1.name %> chose <%= @game.player_1.choice %>,  <%= @game.player_2.name %> chose <%= @game.player_2.choice %>
     <br>
-
+    <%= @game.player_1.name %> chose <strong><%= @game.player_1.choice %></strong>,  <%= @game.player_2.name %> chose <strong> <%= @game.player_2.choice %></strong>
+    <br>
+    <br>
     <h1><%= @game.return_winner %></h1>
+    <br>
+    <br>
+    <h3></h3>
+    <br>
+    <br>
+    <h2> <a href="/begin">Go again </a></h2>
+    <br>
+    <br>
+    <h3><a href="/">or return to player select<a/></h3>
   </body>
 </html>

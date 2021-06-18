@@ -6,6 +6,15 @@ class Player
   end
 
   def set_move(move)
-    @choice = move.downcase
+    options = {
+      "roc" => "rock",
+      "pap" => "paper",
+      "sci" => "scissors",
+    }
+    if move == "roc" || move == "pap" || move == "sci"
+      @choice = options[move]
+    else
+      @choice = move
+    end
   end
 end
