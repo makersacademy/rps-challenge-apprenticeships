@@ -13,9 +13,11 @@ feature "a user can play a game of rock/paper/scissors" do
 
   context "when playing a single player game" do
 
-    scenario "the user can select a move" do
+    scenario "the user can select rock, paper or scissors" do
       start_single_player_game(player1)
-      expect(page).to have_content "Game page"
+      expect(page).to have_button("Rock")
+      expect(page).to have_button("Paper")
+      expect(page).to have_button("Scissors")
     end
 
   end

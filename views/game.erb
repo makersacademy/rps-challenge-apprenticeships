@@ -1,1 +1,19 @@
-Game page
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RPS PvE</title>
+  </head>
+  <body>
+    <header>
+    <h1><%= @player_1 %> V Computer</h1>
+    </header>
+    <main>
+      <form action="/move-submit" method="post">
+        <input type="submit" name="player_choice" value="Rock" />
+        <input type="submit" name="player_choice" value="Paper" />
+        <input type="submit" name="player_choice" value="Scissors" />
+      </form>
+    </main>
+  </body>
+</html>
