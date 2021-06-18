@@ -5,4 +5,9 @@ describe Computer do
     expect(subject.name).to_not be_empty
   end
 
+  it 'can make a move' do
+    srand(4)
+    expect(subject.make_move).to eq("Scissors")
+  end
+
 end

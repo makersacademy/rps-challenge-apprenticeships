@@ -17,17 +17,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/one-player' do
+    session[:player_2] = "Computer"
     erb :singleplayermenu
   end
 
   post '/name-submit' do
-    session[:name] = params[:name]
+    session[:player_1] = params[:name]
     redirect('/welcome')
   end
 
   get '/welcome' do
-    @player1 = session[:name]
-    @player2 = "Computer"
+    @player1 = session[:player_1]
+    @player2 = session[:player_2]
     erb :welcome_screen
   end
 
@@ -35,12 +36,17 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
-  post '/calculate-result' do
-
+  post '/move-submit' do
+    session[:player_1_choice] = params[:player_choice]
+    redirect('/results')
   end
 
   get '/results' do
-
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    @player_1_choice = session[:player_1_choice]
+    @player_2_choice = "Rock"
+    erb :results
   end
 
 
