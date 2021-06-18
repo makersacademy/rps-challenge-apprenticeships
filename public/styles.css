@@ -1,0 +1,78 @@
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: #fc8b3a;
+  font-weight: 300;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+}
+
+.container h1 {
+  font-size: 32px;
+  font-weight: 600;
+}
+
+form {
+  border: 3px solid rgb(26, 26, 26);
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form > * {
+  padding-bottom: 1em;
+}
+
+label span {
+  font-size: 24px;
+}
+
+input,
+select {
+  padding: 0.5em;
+  border: 2px solid black;
+  outline: none;
+}
+
+input[type="submit"] {
+  background-color: rgb(32, 32, 32);
+  color: #fdfdfd;
+  transition: 0.25s ease;
+}
+
+input[type="submit"]:hover,
+p:hover {
+  transform: scale(1.1);
+}
+
+a {
+  color: #fdfdfd;
+  text-transform: uppercase;
+  letter-spacing: 00.25em;
+  text-decoration: none;
+}
+
+a > p {
+  background-color: #92a5ff;
+  padding: 1em 2em;
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+form,
+input,
+select,
+p {
+  border-radius: 5px;
+}
+
+.points {
+  width: 20em;
+  /* background-color: antiquewhite; */
+  display: flex;
+  justify-content: space-between;
+}
