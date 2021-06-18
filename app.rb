@@ -15,7 +15,13 @@ class RockPaperScissors < Sinatra::Base
   end
   post '/name' do
     session[:name_one] = params[:Name_one]
+    redirect('/play')
   end
+  get '/play' do
+    @name_one = session[:name_one]
+    erb :start_game
+  end
+
 
   run! if app_file == $0
 end
