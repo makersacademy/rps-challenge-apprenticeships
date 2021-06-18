@@ -2,6 +2,7 @@ require 'sinatra/base'
 
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
   get '/test' do
     'test page'
   end
