@@ -1,10 +1,9 @@
 require 'sinatra/base'
+require_relative 'lib/game'
+require_relative 'lib/player'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
-
-  get '/test' do
-    'test page'
-  end
 
   get '/' do
     erb :index
@@ -12,40 +11,58 @@ class RockPaperScissors < Sinatra::Base
 
   post '/mode-select' do
     choice = params[:name]
-    redirect('/two-player') if choice == "2P"
-    redirect('/one-player')
+    if choice == "2P"
+      redirect('/two-player')
+    else
+      redirect('/one-player')
+    end
   end
 
   get '/one-player' do
-    session[:player_2] = "Computer"
     erb :singleplayermenu
   end
 
+  get '/two-player' do
+    erb :multiplayermenu
+  end
+
   post '/name-submit' do
-    session[:player_1] = params[:name]
+    if params[:p2_name]
+      player1 = Player.new(params[:p1_name])
+      player2 = Player.new(params[:p2_name])
+      session[:game] = Game.new(player1, player2)
+    else
+      player1 = Player.new(params[:p1_name])
+      session[:game] = Game.new(player1)
+    end
     redirect('/welcome')
   end
 
   get '/welcome' do
-    @player1 = session[:player_1]
-    @player2 = session[:player_2]
+    @game = session[:game]
+    # @player1 = @game.player_1
+    # @player2 = @game.player_2
     erb :welcome_screen
   end
 
+  post '/begin' do
+    redirect('/game')
+  end
+
   get '/game' do
+    @game = session[:game]
     erb :game
   end
 
   post '/move-submit' do
-    session[:player_1_choice] = params[:player_choice]
+    @game = session[:game]
+    @game.player_1.set_move(params[:player_choice])
+    @game.player_2.make_move
     redirect('/results')
   end
 
   get '/results' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
-    @player_1_choice = session[:player_1_choice]
-    @player_2_choice = "Rock"
+    @game = session[:game]
     erb :results
   end
 

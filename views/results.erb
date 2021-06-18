@@ -5,6 +5,9 @@
     <title></title>
   </head>
   <body>
-    <%= @player_1 %> chose <%= @player_1_choice %>,  <%= @player_2 %> chose <%= @player_2_choice %>
+    <%= @game.player_1.name %> chose <%= @game.player_1.choice %>,  <%= @game.player_2.name %> chose <%= @game.player_2.choice %>
+    <br>
+
+    <h1><%= @game.return_winner %></h1>
   </body>
 </html>

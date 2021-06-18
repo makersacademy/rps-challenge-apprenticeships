@@ -6,9 +6,14 @@
   </head>
   <body>
     <header>
-    <h1><%= @player_1 %> V Computer</h1>
+      <h2>This match:</h2>
+    <h1><%= @game.player_1.name %> V Computer</h1>
     </header>
     <main>
+      <br>
+      <br>
+      <h2> Choose your move (wisely)! </h2>
+      <br>
       <form action="/move-submit" method="post">
         <input type="submit" name="player_choice" value="Rock" />
         <input type="submit" name="player_choice" value="Paper" />
