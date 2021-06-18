@@ -26,6 +26,7 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @player = session[:player]
     @move = session[:move]
+    @comp_move = ['rock', 'paper', 'scissors'].sample
     erb :result
   end
   
