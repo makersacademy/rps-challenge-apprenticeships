@@ -5,7 +5,7 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
   
   get '/' do
-    erb :form
+    erb :sign_in
   end
 
   post '/start' do
@@ -28,10 +28,6 @@ class RockPaperScissors < Sinatra::Base
     @move = session[:move]
     @comp_move = ['rock', 'paper', 'scissors'].sample
     erb :result
-  end
-  
-  get '/test' do
-    'test page'
   end
 
   run! if app_file == $0
