@@ -49,12 +49,16 @@ let(:computer) { class_double(Computer) }
     describe '#calculate_winner' do
 
       it "calculates rock beats scissors and announces winner" do
-        game = Game.new(player_1)
-        game.set_player_1_choice("rock")
-        game.set_player_2_choice("scissors")
-        expect(game.return_winner).to eq(player_1)
+        object.set_player_1_choice("rock")
+        object.set_player_2_choice("scissors")
+        expect(object.return_winner).to eq(player_1)
       end
 
+      it "returns draw in a draw" do
+        object.set_player_1_choice("rock")
+        object.set_player_2_choice("rock")
+        expect(object.return_winner).to eq("It's a tie!")
+      end
     end
   end
 end

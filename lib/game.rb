@@ -16,6 +16,7 @@ class Game
 
   def return_winner
     return @player_1 if player1_wins?
+    return "It's a tie!" if draw?
     return @player2
   end
 
@@ -27,4 +28,7 @@ class Game
     (@player_1_choice == "scissors" && @player_2_choice == "paper")
   end
 
+  def draw?
+    @player_1_choice == @player_2_choice
+  end
 end
