@@ -12,12 +12,14 @@
     </div>
     <main>
       <br>
-      <h2>To get started, please choose your game mode:</h2>
-      <form action='/mode-select' method='post'>
-        
-        <br>
-        <input type="submit" name="1P" value="Single Player (vs Computer)">
-        <input type="submit" name="2P" value="Two Player">
+      <h2>To get started, please select number of players:</h2>
+      <form action="/mode-select" method="post">
+        <label for="Mode">Players:  </label>
+          <select name="Mode">
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        <input type="submit" value="Select">
       </form>
     </main>
   </body>

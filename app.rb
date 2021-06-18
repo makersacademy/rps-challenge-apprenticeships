@@ -10,12 +10,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/mode-select' do
-    choice = params[:name]
-    if choice == "2P"
+    session[:number_of_players] = params[:Mode].to_i
+    if session[:number_of_players] == 2
       redirect('/two-player')
-    else
+    elsif session[:number_of_players] == 1
       redirect('/one-player')
     end
+    # if params[:name] == "2P"
+    #   redirect('/two-player')
+    # elseif params[:name] == "1P"
+    #   redirect('/one-player')
+    # end
   end
 
   get '/one-player' do

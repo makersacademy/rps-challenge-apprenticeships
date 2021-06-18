@@ -38,7 +38,15 @@ feature "a user can play a game of rock/paper/scissors" do
   end
 
   context "when playing a Multiplayer game" do
-
+    scenario 'two users can play together' do
+      visit('/')
+      select("2", from: "Mode")
+      click_button("Select")
+      fill_in :p1_name, with: "Red"
+      fill_in :p2_name, with: "Blue"
+      click_button("Start")
+      expect(page).to have_content "Red vs Blue"
+    end
   end
 
   context "when playing either game mode" do
