@@ -1,26 +1,25 @@
 require "sinatra/base"
+require "./lib/player.rb"
 # require "sinatra/reloader"
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
-
   get "/" do
     erb :index
   end
 
   post "/start" do
-    session[:player1] = params[:player1]
+    $player1 = Player.new(params[:player1])
     redirect "/play"
   end
 
   get "/play" do
-    @player1 = session[:player1]
+    @player1 = $player1.name
     erb :play
   end
 
   get "/rps-game" do
     @move = ["rock", "paper", "scissors"].sample
-    @player1 = session[:player1]
+    @player1 = $player1.name
     erb :game
   end
 
