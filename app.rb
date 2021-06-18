@@ -21,14 +21,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choices' do
-    $opponent = ComputerChoice.new
-    comp_choice = $opponent.comp_choice
+    opponent = ComputerChoice.new
+    comp_choice = opponent.comp_choice
     $game = Game.new(params[:choice], comp_choice)
+    $result = $game.result
     redirect '/result'
   end
 
   get '/result' do
     @game = $game
+    @result = $result
     erb :result
   end
 

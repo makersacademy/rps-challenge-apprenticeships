@@ -10,6 +10,6 @@ feature 'Select choice' do
     sign_in
     fill_in :choice, with: 'Rock'
     click_button('Submit')
-    expect(page).to have_content('You Chose Rock')
+    expect(page).to have_content('You chose Rock')
   end
 end

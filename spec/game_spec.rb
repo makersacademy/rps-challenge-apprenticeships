@@ -15,4 +15,8 @@ describe Game do
     expect(game.comp_choice).to eq("Paper")
   end
 
+  it 'chooses a winner' do
+    expect(game.result).to eq("Computer wins")
+  end
+
 end
