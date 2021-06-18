@@ -2,14 +2,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
 <body class="text-center bg-light bg-gradient">
-    <h1 class="mt-5"><%= @player %> played: <%= @move %></h1>
-    <h1 class="mt-5">Computer played: <%= @comp_move %></h1>
+    <h1 class="mt-5"><%= @player1 %> played: <%= @p1_move %></h1>
+    <h1 class="mt-5"><%= @player2 %> played: <%= @p2_move %></h1>
 
-    <% if @comp_move == @move %>
+    <% if @p1_move == @p2_move %>
         <h1 class="mt-5">Draw!</h1>
-    <% elsif @comp_move == 'rock' && @move == 'paper' || @comp_move == 'scissors' && @move == 'rock' || @comp_move == 'paper' && @move == 'scissors' %>
-        <h1 class="mt-5"><%= @player %> wins!</h1>
+    <% elsif @p1_move == 'rock' && @p2_move == 'paper' || @p1_move == 'scissors' && @p2_move == 'rock' || @p1_move == 'paper' && @p2_move == 'scissors' %>
+        <h1 class="mt-5"><%= @player2 %> wins!</h1>
     <% else %>
-        <h1 class="mt-5">Computer wins!</h1>
+        <h1 class="mt-5"><%= @player1 %> wins!</h1>
     <% end %>
 </body>

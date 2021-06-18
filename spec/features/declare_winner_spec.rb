@@ -1,23 +1,24 @@
 feature 'declare winner of the game' do
-    scenario 'show player won' do
-        srand(5)
+    
+    scenario 'show player1 win' do
         sign_in_and_play
         choose_rock
-        expect(page).to have_content ('Computer played: scissors')
+        choose_scissors
         expect(page).to have_content ('Anita wins!')
     end
-    scenario 'show player lost' do
-        srand(10)
+
+    scenario 'show player1 lose' do
         sign_in_and_play
+        choose_scissors
         choose_rock
-        expect(page).to have_content ('Computer played: paper')
-        expect(page).to have_content ('Computer wins!')
+        expect(page).to have_content ('Bob wins!')
     end
-    scenario 'show a draw' do
-        srand(15)
+
+    scenario 'show draw' do
         sign_in_and_play
-        choose_rock
-        expect(page).to have_content ('Computer played: rock')
+        choose_paper
+        choose_paper
         expect(page).to have_content ('Draw!')
     end
+
 end
