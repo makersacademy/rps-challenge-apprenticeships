@@ -1,6 +1,5 @@
 def sign_in_and_play
   visit ('/names')
-    name = 'name'
-    fill_in 'human_player', with: name
-    click_button 'Play!'
+    fill_in 'human_player', with: 'Marketeer'
+    click_button 'Sign into the game!'
 end
