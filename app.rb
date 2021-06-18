@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -23,9 +24,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    game = Game.new
     @name = session[:name]
     @option = session[:option]
     @computer_option = ["ROCK", "PAPER", "SCISSORS"].sample
+    @final_message = game.final_message(@option, @computer_option)
     erb :play
   end
   

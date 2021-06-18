@@ -5,6 +5,8 @@
 
 <% if @option %>
   <h4>You picked <%= @option%> and Darth Vader picked <%= @computer_option%></h4>
+  <br>
+  <h4><%= @final_message%></h4>
 <% else %>
   <h4>Pick one option:</h4>
   <form action="/option" method="POST">

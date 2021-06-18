@@ -30,4 +30,22 @@ feature 'play game rock-paper-scissors' do
     click_button "PAPER"
     expect(page).to have_content("and Darth Vader picked SCISSORS")
   end
+
+  scenario 'a winner is declared' do
+    visit '/'
+    fill_in :name, with: 'Super Mario'
+    click_button 'Start Game'
+    srand(7)
+    click_button "PAPER"
+    expect(page).to have_content("You WIN!")
+  end
+
+  scenario 'a draw is declared' do
+    visit '/'
+    fill_in :name, with: 'Super Mario'
+    click_button 'Start Game'
+    srand(7)
+    click_button "ROCK"
+    expect(page).to have_content("It's a DRAW!")
+  end
 end
