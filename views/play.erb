@@ -5,7 +5,10 @@
   </head>
   <body class="container">
     <section>
-      <h1><%= @player1 %> vs Computer</h1>
+      <h1>Are you ready to play, <%= @player1 %>?</h1>
     </section>
+    <form action ="/rps-game" method="get" class="container">
+      <button class="container"><span>Let's Play!</span></button>
+    </form>
   </body>
 </html>

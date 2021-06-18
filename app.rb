@@ -1,4 +1,5 @@
 require "sinatra/base"
+# require "sinatra/reloader"
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -15,6 +16,12 @@ class RockPaperScissors < Sinatra::Base
   get "/play" do
     @player1 = session[:player1]
     erb :play
+  end
+
+  get "/rps-game" do
+    @move = ["rock", "paper", "scissors"].sample
+    @player1 = session[:player1]
+    erb :game
   end
 
   run! if app_file == $0

@@ -9,13 +9,16 @@ body {
   place-items: center;
 }
 
+.black-border {
+  border: 3px solid rgb(26, 26, 26);
+}
+
 .container h1 {
   font-size: 32px;
   font-weight: 600;
 }
 
 form {
-  border: 3px solid rgb(26, 26, 26);
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -44,8 +47,7 @@ input[type="submit"] {
   transition: 0.25s ease;
 }
 
-input[type="submit"]:hover,
-p:hover {
+input[type="submit"]:hover, button:hover{
   transform: scale(1.1);
 }
 
@@ -57,7 +59,7 @@ a {
 }
 
 a > p {
-  background-color: #92a5ff;
+  background-color: #3c3836;
   padding: 1em 2em;
   text-align: center;
   transition: 0.25s ease;
@@ -66,13 +68,15 @@ a > p {
 form,
 input,
 select,
-p {
+button{
   border-radius: 5px;
 }
 
-.points {
-  width: 20em;
-  /* background-color: antiquewhite; */
-  display: flex;
-  justify-content: space-between;
+button {
+  font-size: 18px;
+  background-color: #f4f3f3;
+  color: #3c3836;
+  border: none;
+  transition: 0.25s ease;
+  padding: 1em 2em;
 }
