@@ -18,5 +18,15 @@ class RockPaperScissors < Sinatra::Base
     erb :start_game
   end
 
+  post '/playerchoice' do
+    $choice = params[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @choice = $choice
+    erb :result
+  end
+
   run! if app_file == $0
 end
