@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    session[:option] = nil
     erb :index
   end
 
@@ -24,6 +25,7 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @name = session[:name]
     @option = session[:option]
+    @computer_option = ["ROCK", "PAPER", "SCISSORS"].sample
     erb :play
   end
   

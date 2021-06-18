@@ -21,4 +21,13 @@ feature 'play game rock-paper-scissors' do
     click_button random_pick
     expect(page).to have_content("You picked #{random_pick}")
   end
+
+  scenario 'game will choose a random option' do
+    visit '/'
+    fill_in :name, with: 'Super Mario'
+    click_button 'Start Game'
+    srand(4)
+    click_button "PAPER"
+    expect(page).to have_content("and Darth Vader picked SCISSORS")
+  end
 end
