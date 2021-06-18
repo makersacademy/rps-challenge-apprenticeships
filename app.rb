@@ -1,7 +1,12 @@
-require 'sinatra/base'
+require "sinatra/base"
+
 class RockPaperScissors < Sinatra::Base
-  get '/test' do
-    'test page'
+  get "/" do
+    erb :index
+  end
+  post "/star-the-game" do
+    @name = params[:name]
+    erb :play
   end
 
   run! if app_file == $0
