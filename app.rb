@@ -35,6 +35,14 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post '/calculate-result' do
+
+  end
+
+  get '/results' do
+
+  end
+
 
   run! if app_file == $0
 end
