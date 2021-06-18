@@ -16,11 +16,10 @@ class Game
   def calc_winner(player, computer)
     if player == computer
       @winner = "draw"
-    elsif player == "ROCK" && computer == "SCISSORS"
-      @winner = 'player'
-    elsif player == "PAPER" && computer == "ROCK"
-      @winner = 'player'
-    elsif player == "SCISSORS" && computer == "PAPER"
+    elsif (player == "ROCK" && computer == "SCISSORS") ||
+          (player == "PAPER" && computer == "ROCK") ||
+          (player == "SCISSORS" && computer == "PAPER")
+          
       @winner = 'player'
     else
       @winner = 'computer'
