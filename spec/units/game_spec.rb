@@ -33,9 +33,9 @@ let(:computer) { class_double(Computer) }
   context "when playing either 1 or 2 player game" do
 
     describe '#set_player_1_choice' do
-      it 'can set player 1 choice as scissors' do
-        object.set_player_1_choice("scissors")
-        expect(object.player_1_choice).to eq("scissors")
+      it 'can set player 1 choice as rock' do
+        object.set_player_1_choice("rock")
+        expect(object.player_1_choice).to eq("rock")
       end
     end
 
@@ -48,8 +48,11 @@ let(:computer) { class_double(Computer) }
 
     describe '#calculate_winner' do
 
-      it "calculates rock beats paper" do
-
+      it "calculates rock beats scissors and announces winner" do
+        game = Game.new(player_1)
+        game.set_player_1_choice("rock")
+        game.set_player_2_choice("scissors")
+        expect(game.return_winner).to eq(player_1)
       end
 
     end

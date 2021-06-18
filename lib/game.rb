@@ -7,10 +7,24 @@ class Game
   end
 
   def set_player_1_choice(choice)
-    @player_1_choice = choice
+    @player_1_choice = choice.downcase
   end
 
   def set_player_2_choice(choice=player_2.choice)
-    @player_2_choice = choice
+    @player_2_choice = choice.downcase
   end
+
+  def return_winner
+    return @player_1 if player1_wins?
+    return @player2
+  end
+
+  private
+
+  def player1_wins?
+    (@player_1_choice == "rock" && @player_2_choice == "scissors") ||
+    (@player_1_choice == "paper" && @player_2_choice == "rock") ||
+    (@player_1_choice == "scissors" && @player_2_choice == "paper")
+  end
+
 end
