@@ -17,6 +17,17 @@ class RockPaperScissors < Sinatra::Base
     @player = session[:player]
     erb :play
   end
+
+  post '/move' do
+    session[:move] = params[:move]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @player = session[:player]
+    @move = session[:move]
+    erb :result
+  end
   
   get '/test' do
     'test page'

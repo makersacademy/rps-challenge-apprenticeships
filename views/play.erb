@@ -1,1 +1,9 @@
-<%= @player %>
+<h1><%= @player %></h1>
+<form action='/move' method='post'>
+    <label>Pick your move: </label><br>
+        <input type='radio' name='move' value='rock'>
+        <label for='rock'>rock</label><br>
+    <input type='submit' value='submit'>
+</form>
+
+
