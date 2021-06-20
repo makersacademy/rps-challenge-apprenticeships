@@ -6,22 +6,58 @@
 
 ```
 sequenceDiagram
-User->>+Browser: types 'http://localhost:4567/'
-Browser->>+Controller: GET /
+    User->>+Browser: type `http://localhost:4567/`
+    Browser->>+Controller: GET '/'
+    Controller->>+View: render :index
+    View->>-Controller: HTML
+    Controller->>-Browser: 200 OK, body HTML
+    Browser->>-User: see home page
+
+    User->>+Browser: select `mode` from 'player select' and click `Start`
+    Browser->>+Controller: POST /mode-select formdata
+    Controller->>+Model: store :number_of_players in session[]
+    Model->>-Controller: send session[:number_of_players]
+    Controller->>Browser: IF session[:number_of_players] == 1, 303 Redirect, `/one-player'
+        Browser->>Controller: GET /one-player
+        Controller->>+View: render :singleplayermenu
+        View->>-Controller: HTML
+        Controller->>Browser: 200 OK, body HTML
+        Browser->>User: see 1 player name form
+    Controller->>Browser: IF session[:number_of_players] == 2, 303 Redirect, `/two-player`
+        Browser->>Controller: GET /two-player
+        Controller->>+View: render :multiplayermenu
+        View->>-Controller: HTML
+        Controller->>-Browser: 200 OK, body HTML
+        Browser->>-User: see 2 player name form
+
+    User->>+Browser: fill in name(s) and press 'Start'
+    Browser->>+Controller: POST '/name-submit', formdata
+    Controller->>+Model: store session[:game]
+    Controller->>Browser: 303 Redirect, '/welcome'
+    Browser->>Controller: GET '/welcome'
+    Model->>-Controller: unpack session[:game] to @game
+    Controller->>View: render :welcome_screen
+    View->>Controller: HTML
+    Controller->>-Browser: 200 OK, body HTML + @game.player_1.name, @game.player_2.name
+    Browser->>-User: see name(s) on welcome screen
+
+    User->>Browser: clicks 'Begin'
+    Browser->>+Controller: IF singleplayer GET '/game'
+        Model->>Controller: unpack session[:game] to @game
+        Controller->>+View:  render :game
+        View->>-Controller: HTML
+        Controller->>-Browser: 200 OK, body HTML + @game.player_1.name, @game.player_2.name
+    Browser->>+Controller: IF two-player GET '/mulitplayer-game'
+        Controller->>View:  render :multiplayergame
+        View->>Controller: HTML, @game.player_1, @game.player_2
+        Controller->>-Browser: 200 OK, body HTML + @game.player_1.name, @game.player_2.name
+        Browser->>User: sees names + rock/paper/scissors move options
 
 
-Controller->>-Browser: 200 OK, body HTML
-Browser->>-User: see homepage
 
 
-User->>+Browser: fills in name form + clicks 'submit'
-Browser->>+Controller: POST /name-form formdata
-Controller->>+Model: session[:name]
-Model->>-Controller: :name
-Controller->>+View: render :name in :layout
-View->>-Controller: HTML
-Controller->>-Browser: 303 Redirect, '/welcome-page'
-Browser->>-User: Sees personanlised greeting and game mode select
+
+
 
 ```
 
