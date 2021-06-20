@@ -26,7 +26,7 @@ let(:pvp_game) { Game.new(player_1, player_2) }
 
       it 'allows the computer to make a choice' do
         srand(4)
-        expect(object.player_2.make_move).to eq "scissors"
+        expect(object.player_2.make_move).to eq "paper"
       end
 
 
@@ -40,7 +40,7 @@ let(:pvp_game) { Game.new(player_1, player_2) }
     describe '#calculate_winner' do
 
       it "calculates rock beats scissors and announces winner" do
-        allow(object.player_1).to receive_messages(:choice => "rock", :name => player_1)
+        allow(object.player_1).to receive_messages(:choice => "rock", :name => player_1, :win! => true)
         allow(object.player_2).to receive_messages(:choice =>"scissors", :name => player_2)
         expect(object.return_winner).to eq("#{player_1} wins!")
       end

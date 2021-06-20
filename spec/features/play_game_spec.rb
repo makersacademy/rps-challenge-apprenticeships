@@ -16,22 +16,21 @@ feature "a user can play a game of rock/paper/scissors" do
 
     scenario "the user can select rock, paper or scissors" do
       start_single_player_game(player1)
-      expect(page).to have_button("Rock")
-      expect(page).to have_button("Paper")
-      expect(page).to have_button("Scissors")
+      expect(page).to have_button("rock")
+      expect(page).to have_button("paper")
+      expect(page).to have_button("scissors")
     end
 
     scenario "the computer makes a move" do
       start_single_player_game(player1)
-      click_button("Rock")
-      expect(page).to have_content("Computer chose scissors")
+      click_button("rock")
+      expect(page).to have_content("Computer chose paper")
 
     end
 
     scenario "Player win is announced" do
-      srand(4)
       start_single_player_game(player1)
-      click_button("Rock")
+      click_button("scissors")
       expect(page).to have_content("#{player1} wins!")
     end
 
