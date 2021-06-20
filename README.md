@@ -73,8 +73,9 @@ sequenceDiagram
 
 ### Diagram
 
+[Direct link here](../docs/RPS_MVC_diagram.jpg)
 
-
+![MVC diagram](../docs/RPS_MVC_diagram.jog)
 
 
 ## Instructions
