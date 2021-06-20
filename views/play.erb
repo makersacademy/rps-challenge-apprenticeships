@@ -1,0 +1,36 @@
+<h1>  <%= $name %> Choose:</h1>
+<a href="/play?choice=rock"><button type="button" >Rock</button></a>
+<a href="/play?choice=paper"><button type="button" >Paper</button></a>
+<a href="/play?choice=scissors"><button type="button" >Scissors</button></a>
+
+
+
+<ol>
+ <% for @play in @plays %>
+    <li>
+      <span>
+       <b>user choice: </b>
+        <%= @play.user_choice %>
+      </span>
+      <br>
+      <span>
+        <b>machine choice: </b>
+         <%= @play.machine_choice %>
+      </span>
+  
+    </li>
+  <% end %>
+  </ol>
+  
+ <% if @score %>
+ <h3> Game result</h3>  <%= @score[:msg] %>
+ <br>
+   <span>
+      <b>user score </b>  <%= @score[:user] %>
+   </span>
+   <br>
+    <span>
+      <b>machine score </b>  <%= @score[:machine] %>
+    </span>
+ <% end %>
+ 

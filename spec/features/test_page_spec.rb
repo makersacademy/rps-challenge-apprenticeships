@@ -1,6 +1,6 @@
-feature 'test page' do
-  scenario 'visit test page' do
-    visit '/test'
-    expect(page).to have_content('test page')
+feature "entering name" do
+  scenario "visit start game page" do
+    visit "/"
+    expect(page).to have_content("Sing in to play!")
   end
 end
