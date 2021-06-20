@@ -7,12 +7,14 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
   $game = Game.new
+  $name
+
   get "/" do
     erb :index
   end
   post "/star-the-game" do
-    @name = params[:name]
-
+    $name = params[:name]
+    @plays = $game.get_plays
     erb :play
   end
 
@@ -21,9 +23,11 @@ class RockPaperScissors < Sinatra::Base
     machine_choice = $game.get_rand_choice
     play_result = $game.get_curr_res(user_choice, machine_choice)
     $game.add_play(user_choice, machine_choice, play_result)
-    # # if $game.get_plays.length == 3
-    # #   return
-    # end
+    @plays = $game.get_plays
+    if $game.get_plays.length == 3
+      @score = $game.get_game_result
+      $game.restart_game
+    end
     erb :play
   end
 
