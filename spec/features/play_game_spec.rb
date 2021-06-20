@@ -37,14 +37,20 @@ feature "a user can play a game of rock/paper/scissors" do
   end
 
   context "when playing a Multiplayer game" do
-    scenario 'two users can play together' do
-      visit('/')
-      select("2", from: "Mode")
-      click_button("Select")
-      fill_in :p1_name, with: "Red"
-      fill_in :p2_name, with: "Blue"
-      click_button("Start")
-      expect(page).to have_content "Red vs Blue"
+    scenario 'two users can enter their names respectively' do
+      load_multiplayer_game(player1, player2)
+      expect(page).to have_content "#{player1} vs #{player2}"
+    end
+
+    scenario 'two users can select moves' do
+      start_multiplayer_game(player1, player2)
+      # within('move-select') do
+        fill_in :player_1_choice, with: "roc"
+        fill_in :player_2_choice, with: "pap"
+        click_button("Submit")
+      # end
+
+      expect(page).to have_content "#{player1} chose rock, #{player2} chose paper"
     end
   end
 

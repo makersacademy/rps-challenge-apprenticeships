@@ -14,7 +14,21 @@ describe Player do
       object.set_move("rock")
       expect(object.choice).to eq("rock")
     end
+
+    it 'receives a three letter reference and returns a valid move' do
+      object.set_move("roc")
+      expect(object.choice).to eq("rock")
+    end
+
+    it 'returns invalid move if invalid three letter reference is submitted' do
+      object.set_move("tur")
+      expect(object.choice).to eq("an invalid move")
+    end
+
+    it 'returns invalid move if a non-three letter reference is submitted' do
+      object.set_move("turnip")
+      expect(object.choice).to eq("an invalid move")
+    end
   end
 
-  
 end

@@ -17,7 +17,7 @@
       <h3>You may each secretly enter "roc"(k), "pap"(er) or "sci"(ssors)</h3>
       <br>
 
-      <form action="/move-submit" method="post" class="row g-3">
+      <form id="move-select" action="/move-submit" method="post" class="row g-3">
         <div class="col-md-6">
           <label for="player_1_choice" class="form-label"><%= @game.player_1.name %>'s Move:</label>
           <input type="password" class="form-control" name="player_1_choice" placeholder="Enter roc / pap / sci">
@@ -27,7 +27,7 @@
           <input type="password" class="form-control" name="player_2_choice" placeholder="roc / pap / sci">
         </div>
         <div class="col-12">
-          <button type="submit" class="btn btn-primary" name="player_choices">Go!</button>
+          <button type="submit" class="btn btn-primary" name="Submit">Go!</button>
         </div>
       </form>
     </main>
