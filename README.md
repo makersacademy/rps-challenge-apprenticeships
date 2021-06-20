@@ -73,9 +73,9 @@ sequenceDiagram
 
 ### Diagram
 
-[Direct link here](../docs/RPS_MVC_diagram.jpg)
+[Direct link here](https://github.com/Aroax/rps-challenge-apprenticeships/blob/master/docs/RPS_MVC_diagram.jpg)
 
-![MVC diagram](../docs/RPS_MVC_diagram.jog)
+![MVC diagram](https://github.com/Aroax/rps-challenge-apprenticeships/blob/master/docs/RPS_MVC_diagram.jpg)
 
 
 ## Instructions
