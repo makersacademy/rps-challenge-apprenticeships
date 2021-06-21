@@ -63,6 +63,13 @@ let(:pvp_game) { Game.new(player_object_1, player_object_2) }
         allow(object.player_2).to receive_messages(:choice =>"scissors", :name => player_2)
         expect(object.return_winner).to eq("#{player_2} wins!")
       end
+
+      it "calculates lizard beats spock and announces winner" do
+        allow(object.player_1).to receive_messages(:choice => "lizard", :name => player_1, :win! => true)
+        allow(object.player_2).to receive_messages(:choice =>"spock", :name => player_2)
+        expect(object.return_winner).to eq("#{player_1} wins!")
+      end
     end
+
   end
 end
