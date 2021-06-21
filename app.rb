@@ -7,7 +7,6 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
   
   get '/' do
-    'test page'
     erb :index
   end
 
@@ -26,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
     opponent = Opponent.new
 
     @choice = params[:choice]
-    player_choice = player.make_choice(@choice)
+    player.make_choice(@choice)
 
     session[:game] = Game.new(player, opponent)
     session[:result] = session[:game].result
