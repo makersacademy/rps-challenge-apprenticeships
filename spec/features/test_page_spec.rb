@@ -24,8 +24,8 @@ feature 'allows play' do
   scenario 'player can play rock/paper/scissors against the computer' do
     visit('/game')
     page.find('#rock').click
+    srand(5)
     click_button 'Go!'
-    allow_any_instance_of(RockPaperScissors).to receive(:computer_weapon).and_return(:Scissors)
     expect(page).to have_content('You win!')
   end
 end
