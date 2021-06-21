@@ -44,17 +44,112 @@ feature "a user can play a game of rock/paper/scissors" do
 
     scenario 'two users can select moves' do
       start_multiplayer_game(player1, player2)
-      # within('move-select') do
-        fill_in :player_1_choice, with: "roc"
-        fill_in :player_2_choice, with: "pap"
-        click_button("Submit")
-      # end
-
+      fill_in :player_1_choice, with: "roc"
+      fill_in :player_2_choice, with: "pap"
+      click_button("Submit")
       expect(page).to have_content "#{player1} chose rock, #{player2} chose paper"
     end
+
   end
 
   context "when playing either game mode" do
     # scenario "loser can propose best 2 out of 3"
+  end
+
+    scenario "user(s) can play RPS-Lizard-Spock" do
+
+    end
+end
+
+feature "user(s) can play Rock-Paper-Scissors-Lizard-Spock" do
+  let(:player1) { double("Player 1") }
+  let(:player2) { double("Player 2") }
+  
+  scenario "scissors cuts paper" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "sci"
+    fill_in :player_2_choice, with: "pap"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose scissors, #{player2} chose paper"
+  end
+
+  scenario "paper covers rock" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "pap"
+    fill_in :player_2_choice, with: "roc"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose paper, #{player2} chose rock"
+    expect(page).to have_content "#{player1} wins!"
+  end
+
+  scenario "rock crushes lizard" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "roc"
+    fill_in :player_2_choice, with: "liz"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose rock, #{player2} chose lizard"
+    expect(page).to have_content "#{player1} wins!"
+  end
+
+  scenario "lizard poisons spock" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "liz"
+    fill_in :player_2_choice, with: "spo"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose lizard, #{player2} chose spock"
+    expect(page).to have_content "#{player1} wins!"
+  end
+
+  scenario "spock smashes scissors" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "spo"
+    fill_in :player_2_choice, with: "sci"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose spock, #{player2} chose scissors"
+    expect(page).to have_content "#{player1} wins!"
+  end
+
+  scenario "scissors decapitate lizard" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "sci"
+    fill_in :player_2_choice, with: "spo"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose scissors, #{player2} chose spock"
+    expect(page).to have_content "#{player1} wins!"
+  end
+
+  scenario "lizard eats paper" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "liz"
+    fill_in :player_2_choice, with: "pap"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose lizard, #{player2} chose paper"
+  end
+
+  scenario "paper disproves spock" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "pap"
+    fill_in :player_2_choice, with: "spo"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose paper, #{player2} chose spock"
+    expect(page).to have_content "#{player1} wins!"
+  end
+
+  scenario "spock vaporizes rock" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "spo"
+    fill_in :player_2_choice, with: "roc"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose spock, #{player2} chose rock"
+    expect(page).to have_content "#{player1} wins!"
+  end
+
+  scenario "rock crushes scissors" do
+    start_multiplayer_game(player1, player2)
+    fill_in :player_1_choice, with: "roc"
+    fill_in :player_2_choice, with: "sci"
+    click_button("Submit")
+    expect(page).to have_content "#{player1} chose rock, #{player2} chose scissors"
+    expect(page).to have_content "#{player1} wins!"
   end
 end

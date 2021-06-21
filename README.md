@@ -4,10 +4,20 @@
 
 Working over one day plus a little refining over the weekend, for this task I created a simple-looking ruby web app that allows a user to play a game of Rock Paper Scissors either vs a computer opponent or with another user.
 
+I did not have the time nor the comfort of knowledge to style the site nicely, though I did set up my tree structure to support additional CSS, and implemented bootstrap for a baseline improvement.
+
 ## How to run
 
+1. Clone repo, `cd` to directory and run `bundle install`
+2. Run the app with `ruby app.rb`
 
 ## MVC
+
+### Diagram
+
+[Direct link here](https://github.com/Aroax/rps-challenge-apprenticeships/blob/master/docs/RPS_MVC_diagram.jpg)
+
+![MVC diagram](https://github.com/Aroax/rps-challenge-apprenticeships/blob/master/docs/RPS_MVC_diagram.jpg)
 
 ### Mermaid Code
 
@@ -71,14 +81,10 @@ sequenceDiagram
 
 ```
 
-### Diagram
 
-[Direct link here](https://github.com/Aroax/rps-challenge-apprenticeships/blob/master/docs/RPS_MVC_diagram.jpg)
+# Original Instructions
 
-![MVC diagram](https://github.com/Aroax/rps-challenge-apprenticeships/blob/master/docs/RPS_MVC_diagram.jpg)
-
-
-## Instructions
+## Challenge
 
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
