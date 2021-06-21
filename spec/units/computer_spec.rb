@@ -7,7 +7,7 @@ describe Computer do
 
   it 'can make a move' do
     srand(4)
-    expect(subject.make_move).to eq("paper")
+    expect(subject.make_move).to eq("rock")
   end
 
 end

@@ -23,14 +23,14 @@ feature "a user can play a game of rock/paper/scissors" do
 
     scenario "the computer makes a move" do
       start_single_player_game(player1)
-      click_button("rock")
-      expect(page).to have_content("Computer chose paper")
+      click_button("scissors")
+      expect(page).to have_content("Computer chose rock")
 
     end
 
     scenario "Player win is announced" do
       start_single_player_game(player1)
-      click_button("scissors")
+      click_button("paper")
       expect(page).to have_content("#{player1} wins!")
     end
 

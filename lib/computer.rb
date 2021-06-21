@@ -9,11 +9,11 @@ class Computer
   end
 
   def make_move
-    @choice = ["Rock", "Paper", "Scissors"].sample.downcase
+    @choice = ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample.downcase
   end
 
   def set_move(_move)
-    @choice = ["Rock", "Paper", "Scissors"].sample.downcase
+    @choice = ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample.downcase
   end
 
   def win!

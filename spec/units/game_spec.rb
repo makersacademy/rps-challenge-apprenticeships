@@ -30,7 +30,7 @@ let(:pvp_game) { Game.new(player_object_1, player_object_2) }
 
       it 'allows the computer to make a choice' do
         srand(4)
-        expect(object.player_2.make_move).to eq "paper"
+        expect(object.player_2.make_move).to eq "rock"
       end
 
   end
