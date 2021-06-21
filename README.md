@@ -2,6 +2,10 @@
 
 Built an interactive game in Sinatra, allowing user to play rock-paper-scissors against the computer.
 
+### MVC
+
+[MVC sequence diagram](screenshots/rps-mvc-sequence-diagram.png)
+
 ### Screenshots
 
 <img src="/screenshots/register-player.png" width= "50%">
@@ -23,8 +27,6 @@ Built an interactive game in Sinatra, allowing user to play rock-paper-scissors 
 ```bash
 $ bundle install
 $ rspec
-# You should output that includes:
-# 1 example, 0 failures
 ```
 
 ## Task
