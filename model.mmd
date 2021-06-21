@@ -1,0 +1,34 @@
+sequenceDiagram
+	User->>+Browser: enters name and clicks `Let's get started!`
+  Browser->>+Controller: POST /name
+  Controller->>+Model: gets data from /game
+  Model->>-Controller: Choice of weapons
+  Controller->>+View: render /game with @player1
+  View->>-Controller: HTML
+  Controller->>-Browser: 200 OK, body HTML
+  Browser->>-User: see weapons choice
+
+  User->>+Browser: chooses weapon and clicks `Go!`
+  Browser->>+Controller: POST /weapon
+  Controller->>+Model: gets computer_weapon
+  Model->>-Controller: computer_weapon
+  Controller->>+View: render /result with @weapon1 & @weapon2
+  View->>-Controller: HTML
+  Controller->>-Browser: 200 OK, body HTML
+  Browser->>-User: see result
+
+  User->>+Browser: clicks `Play again!`
+  Browser->>+Controller: POST /replay
+  Controller->>+Model: gets data from /game
+  Model->>-Controller: Choice of weapons
+  Controller->>+View: render /game with @player1
+  View->>-Controller: HTML
+  Controller->>-Browser: 200 OK, body HTML
+  Browser->>-User: see result
+
+  User->>+Browser: clicks `New Player?`
+  Browser->>+Controller: POST /new_player
+  Controller->>+View: render /
+  View->>-Controller: HTML
+  Controller->>-Browser: 200 OK, body HTML
+  Browser->>-User: see result
