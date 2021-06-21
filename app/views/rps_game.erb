@@ -16,13 +16,13 @@
 
 <h3 class="mt-4"> What is going to be: Rock, Paper, Scissors?</h3>
 
-<form action="/rsp_game" method="post" class="mt-3 w-50">
+<form action="/rps_game" method="post" class="mt-3 w-50">
 
-<select class="form-select" id="SelectBox">
+<select name="your_choice" class="form-select" id="SelectBox">
   <option selected>Select your weapon</option>
-  <option value="1">🪨 Rock</option>
-  <option value="2">📄 Paper</option>
-  <option value="3">✄ Scissors</option>
+  <option value="rock">Rock</option>
+  <option value="paper">Paper</option>
+  <option value="scissors">Scissors</option>
 </select>
 <button type="submit" class="btn btn-primary mt-3">Attack!</button>
 </form>

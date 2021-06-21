@@ -1,7 +1,9 @@
 require 'sinatra/base'
+require_relative 'play.rb'
 
 
 class RockPaperScissors < Sinatra::Base
+
   enable :sessions
 
   get '/test' do
@@ -23,14 +25,33 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/start_game' do
-    session[:human_player] = params[:human_player]
     redirect '/rps_game'
   end
 
   get '/rps_game' do
-    session[:human_player] = params[:human_player]
     erb :rps_game
   end
+
+  post '/rps_game' do
+    session[:player_choice] = params[:your_choice]
+    redirect '/result_rps'
+  end
+
+  get '/result_rps' do
+    @player_choice = session[:player_choice]
+    session[:choice] = PlayRPS.new(@player_choice)
+    @play = session[:choice]
+    if @play = 'Computer wins!'
+      'Computer wins!'
+    elsif @play = 'You win!'
+      'You win!'
+    else @play = 'It is a tie!'
+      'It is a tie!'
+    end
+  end
+  
+  
+  
 
 
   run! if app_file == $0
