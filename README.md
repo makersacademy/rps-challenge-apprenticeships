@@ -1,4 +1,24 @@
-Got implementation of the game with 1 player and the game restarts. With more time I would have got rid of the global variables, set up a score counter and made a 2nd player.
+Got implementation of the game with 98% test coverage. With more time I would have set up a score counter and made a 2nd player for the game.
+
+
+# DOMAIN MODELS
+
+## 1- from index page to /start-game
+	User->>+Browser: Enters name, submits form
+  Browser->>+Controller: POST /index form data to /name
+  Controller->>+Model: initialize Player.new(name)
+  Controller->>+View: send name
+  View->>-Browser: render :start-game
+
+## 2- from /start-game to /result
+	User->>+Browser: selects choice, clicks button
+  Browser->>+Controller: POST button selection to /choices
+  Controller->>+Model: player-choice stored in Player object
+  Controller->>+Model: Oppponent class initialized, returns comp-choice
+  Controller->>+Model: initialize Game.new(comp-choice, player-choice), return result
+  Controller->>+View: send result
+  View->>-Browser: render /result page with result of game
+
 
 # RPS Challenge
 
