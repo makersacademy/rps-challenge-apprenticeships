@@ -24,15 +24,22 @@ class Game
   private
 
   def player1_wins?
-    (@player_1.choice == "rock" && @player_2.choice == "scissors") ||
+    (@player_1.choice == "scissors" && @player_2.choice == "paper") ||
     (@player_1.choice == "paper" && @player_2.choice == "rock") ||
-    (@player_1.choice == "scissors" && @player_2.choice == "paper")
+    (@player_1.choice == "rock" && @player_2.choice == "lizard") ||
+    (@player_1.choice == "lizard" && @player_2.choice == "spock") ||
+    (@player_1.choice == "spock" && @player_2.choice == "scissors") ||
+    (@player_1.choice == "scissors" && @player_2.choice == "lizard") ||
+    (@player_1.choice == "lizard" && @player_2.choice == "paper") ||
+    (@player_1.choice == "paper" && @player_2.choice == "spock") ||
+    (@player_1.choice == "spock" && @player_2.choice == "rock") ||
+    (@player_1.choice == "rock" && @player_2.choice == "scissors")
   end
 
   def draw?
     (@player_1.choice == @player_2.choice) ||
     # Evaluating invalid move entry edge cases as ties for zero score
-    ( !["rock", "paper", "scissors"].include?(@player_2.choice) ) ||
-    ( !["rock", "paper", "scissors"].include?(@player_1.choice) )
+    ( !["rock", "paper", "scissors", "lizard", "spock"].include?(@player_2.choice) ) ||
+    ( !["rock", "paper", "scissors", "lizard", "spock"].include?(@player_1.choice) )
   end
 end

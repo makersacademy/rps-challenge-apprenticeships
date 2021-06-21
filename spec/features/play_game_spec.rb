@@ -64,7 +64,7 @@ end
 feature "user(s) can play Rock-Paper-Scissors-Lizard-Spock" do
   let(:player1) { double("Player 1") }
   let(:player2) { double("Player 2") }
-  
+
   scenario "scissors cuts paper" do
     start_multiplayer_game(player1, player2)
     fill_in :player_1_choice, with: "sci"
@@ -112,9 +112,9 @@ feature "user(s) can play Rock-Paper-Scissors-Lizard-Spock" do
   scenario "scissors decapitate lizard" do
     start_multiplayer_game(player1, player2)
     fill_in :player_1_choice, with: "sci"
-    fill_in :player_2_choice, with: "spo"
+    fill_in :player_2_choice, with: "liz"
     click_button("Submit")
-    expect(page).to have_content "#{player1} chose scissors, #{player2} chose spock"
+    expect(page).to have_content "#{player1} chose scissors, #{player2} chose lizard"
     expect(page).to have_content "#{player1} wins!"
   end
 

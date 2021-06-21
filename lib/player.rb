@@ -11,6 +11,8 @@ class Player
       "roc" => "rock",
       "pap" => "paper",
       "sci" => "scissors",
+      "liz" => "lizard",
+      "spo" => "spock"
     }
     if options.include?(move)
       @choice = options[move]
