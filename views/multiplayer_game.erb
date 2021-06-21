@@ -14,17 +14,17 @@
       <br>
       <h2> Choose your moves (no peeking!) </h2>
       <br>
-      <h3>You may each secretly enter "roc"(k), "pap"(er) or "sci"(ssors)</h3>
+      <h3>You may each secretly enter "roc"(k), "pap"(er), "sci"(ssors), "liz"(ard) or "spo"(ck)</h3>
       <br>
 
       <form id="move-select" action="/move-submit" method="post" class="row g-3">
         <div class="col-md-6">
           <label for="player_1_choice" class="form-label"><%= @game.player_1.name %>'s Move:</label>
-          <input type="password" class="form-control" name="player_1_choice" placeholder="Enter roc / pap / sci">
+          <input type="password" class="form-control" name="player_1_choice" placeholder="Enter roc / pap / sci / liz / spo">
         </div>
         <div class="col-md-6">
           <label for="player_2_choice" class="form-label"><%= @game.player_2.name %>'s Move:</label>
-          <input type="password" class="form-control" name="player_2_choice" placeholder="roc / pap / sci">
+          <input type="password" class="form-control" name="player_2_choice" placeholder="roc / pap / sci / liz / spo">
         </div>
         <div class="col-12">
           <button type="submit" class="btn btn-primary" name="Submit">Go!</button>

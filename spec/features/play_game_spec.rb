@@ -153,3 +153,18 @@ feature "user(s) can play Rock-Paper-Scissors-Lizard-Spock" do
     expect(page).to have_content "#{player1} wins!"
   end
 end
+
+feature "it provides context for the victory with an appropriate explanation message" do
+  let(:player1) { double("Player 1") }
+  let(:player2) { double("Player 2") }
+  
+  context "when lizard and spock are chosen" do
+    scenario "lizard poisons spock" do
+      start_multiplayer_game(player1, player2)
+      fill_in :player_1_choice, with: "liz"
+      fill_in :player_2_choice, with: "spo"
+      click_button("Submit")
+      expect(page).to have_content "lizard poisons spock"
+    end
+  end
+end
