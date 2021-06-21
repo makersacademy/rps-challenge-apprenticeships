@@ -1,5 +1,7 @@
 # RPS Challenge
 
+Finished the challenge but could improve it by adding a second player.
+
 ## Instructions
 
 * Challenge time: until the end of the day
