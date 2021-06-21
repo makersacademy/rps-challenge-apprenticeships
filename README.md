@@ -1,6 +1,19 @@
-# RPS Challenge
+## RPS Challenge
 
-## Instructions
+Built an interactive game in Sinatra, allowing user to play rock-paper-scissors against the computer.
+
+### MVC
+
+[MVC sequence diagram](screenshots/rps-mvc-sequence-diagram.png)
+
+### Screenshots
+
+<img src="/screenshots/register-player.png" width= "50%">
+<img src="/screenshots/play.png" width= "50%">
+<img src="/screenshots/player-move.png" width= "50%">
+<img src="/screenshots/game-outcome.png" width= "50%">
+
+### Instructions
 
 * Challenge time: until the end of the day
 * Feel free to use google, your notes, books etc but please work on your own
@@ -9,13 +22,11 @@
 * There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
 * If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
 
-## Set up
+### Set up
 
 ```bash
 $ bundle install
 $ rspec
-# You should output that includes:
-# 1 example, 0 failures
 ```
 
 ## Task
@@ -49,22 +60,22 @@ As usual please start by:
 * Forking this repo
 * Test-driving development of your app
 
-## Resources
+### Resources
 
 * [HTML forms](https://www.w3schools.com/html/html_forms.asp)
 * [Capybara cheatsheet](https://devhints.io/capybara)
 * [Twitter bootstrap css library](https://getbootstrap.com/)
 * [Hosting on heroku](https://heroku.com)
 
-## Bonus level 1: Multiplayer
+### Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+### Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
 Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
 
-## Basic Rules
+### Basic Rules
 
 - Rock beats Scissors
 - Scissors beats Paper
@@ -79,7 +90,7 @@ In code review we'll be hoping to see:
 
 Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
 
-## Notes on test coverage
+### Notes on test coverage
 
 Please ensure you have the following **AT THE TOP** of your `spec/spec_helper.rb` in order to have test coverage stats generated on your pull request:
 

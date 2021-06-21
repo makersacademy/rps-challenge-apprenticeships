@@ -1,0 +1,22 @@
+<html>
+  <head>
+      <title>Rock Paper Scissors</title>
+      <link href="<%= url("/styles.css") %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="container">
+    <section>
+      <h1><%= @player1 %> vs Computer</h1>
+    </section>
+    <section class="container buttons">
+        <h3>Select your move</h3>
+        <form action="/result" method="post" class = "row">
+          <select name="player1_move">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+          </select>
+          <input type="submit" value="confirm">
+        </form>
+    </section>
+  </body>
+</html>

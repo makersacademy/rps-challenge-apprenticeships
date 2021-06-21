@@ -1,0 +1,27 @@
+<html>
+  <head>
+      <title>Rock Paper Scissors</title>
+      <link href="<%= url("/styles.css") %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body class="container">
+    <section class="container">
+      <h1>Game outcome</h1>
+    <% if (@player1_move == "paper") && (@computer_move == "rock") %>
+      <h3>You won!</h3>
+    <% elsif (@player1_move == "scissors") && (@computer_move == "paper") %>
+      <h3> You won!</h3>
+    <% elsif (@player1_move == "rock") && (@computer_move == "scissors") %>
+      <h3> You won!</h3>
+    <% elsif @player1_move == @computer_move %>
+      <h3> It's a draw!</h3>
+    <% else %>
+      <h3> You lost! Try again</h3>
+    <% end %>
+        <p>You chose "<%= @player1_move %>".</p>
+        <p>Computer chose "<%= @computer_move %>".</p>
+    </section>
+    <form action ="/rps-game" method="get" class="container">
+      <button class="container"><span>Play again</span></button>
+    </form>
+  </body>
+</html>
