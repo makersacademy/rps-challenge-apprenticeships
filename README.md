@@ -1,3 +1,5 @@
+Got implementation of the game with 1 player and the game restarts. With more time I would have set up a score counter and made a 2nd player.
+
 # RPS Challenge
 
 ## Instructions
