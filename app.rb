@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
 require './lib/opponent.rb'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   
@@ -11,31 +12,31 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    $player = Player.new(params[:name])
+    session[:player] = Player.new(params[:name])
     redirect '/startgame'
   end
 
   get '/startgame' do
-    @player = $player
+    @player = session[:player] 
     erb :start_game
   end
 
   post '/choices' do
-    player = $player
+    player = session[:player] 
     opponent = Opponent.new
 
     @choice = params[:choice]
     player_choice = player.make_choice(@choice)
 
-    $game = Game.new(player, opponent)
-    $result = $game.result
+    session[:game] = Game.new(player, opponent)
+    session[:result] = session[:game].result
 
     redirect '/result'
   end
 
   get '/result' do
-    @game = $game
-    @result = $result
+    @game = session[:game]
+    @result = session[:result]
     erb :result
   end
 
