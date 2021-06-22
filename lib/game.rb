@@ -48,6 +48,14 @@ class Game
     end
   end
 
+  # def victory!
+  #   choices = [@player_1.choice, @player_2.choice]
+  #   case choices.include?()
+  #   when "lizard" && "spock"
+  #     return "lizard poisons spock"
+  #   end
+  # end
+
   private
 
   def player1_wins?
