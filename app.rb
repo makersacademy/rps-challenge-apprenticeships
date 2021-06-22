@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
 require_relative 'lib/game'
 require_relative 'lib/player'
 
