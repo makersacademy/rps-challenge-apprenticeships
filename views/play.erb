@@ -1,0 +1,15 @@
+<h1>Player name: <%= @player_name %></h1>
+
+<h2><%= @player_name %> Choose ROCK, PAPER or SCISSORS </h2>
+ 
+<form class="text-center" action="/choice" method="post">
+<button type="submit" name="choice" value="ROCK">ROCK</button>
+</form>
+
+<form class="text-center" action="/choice" method="post">
+<button type="submit" name="choice" value="PAPER">PAPER</button>
+</form>
+
+<form class="text-center" action="/choice" method="post">
+<button type="submit" name="choice" value="SCISSORS">SCISSORS</button>
+</form>
