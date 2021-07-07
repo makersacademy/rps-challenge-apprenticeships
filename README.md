@@ -1,5 +1,5 @@
 # RPS Challenge
-
+Started
 ## Instructions
 
 * Challenge time: until the end of the day
