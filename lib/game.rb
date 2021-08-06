@@ -19,4 +19,22 @@ class Game
     move = @options.sample
     @computer_move << move
   end
+
+  def winner 
+    if @computer_move == "Rock" && @player_move == "Scissors"
+      return "Computer Wins"
+    elsif @computer_move == "Paper" && @player_move == "Rock"
+      return "Computer Wins"
+    elsif @computer_move == "Scissors" && @player_move == "Paper"
+      return "Computer Wins"
+    elsif @player_move == "Rock" && @computer_move == "Scissors"
+      return "Player wins"
+    elsif @player_move == "Paper" && @computer_move == "Rock"
+      return "Player wins"
+    elsif @player_move == "Scissors" && @computer_move == "Paper"
+      return "Player wins"
+    else
+      return "It's a draw"
+    end
+  end
 end

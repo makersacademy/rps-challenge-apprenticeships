@@ -22,9 +22,11 @@ describe Game do
     end
   end
 
-  # pending describe '#winner' do 
-  #   it 'presents the winner' do
-  #     expect(subject.winner).to 
-  #   end
-  # end 
+  describe '#winner' do 
+    it 'presents the winner' do
+      allow(play).to receive(:random).and_return("Rock")
+      play.submit_move("Scissors")
+      expect(subject.winner).to eq "Computer Wins"
+    end
+  end 
 end
