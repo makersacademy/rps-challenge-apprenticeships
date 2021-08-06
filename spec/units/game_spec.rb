@@ -1,17 +1,19 @@
 require './lib/game.rb'
 
 describe Game do
-  subject(:play) {described_class.new("Rock")}
+  subject(:play) { described_class.new }
   describe '#present' do
     it 'presents choices to the player' do
       expect(play.present).to include "Rock, Paper, Scissors"
     end
   end
 
-  # pending describe '#player_move' do
-  #   it 'the player chooses their move' do     
-  #   end
-  # end
+  describe '#player_move' do
+    it 'the player chooses their move' do
+      play.submit_move("Scissors")
+      expect(play.player_move).to eq "Scissors"     
+    end
+  end
 
   describe '#random' do
     it 'chooses a random option' do
