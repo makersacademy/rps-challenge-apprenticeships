@@ -13,10 +13,8 @@ feature 'play page' do
     expect(page).to have_button 'Scissors'
   end 
 
-
-
-  # scenario 'When you select the rock option that is displayed' do 
-  #   click_button 'Rock'
-  #   expect (page).to have_content 'You selected rock'
-  # end 
+  scenario 'When you select the rock option that is displayed' do 
+    click_button 'Rock'
+    expect(page).to have_content 'You chose Rock'
+  end 
 end 
