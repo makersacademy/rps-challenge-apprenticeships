@@ -3,4 +3,6 @@ feature 'index page' do
     visit '/'
     expect(page).to have_content('Welcome!')
   end
+
+  scenario ''
 end 
