@@ -10,6 +10,12 @@ class RockPaperScissors < Sinatra::Base
 
   post '/player_names' do
     @name1 = params[:player_1_name]
+    erb :choice
+  end
+
+  post '/player_1_chosen' do
+    @player1_choice = params[:player_1_chose]
+    erb :outcome
   end
 
   run! if app_file == $0
