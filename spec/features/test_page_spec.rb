@@ -1,3 +1,4 @@
+require './app.rb'
 feature 'test page' do
   scenario 'visit test page' do
     visit '/test'
