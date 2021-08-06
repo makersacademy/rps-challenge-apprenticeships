@@ -8,7 +8,7 @@ class Game
   end
 
   def present
-    "Choose an option: Rock, Paper, Scissors"
+    puts "Choose an option: Rock, Paper, Scissors"
   end
 
   def submit_move(move)
@@ -28,11 +28,11 @@ class Game
     elsif @computer_move == "Scissors" && @player_move == "Paper"
       return "Computer Wins"
     elsif @player_move == "Rock" && @computer_move == "Scissors"
-      return "Player wins"
+      return "Player Wins"
     elsif @player_move == "Paper" && @computer_move == "Rock"
-      return "Player wins"
+      return "Player Wins"
     elsif @player_move == "Scissors" && @computer_move == "Paper"
-      return "Player wins"
+      return "Player Wins"
     else
       return "It's a draw"
     end

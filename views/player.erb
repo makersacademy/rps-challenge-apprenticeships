@@ -1,3 +1,9 @@
-<h1> Welcome, <%= @player %> </h1>
+<h1> Welcome, <%= @player_name %> </h1>
 
 <h2> Make your move: Rock, Paper, Scissors </h2>
+<%# <h2> <%= @intro </h2> %>
+
+<form action="/move" method="post">
+  <input type="text" name="move">
+  <input type="submit" value="Play">
+</form>
