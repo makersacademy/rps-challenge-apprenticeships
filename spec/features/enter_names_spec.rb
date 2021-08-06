@@ -2,8 +2,8 @@ feature 'Enter names' do
   scenario 'submitting names' do
     visit('/')
   
-    save_and_open_page # will save the web page and open the browser to display it
+    save_and_open_page 
     
-    expect(page).to have_content 'Enter your name:'
+    expect(page).to have_content 'Sign in to play'
   end
 end
