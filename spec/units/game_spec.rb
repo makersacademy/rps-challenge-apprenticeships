@@ -1,7 +1,7 @@
 require './lib/game.rb'
 
 describe Game do
-  describe '#present' do
+  describe '#present_' do
     it 'presents choices to the player' do
       expect(subject.present).to eq "Rock, Paper, Scissors"
     end
@@ -12,8 +12,9 @@ describe Game do
     end
   end
 
-  pending describe '#rand' do
+  describe '#random' do
     it 'chooses a random option' do
+      expect(subject.random).to be true
     end
   end
 
