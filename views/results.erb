@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <br>
+    <%= @game.player_1.name %> chose <strong><%= @game.player_1.choice %></strong>,  <%= @game.player_2.name %> chose <strong> <%= @game.player_2.choice %></strong>
+    <br>
+    <br>
+    <h2><%= @game.victory! %></h2>
+    <br>
+    <h1><%= @game.return_winner %></h1>
+    <br>
+    <br>
+    <h3><%= @game.player_1.name %>: <%= @game.player_1.score %>   |   <%= @game.player_2.name %>: <%= @game.player_2.score %></h3>
+    <br>
+    <br>
+    <h2> <a href="/begin">Go again </a></h2>
+    <br>
+    <br>
+    <h3><a href="/">or return to player select<a/></h3>
+  </body>
+</html>

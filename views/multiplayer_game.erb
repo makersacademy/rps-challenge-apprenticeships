@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RPS PvE</title>
+  </head>
+  <body>
+    <header>
+      <h2>This match:</h2>
+    <h1><%= @game.player_1.name %> V <%= @game.player_2.name %></h1>
+    </header>
+    <main>
+      <br>
+      <br>
+      <h2> Choose your moves (no peeking!) </h2>
+      <br>
+      <h3>You may each secretly enter "roc"(k), "pap"(er), "sci"(ssors), "liz"(ard) or "spo"(ck)</h3>
+      <br>
+
+      <form id="move-select" action="/move-submit" method="post" class="row g-3">
+        <div class="col-md-6">
+          <label for="player_1_choice" class="form-label"><%= @game.player_1.name %>'s Move:</label>
+          <input type="password" class="form-control" name="player_1_choice" placeholder="Enter roc / pap / sci / liz / spo">
+        </div>
+        <div class="col-md-6">
+          <label for="player_2_choice" class="form-label"><%= @game.player_2.name %>'s Move:</label>
+          <input type="password" class="form-control" name="player_2_choice" placeholder="roc / pap / sci / liz / spo">
+        </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary" name="Submit">Go!</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

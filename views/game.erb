@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RPS PvE</title>
+  </head>
+  <body>
+    <header>
+      <h2>This match:</h2>
+    <h1><%= @game.player_1.name %> V <%= @game.player_2.name %></h1>
+    </header>
+    <main>
+      <br>
+      <br>
+      <h2> Choose your move (wisely)! </h2>
+      <br>
+      <form action="/move-submit" method="post">
+        <input type="submit" name="player_1_choice" value="rock" />
+        <input type="submit" name="player_1_choice" value="paper" />
+        <input type="submit" name="player_1_choice" value="scissors" />
+        <input type="submit" name="player_1_choice" value="lizard" />
+        <input type="submit" name="player_1_choice" value="spock" />
+      </form>
+    </main>
+  </body>
+</html>
