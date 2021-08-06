@@ -4,6 +4,6 @@ feature '#choose rock' do
     enter_name_and_play
     find("option[value='rock']").select_option
     click_button "Submit"
-    expect(page).to have_content('Rock')
+    expect(page).to have_content('picked rock')
   end
 end

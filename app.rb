@@ -1,8 +1,8 @@
 require 'sinatra/base'
 
-enable :sessions
+class RockPaperScissors < Sinatra::Base
+  enable :sessions
 
-  class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
   end
@@ -11,7 +11,7 @@ enable :sessions
     erb :index
   end
 
-  post '/player_names' do
+  post '/choice' do
     @name1 = params[:player_1_name]
     erb :choice
   end
