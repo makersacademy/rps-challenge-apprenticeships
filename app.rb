@@ -23,10 +23,10 @@ class RockPaperScissors < Sinatra::Base
   end  
 
   post '/choice' do
-   @choice = params[:choice].capitalize
-   @cpu_choice = ["Rock", "Paper", "Scissors"].sample
-   "You selected #{@choice} and the computer selected #{@cpu_choice}"
-   erb:choice
+    @player_1 = session[:player_1]
+    @choice = params[:choice].capitalize
+    @cpu_choice = ["Rock", "Paper", "Scissors"].sample
+    erb:choice
   end  
 
   get '/test' do
