@@ -1,6 +1,10 @@
 require 'capybara/rspec'
 require 'simplecov'
+require 'capybara/dsl'
+require 'selenium-webdriver'
 require 'simplecov-console'
+#Capybara.default_driver = :selenium # :selenium_chrome and :selenium_chrome_headless are also registered
+
 
 # SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
 #   SimpleCov::Formatter::Console,

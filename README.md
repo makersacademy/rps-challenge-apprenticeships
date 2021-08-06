@@ -1,3 +1,67 @@
+Project Title - RockPaperScissors Challenge (details at end of readme file)
+
+Requested outputs
+Travis CI badge placeholder.
+HTTP cycle - diagram provided in root directory
+
+Motivation
+End of week 5 test to allow calibration of current learning status and allow setting of goals in future weeks.
+
+Build status
+v0.1 Submitted first initial working rspec test for home page
+v0.2 Submitted current working copy
+
+Notes:
+Impacted by the RSPEC capybara tests not working. Spent a large amount of time trying to diagnose the issue and called in coach support. The code can be tested via pry and works, but will not produce the required results in RSPEC.
+
+Code style
+Ruby, RSpec, rubocop, Hound, Sinatra, Capybara. MVC model implemented.
+
+Screenshots
+See Overview diagram (.png) for overview of the setup
+See RPSlogic (.png) for approach to RockPaperScissors
+See HTTP cycle for interactions between user, browser and server.
+
+Installation
+lib folder for classes game and person.rb (in progress)
+view folder for views.erb files (1-3)
+spec folder/features for feature tests.
+
+Provide step by step series of examples and explanations about how to get a development env running. (to be provided)
+
+API Reference
+none
+
+Tests 
+info on full testing to be reported
+expect shape of tests to be:
+the marketeer should be able to enter their name before the game {from home screen /]
+User sees name in lights (perhaps an image of spotlights under the name or something similar) - will add this in as last test if others passing.
+the marketeer will be presented the choices (rock, paper and scissors)
+the marketeer can choose one option
+the game will choose a random option
+a winner will be declared
+
+Initial analyses
+
+
+How to use?
+can be operated via rackup and the local host website address using / for the home page to navigate through the screens.
+
+Contribute
+TBC
+
+Credits
+
+Thanks to my peer group team for their support, they are my rocks (Jessica, Annesa, Danyaal)
+
+License
+
+no known license requirements.
+
+Thoughts on the project:
+to be filled in at pull request.
+
 # RPS Challenge
 
 ## Instructions
