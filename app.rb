@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require "sinatra/reloader"
+require './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
