@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative '/Users/manu/Projects/rps-challenge-apprenticeships/lib/result.rb'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -12,7 +13,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    p session[:player_1] = params[:player_1]
+    session[:player_1] = params[:player_1]
     redirect '/select'
   end
 
@@ -25,6 +26,7 @@ class RockPaperScissors < Sinatra::Base
    @choice = params[:choice].capitalize
    @cpu_choice = ["Rock", "Paper", "Scissors"].sample
    "You selected #{@choice} and the computer selected #{@cpu_choice}"
+   erb:choice
   end  
 
   get '/test' do

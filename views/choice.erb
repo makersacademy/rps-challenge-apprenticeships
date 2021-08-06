@@ -1,16 +1,2 @@
-<%= if @choice == "Rock" && @cpu_choice == "Scissors" %>
-  "You win"
-<%= elsif @choice == "Rock" && @cpu_choice == "Paper" %>   
-  "CPU wins"
-<%= elsif @choice == "Paper" && @cpu_choice == "Rock" %>
-  "You win"
-<%= elsif @choice == "Paper" && @cpu_choice == "Scissors" %>
-  "CPU wins"
-<%= elsif @choice == "Scissors" && @cpu_choice == "Paper" %>
-  "You win"
-<%= elsif @choice == "Scissors" && @cpu_choice == "Rock" %>
-  "CPU wins"  
-<%= else %>
-  "It's a draw"
-<%= end %> 
-  
+<h1>Hi you selected <%= @choice %> and computer selected <%= @cpu_choice %> </h1>
+<h1><%= result(@choice,@cpu_choice)%></h1>
