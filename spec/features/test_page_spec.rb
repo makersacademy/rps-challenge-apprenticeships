@@ -21,14 +21,14 @@ feature 'test page' do
     choose('scissors')
   end
 
-  # scenario 'player selects either rock, paper, or scissors by clicking corresponding button'
-  #   visit "/"
-  #   fill_in('player_1', with: 'Player 1')
-  #   click_on('Submit')
-  #   find_button('Rock').click
-  #   find_button('Paper').click
-  #   find_button('Scissors').click
-  # end
+  scenario 'player makes choice by selecting button and clicking Go' do
+    visit "/"
+    fill_in('player_1', with: 'Player 1')
+    click_on('Play Game')
+    choose('paper')
+    click_on('Go')
+    expect(page).to have_content('You selected Paper and the computer selected ')
+  end
 end
 
 
