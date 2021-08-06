@@ -1,5 +1,8 @@
 require 'sinatra/base'
-class RockPaperScissors < Sinatra::Base
+
+enable :sessions
+
+  class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
   end
@@ -13,8 +16,8 @@ class RockPaperScissors < Sinatra::Base
     erb :choice
   end
 
-  post '/player_1_chosen' do
-    @player1_choice = params[:player_1_chose]
+  post '/result' do
+    @player_1_choice = params[:player_1_chose]
     erb :outcome
   end
 

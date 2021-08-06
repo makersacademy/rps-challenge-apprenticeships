@@ -1,16 +1,9 @@
 
-feature '#playing a game of rock, paper, scissors' do
-  
-  scenario "the user can select rock, paper or scissors" do
+feature '#choose rock' do
+  scenario 'player chooses rock' do
     enter_name_and_play
-    expect(page).to have_button("Rock")
-    expect(page).to have_button("Paper")
-    expect(page).to have_button("Scissors")
+    find("option[value='rock']").select_option
+    click_button "Submit"
+    expect(page).to have_content('Rock')
   end
-
-  # scenario 'player chooses rock' do
-  #   enter_name_and_play
-  #   click_button "Rock"
-  #   expect(page).to have_content('Rock')
-  # end
 end
