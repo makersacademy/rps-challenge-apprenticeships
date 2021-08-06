@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/play' do 
+  post '/play' do  
     session[:shape] = params[:shape]
     session[:op_shape] = :rock
     redirect '/play'
