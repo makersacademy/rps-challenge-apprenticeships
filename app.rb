@@ -2,6 +2,7 @@ require 'sinatra/base'
 require "sinatra/reloader"
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
   get '/test' do
     'test page'
   end
@@ -11,10 +12,24 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/rps' do
-    @name = params[:name]
-    erb :rps
+    session[:name] = params[:name]
+    redirect '/rps'
   end
   
+  get '/rps' do
+    @name = session[:name]
+    erb :rps
+  end
+
+  post '/result' do
+    session[:choice] = params[:choice]
+    redirect '/result'
+  end
+
+  get '/result' do
+    @choice = session[:choice]
+    erb :result
+  end
 
   run! if app_file == $0
 end
