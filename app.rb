@@ -19,11 +19,13 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do 
     @name = session[:p1_name]
     @shape = session[:shape] 
+    @op_shape = session[:op_shape] 
     erb :play
   end
 
   post '/play' do 
     session[:shape] = params[:shape]
+    session[:op_shape] = :rock
     redirect '/play'
   end 
    run! if app_file == $0

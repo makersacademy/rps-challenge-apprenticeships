@@ -17,4 +17,10 @@ feature 'play page' do
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock'
   end 
+
+  scenario 'Have the game choose an option ("Rock")' do 
+    click_button "Rock"
+    expect(page).to have_content "Opponent chose Rock"
+  end 
+
 end 
