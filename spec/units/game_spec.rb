@@ -2,11 +2,11 @@ require './lib/game.rb'
 
 describe Game do
   subject(:play) {described_class.new("Rock")}
-  # describe '#present_' do
-  #   it 'presents choices to the player' do
-  #     expect(subject.present).to eq "Rock, Paper, Scissors"
-  #   end
-  # end
+  describe '#present' do
+    it 'presents choices to the player' do
+      expect(play.present).to include "Rock, Paper, Scissors"
+    end
+  end
 
   # pending describe '#player_move' do
   #   it 'the player chooses their move' do     

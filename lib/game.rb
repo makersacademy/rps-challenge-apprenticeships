@@ -8,7 +8,7 @@ class Game
   end
 
   def present
-    "Rock, Paper, Scissors"
+    "Choose an option: Rock, Paper, Scissors"
   end
 
   def random
