@@ -3,7 +3,7 @@ class Move_Generator
   def initialize
     @computer_move = ""
   end
-  def move_generator
+  def generator_move
     @computer_move = ['Rock', 'Paper', 'Scissors'].sample
   end
 end

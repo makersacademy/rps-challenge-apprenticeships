@@ -1,5 +1,6 @@
 require 'sinatra/base'
-# require_relative 'lib/game'
+require_relative 'lib/move_generator'
+require_relative 'lib/outcomes'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -17,8 +18,11 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  computer_move = Move_Generator.new
+
   post '/result' do
     @user_move = params[:move]
+    @outcome = check(@user_move, computer_move.generator_move)
     erb :result
   end
   
