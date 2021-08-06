@@ -9,3 +9,9 @@ feature 'Results' do
     expect(page).to have_content 'You clicked: Scissor'
   end
 end
+
+feature 'Final outcome' do
+  scenario "Result of ended game" do
+    # Test from index page till user wins or loses or draws
+  end
+end
