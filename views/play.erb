@@ -1,0 +1,14 @@
+<h1><%= @player1 %> VS Computer</h1>
+
+# <form action="/player1_move" method="post">
+<form method="post">
+  <div>
+    <label for="Rock">Rock</label>
+    <input type="radio" name="move" value="Rock">
+    <label for="Paper">Paper</label>
+    <input type="radio" name="move" value="Paper">
+    <label for="Scissor">Scissor</label>
+    <input type="radio" name="move" value="Scissor">
+    <button type="submit" value="submit"><%= @player1 %>'s move</button>
+  </div>
+</form>
