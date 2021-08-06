@@ -8,6 +8,8 @@ describe Game do
       expect(rock.choice.to eq('rock'))
     end
 
+    
+
   end
 
 end
