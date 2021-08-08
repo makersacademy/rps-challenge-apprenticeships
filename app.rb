@@ -17,6 +17,7 @@ class RockPaperScissors < Sinatra::Base
   end  
 
   get '/play' do 
+    @turn = Turn.new(session)
     @name = session[:p1_name]
     @shape = session[:shape] 
     @op_shape = session[:op_shape] 
