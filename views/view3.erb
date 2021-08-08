@@ -58,7 +58,7 @@ textarea {
 
 .button {
   /* Align buttons with the text fields */
-  padding-left: 180px; /* same size as the label elements */
+  padding-left: 220px; /* same size as the label elements */
 }
 
 button {
@@ -67,10 +67,28 @@ button {
   margin-left: .5em;
 }
 </style>
-  <head>
-    
+ <head>
+  
   </head>
-  'The Winner is <<name to be inserted here>>'
+ 
+</html>
 
-  <p>'a picture of spotlights to be inserted here as an image'</p>
+<head>
+    <meta charset="utf-8">
+    <title>The Results!</title>
+  </head>
+  <body style="background-color:#1c87c9;" >
+  <h1><%=@winnermessage%></h1>
+   
+    <form action="/" method="gets">
+ <ul>
+  <li>
+    
+  <li class="button">
+      <button type="submit">Play again? Click here!</button>
+  </li>
+  </p>
+ </ul>
+</form>
+  </body>
 </html>

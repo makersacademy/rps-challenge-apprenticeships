@@ -69,36 +69,30 @@ button {
 </style>
   <head>
     <meta charset="utf-8">
-    <title>It's your Move!</title>
+    <title>Hello There!</title>
   </head>
   <body style="background-color:#1c87c9;" >
   
-    <form action="/results" method="gets">
+    <form action="/game" method="gets">
  <ul>
   <li>
-   
+    <h2>Please enter your name</h2>
+    <label for="What's your name?">Name:</label>
+    <input type="text" id="name" name="user_name">
+  </li>
   
-  <h2 class="fallbackLabel">Please choose your move <%= @@name %></h2>
-  <div >
-    <div>
-      <span>
-        <label for="move">Move:</label>
-        <select id="move" name="move">
-          <option>Rock</option>
-          <option>Paper</option>
-          <option>Scissors</option>
-          
-        </select>
       </span>
       </div>
       </div>
     </form>
     <p>
   <li class="button">
-      <button type="submit">Send Message</button>
+      <button type="submit">Start</button>
   </li>
   </p>
  </ul>
 </form>
   </body>
 </html>
+
+
