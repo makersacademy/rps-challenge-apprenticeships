@@ -1,0 +1,13 @@
+<html align=center style="background-color:coral">
+  <h1> <%= @player_1 %> vs. CPU </h1> 
+    <h2> Please select an option </h2>
+      <form action='/choice' method="post">
+        <input type="radio" id="rock" name="choice" value="rock">
+        <label for="rock">Rock</label><br>
+        <input type="radio" id="paper" name="choice" value="paper">
+        <label for="paper">Paper</label><br>
+        <input type="radio" id="scissors" name="choice" value="scissors">
+        <label for="scissors">Scissors</label><br>
+        <input type="submit" value="Go!">
+      </form>  
+</html>  
