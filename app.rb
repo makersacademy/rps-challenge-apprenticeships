@@ -12,20 +12,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do 
-    session[:p1_name] = params[:p1_name]
+    session[:player_name] = params[:p1_name]
     redirect '/play'
   end  
 
   get '/play' do 
     @turn = Turn.new(session)
-    @name = session[:p1_name]
-    @shape = session[:shape] 
-    @op_shape = session[:op_shape] 
+    # @name = session[:p1_name]
+    # @shape = session[:shape] 
+    # @op_shape = session[:op_shape] 
     erb :play
   end
 
   post '/play' do  
-    session[:shape] = params[:shape]
+    session[:player_shape] = params[:p_shape]
     session[:op_shape] = :rock
     redirect '/play'
   end 
