@@ -1,0 +1,11 @@
+<%# <% if @name %>
+<h1> Hi <%= @name %> ! </h1>
+<h2> Rock, Paper or Scissors?</h2>
+<form action="/move" method="post">
+  <label for="move">
+    Move
+    <input type="text" name="move">
+  </label>
+  <input type="submit" value="Submit">
+</form>
+<%# <% end %>
