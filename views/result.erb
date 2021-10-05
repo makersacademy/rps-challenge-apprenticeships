@@ -1,0 +1,28 @@
+<h2> You chose <%= @move %> and the computer chose <%= @computer_move%> </h2>
+
+<h1>
+<% if @move == "Rock" && @computer_move == "Rock" %>
+  It's a draw!
+<% elsif @move == "Rock" && @computer_move == "Scissors" %>
+  You win!
+<% elsif @move == "Rock" && @computer_move == "Paper" %>
+  You lose!
+<% elsif @move == "Scissors" && @computer_move == "Scissors" %>
+  It's a draw!
+<% elsif @move == "Scissors" && @computer_move == "Rock" %>
+  You lose!
+<% elsif @move == "Scissors" && @computer_move == "Paper" %>
+  You win!
+<% elsif @move == "Paper" && @computer_move == "Scissors" %>
+  You lose!
+<% elsif @move == "Paper" && @computer_move == "Rock" %>
+  You win!
+<% elsif @move == "Paper" && @computer_move == "Paper" %>
+  It's a draw!
+<%end%>
+</h1>
+
+<h2> Want to play again? </h2>
+<form action="/game" method="get">
+  <input type="submit" value="Play again!">
+</form>
