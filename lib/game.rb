@@ -6,6 +6,14 @@ class Game
     @computer_choices = ["Rock", "Paper", "Scissors"]
   end
 
+  def self.create(player)
+    @game = Game.new(player)
+  end
+
+  def self.instance
+    @game
+  end
+
   def player_choice(choice)
     @player.move(choice)
   end
