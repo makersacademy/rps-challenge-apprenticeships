@@ -28,10 +28,36 @@ describe Game do
   end
 
   describe "#decide_winner" do
-    it "decided the winner of the game" do
+    it "player wins (scissors)" do
       game = Game.new(player)
-      # expect(game).to receive(:computer_choice).and_return("Paper")
-      expect(game.decide_winner(player.choice, "Paper")).to eq "Player"
+      expect(game).to receive(:computer_choice).and_return("Paper")
+      expect(game.decide_winner(player.choice, game.computer_choice)).to eq "Player"
+    end
+
+    it "player wins (rock)" do
+      game = Game.new(player)
+      allow(player).to receive(:choice).and_return('Rock')
+      expect(game).to receive(:computer_choice).and_return("Scissors")
+      expect(game.decide_winner(player.choice, game.computer_choice)).to eq "Player"
+    end
+
+    it "player wins (paper)" do
+      game = Game.new(player)
+      allow(player).to receive(:choice).and_return('Paper')
+      expect(game).to receive(:computer_choice).and_return("Rock")
+      expect(game.decide_winner(player.choice, game.computer_choice)).to eq "Player"
+    end
+
+    it "draw" do
+      game = Game.new(player)
+      expect(game).to receive(:computer_choice).and_return("Scissors")
+      expect(game.decide_winner(player.choice, game.computer_choice)).to eq "Draw"
+    end
+
+    it "computer wins" do
+      game = Game.new(player)
+      expect(game).to receive(:computer_choice).and_return("Rock")
+      expect(game.decide_winner(player.choice, game.computer_choice)).to eq "Computer"
     end
     
   end
