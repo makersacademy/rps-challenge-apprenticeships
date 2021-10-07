@@ -18,12 +18,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    "You entered: #{params[:choice]}\nComputer entered: Paper\nComputer wins!"
+    choice = params[:choice]
+    $game.player_choice(choice)
+    redirect to('/result')
   end
 
   get '/game' do
     @name = $game.player.name
     erb :game
+  end
+  
+  get '/result' do
+    player_choice = $game.player.choice
+    "You entered: #{player_choice}\nComputer entered: Paper\nComputer wins!"
   end
 
   run! if app_file == $0

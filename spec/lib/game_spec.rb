@@ -19,4 +19,11 @@ describe Game do
       expect(game.player.choice).to eq 'Rock'
     end
   end
+
+  describe "#computer_choice" do
+    it "returns either rock, paper or scissors" do
+      game = Game.new(player)
+      expect(game.computer_choice).to eq("Rock").or eq("Paper").or eq("Scissors")
+    end
+  end
 end
