@@ -1,11 +1,11 @@
-<p>You entered: <%=@player_choice%></p>
-<p>Computer entered: <%=@computer_choice%></p>
+<p class="result">You entered: <%=@player_choice%></p>
+<p class="result">Computer entered: <%=@computer_choice%></p>
 
 <% if @winner == "Draw" %>
-<p>It's a draw!</p>
+<p class="result">It's a draw!</p>
 
 <% else %>
-<p><%=@winner%> wins!</p>
+<p class="result"><%=@winner%> wins!</p>
 
 <% end %>
 
