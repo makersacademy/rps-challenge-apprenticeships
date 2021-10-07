@@ -5,9 +5,7 @@ feature 'home page' do
   end
 
   scenario 'user enters their name and is taken to /game' do
-    visit '/'
-    fill_in "name", with: "Foo"
-    click_button "Submit"
+    user_starts_game
     expect(page).to have_content('Enter your choice, Foo:')
   end
 end
