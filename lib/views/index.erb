@@ -4,9 +4,16 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/stylesheets/application.css">
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <h1>Hello World</h1>
+  <div id="container">
+    <h1 id="title">Rock, Paper, Scissors</h1>
+    <form action="/name-info" method="POST">
+      <input type="text" name="name" placeholder="your name here">
+      <input type="submit" value="Let's play!">
+    </form>
+  </div>
 </body>
 </html>
