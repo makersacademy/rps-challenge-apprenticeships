@@ -12,7 +12,7 @@ describe Game do
 
   describe "#player_choice" do
     it "sets the players choice to what is passed" do
-      allow(player).to receive(:set_choice).with('Rock')
+      allow(player).to receive(:move).with('Rock')
       allow(player).to receive(:choice) { 'Rock' }
       @game.player_choice('Rock')
       expect(@game.player.choice).to eq 'Rock'

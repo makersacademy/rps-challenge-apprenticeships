@@ -7,7 +7,7 @@ class Game
   end
 
   def player_choice(choice)
-    @player.set_choice(choice)
+    @player.move(choice)
   end
 
   def computer_choice 
@@ -27,11 +27,11 @@ class Game
   private
 
   def player_wins?(player_choice, computer_choice)
-     true if (
-      player_choice == "Scissors" && computer_choice == "Paper" ||
-      player_choice == "Rock" && computer_choice == "Scissors" ||
-      player_choice == "Paper" && computer_choice == "Rock"
-    )
+    true if (
+    player_choice == "Scissors" && computer_choice == "Paper" ||
+    player_choice == "Rock" && computer_choice == "Scissors" ||
+    player_choice == "Paper" && computer_choice == "Rock"
+  )
   end
 
   def draw?(player_choice, computer_choice)

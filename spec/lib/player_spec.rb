@@ -8,10 +8,10 @@ describe Player do
     end
   end
 
-  describe "#set_choice" do
+  describe "#move" do
     it "sets the players choice to what is passed" do
       player = Player.new('foo')
-      player.set_choice('Rock')
+      player.move('Rock')
       expect(player.choice).to eq 'Rock'
     end
   end

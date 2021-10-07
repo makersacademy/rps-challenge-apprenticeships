@@ -1,6 +1,6 @@
 require 'sinatra/base'
-require './lib/player.rb'
-require './lib/game.rb'
+require './lib/player'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
