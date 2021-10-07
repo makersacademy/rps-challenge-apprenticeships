@@ -11,12 +11,6 @@ class Game
   end
 
   def computer_choice 
-    @computer_choices[random_index]
-  end
-
-  private
-
-  def random_index
-    [0,1,2].sample
+    @computer_choices.sample
   end
 end
