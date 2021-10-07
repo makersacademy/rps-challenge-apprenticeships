@@ -15,6 +15,10 @@ class RockPaperScissors < Sinatra::Base
     redirect to('/game')
   end
 
+  post '/choice' do
+    "You entered: #{params[:choice]}\nComputer entered: Paper\nComputer wins!"
+  end
+
   get '/game' do
     @name = $player.name
     erb :game
