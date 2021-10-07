@@ -22,4 +22,10 @@ feature 'game page' do
     click_button "Play again!"
     expect(page).to have_content "Enter your choice"
   end
+
+  scenario 'lets the user exit' do
+    run_game('Scissors')
+    click_button "Exit"
+    expect(page).to have_content "Enter your name"
+  end
 end
