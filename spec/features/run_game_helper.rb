@@ -3,6 +3,5 @@ def run_game(user_choice)
   allow_any_instance_of(Game).to receive(:computer_choice).and_return("Scissors")
 
   user_starts_game
-  select user_choice, from: "choice"
-  click_button "Go!"
+  click_button(user_choice)
 end

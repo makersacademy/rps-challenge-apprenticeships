@@ -17,11 +17,7 @@ feature 'game page' do
   end
 
   scenario 'lets the user play again' do
-    allow_any_instance_of(Game).to receive(:computer_choice).and_return("Scissors")
-    
-    user_starts_game
-    select "Scissors", from: "choice"
-    click_button "Go!"
+    run_game('Scissors')
     
     click_button "Play again!"
     expect(page).to have_content "Enter your choice"
