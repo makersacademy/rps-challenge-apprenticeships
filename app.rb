@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player.rb'
+
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
@@ -6,6 +8,16 @@ class RockPaperScissors < Sinatra::Base
 
   get '/' do
     erb :index
+  end
+
+  post '/player' do
+    $player = Player.new(params[:name])
+    redirect to('/game')
+  end
+
+  get '/game' do
+    @name = $player.name
+    erb :game
   end
 
   run! if app_file == $0
