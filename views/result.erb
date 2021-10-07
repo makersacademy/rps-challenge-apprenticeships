@@ -1,4 +1,10 @@
 <p>You entered: <%=@player_choice%></p>
 <p>Computer entered: <%=@computer_choice%></p>
 
+<% if @winner == "Draw" %>
+<p>It's a draw!</p>
+
+<% else %>
 <p><%=@winner%> wins!</p>
+
+<% end %>
