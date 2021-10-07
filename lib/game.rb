@@ -13,4 +13,14 @@ class Game
   def computer_choice 
     @computer_choices.sample
   end
+
+  def decide_winner(player_choice, computer_choice)
+    result = ""
+    if player_choice == computer_choice
+      result = "Draw"
+    elsif player_choice == "Scissors" && computer_choice == "Paper"
+      result = "Player"
+    end
+    result
+  end
 end
