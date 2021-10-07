@@ -16,3 +16,4 @@ group :development, :test do
 end
 
 gem "webrick"
+gem "sinatra-reloader"
