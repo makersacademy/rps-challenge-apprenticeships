@@ -39,4 +39,15 @@ feature 'game page' do
     expect(page).to have_content("Computer entered: Scissors")
     expect(page).to have_content "It's a draw!"
   end
+
+  scenario 'lets the user play again' do
+    allow_any_instance_of(Game).to receive(:computer_choice).and_return("Scissors")
+    
+    user_starts_game
+    select "Scissors", from: "choice"
+    click_button "Go!"
+    
+    click_button "Play again!"
+    expect(page).to have_content "Enter your choice"
+  end
 end
