@@ -31,6 +31,7 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @player_choice = $game.player.choice
     @computer_choice = $game.computer_choice
+    @winner = $game.decide_winner(@player_choice, @computer_choice)
     erb :result
   end
 
