@@ -1,12 +1,15 @@
-<p class="result">You entered: <%=@player_choice%></p>
-<p class="result">Computer entered: <%=@computer_choice%></p>
+
+<p class="moves">You entered: <%=@player_choice%></p>
+<p class="moves">Computer entered: <%=@computer_choice%></p>
 
 <% if @winner == "Draw" %>
 <p class="result">It's a draw!</p>
 
-<% else %>
-<p class="result"><%=@winner%> wins!</p>
+<% elsif @winner == "Computer" %>
+<p class="result red"><%=@winner%> wins</p>
 
+<% else %>
+<p class="result green"><%=@winner%> wins!</p>
 <% end %>
 
 <form method="get" action="/game">

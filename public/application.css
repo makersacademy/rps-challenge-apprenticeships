@@ -16,10 +16,24 @@ form {
   text-align: left;
 }
 
+.moves {
+  font-size: 20;
+  font-weight: bold;
+  text-align: center;
+}
+
 .result {
   font-size: 25;
   font-weight: bold;
   text-align: center;
+}
+
+.result.red {
+  color: red;
+}
+
+.result.green {
+  color: green;
 }
 
 body {
