@@ -34,3 +34,17 @@ Open localhost in your browser with the specified port (found in your terminal m
 │   └── This is where the text/html for pages will be stored.
 └── app.rb 
 ```
+
+## To-Do
+
+
+
+## Done
+* Write a feature test for entering a player name
+* Create a `'/'` route in `app.rb` that renders `index.erb`
+* Create views directory with an `index.erb` file
+* Create form in `index.erb` that points to `/name` and uses a `post` request
+* Add `post '/name'` route to app.rb
+* Create `play.erb` to display the user's name
+* Add `save_and_open_page` helper to feature test so page will open when running `rspec`
+* Add title, instruction and label to `index.erb`
