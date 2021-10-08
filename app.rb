@@ -17,7 +17,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     @user_choice = params[:user_choice]
-    p @user_choice
+    @game_choice = ["Rock", "Paper", "Scissors"].sample
     erb :result
   end
 
