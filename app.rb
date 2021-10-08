@@ -10,5 +10,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:entername)
   end
 
+  post "/play" do
+    @name = params[:name]
+    "Hello #{@name}"
+  end
+
   run! if app_file == $0
 end
