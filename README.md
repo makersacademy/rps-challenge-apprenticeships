@@ -69,3 +69,8 @@ $ rspec
 
 [optional footer(s)]
 ```
+
+## Diagrams
+
+![Initial Browser Server Interraction Flowchart 1](https://github.com/feedXia/rps-challenge-apprenticeships/blob/0c8f5ce7102f0f149ed9365511f5fffe2c897141/images/RPS_1.png)
+![Initial Browser Server Interraction Flowchart 2](https://github.com/feedXia/rps-challenge-apprenticeships/blob/0c8f5ce7102f0f149ed9365511f5fffe2c897141/images/RPS_2.png)
