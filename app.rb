@@ -6,6 +6,8 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  enable :sessions
+
   get "/test" do
     "test page"
   end
@@ -15,14 +17,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/name" do
-    @player_1 = params[:player_1]
+    session[:player_1] = params[:player_1]
+    redirect "/play"
   end
 
-  # get "/play" do
-  #   @player_1 = session[:player_1]
-  #   @player_2 = session[:player_2]
-  #   erb(:play)
-  # end
+  get "/play" do
+    @player_1 = session[:player_1]
+    erb(:play)
+  end
 
   run! if app_file == $0
 end

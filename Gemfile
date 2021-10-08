@@ -3,8 +3,8 @@ source "https://rubygems.org"
 ruby "3.0.2"
 
 gem "sinatra"
-# gem "webrick"
-# gem "selenium-webdriver"
+gem "webrick"
+gem "selenium-webdriver"
 
 group :test do
   gem "capybara"
