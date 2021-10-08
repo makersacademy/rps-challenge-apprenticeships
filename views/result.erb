@@ -1,0 +1,7 @@
+<h1>You chose <%= @game.player_choice %>. Computer chose <%= @game.comp_choice %>. </h1>
+
+<h1> <%= @result %> </h1>
+
+<form action='/startgame' method='get'>
+  <button>Restart</button>
+</form>

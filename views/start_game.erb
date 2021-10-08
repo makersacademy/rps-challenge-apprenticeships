@@ -1,0 +1,11 @@
+<h1>Hello <%= @player.name %>. Let the game begin.</h1>
+
+<h2>Choose Rock, Paper or Scissors</h2>
+
+<form action='/choices' method='post'>
+
+  <button name='choice' type='submit' value="Rock">Rock</button>
+  <button name='choice' type='submit' value="Paper">Paper</button>
+  <button name='choice' type='submit' value="Scissors">Scissors</button>
+
+</form>
