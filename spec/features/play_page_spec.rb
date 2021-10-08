@@ -1,5 +1,5 @@
 feature "the play page" do
-  before(:each) do
+  background do
     visit "/play"
   end
 

@@ -1,5 +1,6 @@
 require "sinatra/base"
 require "sinatra/reloader"
+require_relative "./computer"
 
 class RockPaperScissors < Sinatra::Base
   use Rack::Session::Cookie
@@ -29,12 +30,12 @@ class RockPaperScissors < Sinatra::Base
 
   post "/victory" do
     session[:choice] = params[:choice]
-    p params[:choice]
     redirect "/result"
   end
 
   get "/result" do
     @choice = session[:choice]
+    $computer = Computer.new
     erb(:result)
   end
 
