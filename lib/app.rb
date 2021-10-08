@@ -32,12 +32,15 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/victory" do
-    session[:choice] = params[:choice]
+    # session[:choice] = params[:choice]
+    $user_choice = params[:choice]
+    $player.selection($user_choice)
     redirect "/result"
   end
 
   get "/result" do
-    @choice = session[:choice]
+    # @choice = session[:choice]
+    @choice = $user_choice
     $computer = Computer.new
     erb(:result)
   end
