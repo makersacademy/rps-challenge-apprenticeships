@@ -1,2 +1,7 @@
 <p><%=@name%> chose <%=@player_choice%></p>
 <p>the bot chose <%=@bot_choice%></p>
+<%if !@draw %>
+<p><%=@winner%> beat <%=@loser%></p>
+<%else%>
+<p> it's a draw </p>
+<%end%>
