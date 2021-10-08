@@ -8,8 +8,13 @@ class GameResult
   end
 
   def result
-    draw ? "Draw" :
-      case user_choice
+    draw ? "Draw" : no_draw
+  end
+
+  private
+
+  def no_draw
+    case user_choice
       when "Rock"
         rock
       when "Paper"
