@@ -6,6 +6,10 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
 
+  get '/' do
+    erb :index
+  end
+
   get '/test' do
     'test page now reloads'
   end
