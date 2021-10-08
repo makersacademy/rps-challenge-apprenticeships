@@ -9,7 +9,8 @@ class RockPaperScissors < Sinatra::Base
   # enable :sessions
 
   get '/' do
-    erb :index
+    'Welcome to Rock, Paper, Scissors!'
+    # erb :index
   end
 
   get '/test' do
