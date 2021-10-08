@@ -1,7 +1,4 @@
 feature "the home page" do
-  # background do
-  #   sign_in_and_play
-  # end
   scenario "the home page returns a successful status code" do
     visit "/"
     expect(page.status_code).to eq 200
@@ -14,6 +11,6 @@ feature "the home page" do
 
   scenario "a user can enter their name" do
     sign_in_and_play
-    expect(page).to have_content "Welcome Tina!"
+    expect(page).to have_content "Welcome Tina"
   end
 end

@@ -16,3 +16,13 @@ h1 {
 #result-page {
   background-image: url("../images/6ob.gif");
 }
+
+.form-control, .form-select {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 10px;
+}
