@@ -41,4 +41,9 @@ feature "play" do
     click_on "Play"
     expect(current_path).to eq "/result"
   end
+  # scenario "cpu_choice created" do
+  #   expect(cpu_choice).to have_content(cpu_choice)
+  # end
 end
+
+feature "result"

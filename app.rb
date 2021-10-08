@@ -17,7 +17,7 @@ class RockPaperScissors < Sinatra::Base
 
   post "/result" do
     @choice = params[:choice]
-    @cpu_choice = cpu_choice
+    @cpu_choice = ["rock", "paper", "scissors"].sample
     erb(:result)
   end
 
