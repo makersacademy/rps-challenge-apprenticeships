@@ -8,4 +8,14 @@ feature 'entering name' do
     visit "/"
     expect(page).to have_field "player"
   end
+
+  scenario 'page has play button' do
+    visit "/"
+    expect(page).to have_button "play"
+  end
+
+  scenario 'page redirects after submitting name' do
+    sign_in_and_play
+    expect(page).to have_content "Sasha"
+  end
 end
