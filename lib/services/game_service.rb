@@ -1,8 +1,8 @@
+require_relative '../domain/game_status_codes'
+
 class GameService
-
-  COMPUTER_PLAYER = :ai
-  SINGLE_PLAYER = :single_player
-
+  include GameStatusCodes
+  
   def initialize   
     @games = [] 
   end
