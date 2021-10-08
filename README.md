@@ -54,7 +54,7 @@ Reviewers will potentially be using this [code review rubric](docs/review.md). R
 
 ## Project To Do List
 
-- [ ] Raise a Pull Request
+- [x] Raise a Pull Request
 
 ### Planning
 
