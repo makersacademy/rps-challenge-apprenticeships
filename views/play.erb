@@ -1,0 +1,14 @@
+<%= @player_1 %>
+
+<form action="/play" method="POST">
+<label for="Rock">Rock </label>
+  <input type="radio" id="Rock" name="selection" value="Rock"><br>
+  <label for="Paper">Paper </label>
+  <input type="radio" id="Paper" name="selection" value="Paper"><br>
+  <label for="Scissors">Scissors </label>
+  <input type="radio" id="Scissors" name="selection" value="Scissors"><br>
+  <input type="submit" value="Submit">
+</form>
+
+You chose: <%= @selection %><br>
+The AI chose: <%= @ai_selection %><br>
