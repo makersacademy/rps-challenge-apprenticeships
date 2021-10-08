@@ -7,6 +7,7 @@ class RockPaperScissors < Sinatra::Base
 
   get "/" do
     "Please enter your name:"
+    erb(:entername)
   end
 
   run! if app_file == $0
