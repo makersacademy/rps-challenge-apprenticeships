@@ -1,6 +1,7 @@
 require "sinatra/base"
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
   get "/test" do
     "test page"
   end
@@ -11,12 +12,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/play" do
-    @name = params[:name]
+    session[:name] = params[:name]
     erb(:play)
   end
 
   post "/result" do
-    @choice = params[:choice]
+    @name = session[:name]
+    p @user_choice = params[:user_choice]
     @cpu_choice = ["rock", "paper", "scissors"].sample
     erb(:result)
   end

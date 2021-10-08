@@ -1,0 +1,15 @@
+<%= @name %>: <%= @user_choice %>
+<br>
+Computer: <%= @cpu_choice %>
+<br>
+<% if @user_choice == "rock" && @cpu_choice == "scissors" %>
+You win!
+<% elsif @user_choice == "scissors" && @cpu_choice == "paper" %>
+You win!
+<% elsif @user_choice == "paper" && @cpu_choice == "rock" %>
+You win!
+<% elsif @user_choice == @cpu_choice %>
+It's a draw!
+<% else %>
+You lose! :(
+<% end %>

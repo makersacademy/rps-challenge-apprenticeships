@@ -12,7 +12,7 @@ feature "home page" do
   end
   scenario "clicking submit posts to /play" do
     visit "/"
-    fill_in "name", with: "Graham"
+    fill_in "name", with: "Liz"
     click_button
     expect(current_path).to eq "/play"
   end
@@ -22,7 +22,7 @@ feature "play" do
   before do
     visit "/"
     fill_in "name", with: "Steve"
-    click_button
+    click_button "Submit"
   end
   scenario "greets user" do
     expect(page).to have_content "Hello Steve"
@@ -36,14 +36,21 @@ feature "play" do
     expect(page).to have_selector "input[type=radio][value=scissors]"
   end
   scenario "pressing play posts to /result" do
-    save_and_open_page
     choose "Rock"
     click_on "Play"
     expect(current_path).to eq "/result"
   end
-  # scenario "cpu_choice created" do
-  #   expect(cpu_choice).to have_content(cpu_choice)
-  # end
 end
 
-feature "result"
+feature "result" do
+  before do
+    visit "/"
+    fill_in "name", with: "Kim"
+    click_button
+    choose "Rock"
+    click_on "Play"
+  end
+  scenario "cpu_choice created" do
+    expect(page).to have_content @cpu_choice
+  end
+end

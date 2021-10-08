@@ -1,13 +1,13 @@
 Hello <%= @name %>
 <br>
 <label>Rock, Paper or Scissors?</label>
-<form action="/result" id="choice" method="post">
+<form action="/result" id="user_choice" method="post">
   <label for="rock">Rock</label>
-    <input type="radio" id="rock" name="choice" value="rock">
+    <input type="radio" id="rock" name="user_choice" value="rock">
   <label for="paper">Paper</label>
-    <input type="radio" id="paper" name="choice" value="paper">
+    <input type="radio" id="paper" name="user_choice" value="paper">
   <label for="scissors">Scissors</label>
-    <input type="radio" id="scissors" name="choice" value="scissors">
+    <input type="radio" id="scissors" name="user_choice" value="scissors">
   <br>
   <input type="submit" value="Play">
 </form>
