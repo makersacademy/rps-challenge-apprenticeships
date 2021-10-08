@@ -1,5 +1,7 @@
 # Rock, Paper, Scissors Challenge
 
+![Flow Diagram](https://drive.google.com/uc?export=view&id=1ehbTZpCRQZsWsLRcrY5hWElzRxX8i06D)
+
 ## Instructions
 
 * Challenge time: until the end of the day
