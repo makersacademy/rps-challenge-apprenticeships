@@ -36,7 +36,9 @@ Open localhost in your browser with the specified port (found in your terminal m
 ```
 
 ## To-Do
-
+* Redirect from `/play` to `/display-weapon`
+* Issue with submit button?
+* `:choice` param not being carried on to `/display-weapon` page
 
 
 ## Done
@@ -48,3 +50,7 @@ Open localhost in your browser with the specified port (found in your terminal m
 * Create `play.erb` to display the user's name
 * Add `save_and_open_page` helper to feature test so page will open when running `rspec`
 * Add title, instruction and label to `index.erb`
+* Enable `session` in Sinatra
+* Add a `get /play` route that renders `play.erb` 
+* Write feature tests for weapon buttons
+* Create weapon buttons in `play.erb`

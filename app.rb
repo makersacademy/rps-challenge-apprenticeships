@@ -5,6 +5,7 @@ class RockPaperScissors < Sinatra::Base
   # configure :development do
   #   register Sinatra::Reloader
   # end
+  enable :sessions
 
   get '/test' do
     'test page'
@@ -19,9 +20,24 @@ class RockPaperScissors < Sinatra::Base
   end  
 
   post '/name' do
-    @player_name = params[:player_name]
-    erb :play
+    session[:player_name] = params[:player_name]
+    redirect '/play'
   end  
+
+  get '/play' do
+    @player_name = session[:player_name]
+    erb :play
+  end
+
+  post '/choice' do
+    session[:choice] = params[:choice]
+    redirect '/display-weapon'
+  end
+
+  get '/display-weapon' do
+    @choice = session[:choice]
+    erb :display_weapon
+  end
 
   run! if app_file == $0
 end
