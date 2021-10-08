@@ -2,7 +2,7 @@ require 'game'
 
 describe Game do
   describe '#winner' do
-    it 'should return a draw' do
+    it 'should return a draw -  Rock vs Rock' do
       expect(subject.winner(:rock, :rock)).to eq('It\'s a draw!')
     end
 

@@ -1,7 +1,8 @@
+# adjust this number to speed up/slow down test execution in the browser
 sleep_time_for_capybara = 1
 
 feature 'Homepage' do
-  scenario 'visit Homepage and correct content is displayed' do
+  scenario 'visit Homepage and display correct content' do
     visit_homepage
     expect(page).to have_content('Game on!')
     expect(page).to have_content('Rock | Paper | Scissors')

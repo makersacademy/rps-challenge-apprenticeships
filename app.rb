@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/computer_opponent'
 require './lib/game'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   register Sinatra::Reloader
@@ -11,8 +12,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    @name = params[:name] == "" ? "You" : params[:name].capitalize
-    @player_choice = params[:choice]
+    @player = Player.new(params[:name], params[:choice])
+    @name = @player.name
+    @player_choice = @player.choice
     @computer_choice = ComputerOpponent.new.computer_choice
     @winner = Game.new.winner(@player_choice.downcase.to_sym, @computer_choice.downcase.to_sym)
     erb :result

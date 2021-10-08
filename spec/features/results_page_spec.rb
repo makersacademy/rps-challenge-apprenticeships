@@ -1,4 +1,4 @@
-# ajust this number to speed up/slow down test execution in the browser
+# adjust this number to speed up/slow down test execution in the browser
 sleep_time_for_capybara = 1
 
 feature 'Results page' do
@@ -16,7 +16,7 @@ feature 'Results page' do
     expect(page).to have_button('Play Again')
   end
 
-  scenario 'should default player name to "You" if no name is entered' do
+  scenario 'should show player name as "You" if no name is entered' do
     allow_any_instance_of(Array).to receive(:sample).and_return('Paper')
     visit '/'
     sleep(sleep_time_for_capybara)

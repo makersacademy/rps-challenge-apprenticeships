@@ -1,31 +1,13 @@
 # RPS Challenge
 
-## Instructions
+Task
+-----
+The task for this challenge was to create a Rock, Paper, Scissors web application that utilised Object Oriented Programming (OOP) through a Test Driven Development (TDD) approach. In addition, the application was to be tested using Capybara and Sinatra. The user stories below outline the requirements for this challenge - to be able to register a username and play a game of rock, paper, scissors.
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+My approach to this challenge was to work through each individual user story, breaking each component down into the simplest requirement to create each class and method as needed, while applying the **RED, GREEN, REFACTOR** method in parallel. This method requires a test to be created initially to define what each element of the application should be doing, running the test to ensure they are failing in the intended way, then developing the feature using the test requirements. Once the feature is working correctly and the tests are passing, I then revisited my code to improve implementation, readability for better maintainability, and overall scalability. For this challenge, I particularly enjoyed integrating Capybara and the Selenium WebDriver into RSpec to automatically test my application's user interface.
 
-## Set up
-
-```bash
-$ bundle install
-$ rspec
-# You should output that includes:
-# 1 example, 0 failures
-```
-
-## Task
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
+User Stories
+-----
 ```
 As a marketeer
 So that I can see my name in lights
@@ -35,64 +17,107 @@ As a marketeer
 So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
+Installation
+-----
+* Fork this repo
+* Run the command 'bundle' in the project directory to ensure you have all the gems
 
-Hints on functionality
+How To Run Tests
+-----
+Once `bundle` has been ran, to test the application,
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+1. Open the application directory `/rps-challenge-apprenticeships` using your preferred terminal.
+2. Run `rspec` to see a list of tests and coverage reports.
 
-As usual please start by:
+In your terminal, you should see the below: 
 
-* Forking this repo
-* Test-driving development of your app
+```
+Homepage
+  visit Homepage and display correct content
+  should enter name and make choice
 
-## Resources
+Results page
+  should display results page with details
+  should show player name as "You" if no name is entered
 
-* [HTML forms](https://www.w3schools.com/html/html_forms.asp)
-* [Capybara cheatsheet](https://devhints.io/capybara)
-* [Twitter bootstrap css library](https://getbootstrap.com/)
-* [Hosting on heroku](https://heroku.com)
+ComputerOpponent
+  #computer_choice
+    should pick Rock, Paper or Scissors
 
-## Bonus level 1: Multiplayer
+Game
+  #winner
+    should return a draw -  Rock vs Rock
+    should return Player wins - Rock vs Scissors
+    should return Player wins - Paper vs Rock
+    should return Computer wins - Rock vs Paper
+    should return Computer wins - Paper vs Scissors
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+Player
+  #initialize
+    should set the player name to what is passed in
+    should set the player name to "You" when no name is passed
+    should set the player choice to what is passed in
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+Have you considered running rubocop? It will help you improve your code!
+Try it now! Just run: rubocop
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
+Finished in 20.26 seconds (files took 0.36409 seconds to load)
+13 examples, 0 failures
 
-## Basic Rules
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-* Commits and short and scoped
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-## Notes on test coverage
-
-Please ensure you have the following **AT THE TOP** of your `spec/spec_helper.rb` in order to have test coverage stats generated on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
+COVERAGE: 100.00% -- 107/107 lines in 9 files
 ```
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+**In addition, chrome will open and run through the feature tests.**
+
+To disable chrome opening to run the tests: 
+
+1. Navigate to the spec_helper.rb file found here -> `spec/spec_helper.rb`.
+2. Comment out lines 22 & 23 (Capybara.server = :webrick Capybara.default_driver = :selenium_chrome).
+3. Rerun `rspec` in your terminal.
+
+To change the speed Capybara and Selenium run the automated browser tests:
+
+1. Navigate to the homepage_spec.rb file found here -> `spec/features/homepage_spec.rb`.
+2. Change the value for `sleep_time_for_capybara = 1` on line 2. This is currently set to wait 1 second after each step in the browser. Set this to a higher value for slower runtime in the browser, or set it to a lower number for faster runtime in the browser.
+3. Navigate to the results_page_spec.rb file found here -> `spec/features/results_page_spec.rb`.
+4. Repeat step 2 in the results_page_spec.rb file.
+5. Rerun `rspec` in your terminal.
+
+How To Use The Application
+-----
+
+1. Open the application directory `/rps-challenge-apprenticeships` using your preferred terminal.
+2. Run `rackup -p 4567`.
+
+You should see something that resembles the below in your terminal: 
+
+```
+[2021-10-08 17:04:18] INFO  WEBrick 1.7.0
+[2021-10-08 17:04:18] INFO  ruby 3.0.2 (2021-07-07) [arm64-darwin20]
+[2021-10-08 17:04:18] INFO  WEBrick::HTTPServer#start: pid=89359 port=4567
+```
+
+3. In your browser, navigate to `http://localhost:4567/`
+
+In your browser you should see this homepage: 
+
+![alt text](./homepage-screenshot.png)
+
+4. On the homepage, enter your name and select Rock, Paper or Scissors by clicking the button. 
+
+In your browser you should see the results page:
+
+![alt text](./results-screenshot.png)
+
+5. To play again, click the `Play Again` button
+
+Built Using
+-----
+
+* Ruby
+* Sinatra
+* Capybara
+* RSpec
+* Simplecov
+* Rubocop
