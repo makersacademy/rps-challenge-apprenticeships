@@ -26,7 +26,9 @@ class RockPaperScissors < Sinatra::Base
 
   get "/turn" do
     @name = $name
-    return "#{@name} chose #{$player_choice}"
+    @player_choice = $player_choice
+    @bot_choice = ["rock","paper","scissors"].sample
+    return erb(:turn)
   end
 
   run! if app_file == $0

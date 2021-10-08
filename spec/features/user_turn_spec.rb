@@ -4,7 +4,7 @@ feature "user's turn" do
     fill_in "name", with: "sunny"
     click_button "Submit"
     click_button "scissors"
-    expect(page).to have_content "sunny chose scissors"
+    expect(page).to have_selector("//p", text: "sunny chose scissors")
 
 
   end
