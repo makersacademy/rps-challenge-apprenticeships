@@ -1,0 +1,11 @@
+
+<p>Hi <%= @name1 %> </p>
+<p>Please choose Rock, Paper or Scissors</p>
+<form action="/move_made" method="post" class="row">
+  <select name="player_1_chose">
+    <option value ="rock">Rock</option>
+    <option value ="paper">Paper</option>
+    <option value ="scissors">Scissors</option>
+  </select> 
+  <input type="submit" value="Submit">
+</form>
