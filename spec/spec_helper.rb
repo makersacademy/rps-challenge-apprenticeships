@@ -1,8 +1,13 @@
+ENV['RACK_ENV'] = 'test'
+
+require_relative '../app'
+
 require 'capybara/rspec'
-require 'capybara'
-require 'rspec'
 require 'simplecov'
 require 'simplecov-console'
+
+Capybara.app = RockPaperScissors
+Capybara.server = :webrick
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -13,7 +18,7 @@ SimpleCov.start
 
 ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-Capybara.app = RockPaperScissors
+
 
 # RSpec.configure do |config|
 #   config.after(:suite) do
