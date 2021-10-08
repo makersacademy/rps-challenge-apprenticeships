@@ -31,6 +31,10 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
+## Usage
+
+See images in `/public/images/single_player` for how the game runs.
+
 ## Set up
 
 1. Clone repo
@@ -40,35 +44,6 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 
 1. Run `rackup -p 4567`
 2. Access the website at http://localhost:4567
-
-## Usage
-### Home
-
-![home page](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/index.png)
-
-### Single Player
-
-Entering name:
-
-![enter player name](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/single_player/name.png)
-
-Make a move:
-
-![making a move](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/single_player/choice.png)
-
-Result:
-
-![player wins](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/single_player/result.png)
-
-### Two Player
-Enter names:
-
-Player 1 move:
-
-Player 2 move:
-
-Result:
-
 
 ## Client-Server diagram
 
