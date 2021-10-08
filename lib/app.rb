@@ -1,6 +1,7 @@
 require "sinatra/base"
 require "sinatra/reloader"
 require_relative "./computer"
+require_relative "./player"
 
 class RockPaperScissors < Sinatra::Base
   use Rack::Session::Cookie
@@ -19,12 +20,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/name-info" do
-    session[:username] = params[:name]
+    # session[:username] = params[:name]
+    $player = Player.new(params[:name])
     redirect "/play"
   end
 
   get "/play" do
-    @name = session[:username]
+    # @name = session[:username]
+    @name = $player.name
     erb(:play)
   end
 

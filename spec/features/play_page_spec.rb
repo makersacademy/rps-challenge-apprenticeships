@@ -1,6 +1,6 @@
 feature "the play page" do
   background do
-    visit "/play"
+    sign_in_and_play
   end
 
   scenario "users can select one of three options" do
