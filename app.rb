@@ -12,7 +12,7 @@ class RockPaperScissors < Sinatra::Base
 
   post "/play" do
     @name = params[:name]
-    "Hello #{@name}"
+    erb(:play)
   end
 
   run! if app_file == $0
