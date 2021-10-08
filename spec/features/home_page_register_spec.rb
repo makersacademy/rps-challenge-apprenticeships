@@ -1,4 +1,4 @@
-feature 'Can visit home page and enter name' do
+feature 'Can visit home page' do
   scenario 'visit home page and enter name' do
     visit('/')
     expect(page).to have_content('Please enter your name')
@@ -7,7 +7,7 @@ feature 'Can visit home page and enter name' do
     expect(page).to have_content('Welcome Troy')
   end
 
-  scenario 'visit home page and enter blank name' do
+  scenario 'enter blank name' do
     visit('/')
     fill_in 'name', with: ''
     click_button 'submit'

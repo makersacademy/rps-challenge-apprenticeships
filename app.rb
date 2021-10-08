@@ -1,5 +1,7 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
+require './lib/player'
+require './lib/input_checker'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -10,20 +12,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    @name_error = session[:name_error].nil? ? nil : true
+    InputChecker.new
+    @name_error = InputChecker.input.empty?
     erb(:index)
   end
 
   post '/register' do
-    session[:name] = params[:name]
-    if session[:name].empty?
-      session[:name_error] = true
-      redirect "/"
-    end
+    name = InputChecker.set_input(params[:name])
+    redirect "/" if InputChecker.input.empty?
+    Player.new(name)
     redirect "/play"
   end
 
   get '/play' do
+    @name = Player.name
     erb(:play)
   end
 
