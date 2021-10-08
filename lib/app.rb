@@ -9,9 +9,9 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
-  get '/test' do
-    'test page'
-  end
+  # get '/test' do
+  #   'test page'
+  # end
 
   get "/" do
     erb(:index)
@@ -25,6 +25,17 @@ class RockPaperScissors < Sinatra::Base
   get "/play" do
     @name = session[:username]
     erb(:play)
+  end
+
+  post "/victory" do
+    session[:choice] = params[:choice]
+    p params[:choice]
+    redirect "/result"
+  end
+
+  get "/result" do
+    @choice = session[:choice]
+    erb(:result)
   end
 
   run! if app_file == $0
