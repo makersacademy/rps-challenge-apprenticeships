@@ -1,1 +1,9 @@
 <%= @player_1 %>
+
+<form action="/play" method="POST">
+  <label for="selection">Choose Rock Paper or Scissors </label>
+  <input type="text" name="selection">
+  <input type="submit" value="Submit">
+</form>
+
+You chose: <%= @selection %>
