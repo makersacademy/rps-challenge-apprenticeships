@@ -7,14 +7,6 @@ class RockPaperScissors < Sinatra::Base
   # end
   enable :sessions
 
-  get '/test' do
-    'test page'
-  end
-
-  get '/test2' do
-    'testing page and test works'
-  end  
-
   get '/' do
     erb :index
   end  
@@ -29,12 +21,13 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/choice' do
+  post '/weapon' do
     session[:choice] = params[:choice]
     redirect '/display-weapon'
   end
 
   get '/display-weapon' do
+    @player_name = session[:player_name]
     @choice = session[:choice]
     erb :display_weapon
   end

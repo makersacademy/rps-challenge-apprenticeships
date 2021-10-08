@@ -35,11 +35,6 @@ Open localhost in your browser with the specified port (found in your terminal m
 └── app.rb 
 ```
 
-## To-Do
-* Redirect from `/play` to `/display-weapon`
-* Issue with submit button?
-* `:choice` param not being carried on to `/display-weapon` page
-
 
 ## Done
 * Write a feature test for entering a player name
@@ -52,5 +47,11 @@ Open localhost in your browser with the specified port (found in your terminal m
 * Add title, instruction and label to `index.erb`
 * Enable `session` in Sinatra
 * Add a `get /play` route that renders `play.erb` 
-* Write feature tests for weapon buttons
-* Create weapon buttons in `play.erb`
+* Write feature tests for choosing a weapon
+* Create form in `play.erb` that points to `/weapon` and uses a `post` request
+* Add a `post '/weapon'` route to app.rb
+* Create `display_weapon.erb` to display the user's weapon of choice
+* Add a `get '/display-weapon` route to app.rb
+
+## To-Do
+* User story 2

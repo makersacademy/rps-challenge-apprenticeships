@@ -1,7 +1,7 @@
 <h1>Rock, Paper, Scissors</h1>
-<br>
 Player: <%= @player_name %>
-<br>
-Choose your weapon:
-<input type="text" name="choice" placeholder="rock, paper or scissors">
-<input type="submit" name="Submit">
+<form action="/weapon" method="post">
+  Choose your weapon:
+  <input type="text" name="choice" placeholder="rock, paper or scissors">
+  <input type="submit" name="Submit">
+</form>
