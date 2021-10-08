@@ -4,6 +4,8 @@ require './lib/game'
 require './lib/two_player_game'
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
+
   get '/test' do
     'test page'
   end
@@ -16,11 +18,12 @@ class RockPaperScissors < Sinatra::Base
     mode = params[:mode]
     case mode
     when 'Single Player'
+      session[:extended] = false
       redirect('/single_player')
     when 'Two Player'
       redirect('/two_player')
     when 'Rock, Paper, Scissor, Lizard, Spock'
-      $extended = true
+      session[:extended] = true
       redirect('/single_player')
     end
   end
@@ -33,6 +36,8 @@ class RockPaperScissors < Sinatra::Base
   post '/player' do
     player = Player.new(params[:name])
     @game = Game.create(player)
+    extended = session[:extended]
+    @game.extended = extended
     redirect to('/single_player_game')
   end
 
@@ -41,7 +46,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/single_player_game' do
-    @extended = $extended
     @name = @game.player.name
     erb :single_player_game
   end
@@ -53,8 +57,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @extended = $extended
-    
+    p @game.extended
     @player_choice = @game.player.choice
     @computer_choice = @game.computer_choice
     @winner = @game.decide_winner(@player_choice, @computer_choice)

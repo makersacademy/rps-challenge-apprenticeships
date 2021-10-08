@@ -2,11 +2,13 @@ require_relative 'game_logic'
 
 class Game
   attr_reader :player
+  attr_accessor :extended
   
   def initialize(player)
     @player = player
     @computer_choices = ["Rock", "Paper", "Scissors"]
     @extended_computer_choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
+    @extended = false
   end
 
   def self.create(player)
