@@ -5,12 +5,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+  <link rel="stylesheet" href="/stylesheets/application.css">
   <title>Victory</title>
 </head>
-<body>
-  <h1>You chose: <%=@choice%></h1>
+<body id="result-page">
+  <h1>You chose: <%=@player_choice%></h1>
   <h1>The Computer chose: <%=@computer_choice%></h1>
-  <h1>RESULT: <%=@game_result%></h1>
+  <h1><%=@game_result%></h1>
+  <form action="/play">
+    <input type="submit" name="play-again" value="Play again!">
+  </form>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 </body>
 </html>

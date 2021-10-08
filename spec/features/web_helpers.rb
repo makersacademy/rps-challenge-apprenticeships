@@ -7,5 +7,5 @@ end
 def make_player_choice
   visit "/play"
   select "Scissors", from: "choice"
-  click_button("Submit")
+  click_button "Submit"
 end

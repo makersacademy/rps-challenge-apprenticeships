@@ -6,42 +6,42 @@ require_relative "./game"
 
 class RockPaperScissors < Sinatra::Base
   use Rack::Session::Cookie
+
   configure :development do
     register Sinatra::Reloader
   end
 
   enable :sessions
-  
+
   get "/" do
     erb(:index)
   end
 
   post "/name-info" do
-    # session[:username] = params[:name]
-    $player = Player.new(params[:name])
+    player = Player.new(params[:name])
+    computer = Computer.new
+    $game = Game.new(player, computer)
     redirect "/play"
   end
 
   get "/play" do
-    # @name = session[:username]
-    @name = $player.name
+    @game = $game
+    @name = @game.player.name
     erb(:play)
   end
 
   post "/victory" do
-    # session[:choice] = params[:choice]
-    $user_choice = params[:choice]
-    $player.selection($user_choice)
+    session[:choice] = params[:choice]
+    @game = $game
+    @game.player.selection(session[:choice])
     redirect "/result"
   end
 
   get "/result" do
-    # @choice = session[:choice]
-    @choice = $user_choice
-    $computer = Computer.new
-    @computer_choice = $computer.generate_choice
-    $game = Game.new($player, $computer)
-    @game_result = $game.result(@choice, @computer_choice)
+    @player_choice = session[:choice]
+    @game = $game
+    @computer_choice = @game.computer.generate_choice
+    @game_result = @game.result(@player_choice, @computer_choice)
     erb(:result)
   end
 

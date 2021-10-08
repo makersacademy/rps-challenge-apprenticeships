@@ -7,7 +7,7 @@ describe Game do
   subject(:game) { described_class.new(bob, computer) }
 
   it "returns the correct winner" do
-    expect(game.result(bob.selection("Scissors"), computer.generate_choice)).to eq "The player won"
+    expect(game.result(bob.selection("Scissors"), computer.generate_choice)).to eq "You won!"
   end
 
 end
