@@ -14,7 +14,20 @@ feature "home page" do
     visit "/"
     fill_in "name", with: "Graham"
     click_button
-    expect(page).to have_content "Hello Graham"
     expect(current_path).to eq "/play"
+  end
+end
+
+feature "play" do
+  before do
+    visit "/"
+    fill_in "name", with: "Steve"
+    click_button
+  end
+  scenario "greets user" do
+    expect(page).to have_content "Hello Steve"
+  end
+  scenario "asks user for input" do
+    expect(page).to have_content "Rock, Paper or Scissors?"
   end
 end
