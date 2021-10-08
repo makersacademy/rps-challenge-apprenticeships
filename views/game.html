@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+  <style>
+    h1, h2 {
+      text-align: center
+    }
+    #scores-container {
+      display: flex;
+      justify-content: space-evenly;
+    }
+    .score-label {
+      text-align: center;
+    }
+    .image {
+      width: 300px;
+      height: 400px;
+      background-color: palegoldenrod;
+      margin-bottom: 20px;
+    }
+    .button-panel {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+    }
+    .action-button {
+      font-size: 30px;
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Rock, Paper, Scissors</h1>
+  <h2>First player to score 3 points wins the game</h2>
+  <div id="scores-container">
+    <div class="player">
+      <h3 class="score-label">Score</h3>
+      <div class="image"></div>
+      <div class="button-panel">
+        <button class="action-button">Rock</button>
+        <button class="action-button">Paper</button>
+        <button class="action-button">Scissors</button>
+      </div>
+    </div>
+    <div class="player">
+      <h3 class="score-label">Score</h3>
+      <div class="image"></div>
+    </div>
+  </div>  
+</body>
+</html>
