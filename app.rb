@@ -12,11 +12,6 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  # post '/play' do
-  #   @player_name = params[:player_name]
-  #   erb :play
-  # end
-
   post '/name' do
     p params
     session[:player_name] = params[:player_name]
@@ -26,6 +21,21 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     erb :play
+  end
+
+  post '/move_rock' do
+    @player_name = session[:player_name]
+    erb :move_rock
+  end
+
+  post '/move_paper' do
+    @player_name = session[:player_name]
+    erb :move_paper
+  end
+
+  post '/move_scissors' do
+    @player_name = session[:player_name]
+    erb :move_scissors
   end
 
   get '/test' do
