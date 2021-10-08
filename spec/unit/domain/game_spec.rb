@@ -1,9 +1,9 @@
 require 'domain/game'
 
 describe Game do
-  let(:player_one) { double :player_one }
-  let(:player_two) { double :player_two }
-  let(:subject) { described_class.new("ABCDEF", player_one, player_two, :single_player)}
+  let(:player_one) { double :player_one, name: "Jim"}
+  let(:player_two) { double :player_two, name: "ai" }
+  let(:subject) { described_class.new("ABCDEF", player_one, player_two, :single_player) }
   it 'has a game code' do
     expect(subject.game_code).to eq "ABCDEF"
   end
@@ -15,5 +15,24 @@ describe Game do
 
   it 'has a game type' do
     expect(subject.game_type).to eq :single_player
+  end
+
+  describe '#play_single_player_round' do
+    it 'player loses' do
+      result = subject.play_single_player_round(player_one.name, GameStatusCodes::ROCK, GameStatusCodes::PAPER)
+      expected = { player_one.name => 0, player_two.name => 1 }
+      expect(result).to eq expected
+    end
+    it 'player wins' do
+      result = subject.play_single_player_round(player_one.name, GameStatusCodes::ROCK, GameStatusCodes::SCISSORS)
+      expected = { player_one.name => 0, player_two.name => 1 }
+      expect(result).to eq expected
+    end
+  end
+
+  describe '#==' do
+    it 'returns false if the compared class does not match' do
+      expect(subject == "Not a game").to eq false
+    end
   end
 end

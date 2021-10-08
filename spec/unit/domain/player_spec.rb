@@ -2,7 +2,7 @@ require 'domain/player'
 
 describe Player do
   let(:name) { "Harry" }
-  let(:subject) { described_class.new(name)}
+  let(:subject) { described_class.new(name) }
   it 'has a name' do
     expect(subject.name).to eq name
   end
@@ -20,13 +20,13 @@ describe Player do
 
   describe '#add_win' do
     it 'adds a win to the players record' do
-      expect {subject.add_win}.to change {subject.wins}.by 1
+      expect { subject.add_win }.to change { subject.wins }.by 1
     end
   end
 
   describe '#add_loss' do
     it 'adds a win to the players record' do
-      expect {subject.add_loss}.to change {subject.losses}.by 1
+      expect { subject.add_loss }.to change { subject.losses }.by 1
     end
   end
 

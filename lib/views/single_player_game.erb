@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Game</title>
+</head>
+<body>
+  <div>
+    <h1>Game: <%= @game_id %> </h1>
+    <p id="player_one">Player 1: <%= @player_one %> </p>
+    <p id="player_two">Player 2: <%= @player_two %> </p>
+  </div>
+  <div>
+    <form method="post" action="/play-round">
+      <input id="rock-option" type="radio" name="move" value="Rock" required>
+      <label for="rock-option">Rock</label>
+      <input id="paper-option" type="radio" name="move" value="Paper">
+      <label for="paper-option">Paper</label>
+      <input id="scissors-option" type="radio" name="move" value="Scissors">
+      <label for="scissors-option">Scissors</label>
+      <input type="hidden" id="game_id" name="game_id" value="<%= @game_id %>" >
+      <input type="hidden" id="current_player" name="current_player" value="<%= @current_player %>" >
+      <input type="submit" id="start-vs-pc" value="Go!"/>
+    </form>
+    
+  </div>
+</body>
+</html>

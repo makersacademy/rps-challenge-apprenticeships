@@ -3,7 +3,7 @@ class Player
   attr_reader :name
   def initialize(name)
     @name = name
-    @games_record = {:wins => 0, :losses => 0}
+    @games_record = { :wins => 0, :losses => 0 }
   end
 
   def wins
