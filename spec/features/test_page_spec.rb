@@ -31,8 +31,14 @@ feature "play" do
     expect(page).to have_content "Rock, Paper or Scissors?"
   end
   scenario "includes 3 radio buttons" do
-    expect(page).to have_selector "input[type=radio][value=Rock]"
-    expect(page).to have_selector "input[type=radio][value=Paper]"
-    expect(page).to have_selector "input[type=radio][value=Scissors]"
+    expect(page).to have_selector "input[type=radio][value=rock]"
+    expect(page).to have_selector "input[type=radio][value=paper]"
+    expect(page).to have_selector "input[type=radio][value=scissors]"
+  end
+  scenario "pressing play posts to /result" do
+    save_and_open_page
+    choose "Rock"
+    click_on "Play"
+    expect(current_path).to eq "/result"
   end
 end

@@ -16,6 +16,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/result" do
+    @choice = params[:choice]
+    @cpu_choice = cpu_choice
+    erb(:result)
   end
 
   run! if app_file == $0
