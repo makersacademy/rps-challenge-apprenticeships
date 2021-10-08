@@ -1,0 +1,21 @@
+<% if @game.extended == true %>
+
+<h2>Enter your choice, <%=@name%>:</h2>
+<form method="post" action="/choice">
+  <input name="choice" type="submit" value="Rock"></option>
+  <input name="choice" type="submit" value="Paper"></option>
+  <input name="choice" type="submit" value="Scissors"></option>
+  <input name="choice" type="submit" value="Lizard"></option>
+  <input name="choice" type="submit" value="Spock"></option>
+</form>
+
+<% else %>
+
+<h2>Enter your choice, <%=@name%>:</h2>
+<form method="post" action="/choice">
+  <input name="choice" type="submit" value="Rock"></option>
+  <input name="choice" type="submit" value="Paper"></option>
+  <input name="choice" type="submit" value="Scissors"></option>
+</form>
+
+<% end %>

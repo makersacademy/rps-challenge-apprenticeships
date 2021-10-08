@@ -1,0 +1,21 @@
+
+<p class="moves"><%=@player1%> entered: <%=@player1_choice%></p>
+<p class="moves"><%=@player2%> entered: <%=@player2_choice%></p>
+
+<% if @winner == "Draw" %>
+<p class="result">It's a draw!</p>
+
+<% elsif @winner == "Player 1" %>
+<p class="result green"><%=@player1%> wins!</p>
+
+<% elsif @winner == "Player 2" %>
+<p class="result green"><%=@player2%> wins!</p>
+<% end %>
+
+<form method="get" action="/single_player_game">
+  <input value="Play again!" type="submit">
+</form>
+
+<form method="get" action="/">
+  <input value="Exit" type="submit">
+</form>

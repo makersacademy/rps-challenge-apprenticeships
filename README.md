@@ -1,30 +1,10 @@
-# RPS Challenge
+# Rock, Paper, Scissors!
 
-## Instructions
+A project built following a TDD approach, using Sinatra and Capybara/RSpec for test-driving, as part of the `individual challenges` for the Makers Academy coding course: https://github.com/makersacademy/rps-challenge-apprenticeships.
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+This is a simple webapp that lets the user play a game of rock, paper, scissors, in either single player, two player or an extended mode.
 
-## Set up
-
-```bash
-$ bundle install
-$ rspec
-# You should output that includes:
-# 1 example, 0 failures
-```
-
-## Task
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+## User Stories
 
 ```
 As a marketeer
@@ -36,33 +16,13 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-As usual please start by:
-
-* Forking this repo
-* Test-driving development of your app
-
-## Resources
-
-* [HTML forms](https://www.w3schools.com/html/html_forms.asp)
-* [Capybara cheatsheet](https://devhints.io/capybara)
-* [Twitter bootstrap css library](https://getbootstrap.com/)
-* [Hosting on heroku](https://heroku.com)
-
 ## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
 ## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
+Use the _special_ rules!
 
 ## Basic Rules
 
@@ -70,29 +30,56 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 - Scissors beats Paper
 - Paper beats Rock
 
-In code review we'll be hoping to see:
+## _Special_ Rules
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-* Commits and short and scoped
+Source: https://bigbangtheory.fandom.com/wiki/Rock,_Paper,_Scissors,_Lizard,_Spock
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+- Scissors cuts Paper
+- Paper covers Rock
+- Rock crushes Lizard
+- Lizard poisons Spock
+- Spock smashes Scissors
+- Scissors decapitates Lizard
+- Lizard eats Paper
+- Paper disproves Spock
+- Spock vaporizes Rock
+- Rock crushes Scissors
 
-## Notes on test coverage
+## Usage
 
-Please ensure you have the following **AT THE TOP** of your `spec/spec_helper.rb` in order to have test coverage stats generated on your pull request:
+See images in `/public/images/single_player` for how a simple, single player game runs.
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+## Set up
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+1. Clone repo
+2. Run `bundle install`
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+## To run
+
+1. Run `rackup -p 4567`
+2. Access the website at http://localhost:4567
+
+## Routing
+### Single player game
+
+index > single_player_signup > single_player_game > result
+
+### Two player game
+
+index > two_player_signup > player1_choice > player2_choice > result2
+
+### Extended game
+
+Same as single player route.
+
+## Client-Server diagram
+
+![client-server diagram for RPS app](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/server.png)
+
+## Improvement Points
+
+- Main point would be to find a way to not require multiple views for getting the different players choices in a two player game - would be better if the players choices could be done within the `/choices` view
+- Tried different ways of doing this, but it was challenging as I wanted the choices to be made on separate screens, so the users could pass the device running the game after they have selected their option. I didn't want both players to make their choices on the same page, otherwise each player would know the other's move! Not sure what would be the best way to do this
+- High cyclometric complexity for game logic (especially the extended game logic) in `GameLogic` module - would be better to reduce this by splitting out into smaller methods
+- Use of `session` within Sinatra is generally unfavourable, although I have managed to remove any instances of the global variable by configuring the `Game` and `TwoPlayerGame` classes to be Singletons (only one instance can be created at a time, and this is accessed using e.g. `Game.instance`)
+- Conflicted as to whether it would be better to have a Game _and_ a TwoPlayerGame class, or whether this logic should have been kept inside a single class for both game modes

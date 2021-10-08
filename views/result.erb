@@ -1,0 +1,21 @@
+
+<p class="moves">You entered: <%=@player_choice%></p>
+<p class="moves">Computer entered: <%=@computer_choice%></p>
+
+<% if @winner == "Draw" %>
+<p class="result">It's a draw!</p>
+
+<% elsif @winner == "Computer" %>
+<p class="result red"><%=@winner%> wins</p>
+
+<% else %>
+<p class="result green"><%=@winner%> wins!</p>
+<% end %>
+
+<form method="get" action="/single_player_game">
+  <input value="Play again!" type="submit">
+</form>
+
+<form method="get" action="/">
+  <input value="Exit" type="submit">
+</form>

@@ -1,0 +1,50 @@
+h1 {
+  text-align: center;
+  padding: 20 0 10;
+}
+
+h2 {
+  text-align: center;
+  padding: 10px;
+}
+
+form {
+  text-align: center;
+}
+
+.left {
+  text-align: left;
+}
+
+.moves {
+  font-size: 20;
+  font-weight: bold;
+  text-align: center;
+}
+
+.result {
+  font-size: 25;
+  font-weight: bold;
+  text-align: center;
+}
+
+.result.red {
+  color: red;
+}
+
+.result.green {
+  color: green;
+}
+
+body {
+  background-color: LightSkyBlue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+label {
+  padding: 5;
+}
+
+input {
+  text-align: center;
+}
