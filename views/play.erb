@@ -1,9 +1,12 @@
 <%= @player_1 %>
 
 <form action="/play" method="POST">
-  <label for="selection">Choose Rock Paper or Scissors </label>
-  <% # <input type="text" name="selection"> %>
-  <input type="radio" id="Rock" name="selection" value="Rock">
+<label for="Rock">Rock </label>
+  <input type="radio" id="Rock" name="selection" value="Rock"><br>
+  <label for="Paper">Paper </label>
+  <input type="radio" id="Paper" name="selection" value="Paper"><br>
+  <label for="Scissors">Scissors </label>
+  <input type="radio" id="Scissors" name="selection" value="Scissors"><br>
   <input type="submit" value="Submit">
 </form>
 
