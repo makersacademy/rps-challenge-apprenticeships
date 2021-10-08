@@ -1,0 +1,10 @@
+<h1>Welcome <%= @name %> </h1>
+
+<form action="/play" method="post">
+  <input type="submit" name="weapon" value="Rock">
+  <input type="submit" name="weapon" value="Paper">
+  <input type="submit" name="weapon" value="Scissors">
+</form>
+
+<h2>Your Weapon Is <%= @weapon %>!</h2>
+
