@@ -18,5 +18,16 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post "/turn" do
+    $player_choice = params[:button]
+    redirect("/turn")
+    
+  end
+
+  get "/turn" do
+    @name = $name
+    return "#{@name} chose #{$player_choice}"
+  end
+
   run! if app_file == $0
 end
