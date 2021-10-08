@@ -16,8 +16,9 @@ feature 'two player home page' do
   scenario 'first player and second player enter their choices, winner decided' do
     two_player_start
 
+    # First player (Foo) choice
     click_button 'Rock'
-
+    # Second player (Bar) choice
     click_button 'Paper'
 
     expect(page).to have_content('Bar wins')

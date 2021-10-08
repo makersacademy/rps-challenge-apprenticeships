@@ -61,16 +61,20 @@ describe Game do
   end
 
   describe "#decide_extended_winner" do
+    before(:each) { allow(player).to receive(:choice).and_return('Spock') }
     it "returns computer when computer wins" do
-      expect(@game.decide_extended_winner("Spock", "Lizard")).to eq "Computer"
+      expect(@game).to receive(:extended_computer_choice).and_return("Lizard")
+      expect(@game.decide_extended_winner(player.choice, @game.extended_computer_choice)).to eq "Computer"
     end
 
     it "returns draw when draw" do
-      expect(@game.decide_extended_winner("Spock", "Spock")).to eq "Draw"
+      expect(@game).to receive(:extended_computer_choice).and_return("Spock")
+      expect(@game.decide_extended_winner(player.choice, @game.extended_computer_choice)).to eq "Draw"
     end
 
     it "returns player when player wins" do
-      expect(@game.decide_extended_winner("Spock", "Rock")).to eq "Player"
+      expect(@game).to receive(:extended_computer_choice).and_return("Rock")
+      expect(@game.decide_extended_winner(player.choice, @game.extended_computer_choice)).to eq "Player"
     end
   end
 end
