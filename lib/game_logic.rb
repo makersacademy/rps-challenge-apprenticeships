@@ -22,8 +22,6 @@ module GameLogic
     )
   end
 
-  private_class_method
-
   def self.spock(choice1, choice2)
     true if (
       choice1 == "Spock" && choice2 == "Scissors" ||
