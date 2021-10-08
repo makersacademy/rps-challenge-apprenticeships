@@ -1,4 +1,4 @@
-require 'game_logic'
+require_relative 'game_logic'
 
 class Game
   attr_reader :player

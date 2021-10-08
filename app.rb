@@ -1,10 +1,21 @@
 require 'sinatra/base'
+# require './lib/game_logic'
 require './lib/player'
 require './lib/game'
+
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
+  end
+
+  get '/' do
+    erb :index
+  end
+
+  post '/game_mode' do
+    mode = params[:mode]
+    mode == "Single Player" ? redirect('/single_player') : redirect('/two_player')
   end
 
   get '/single_player' do
@@ -15,6 +26,10 @@ class RockPaperScissors < Sinatra::Base
     player = Player.new(params[:name])
     @game = Game.create(player)
     redirect to('/single_player_game')
+  end
+
+  get '/two_player' do
+    erb :two_player_index
   end
 
   before do
