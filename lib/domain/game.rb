@@ -10,6 +10,10 @@ class Game
   end
 
   def ==(other)
-    @game_code == other.game_code
+    if self.class == other.class
+      @game_code == other.game_code
+    else 
+      false
+    end
   end
 end

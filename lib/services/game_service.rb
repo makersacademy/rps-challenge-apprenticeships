@@ -12,7 +12,12 @@ class GameService
   end
 
   def find_game(code)
-    @games.find {|game| game.game_code == code}
+    result = @games.find {|game| game.game_code == code }
+    if result == nil
+      raise "No game found"
+    else
+      result
+    end
   end
 
 end

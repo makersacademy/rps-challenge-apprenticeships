@@ -12,4 +12,16 @@ describe GameService do
       expect(subject.find_game(game_code)).to eq game
     end
   end
+
+  describe '#find_game' do
+    it 'can find a game by the ID' do
+      subject.start_single_player_game(player, "123456")
+      subject.start_single_player_game(player, "789101")
+      expect(subject.find_game("123456").game_code).to eq "123456"
+    end
+
+    it 'throws an error if the game does not exist' do
+      expect { subject.find_game("123456") }.to raise_error "No game found"
+    end
+  end
 end
