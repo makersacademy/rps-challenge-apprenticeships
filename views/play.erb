@@ -7,6 +7,18 @@
   <title>Hi, <%= @player %>! | Rock, Paper, Scissors</title>
 </head>
 <body>
-  <h2><%= @player %></h2>
+  <h2><%= @player.nil? ? "Stranger" : @player %>, please, choose one:</h2>
+  <form action="/choose" method="post">
+    <input type="radio" name="move" value="rock" id="rock" checked />
+    <label for="rock">Rock</label>
+
+    <input type="radio" name="move" value="paper" id="paper" />
+    <label for="paper">Paper</label>
+
+    <input type="radio" name="move" value="scissors" id="scissors" />
+    <label for="scissors">Scissors</label>
+
+    <input type="submit" value="choose" />
+  </form>
 </body>
 </html>
