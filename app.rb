@@ -15,8 +15,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/test' do
-    'test page now reloads'
+  post '/result' do
+    @user_choice = params[:user_choice]
+    p @user_choice
+    erb :result
   end
 
   run! if app_file == $0
