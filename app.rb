@@ -26,7 +26,7 @@ class RockPaperScissors < Sinatra::Base
 
   # Single Player
   get '/single_player' do
-    erb :single_player
+    erb :single_player_signup
   end
 
   post '/player' do
@@ -66,7 +66,7 @@ class RockPaperScissors < Sinatra::Base
 
   # Two player game
   get '/two_player' do
-    erb :two_player
+    erb :two_player_signup
   end
 
   post '/two_players' do
