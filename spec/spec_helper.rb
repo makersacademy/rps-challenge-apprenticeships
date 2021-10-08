@@ -1,7 +1,7 @@
-# require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-# require 'sinatra/reloader'
+require 'capybara'
+require 'capybara/rspec'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
@@ -15,12 +15,6 @@ SimpleCov.start
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
-# Capybara.app = RockPaperScissors
-
-require 'capybara'
-require 'capybara/rspec'
-# require 'sinatra/reloader'
-
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
