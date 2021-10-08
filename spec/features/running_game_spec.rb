@@ -26,6 +26,6 @@ feature 'game page' do
   scenario 'lets the user exit' do
     run_game('Scissors')
     click_button "Exit"
-    expect(page).to have_content "Enter your name"
+    expect(page).to have_content "Rock, Paper, Scissors!"
   end
 end

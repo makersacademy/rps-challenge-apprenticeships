@@ -7,23 +7,23 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
 
-  get '/' do
-    erb :index
+  get '/single_player' do
+    erb :single_player_index
   end
 
   post '/player' do
     player = Player.new(params[:name])
     @game = Game.create(player)
-    redirect to('/game')
+    redirect to('/single_player_game')
   end
 
   before do
     @game = Game.instance
   end
 
-  get '/game' do
+  get '/single_player_game' do
     @name = @game.player.name
-    erb :game
+    erb :single_player_game
   end
 
   post '/choice' do
