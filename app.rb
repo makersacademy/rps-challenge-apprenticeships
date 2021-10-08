@@ -1,7 +1,7 @@
 require 'sinatra/base'
-# require './lib/game_logic'
 require './lib/player'
 require './lib/game'
+require './lib/two_player_game'
 
 
 class RockPaperScissors < Sinatra::Base
@@ -30,6 +30,20 @@ class RockPaperScissors < Sinatra::Base
 
   get '/two_player' do
     erb :two_player_index
+  end
+
+  post '/two_players' do
+    player1 = Player.new(params[:player1])
+    player2 = Player.new(params[:player2])
+    @two_game = TwoPlayerGame.create(player1, player2)
+    redirect to('/two_player_game')
+  end
+
+  get '/two_player_game' do
+    @two_game = TwoPlayerGame.instance
+    @player1 = @two_game.player1.name
+    @player2 = @two_game.player2.name
+    erb :two_player_game
   end
 
   before do

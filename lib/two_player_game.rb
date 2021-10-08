@@ -1,5 +1,5 @@
-require 'player'
-require 'game_logic'
+require_relative 'player'
+require_relative 'game_logic'
 
 class TwoPlayerGame
   attr_reader :player1, :player2
@@ -7,6 +7,14 @@ class TwoPlayerGame
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
+  end
+
+  def self.create(player1, player2)
+    @game = TwoPlayerGame.new(player1, player2)
+  end
+
+  def self.instance
+    @game
   end
 
   def player_choice(player, choice)
