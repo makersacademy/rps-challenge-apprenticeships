@@ -10,6 +10,7 @@ class RockPaperScissors < Sinatra::Base
   get '/game' do
     @game_id = session['game_id']
     @player = session['player']
+    
     @player2 = "waiting"
     erb :game
   end
