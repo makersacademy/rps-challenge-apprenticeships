@@ -1,7 +1,7 @@
 require 'player'
 
 describe Player do
-  before(:each) {@player = Player.new('foo') }
+  before(:each) { @player = Player.new('foo') }
 
   describe "#initialize" do
     it "is initialised with a name" do

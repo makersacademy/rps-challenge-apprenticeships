@@ -12,50 +12,34 @@ describe TwoPlayerGame do
     end
   end
 
-  describe "#player_choice" do
-    it 'sets the specified player choice to the passed value' do
+  context "player chooses scissors" do
+    before(:each) do
       allow(player1).to receive(:move).with('Scissors')
       @game.player_choice(player1, 'Scissors')
       allow(player1).to receive(:choice).and_return('Scissors')
-      expect(@game.player1.choice).to eq 'Scissors'
-    end
-  end
-
-  describe "#decide_winner" do
-    it 'player 1 wins' do
-      allow(player1).to receive(:move).with('Scissors')
-      @game.player_choice(player1, 'Scissors')
-      allow(player1).to receive(:choice).and_return('Scissors')
-      
-      allow(player2).to receive(:move).with('Paper')
-      @game.player_choice(player2, 'Paper')
-      allow(player2).to receive(:choice).and_return('Paper')
-
-      expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Player 1'
     end
 
-    it 'player 2 wins' do
-      allow(player1).to receive(:move).with('Scissors')
-      @game.player_choice(player1, 'Scissors')
-      allow(player1).to receive(:choice).and_return('Scissors')
-      
-      allow(player2).to receive(:move).with('Rock')
-      @game.player_choice(player2, 'Rock')
-      allow(player2).to receive(:choice).and_return('Rock')
-
-      expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Player 2'
+    describe "#player_choice" do
+      it 'sets the specified player choice to the passed value' do
+        expect(@game.player1.choice).to eq 'Scissors'
+      end
     end
-
-    it 'draw' do
-      allow(player1).to receive(:move).with('Scissors')
-      @game.player_choice(player1, 'Scissors')
-      allow(player1).to receive(:choice).and_return('Scissors')
-      
-      allow(player2).to receive(:move).with('Scissors')
-      @game.player_choice(player2, 'Scissors')
-      allow(player2).to receive(:choice).and_return('Scissors')
-
-      expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Draw'
+  
+    describe "#decide_winner" do
+      it 'player 1 wins' do
+        configure_second_player_double('Paper')
+        expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Player 1'
+      end
+  
+      it 'player 2 wins' do
+        configure_second_player_double('Rock')
+        expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Player 2'
+      end
+  
+      it 'draw' do
+        configure_second_player_double('Scissors')
+        expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Draw'
+      end
     end
   end
 end
