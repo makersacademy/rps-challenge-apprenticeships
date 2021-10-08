@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/player'
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
   get '/test' do
     'test page'
   end
@@ -19,17 +20,20 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
-  get "/rock" do
-    erb :rock
+  post "/rock" do
+    @rock_option = params[:rock_option]
+    erb :option
   end
 
-  get "/paper" do
-    erb :paper
+  post "/paper" do
+    @paper_option = params[:paper_option]
+    erb :option
   end
 
-  get "/scissors" do
-    erb :scissors
+  post "/scissors" do
+    @scissors_option = params[:scissors_option]
+    erb :option
   end
-  
+
   run! if app_file == $0
 end

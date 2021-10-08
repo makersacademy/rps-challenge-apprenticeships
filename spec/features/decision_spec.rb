@@ -4,6 +4,7 @@ feature "Decision" do
     fill_in :player_name, with: "Ana"
     click_button "Start game"
     click_button("Rock")
+    save_and_open_page
     expect(page).to have_content "You have picked rock"
   end
   scenario "Player chooses paper button" do
