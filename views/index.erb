@@ -1,0 +1,8 @@
+<h1>Please enter your name</h1>
+<form method="post" action="/register">
+  <input type="text" name="name">
+  <input type="submit" name="submit">
+  <% unless @name_error.nil?%>
+    <p style="color:red;">You must enter a name!</p>
+  <% end%>
+</form>
