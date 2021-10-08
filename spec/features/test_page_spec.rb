@@ -53,4 +53,20 @@ feature "result" do
   scenario "cpu_choice created" do
     expect(page).to have_content @cpu_choice
   end
+  scenario "page states user's choice" do
+    expect(page).to have_content "Kim: rock"
+  end
+  scenario "page states computer's choice" do
+    expect(page).to have_content "Computer: " # How do I use a double here?
+  end
+  scenario "asks the user if they would like to play again" do
+    expect(page).to have_content "Would you like to play again?"
+  end
+end
+
+feature "end" do
+  scenario "says goodbye to user" do
+    visit "/end"
+    expect(page).to have_content "Goodbye"
+  end
 end

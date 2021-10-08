@@ -13,12 +13,13 @@ class RockPaperScissors < Sinatra::Base
 
   post "/play" do
     session[:name] = params[:name]
+    @name = session[:name]
     erb(:play)
   end
 
   post "/result" do
     @name = session[:name]
-    p @user_choice = params[:user_choice]
+    @user_choice = params[:user_choice]
     @cpu_choice = ["rock", "paper", "scissors"].sample
     erb(:result)
   end
