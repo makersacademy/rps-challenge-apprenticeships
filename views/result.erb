@@ -1,0 +1,6 @@
+<h2><%=@game.player.name%> played <%=@game.player_move%></h2>
+<h2>computer played <%=@game.computer_move%></h2>
+<h1><%=@game.winner%></h1>
+<form method='get' action='/play'>
+    <button type=submit>Play again?</button>
+</form>
