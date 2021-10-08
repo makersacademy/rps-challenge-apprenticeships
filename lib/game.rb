@@ -7,16 +7,10 @@ class Game
   end
 
   def result(player_choice, computer_choice)
-    if player_choice == "Rock" && computer_choice == "Scissors"
-      return "You won!"
-    elsif player_choice == "Paper" && computer_choice == "Rock"
-      return "You won!"
-    elsif player_choice == "Scissors"  && computer_choice == "Paper"
-      return "You won!"
-    elsif player_choice == computer_choice
-      return "It's a draw!"
-    else
-      return "The computer won!"
-    end
+    return "You won!" if player_choice == "Rock" && computer_choice == "Scissors"
+    return "You won!" if player_choice == "Paper" && computer_choice == "Rock"
+    return "You won!" if player_choice == "Scissors" && computer_choice == "Paper"
+    return "It's a draw!" if player_choice == computer_choice
+    return "The computer won!"
   end
 end

@@ -1,15 +1,10 @@
 require "sinatra/base"
-require "sinatra/reloader"
 require_relative "./computer"
 require_relative "./player"
 require_relative "./game"
 
 class RockPaperScissors < Sinatra::Base
   use Rack::Session::Cookie
-
-  configure :development do
-    register Sinatra::Reloader
-  end
 
   enable :sessions
 
@@ -30,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post "/victory" do
+  post "/outcome" do
     session[:choice] = params[:choice]
     @game = $game
     @game.player.selection(session[:choice])

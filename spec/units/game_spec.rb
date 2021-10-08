@@ -9,5 +9,4 @@ describe Game do
   it "returns the correct winner" do
     expect(game.result(bob.selection("Scissors"), computer.generate_choice)).to eq "You won!"
   end
-
 end
