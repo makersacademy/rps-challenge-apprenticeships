@@ -1,5 +1,6 @@
 def user_starts_game
-  visit '/single_player'
+  visit '/'
+  click_button 'Single Player'
   fill_in "name", with: "Foo"
   click_button "Submit"
 end
