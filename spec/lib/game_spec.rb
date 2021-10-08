@@ -59,4 +59,18 @@ describe Game do
       expect(@game.extended_computer_choice).to eq("Rock").or eq("Paper").or eq("Scissors").or eq("Lizard").or eq("Spock")
     end
   end
+
+  describe "#decide_extended_winner" do
+    it "returns computer when computer wins" do
+      expect(@game.decide_extended_winner("Spock", "Lizard")).to eq "Computer"
+    end
+
+    it "returns draw when draw" do
+      expect(@game.decide_extended_winner("Spock", "Spock")).to eq "Draw"
+    end
+
+    it "returns player when player wins" do
+      expect(@game.decide_extended_winner("Spock", "Rock")).to eq "Player"
+    end
+  end
 end

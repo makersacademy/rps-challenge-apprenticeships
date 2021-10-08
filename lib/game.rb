@@ -38,4 +38,14 @@ class Game
       "Computer"
     end
   end
+
+  def decide_extended_winner(player_choice, computer_choice)
+    if GameLogic.draw?(player_choice, computer_choice)
+      "Draw"
+    elsif GameLogic.player1_wins_extended_game?(player_choice, computer_choice)
+      "Player"
+    else
+      "Computer"
+    end
+  end
 end

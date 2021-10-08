@@ -53,6 +53,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @extended = $extended
+    
     @player_choice = @game.player.choice
     @computer_choice = @game.computer_choice
     @winner = @game.decide_winner(@player_choice, @computer_choice)
