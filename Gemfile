@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-ruby '3.0.2'
+ruby '3.0.0'
 
 gem 'sinatra'
+gem 'selenium-webdriver'
+gem "webrick"
 
 group :test do
   gem 'capybara'
