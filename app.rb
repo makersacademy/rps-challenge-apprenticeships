@@ -22,13 +22,13 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post "/move" do
-    session[:move] = params[:move]
+  post "/player_turn" do
+    session[:player_turn] = params[:player_turn]
     redirect "/outcome"
   end
 
   get "/outcome" do
-    @move = session[:move]
+    @player_turn = session[:player_turn]
     @player_name = session[:player_name]
     computer = Computer.new
     @computer_turn = computer.random_turn

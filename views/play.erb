@@ -10,10 +10,10 @@
   
 <h1>Let's play, <%= @player_name %>. Choose rock, paper or scissors. </h1>
 
-<form action="/move" method="POST">
-  <input type="submit" name="move" value="Rock">
-  <input type="submit" name="move" value="Paper">
-  <input type="submit" name="move" value="Scissors">
+<form action="/player_turn" method="POST">
+  <input type="submit" name="player_turn" value="Rock">
+  <input type="submit" name="player_turn" value="Paper">
+  <input type="submit" name="player_turn" value="Scissors">
 </form>
 </body>
 </html>
