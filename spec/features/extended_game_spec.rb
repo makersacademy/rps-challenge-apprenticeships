@@ -1,21 +1,31 @@
 feature 'Extended game' do
   scenario 'Has extended game buttons' do
-    visit '/'
-    click_button 'Rock, Paper, Scissor, Lizard, Spock'
-    fill_in "name", with: "Foo"
-    click_button "Submit"
+    # Sets computer choice to 'Lizard'
+    extended_game_start
 
     expect(page).to have_button('Lizard')
     expect(page).to have_button('Spock')
   end
 
-  scenario 'user wins' do  
-    allow_any_instance_of(Game).to receive(:extended_computer_choice).and_return("Lizard")
-    visit '/'
-    click_button 'Rock, Paper, Scissor, Lizard, Spock'
-    fill_in "name", with: "Foo"
-    click_button "Submit"
+  scenario 'computer wins' do  
+    extended_game_start
+
     click_button 'Spock'
     expect(page).to have_content 'Computer wins'
   end
+
+  scenario 'user wins' do  
+    extended_game_start
+
+    click_button 'Rock'
+    expect(page).to have_content 'Player wins!'
+  end
+
+  scenario 'draw' do  
+    extended_game_start
+
+    click_button 'Lizard'
+    expect(page).to have_content "It's a draw"
+  end
+
 end
