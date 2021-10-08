@@ -24,11 +24,13 @@ class RockPaperScissors < Sinatra::Base
   get "/play" do
     @player_1 = session[:player_1]
     @selection = session[:selection]
+    @ai_selection = session[:ai_selection]
     erb(:play)
   end
 
   post "/play" do
     session[:selection] = params[:selection]
+    session[:ai_selection] = "Paper"
     redirect "/play"
   end
 
