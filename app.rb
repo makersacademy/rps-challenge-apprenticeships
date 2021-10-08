@@ -6,9 +6,9 @@ class RockPaperScissors < Sinatra::Base
     erb :name_form
   end
 
-  get '/game' do
+  post '/game' do
     @name = params[:name]
-    erb 'The Game' 
+    erb "The Game"
   end
 
   run! if app_file == $0
