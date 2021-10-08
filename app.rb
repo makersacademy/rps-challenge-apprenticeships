@@ -6,10 +6,6 @@ require './lib/two_player_game'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
-  get '/test' do
-    'test page'
-  end
-
   get '/' do
     erb :index
   end
