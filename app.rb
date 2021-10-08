@@ -9,5 +9,10 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post "/register" do
+    @player1 = params[:player1]
+    erb :play
+  end
+
   run! if app_file == $0
 end
