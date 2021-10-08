@@ -41,3 +41,6 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 1. Run `rackup -p 4567`
 2. Access the website at http://localhost:4567
 
+## Client-Server diagram
+
+![client-server diagram for RPS app](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/server.png)
