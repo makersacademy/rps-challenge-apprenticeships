@@ -30,4 +30,9 @@ feature "play" do
   scenario "asks user for input" do
     expect(page).to have_content "Rock, Paper or Scissors?"
   end
+  scenario "includes 3 radio buttons" do
+    expect(page).to have_selector "input[type=radio][value=Rock]"
+    expect(page).to have_selector "input[type=radio][value=Paper]"
+    expect(page).to have_selector "input[type=radio][value=Scissors]"
+  end
 end
