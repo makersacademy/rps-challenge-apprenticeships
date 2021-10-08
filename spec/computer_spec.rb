@@ -7,4 +7,11 @@ RSpec.describe Computer do
       expect(computer.moves).to eq(["Rock", "Paper", "Scissors"])
     end
   end
+
+  describe "#random_turn" do
+    let(:computer) { double("computer double", :random_turn => "Scissors") }
+    it "returns an item in the moves array" do
+      expect(computer.random_turn).to eq("Scissors")
+    end
+  end
 end
