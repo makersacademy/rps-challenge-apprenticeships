@@ -33,5 +33,29 @@ describe TwoPlayerGame do
 
       expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Player 1'
     end
+
+    it 'player 2 wins' do
+      allow(player1).to receive(:move).with('Scissors')
+      @game.player_choice(player1, 'Scissors')
+      allow(player1).to receive(:choice).and_return('Scissors')
+      
+      allow(player2).to receive(:move).with('Rock')
+      @game.player_choice(player2, 'Rock')
+      allow(player2).to receive(:choice).and_return('Rock')
+
+      expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Player 2'
+    end
+
+    it 'draw' do
+      allow(player1).to receive(:move).with('Scissors')
+      @game.player_choice(player1, 'Scissors')
+      allow(player1).to receive(:choice).and_return('Scissors')
+      
+      allow(player2).to receive(:move).with('Scissors')
+      @game.player_choice(player2, 'Scissors')
+      allow(player2).to receive(:choice).and_return('Scissors')
+
+      expect(@game.decide_winner(player1.choice, player2.choice)).to eq 'Draw'
+    end
   end
 end
