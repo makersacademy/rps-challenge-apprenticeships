@@ -10,7 +10,7 @@ class Game
     if RULES[player_choice][computer_choice] == :draw
       'It\'s a draw!'
     elsif RULES[player_choice][computer_choice] == player_choice
-      'Player Wins!'
+      'You Win!'
     elsif RULES[player_choice][computer_choice] == computer_choice
       'Computer Wins!'
     end

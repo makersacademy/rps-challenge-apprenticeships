@@ -7,11 +7,11 @@ describe Game do
     end
 
     it 'should return Player wins - Rock vs Scissors' do
-      expect(subject.winner(:rock, :scissors)).to eq('Player Wins!')
+      expect(subject.winner(:rock, :scissors)).to eq('You Win!')
     end
 
     it 'should return Player wins - Paper vs Rock' do
-      expect(subject.winner(:paper, :rock)).to eq('Player Wins!')
+      expect(subject.winner(:paper, :rock)).to eq('You Win!')
     end
 
     it 'should return Computer wins - Rock vs Paper' do

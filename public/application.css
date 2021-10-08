@@ -1,0 +1,82 @@
+h1 {
+  font-size: 65px;
+  padding: 20 0 20;
+}
+
+h2 {
+  font-size: 30px;
+  padding: 20 0 30;
+}
+
+h3 {
+  font-size: 25px;
+}
+
+#results-player {
+  animation: fadein 1s;
+}
+
+#results-computer {
+  animation: fadein 5s;
+}
+
+#results-winner {
+  animation: fadein 10s;
+}
+
+.centered-content {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input {
+  text-align:center;
+}
+
+#name {
+  height: 30px;
+  width: 300px
+}
+
+body {
+  background-image: url(./RPS7.JPG) ;
+  background-color: #A2D7D5;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+  border-radius: 4px;
+  height: 50px;
+  width: 120px
+}
+
+.button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+#rock-button {
+  color: azure;
+  background-color: #DF807E;
+}
+
+#paper-button {
+  background-color: #F5E97E;
+}
+
+#scissors-button {
+  color: azure;
+  background-color: #CC6310;
+}
+
+#play-again-button {
+  color: azure;
+  background-color: #DF807E;
+}
+
+@keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

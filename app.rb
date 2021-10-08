@@ -11,7 +11,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    @name = params[:name].capitalize
+    @name = params[:name] == "" ? "You" : params[:name].capitalize
     @player_choice = params[:choice]
     @computer_choice = ComputerOpponent.new.computer_choice
     @winner = Game.new.winner(@player_choice.downcase.to_sym, @computer_choice.downcase.to_sym)
