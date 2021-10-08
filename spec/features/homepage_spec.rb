@@ -18,5 +18,3 @@ feature 'Homepage' do
     sign_in_and_play(sleep_time_for_capybara)
   end
 end
-
-
