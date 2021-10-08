@@ -26,20 +26,8 @@ describe Game do
   end
 
   describe "#decide_winner" do
-    it "player wins (scissors)" do
+    it "player wins" do
       expect(@game).to receive(:computer_choice).and_return("Paper")
-      expect(@game.decide_winner(player.choice, @game.computer_choice)).to eq "Player"
-    end
-
-    it "player wins (rock)" do
-      allow(player).to receive(:choice).and_return('Rock')
-      expect(@game).to receive(:computer_choice).and_return("Scissors")
-      expect(@game.decide_winner(player.choice, @game.computer_choice)).to eq "Player"
-    end
-
-    it "player wins (paper)" do
-      allow(player).to receive(:choice).and_return('Paper')
-      expect(@game).to receive(:computer_choice).and_return("Rock")
       expect(@game.decide_winner(player.choice, @game.computer_choice)).to eq "Player"
     end
 
