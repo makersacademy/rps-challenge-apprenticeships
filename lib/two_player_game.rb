@@ -7,4 +7,8 @@ class TwoPlayerGame
     @player1 = player1
     @player2 = player2
   end
+
+  def player_choice(player, choice)
+    player.move(choice)
+  end
 end
