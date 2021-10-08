@@ -41,4 +41,3 @@ feature 'game page' do
     expect(page).to have_content "Rock, Paper, Scissors!"
   end
 end
-
