@@ -22,5 +22,14 @@ class RockPaperScissors < Sinatra::Base
   get "/rock" do
     erb :rock
   end
+
+  get "/paper" do
+    erb :paper
+  end
+
+  get "/scissors" do
+    erb :scissors
+  end
+  
   run! if app_file == $0
 end
