@@ -6,19 +6,34 @@ class RockPaperScissors < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  # enable :sessions
+  enable :sessions
 
   get '/' do
-    'Welcome to Rock, Paper, Scissors!'
-    # erb :index
+    erb :index
+  end
+
+  # post '/play' do
+  #   @player_name = params[:player_name]
+  #   erb :play
+  # end
+
+  post '/name' do
+    p params
+    session[:player_name] = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
+    erb :play
   end
 
   get '/test' do
     'test page'
   end
 
+  # Line below was already in the app.rb file
   # run! if app_file == $0
-  # Don't understand the syntax of this line above
-  # Was already in the app.rb file
+  # Don't understand the syntax of this line!
 
 end
