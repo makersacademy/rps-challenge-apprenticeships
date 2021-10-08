@@ -14,7 +14,15 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game_mode' do
     mode = params[:mode]
-    mode == "Single Player" ? redirect('/single_player') : redirect('/two_player')
+    case mode
+    when 'Single Player'
+      redirect('/single_player')
+    when 'Two Player'
+      redirect('/two_player')
+    when 'Rock, Paper, Scissor, Lizard, Spock'
+      $extended = true
+      redirect('/single_player')
+    end
   end
 
   # Single Player
