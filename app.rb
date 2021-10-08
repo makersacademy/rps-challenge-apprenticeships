@@ -41,6 +41,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/single_player_game' do
+    @extended = $extended
     @name = @game.player.name
     erb :single_player_game
   end
