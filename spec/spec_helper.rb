@@ -1,5 +1,5 @@
 require 'capybara'
-#require 'features/web_helpers'
+require 'features/web_helpers'
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
