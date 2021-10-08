@@ -11,11 +11,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   enable :sessions
-
-  # get '/test' do
-  #   'test page'
-  # end
-
+  
   get "/" do
     erb(:index)
   end
