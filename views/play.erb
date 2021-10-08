@@ -14,10 +14,10 @@
     <br>
     <br>
     <div align="center">
-        <form>
-           <input id="rock" name="rock" type="button" value="Rock">
-           <input id="paper" name="paper" type="button" value="Paper">
-           <input id="scissors" name="scissors" type="button" value="Scissors">
+        <form action="/result" method="post">
+            <label for="choose">What is your Choose <%= @player1 %>?</label>
+            <input type="text" id="choose" name="choose">
+            <input type="submit" value="Start">
         </form>
     </div>
 </body>
