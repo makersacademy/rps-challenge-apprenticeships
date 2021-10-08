@@ -1,6 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/player'
 class RockPaperScissors < Sinatra::Base
-  
   get '/test' do
     'test page'
   end
@@ -17,6 +17,10 @@ class RockPaperScissors < Sinatra::Base
   get "/start" do
     @player_name = $player_name.name
     erb :game
+  end
+
+  get "/rock" do
+    erb :rock
   end
   run! if app_file == $0
 end
