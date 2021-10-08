@@ -53,4 +53,10 @@ describe Game do
       expect(@game.decide_winner(player.choice, @game.computer_choice)).to eq "Computer"
     end
   end
+
+  describe "#extended_computer_choice" do
+    it "returns either rock, paper, scissors, lizard or spock" do
+      expect(@game.extended_computer_choice).to eq("Rock").or eq("Paper").or eq("Scissors").or eq("Lizard").or eq("Spock")
+    end
+  end
 end

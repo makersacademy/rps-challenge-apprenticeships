@@ -6,6 +6,7 @@ class Game
   def initialize(player)
     @player = player
     @computer_choices = ["Rock", "Paper", "Scissors"]
+    @extended_computer_choices = ["Rock", "Paper", "Scissors", "Lizard", "Spock"]
   end
 
   def self.create(player)
@@ -22,6 +23,10 @@ class Game
 
   def computer_choice 
     @computer_choices.sample
+  end
+
+  def extended_computer_choice
+    @extended_computer_choices.sample
   end
 
   def decide_winner(player_choice, computer_choice)
