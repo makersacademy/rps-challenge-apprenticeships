@@ -8,48 +8,31 @@ class GameResult
   end
 
   def result
-    case user_choice
-    when "Rock"
-      rock
-    when "Paper"
-      paper
-    else
-      scissors
-    end
-
+    draw ? "Draw" :
+      case user_choice
+      when "Rock"
+        rock
+      when "Paper"
+        paper
+      else
+        scissors
+      end
   end
 
   def rock
-    case computer_choice
-    when "Paper"
-      "You lose"
-    when "Scissors"
-      "You win"
-    else
-      "Draw"
-    end
+    computer_choice == "Scissors" ? "You win" : "You lose"
   end
 
   def paper
-    case computer_choice
-    when "Paper"
-      "Draw"
-    when "Scissors"
-      "You lose"
-    else
-      "You win"
-    end
+    computer_choice == "Rock" ? "You win" : "You lose"
   end
 
   def scissors
-    case computer_choice
-    when "Paper"
-      "You win"
-    when "Scissors"
-      "Draw"
-    else
-      "You win"
-    end
+    computer_choice == "Paper" ? "You win" : "You lose"
+  end
+
+  def draw
+    user_choice == computer_choice
   end
 
 end
