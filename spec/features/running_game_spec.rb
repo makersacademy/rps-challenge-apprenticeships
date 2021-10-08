@@ -8,7 +8,7 @@ feature 'game page' do
 
   scenario 'computer wins' do
     run_game('Paper')
-    expect(page).to have_content "Computer wins!"
+    expect(page).to have_content "Computer wins"
   end
 
   scenario 'draw' do
