@@ -44,13 +44,21 @@ Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/R
 ## Usage
 ### Home
 
+![home page](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/index.png)
 
 ### Single Player
+
 Entering name:
+
+![enter player name](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/single_player/name.png)
 
 Make a move:
 
+![making a move](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/single_player/choice.png)
+
 Result:
+
+![player wins](https://github.com/lewiscj97/rps-challenge-apprenticeships/blob/main/public/images/single_player/result.png)
 
 ### Two Player
 Enter names:
