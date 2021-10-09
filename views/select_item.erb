@@ -1,0 +1,21 @@
+<div>
+    <h3>Happy to have you here:</h3>
+    <h1><%= @player_1_name %>!</h1>
+</div><br>
+
+<div>
+    <label for="item_choice_selector">Please make your choice :</label>
+
+    <form action="/item_choice" method="post">
+        <select name="rps" id="item_choice_dropdown">
+            <option value="">--Please choose an option--</option>
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+        </select>
+        <input type="submit" value="Submit">
+    </form>    
+</div>
+
+<div>
+</div>
