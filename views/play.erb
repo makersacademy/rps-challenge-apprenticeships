@@ -1,1 +1,9 @@
 <h1> <%=@game.player1.name%> vs <%=@game.player2.name%></h1>
+
+<form action="/player1pick">
+  <input type="submit" value="<%=@game.player1.name%>'s pick">
+</form>
+
+<form action="/player2pick">
+  <input type="submit" value="<%=@game.player2.name%>'s pick">
+</form>

@@ -4,10 +4,8 @@ require './lib/player'
 require './lib/game'
 class RockPaperScissors < Sinatra::Base
 
-  configure :development do
-    register Sinatra::Reloader
-  end
-  
+
+
   get '/' do
     erb(:index)
   end
@@ -22,6 +20,16 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @game = $game
     erb(:play)
+  end
+
+  get '/player1pick' do
+    @player = $game.player1
+    erb(:pick)
+  end
+
+  get '/player2pick' do
+    @player = $game.player2
+    erb(:pick)
   end
 
   run! if app_file == $0
