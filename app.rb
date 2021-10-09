@@ -1,8 +1,4 @@
-require 'sinatra/base'
-class RockPaperScissors < Sinatra::Base
-  get '/test' do
-    'test page'
-  end
+require "sinatra/base"
 
-  run! if app_file == $0
+class RockPaperScissors < Sinatra::Base
 end
