@@ -63,7 +63,7 @@ feature 'play page structure' do
     expect(page).to_not have_selector(:button, "Alice's pick")
   end
 
-  scenario 'load after both players pick (edit this test for check' do
+  scenario 'load after both players pick' do
     click_button "Bob's pick"
     choose('pick', option: 'rock')
     click_button 'Submit'
@@ -71,9 +71,8 @@ feature 'play page structure' do
     choose('pick', option: 'paper')
     click_button 'Submit'
 
-    expect(page).to have_content 'You Win'
+    expect(page).to have_content 'Alice Win'
     expect(page).to_not have_selector(:button, "Bob's pick")
     expect(page).to_not have_selector(:button, "Alice's pick")
   end
-
 end
