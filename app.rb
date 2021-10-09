@@ -3,9 +3,6 @@ require 'sinatra/reloader'
 require './lib/player'
 require './lib/game'
 class RockPaperScissors < Sinatra::Base
-
-
-
   get '/' do
     erb(:index)
   end
@@ -24,12 +21,19 @@ class RockPaperScissors < Sinatra::Base
 
   get '/player1pick' do
     @player = $game.player1
+    $currentPlayer = $game.player1
     erb(:pick)
   end
 
   get '/player2pick' do
     @player = $game.player2
+    $currentPlayer = $game.player2
     erb(:pick)
+  end
+
+  post '/update' do
+    $currentPlayer.choose(params[:pick])
+    redirect '/play'
   end
 
   run! if app_file == $0
