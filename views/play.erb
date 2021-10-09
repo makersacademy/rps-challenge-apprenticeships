@@ -1,0 +1,22 @@
+<h1> <%=@game.player1.name%> vs <%=@game.player2.name%></h1>
+
+<%if @game.player2.bot%>
+  <%@game.player2.bot_pick%>
+<%end%>
+
+<%if @game.player1.chosen == ""%>
+  <%p1 = true%>
+  <form action="/player1pick">
+    <input type="submit" value="<%=@game.player1.name%>'s pick">
+  </form>
+<%end%>
+<%if @game.player2.chosen == ""%>
+  <%p2 = true%>
+  <form action="/player2pick">
+    <input type="submit" value="<%=@game.player2.name%>'s pick">
+  </form>
+<%end%>
+<%if !(p1 || p2)%>
+  <p><%="#{@game.player1.name}: #{@game.player1.chosen} | #{@game.player2.name}: #{@game.player2.chosen}"%></p>
+  <p><%=@game.winner%></p>
+<%end%>
