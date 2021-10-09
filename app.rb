@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   get '/test' do
@@ -21,17 +22,20 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/rock" do
-    @rock_option = params[:rock_option]
+    $player_choice = Game.new(params[:rock_option], $player_name.name)
+    @rock_option = $player_choice.player_choice
     erb :option
   end
 
   post "/paper" do
-    @paper_option = params[:paper_option]
+    $player_choice = Game.new(params[:paper_option], $player_name.name)
+    @paper_option = $player_choice.player_choice
     erb :option
   end
 
   post "/scissors" do
-    @scissors_option = params[:scissors_option]
+    $player_choice = Game.new(params[:scissors_option], $player_name.name)
+    @scissors_option = $player_choice.player_choice
     erb :option
   end
 
