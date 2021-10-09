@@ -1,0 +1,20 @@
+<div>
+Are you ready, <%=@player1%>?<br><br>
+</div>
+
+<form action='/options' method='post'>
+<fieldset>
+  <legend>Choose your preference</legend>
+<div class="checkbox-group required">
+        <label for="rock">Rock</label>
+    <input type="radio" name="rock" value="1">
+        <label for="rock">Paper</label>
+    <input type="radio" name="paper" value="2">
+        <label for="rock">Scissors</label>
+    <input type="radio" name="scissors" value="3"><br><br>
+</div>
+<div>
+    <button type="submit">Go!</button>
+</div>
+</fieldset>
+</form>
