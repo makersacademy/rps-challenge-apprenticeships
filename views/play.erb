@@ -1,5 +1,9 @@
 <h1> <%=@game.player1.name%> vs <%=@game.player2.name%></h1>
 
+<%if @game.player2.bot%>
+  <%@game.player2.bot_pick%>
+<%end%>
+
 <%if @game.player1.chosen == ""%>
   <%p1 = true%>
   <form action="/player1pick">
@@ -13,6 +17,7 @@
   </form>
 <%end%>
 <%if !(p1 || p2)%>
-  <%=@game.winner%>
+  <p><%="#{@game.player1.name}: #{@game.player1.chosen} | #{@game.player2.name}: #{@game.player2.chosen}"%></p>
+  <p><%=@game.winner%></p>
 <%end%>
 

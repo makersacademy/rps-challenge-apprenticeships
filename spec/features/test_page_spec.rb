@@ -71,8 +71,26 @@ feature 'play page structure' do
     choose('pick', option: 'paper')
     click_button 'Submit'
 
+    expect(page).to have_content 'Bob: rock | Alice: paper'
     expect(page).to have_content 'Alice Win'
     expect(page).to_not have_selector(:button, "Bob's pick")
     expect(page).to_not have_selector(:button, "Alice's pick")
+  end
+end
+
+feature 'play page structure with bot' do
+  before(:each) do
+    visit('/')
+    fill_in :name1, with: 'Bob'
+    click_button 'Submit'
+  end
+
+  scenario 'displays bot' do
+    expect(page).to have_selector(:button, "Bob's pick")
+    expect(page).to_not have_selector(:button, "Bot's pick")
+  end
+
+  scenario 'shows results' do
+    expect(page).to have_content 'Bob vs Bot'
   end
 end

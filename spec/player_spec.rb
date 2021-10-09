@@ -24,4 +24,11 @@ describe Player do
       expect(player.chosen).to eq "rock"
     end
   end
+
+  describe '#botPick' do
+    it "Picks randomly for bot" do
+      player = Player.new("")
+      expect(["rock","paper","scissors"]).to include(player.bot_pick)
+    end
+  end
 end

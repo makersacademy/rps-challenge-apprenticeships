@@ -1,6 +1,5 @@
 class Player
-  attr_reader :chosen
-  attr_reader :name
+  attr_reader :chosen, :name, :bot
   
   def initialize(name)
     @chosen = ""
@@ -11,6 +10,10 @@ class Player
       @name = name
       @bot = false
     end
+  end
+
+  def bot_pick
+    @chosen = ["rock","paper","scissors"].sample
   end
 
   def choose(chosen)
