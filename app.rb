@@ -25,7 +25,7 @@ class RockPaperScissors < Sinatra::Base
   post "/rock" do
     $player_choice = Game.new(params[:rock_option], $player_name.name)
     @rock_option = $player_choice.player_choice
-    erb :option
+    erb :option  
   end
 
   post "/paper" do
