@@ -13,10 +13,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     @player = Player.new(params[:name], params[:choice])
-    @name = @player.name
-    @player_choice = @player.choice
     @computer_choice = ComputerOpponent.new.computer_choice
-    @winner = Game.new.winner(@player_choice.downcase.to_sym, @computer_choice.downcase.to_sym)
+    @winner = Game.new.winner(@player.choice.downcase.to_sym, @computer_choice.downcase.to_sym)
     erb :result
   end
 

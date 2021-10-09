@@ -1,5 +1,16 @@
 # RPS Challenge
 
+ Table of Contents
+-----
+* [Task](#task)
+* [User Stories](#user-stories)
+* [Installation](#installation)
+* [How To Run Tests](#how-to-run-tests)
+  * How to disable Chrome test automation
+  * How to speed up/slow down Chrome test automation
+* [How To Use The Application](#how-to-use-the-application)
+* [Built Using](#built-using)
+
 Task
 -----
 The task for this challenge was to create a Rock, Paper, Scissors web application that utilised Object Oriented Programming (OOP) through a Test Driven Development (TDD) approach. In addition, the application was to be tested using Capybara and Sinatra. The user stories below outline the requirements for this challenge - to be able to register a username and play a game of rock, paper, scissors.

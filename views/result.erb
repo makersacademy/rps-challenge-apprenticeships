@@ -1,7 +1,7 @@
 <div class="centered-content">
   <form action="/"> 
-    <h1><%=@name%> vs. Computer</h1>
-    <h2 id="results-player"><%=@name%> chose <%=@player_choice%></h2>
+    <h1><%=@player.name%> vs. Computer</h1>
+    <h2 id="results-player"><%=@player.name%> chose <%=@player.choice%></h2>
     <h2 id="results-computer">Computer chose <%=@computer_choice%></h2>
     <h2 id="results-winner"><%=@winner%></h2>
     <input for="play-again" name="play-again" class="button" id="play-again-button" type="submit" value="Play Again">
