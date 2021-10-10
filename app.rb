@@ -19,20 +19,19 @@ class RockPaperScissors < Sinatra::Base
 
   get '/game' do
     @player_name = session[:player_name]
+    @choices
     erb :game
   end
 
   post '/choice' do
-    @rock = params[:rock]
-    @paper = params[:paper]
-    @scissors = params[:scissors]
+    @choice = params[:choice]
 
-    if @rock
-      @choices << @rock
-    elsif @paper 
-      @choices << @paper
-    elsif @scissors
-      @choices << @scissors
+    if @choice == 'rock'
+      @choices << 'rock'
+    elsif @choice == 'paper'
+      @choices << 'paper'
+    elsif @choice == 'scissors'
+      @choices << 'scissors'
     end
 
     redirect '/game'
@@ -41,13 +40,13 @@ class RockPaperScissors < Sinatra::Base
   run! if app_file == $0
 end
 
-# class Choices
+class Choices
 
-#   attr_accessor :choices
+  attr_accessor :choices
 
-#   def initialize
-#     @choices = []
-#   end
-# end
+  def initialize
+    @choices = []
+  end
+end
 
-# @choices = Choices.new
+@choices = Choices.new
