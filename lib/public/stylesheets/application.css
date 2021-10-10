@@ -1,0 +1,28 @@
+body {
+  background-image: url("../images/rock-paper-scissors.png");
+  background-size: auto;
+}
+
+h1 {
+  color: green;
+  font-weight: 800;
+}
+
+#container, #play-screen, #result-page {
+  text-align: center;
+  margin-top: 300px;
+}
+
+#result-page {
+  background-image: url("../images/6ob.gif");
+}
+
+.form-control, .form-select {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.btn {
+  margin-top: 10px;
+}
