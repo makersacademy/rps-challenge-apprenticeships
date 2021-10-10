@@ -1,8 +1,14 @@
-require 'sinatra/base'
-class RockPaperScissors < Sinatra::Base
-  get '/test' do
-    'test page'
-  end
+require 'sinatra'
+require "sinatra/reloader" if development?
 
-  run! if app_file == $0
+get '/' do
+  'hello!'
+end
+
+get '/secret' do
+  'This is a secret page'
+end
+
+get '/game' do
+  erb(:index)
 end
