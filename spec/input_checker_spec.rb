@@ -1,6 +1,10 @@
+require 'input_checker'
+
 describe InputChecker do
 
-  described_class.new
+  before(:each) do
+    InputChecker.new
+  end
 
   describe '#initialize' do
     it "should initialize a class with an input attribute of 'foo'" do
@@ -16,7 +20,7 @@ describe InputChecker do
 
   describe '#set_input' do
     it 'should set the class attribute to parameter' do
-      expect(InputChecker.set_input("Input"))
+      InputChecker.set_input("Input")
       expect(InputChecker.input).to eq("Input")
     end
   end

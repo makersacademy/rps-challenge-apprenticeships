@@ -1,6 +1,8 @@
+require 'player'
+
 describe Player do
 
-  described_class.new("Troy")
+  Player.new("Troy")
 
   describe '#initialize' do
     it 'should initialize a class with a name attribute' do

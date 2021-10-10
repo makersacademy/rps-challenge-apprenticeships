@@ -2,8 +2,12 @@ require 'sinatra'
 require "sinatra/reloader" if development?
 require './lib/player'
 require './lib/input_checker'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
+
+  InputChecker.new
+  Game.new
 
   enable :sessions
 
@@ -12,8 +16,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    InputChecker.new
-    @name_error = InputChecker.input.empty?
+    @name_error = !InputChecker.input.empty?
     erb(:index)
   end
 
@@ -27,6 +30,16 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @name = Player.name
     erb(:play)
+  end
+
+  post '/move' do
+    p Game.shoot(params[:move])
+    redirect "/result"
+  end
+
+  get '/result' do
+    @result = Game.latest_result
+    erb(:result)
   end
 
   run! if app_file == $0
