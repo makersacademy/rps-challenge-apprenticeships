@@ -12,19 +12,9 @@
 <p>Your turn to select</p>
 
 <form action='/choice' method='post'>
-  <input class='choice' type="text" name='rock' value='rock'>
-  <button type='submit'>rock</button>
+  <input type="submit" name='choice' value='rock'>
+  <input type="submit" name='choice' value='paper'>
+  <input type="submit" name='choice' value='scissors'>
 </form>
-
-<form action='/choice' method='post'>
-  <input class='choice' type="text" name='paper' value='paper'>
-  <button type='submit'>paper</button>
-</form>
-
-<form action='/choice' method='post'>
-  <input class='choice' type="text" name='scissors' value='scissors'>
-  <button type='submit'>scissors</button>
-</form>
-
 
 <%= @choices %>
