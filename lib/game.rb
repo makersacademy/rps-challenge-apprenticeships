@@ -41,29 +41,4 @@ class Game
       lose
     end
   end
-
-  # def outcome
-  #   if @player_weapon.to_sym == @computer_weapon
-  #     result = "Tie!"
-  #   elsif @player_weapon.to_sym == :rock
-  #     if @computer_weapon == :paper
-  #       result = "You lose! #{computer_weapon} covers #{@player_weapon}!"
-  #     else
-  #       result = "You win! #{@player_weapon} smashes #{@computer_weapon}!"
-  #     end
-  #   elsif @player_weapon == :paper
-  #     if @computer_weapon == :scissors
-  #       result = "You lose! #{@computer_weapon} cut #{@player_weapon}!"
-  #     else
-  #       result = "You win! #{@player_weapon} covers #{@computer_weapon}!"
-  #     end
-  #   elsif @player_weapon == :scissors
-  #     if @computer_weapon == :rock
-  #       result = "You lose! #{@computer_weapon} smashes #{@player_weapon}!"
-  #     else
-  #       result = "You win! #{@player_weapon} cut #{@computer_weapon}!"
-  #     end
-  #   end
-  #   return result
-  # end
 end
