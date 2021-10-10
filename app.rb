@@ -1,8 +1,17 @@
-require 'sinatra/base'
+require "sinatra/base"
+require "sinatra/reloader"
+
 class RockPaperScissors < Sinatra::Base
-  get '/test' do
-    'test page'
+  configure :development do
+    register Sinatra::Reloader
   end
 
-  run! if app_file == $0
+  get "/" do
+    erb(:index)
+  end
+
+  get "/game" do
+    @player_name = params[:player_name]
+    erb(:game)
+  end
 end
