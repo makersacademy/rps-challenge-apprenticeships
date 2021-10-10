@@ -1,16 +1,14 @@
-#routing
-
 require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   
   get '/' do
-    erb :index #routing file
+    erb :index 
   end
 
   post '/name' do
     @player_name = params[:player_name]
-    erb :name #routing file
+    erb :name 
   end
 
   get '/play' do
