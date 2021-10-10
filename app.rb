@@ -18,6 +18,10 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do 
     @player_1 = $player_1.name
     erb :play
+  end  
+  
+  get '/hand' do
+    erb :confirm
   end   
 
   run! if app_file == $0

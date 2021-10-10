@@ -1,5 +1,8 @@
 # RPS Challenge
 
+I have attached a simple diagram (PDF) to explain the HTTP request  response cycle.  
+
+
 ## Instructions
 
 * Challenge time: until the end of the day
