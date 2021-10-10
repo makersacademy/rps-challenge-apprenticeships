@@ -4,4 +4,8 @@ class Computer
   def initialize
     @moves = ["Rock", "Paper", "Scissors"]
   end
+
+  def choice
+    @moves.sample
+  end
 end
