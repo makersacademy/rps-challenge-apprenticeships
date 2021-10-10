@@ -7,6 +7,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/" do
-    "Welcome to Rock, Paper Scissors!"
+    erb(:index)
   end
 end
