@@ -1,5 +1,23 @@
 # RPS Challenge
 
+Skeleton of a "Rock, paper, scissors" app. 
+I've done 3 pages: main ('/') for entering player name, '/play' for picking sign and '/result' for winner announcement.
+Test coverage: 100%
+
+## How to use
+* Clone repo
+* go to the app directory in terminal.
+* run `bundle` 
+* run `rackup` to start the server
+* open localhost:9292/ in your browser
+* play with it!
+* To stop the server use Ctrl + C
+
+## TO DO:
+* add CSS styling
+* add optional second player
+* add test for 'play again' link on the result page (tested manualy)
+
 ## Instructions
 
 * Challenge time: until the end of the day
