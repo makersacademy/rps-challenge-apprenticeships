@@ -1,4 +1,5 @@
 require "sinatra/base"
+require "sinatra/reloader"
 require "./lib/player"
 require "./lib/computer"
 require "./lib/game"
@@ -28,10 +29,16 @@ class RockPaperScissors < Sinatra::Base
     @computer = Computer.new
     @player_1 = $player_1
     #@player_1_choice = params[:choice]
+    # session[:game] = params[:game]
+    # session[:game] = Game.new(@player_1, @computer)
+    # @game = session[:game]
     @game = Game.new(@player_1, @computer)
     @player_weapon = @game.player_choice(params[:choice])
+    # session[:computer_weapon] = @game.computer_choice
+    # @computer_weapon = session[:computer_weapon]
     @computer_weapon = @game.computer_choice
-    @game.result
+    #@game_outcome = @game.outcome
+    @game.outcome
     erb(:game)
   end
 

@@ -31,54 +31,28 @@ describe Game do
     end
   end
 
-  describe "#result" do
+  describe "#outcome" do
     context "tie" do
       it "returns tie when player's and computer's choice are the same" do
-        allow(game).to receive(:player_choice).and_return(:paper)
-        allow(game).to receive(:computer_choice).and_return(:paper)
-        expect(game.result).to eq "Tie!"
+        allow(game).to receive(:outcome).and_return("Tie!")
+        game.tie
+        expect(game.outcome).to eq "Tie!"
       end
     end
 
-    context "paper vs rock" do
-      it "returns win if player chose paper" do
-        allow(game).to receive(:result).and_return("You win! paper covers rock!")
-        expect(game.result).to eq("You win! paper covers rock!")
-      end
-
-      it "returns losing if player chose rock" do
-        allow(game).to receive(:result).and_return("You lose! paper covers rock!")
-        expect(game.result).to eq("You lose! paper covers rock!")
+    context "win" do
+      it "returns win for the player" do
+        allow(game).to receive(:outcome).and_return("You win!")
+        game.win
+        expect(game.outcome).to eq "You win!"
       end
     end
 
-    context "paper vs scissors" do
-      it "returns win if player chose scissors" do
-        allow(game).to receive(:result).and_return("You win! scissors cut paper!")
-        expect(game.result).to eq("You win! scissors cut paper!")
-      end
-
-      it "returns losing if player chose paper" do
-        allow(game).to receive(:result).and_return("You lose! scissors cut paper!")
-        expect(game.result).to eq("You lose! scissors cut paper!")
-      end
-    end
-
-    # allow(game).to receive(:computer_weapon).and_return(:rock)
-    # allow(game).to receive(:player_weapon).and_return(:paper)
-    # expect(game.result).to eq result
-
-    context "rock vs scissors" do
-      it "returns win if player chose rock" do
-        allow(game).to receive(:result).and_return("You win! rock smashes scissors!")
-        #allow(game).to receive(:player_weapon).and_return(:scissors)
-        expect(game.result).to eq "You win! rock smashes scissors!"
-      end
-
-      it "returns losing if player chose scissors" do
-        allow(game).to receive(:result).and_return("You lose! rock smashes scissors!")
-        #allow(game).to receive(:player_weapon).and_return(:scissors)
-        expect(game.result).to eq "You lose! rock smashes scissors!"
+    context "lost" do
+      it "returns lost of the player" do
+        allow(game).to receive(:outcome).and_return("You lose!")
+        game.lose
+        expect(game.outcome).to eq "You lose!"
       end
     end
   end
