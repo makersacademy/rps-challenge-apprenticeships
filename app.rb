@@ -14,8 +14,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    @player_name = params[:player_name]
+    @rock_option = params[:rock_option]
     erb :play
-
   end
-  run! if app_file == $0
 end

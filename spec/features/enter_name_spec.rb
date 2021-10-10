@@ -6,5 +6,6 @@ feature 'Player can enter name' do
     expect(page).to have_current_path('/name')
     expect(page).to have_selector('#player_name', text: 'Kirsty')
   end
+end
 
  
