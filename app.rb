@@ -9,4 +9,9 @@ class RockPaperScissors < Sinatra::Base
   get "/" do
     erb(:index)
   end
+
+  get "/game" do
+    @player_name = params[:player_name]
+    erb(:game)
+  end
 end
