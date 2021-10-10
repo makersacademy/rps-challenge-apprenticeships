@@ -11,7 +11,6 @@ feature 'making move:' do
 
   scenario 'choose paper and get confirmation' do
     choose_radio("paper")
-
     expect(page).to have_text "paper vs."
   end
 end
