@@ -17,12 +17,4 @@ feature 'Can play rock, paper, scissors' do
     click_button 'Scissors'
     expect(page).to have_content('You chose Scissors')
   end
-
-  scenario 'visit home page and enter name' do
-    visit('/')
-    expect(page).to have_content('Please enter your name')
-    fill_in 'name', with: 'Troy'
-    click_button 'submit'
-    expect(page).to have_content('Welcome Troy')
-  end
 end
