@@ -14,7 +14,7 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     @player = params[:player_name]
     @player_name = @player
-    redirect '/play'
+    erb(:play)
   end
 
   get '/play' do
