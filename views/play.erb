@@ -1,5 +1,5 @@
 <div>
-Are you ready, <%=@player1%>?<br><br>
+Are you ready, <%=@game.player1.name%>?<br><br>
 </div>
 
 <form action='/options' method='post'>
@@ -7,11 +7,11 @@ Are you ready, <%=@player1%>?<br><br>
   <legend>Choose your preference</legend>
 <div>
         <label for="rock">Rock</label>
-    <input type="radio" name="rock" value="1">
+    <input type="radio" name="game" value="1">
         <label for="rock">Paper</label>
-    <input type="radio" name="paper" value="2">
+    <input type="radio" name="game" value="2">
         <label for="rock">Scissors</label>
-    <input type="radio" name="scissors" value="3"><br><br>
+    <input type="radio" name="game" value="3"><br><br>
 </div>
 <div>
     <button type="submit">Go!</button>
