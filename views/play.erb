@@ -1,1 +1,10 @@
-<%= @player_name %> vs. Computer 
+<h1>Lets Play Rock, Paper, Scissors! </h1>
+<%=@player_name%> vs. Computer 
+
+<form action="/play" method="POST">
+  <input type="submit" name="option" value="Rock" />
+	<input type="submit" name="option" value="Paper" />
+	<input type="submit" name="option" value="Scissors" />
+</form>
+
+You chose <%=@option%>
