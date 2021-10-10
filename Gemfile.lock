@@ -15,10 +15,13 @@ GEM
       xpath (~> 3.2)
     diff-lcs (1.4.4)
     docile (1.4.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     mini_mime (1.1.1)
     mini_portile2 (2.6.1)
     mustermann (1.1.1)
       ruby2_keywords (~> 0.0.1)
+    nio4r (2.5.8)
     nokogiri (1.12.3)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
@@ -28,6 +31,8 @@ GEM
     parser (3.0.2.0)
       ast (~> 2.4.1)
     public_suffix (4.0.6)
+    puma (5.5.0)
+      nio4r (~> 2.0)
     racc (1.5.2)
     rack (2.2.3)
     rack-protection (2.1.0)
@@ -91,6 +96,8 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  launchy
+  puma (~> 5.5)
   rspec
   rubocop (= 1.20)
   simplecov
@@ -101,4 +108,4 @@ RUBY VERSION
    ruby 3.0.2p107
 
 BUNDLED WITH
-   2.2.26
+   2.2.28
