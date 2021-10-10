@@ -15,7 +15,7 @@ class Game
     else
       res += "loose!"
     end
-
+    
     return res
     # "#{player1 == player2 ? "draw!" : (MOVE_WINS[player1] == player2 ? "win!" : "loose!")}"
   end
