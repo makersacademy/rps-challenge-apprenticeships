@@ -1,0 +1,23 @@
+<% if @rock_option %>
+  <h1> You have picked <%= @rock_option %></h1><br>
+  <h1> Results: <%= $player_choice.round_player_rock %></h1>
+  <form action="/start">
+  <button type="submit" value="Try again">Try Again</button>
+  </form>
+<% end %>
+
+<% if @paper_option %>
+  <h1> You have picked <%= @paper_option %></h1>
+  <h1> Results: <%= $player_choice.round_player_paper %></h1>
+  <form action="/start">
+  <button type="submit" value="Try again">Try Again</button>
+  </form>
+<% end %>
+
+<% if @scissors_option %>
+  <h1> You have picked <%= @scissors_option %></h1>
+  <h1> Results: <%= $player_choice.round_player_scissors %></h1>
+  <form action="/start">
+  <button type="submit" value="Try again">Try Again</button>
+  </form>
+<% end %>
