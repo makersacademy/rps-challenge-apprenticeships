@@ -17,5 +17,10 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/selection' do
+    $player_1_selection = params[:selection]
+    redirect '/play'
+  end
+
   run! if app_file == $0
 end
