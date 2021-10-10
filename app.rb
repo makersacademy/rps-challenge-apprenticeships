@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './lib/player'
+require './lib/player.rb'
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
@@ -17,11 +17,15 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do 
     @player_1 = $player_1.name
+    
     erb :play
   end  
   
-  get '/hand' do
-    erb :confirm
+  post '/result' do
+    @player_1 = $player_1.name
+    @won_or_lose = $player_1.rock_paper_scissors(params[:name])
+   
+    erb :result
   end   
 
   run! if app_file == $0

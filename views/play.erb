@@ -1,5 +1,13 @@
 <h1> Welcome : <%= @player_1 %> </h1>
 
-<h2>Click :  Rock, Paper or Scissors to play! </h2>
+<h2>enter :  rock, paper or scissors to play! </h2>
 
-<a href="/hand">Rock</a> 
+
+<form action="/result" method="post">
+    <label for="name">
+        <input type="text" name="name">
+    </label>
+    <input type="submit" value="Submit">
+</form>
+
+

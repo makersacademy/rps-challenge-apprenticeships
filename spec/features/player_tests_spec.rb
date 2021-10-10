@@ -8,17 +8,17 @@ feature 'Enter names' do
   feature 'play game ' do
     scenario 'click Rock' do
       sign_in_and_play
-      click_link 'Rock'
+      click_button 'rock'
       
       expect(page).to have_content "confirm to see if you have won"
     end
 
     scenario 'click Rock' do
       sign_in_and_play
-      click_link 'Rock'
+      click_button 'rock'
       click_link 'ok'
       
-      expect(page).to have_content "You have won"
+      expect(page).to have_content "Khalid won"
     end
   end    
 
