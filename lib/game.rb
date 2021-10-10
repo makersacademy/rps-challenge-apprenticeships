@@ -18,4 +18,12 @@ class Game
     return "It is a tie!" if player_choice == computer_choice
     return "You lost!"
   end
+
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
 end
