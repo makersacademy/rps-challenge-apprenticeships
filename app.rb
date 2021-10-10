@@ -33,9 +33,9 @@ class RockPaperScissors < Sinatra::Base
     if(@move_hierachy[@bot_choice]==@player_choice.to_sym)
       @winner = "bot"
       @loser = @name
-    elsif(@move_hierachy[@user_choice]==@bot_choice)
+    elsif(@move_hierachy[@player_choice.to_sym]==@bot_choice)
       @winner = @name
-      @loser = bot
+      @loser = "bot"
     else
       @draw = true
     end
