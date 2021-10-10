@@ -18,43 +18,27 @@ describe Game do
   describe "#computer_choice" do
     let(:game) { Game.new(option, player) }
     it "chooses at random from the three options" do
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(0)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(0)
       expect(game.computer_choice).to eq ("rock")
 
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(1)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(1)
       expect(game.computer_choice).to eq ("paper")
 
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(2)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(2)
       expect(game.computer_choice).to eq ("scissors")
     end
   end
-  # describe "#round_player_rock" do 
-  #   it "return draw" do
-  #     game = Game.new(rock.rock_option, player)
-  #     expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(0)
-  #     expect(game.round_player_rock).to eq "Draw!"
-  #   end
-  #   it "returns win for the player" do
-  #     game = Game.new(rock.rock_option, player)
-  #     expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(2)
-  #     expect(game.round_player_rock).to eq "You won!"
-  #   end 
-  #   it "returns win for the player" do
-  #     game = Game.new(rock.rock_option, player)
-  #     expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(1)
-  #     expect(game.round_player_rock).to eq "You lost!"
-  #   end 
-  # end
+
   describe "#round_player_rock" do 
     it "returns 3 potential results" do
       game = Game.new(rock.rock_option, player)
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(0)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(0)
       expect(game.round_player_rock).to eq "Draw!"
   
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(2)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(2)
       expect(game.round_player_rock).to eq "You won!"
 
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(1)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(1)
       expect(game.round_player_rock).to eq "You lost!"
     end 
   end
@@ -62,26 +46,26 @@ describe Game do
   describe "#round_player_paper" do 
     it "returns 3 potential results" do
       game = Game.new(paper.paper_option, player)
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(1)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(1)
       expect(game.round_player_paper).to eq "Draw!"
 
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(0)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(0)
       expect(game.round_player_paper).to eq "You won!"
 
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(2)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(2)
       expect(game.round_player_paper).to eq "You lost!"
     end 
   end
   describe "#round_player_scissors" do 
     it "returns 3 potential results" do
       game = Game.new(scissors.scissors_option, player)
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(2)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(2)
       expect(game.round_player_scissors).to eq "Draw!"
 
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(1)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(1)
       expect(game.round_player_scissors).to eq "You won!"
 
-      expect_any_instance_of(Kernel).to receive(:rand).with(3).and_return(0)
+      expect_any_instance_of(Kernel).to receive(:rand).with(2).and_return(0)
       expect(game.round_player_scissors).to eq "You lost!"
     end
   end 

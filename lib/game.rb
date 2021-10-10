@@ -8,7 +8,7 @@ class Game
   end
 
   def computer_choice
-    @options[rand(3)]
+    @options[rand(2)]
   end
 
   def round_player_rock
