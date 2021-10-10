@@ -61,11 +61,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/next-round' do
-    @game_id = session['game_id']
-    game = get_current_game(@game_id)
+    game_id = params[:game_id]
+    player = params[:current_player]
 
+    game = get_current_game(game_id)
+    session['game_id'] = game_id
+    session['current_player'] = player
     get_player_names(game)
-    @current_player = session['current_player']
+    @current_player = params[:current_player]
     redirect('/single-player')
   end
 
