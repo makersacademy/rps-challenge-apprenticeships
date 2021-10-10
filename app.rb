@@ -9,7 +9,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
-    'Hello Game!'
+    erb :index
+  end
+
+  post '/names' do
+    erb :play
   end
 
   # start the server if ruby file executed directly

@@ -3,3 +3,11 @@
 <div>
   <img src='https://facts.net/wp-content/uploads/2020/11/rock-paper-scissors-730x487.jpg'>
   </div>
+
+<!-- in views/index.erb -->
+<input type="text" name="player_name">
+
+<form action="/names" method="post">
+  <input type="text" name="player_name">
+  <input type="submit" value="Submit">
+</form>
