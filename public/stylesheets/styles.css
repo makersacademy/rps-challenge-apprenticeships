@@ -1,0 +1,110 @@
+.main-content {
+  margin: auto;
+  width: 20%;
+  border: 5px solid;
+  padding: 50px;
+  background-color: cadetblue;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+.game {
+  margin: auto;
+  width: 40%;
+  border: 5px solid;
+  padding: 10px;
+  background-color: cadetblue;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+.button {
+  background-color: azure;
+  border-radius: 50%;
+  box-shadow: black;
+  color: grey;
+  padding: 25px 20px;
+  margin-top: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.result-content {
+  margin: auto;
+  width: 40%;
+  border: 5px solid;
+  padding: 10px;
+  background-color: cadetblue;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  text-align: center;
+}
+
+.visuallyhidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.move-selection {
+  margin-left: 10px;
+  margin-right: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.game_id {
+  text-align: right;
+}
+
+.game_title {
+}
+
+.player {
+  font-size: 3rem;
+}
+
+.vs {
+  margin: 10px;
+  font-size: 1rem;
+}
+
+.option {
+  margin: 10px;
+}
+
+.winner-title {
+  font-size: 3rem;
+}
+
+.results-table {
+  table-layout: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  border-collapse: collapse;
+  border-width: 0px;
+  border-color: #f2f83c;
+  border-style: solid;
+  color: #000000;
+}
+
+td,
+th {
+  border-width: 0px;
+  border-color: #f2f83c;
+  border-style: solid;
+  padding: 5px;
+}
+
+thead {
+  background-color: #8199f8;
+}

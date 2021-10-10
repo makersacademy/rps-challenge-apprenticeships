@@ -1,1 +1,40 @@
-<p><%= @result %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/styles.css" rel="stylesheet">
+  <title>RPS</title>
+</head>
+<body>
+  <div class="result-content">
+    <img width="100px" src="https://cdn.pixabay.com/photo/2013/07/13/09/51/rock-paper-scissors-156171_1280.png"/>
+    <h3 class="winner-title" id="round_winner"><%= @result_text%> </h3>
+      <table class="results-table">
+        <thead>
+          <tr>
+            <th><%= @player_one %></th>
+            <th><%= @player_two %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= @player_one_results %></td>
+            <td><%= @player_two_results %></td>
+          </tr>
+        </tbody>
+      </table>
+    <form action="/next-round" method="post">
+    <div>
+      <div id=seesion_details>
+          <input type="hidden" id="game_id" name="game_id" value="<%= @game_id %>" >
+          <input type="hidden" id="current_player" name="current_player" value="<%= @current_player %>" >
+        </div>
+      <input class="button" type="submit" id="next-round" value="Next Round"/>
+    </div>
+    </form>
+  </div>
+  
+</body>
+</html>

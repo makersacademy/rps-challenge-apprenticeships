@@ -29,13 +29,13 @@ describe RockPaperScissorsDecider do
       player_one_move = GameStatusCodes::ROCK
       player_two_move = GameStatusCodes::PAPER
       result = subject.calculate_winner(player_one_move, player_two_move)
-      expect(result).to eq GameStatusCodes::LOSE
+      expect(result).to eq GameStatusCodes::PLAYER_TWO
     end
     it 'returns a win when player two picks scissors' do
       player_one_move = GameStatusCodes::ROCK
       player_two_move = GameStatusCodes::SCISSORS
       result = subject.calculate_winner(player_one_move, player_two_move)
-      expect(result).to eq GameStatusCodes::WIN
+      expect(result).to eq GameStatusCodes::PLAYER_ONE
     end
   end
   context 'player one picks paper' do
@@ -43,13 +43,13 @@ describe RockPaperScissorsDecider do
       player_one_move = GameStatusCodes::PAPER
       player_two_move = GameStatusCodes::SCISSORS
       result = subject.calculate_winner(player_one_move, player_two_move)
-      expect(result).to eq GameStatusCodes::LOSE
+      expect(result).to eq GameStatusCodes::PLAYER_TWO
     end
     it 'returns a win when AI picks rock' do
       player_one_move = GameStatusCodes::PAPER
       player_two_move = GameStatusCodes::ROCK
       result = subject.calculate_winner(player_one_move, player_two_move)
-      expect(result).to eq GameStatusCodes::WIN
+      expect(result).to eq GameStatusCodes::PLAYER_ONE
     end
   end
   context 'player one picks scissors' do
@@ -57,13 +57,13 @@ describe RockPaperScissorsDecider do
       player_one_move = GameStatusCodes::SCISSORS
       player_two_move = GameStatusCodes::ROCK
       result = subject.calculate_winner(player_one_move, player_two_move)
-      expect(result).to eq GameService::LOSE
+      expect(result).to eq GameService::PLAYER_TWO
     end
     it 'returns a win when player two picks paper' do
       player_one_move = GameStatusCodes::SCISSORS
       player_two_move = GameStatusCodes::PAPER
       result = subject.calculate_winner(player_one_move, player_two_move)
-      expect(result).to eq GameService::WIN
+      expect(result).to eq GameService::PLAYER_ONE
     end
   end
   end

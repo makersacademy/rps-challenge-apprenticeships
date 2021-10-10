@@ -10,4 +10,7 @@ module GameStatusCodes
   WIN = :win
   DRAW = :draw
   LOSE = :lose
+
+  PLAYER_ONE = :player_one
+  PLAYER_TWO = :player_two
 end

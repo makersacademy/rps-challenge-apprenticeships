@@ -29,7 +29,7 @@ describe GameService do
     it 'plays a round of the game with a ai player' do
       player_move = GameStatusCodes::ROCK
       pc_move = GameStatusCodes::SCISSORS
-      expect(subject).to receive(:rand).and_return(2)
+      allow_any_instance_of(Array).to receive(:sample).and_return(:scissors)
       expect(subject).to receive(:find_game).with(game_code).and_return(game)
       expect(game).to receive(:play_single_player_round).with(player, player_move, pc_move)
       subject.play_solo_round(game_code, player, player_move)

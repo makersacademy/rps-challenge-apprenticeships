@@ -27,9 +27,6 @@ class GameService
   def play_solo_round(game, player, player_move)
     game = find_game(game)
     pc_move = get_ai_move
-    
-    puts "player move: #{player_move}" 
-    puts "PC move: #{pc_move}"
 
     game.play_single_player_round(player, player_move, pc_move)
   end
@@ -37,8 +34,7 @@ class GameService
   private
 
   def get_ai_move
-    options = [ROCK, PAPER, SCISSORS]
-    options[rand(0..2)]
+    options = [ROCK, PAPER, SCISSORS].sample
   end
 
 end

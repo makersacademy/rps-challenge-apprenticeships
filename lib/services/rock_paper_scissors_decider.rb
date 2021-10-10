@@ -23,18 +23,18 @@ class RockPaperScissorsDecider
   private 
   
   def self.player_picked_rock(player_two_move)
-    return LOSE if player_two_move == PAPER
-    return WIN if player_two_move == SCISSORS
+    return PLAYER_TWO if player_two_move == PAPER
+    return PLAYER_ONE if player_two_move == SCISSORS
   end
 
   def self.player_picked_paper(player_two_move)
-    return WIN if player_two_move == ROCK
-    return LOSE if player_two_move == SCISSORS
+    return PLAYER_ONE if player_two_move == ROCK
+    return PLAYER_TWO if player_two_move == SCISSORS
   end
 
   def self.player_picked_scissors(player_two_move)
-    return WIN if player_two_move == PAPER
-    return LOSE if player_two_move == ROCK
+    return PLAYER_ONE if player_two_move == PAPER
+    return PLAYER_TWO if player_two_move == ROCK
   end
 end
   

@@ -4,27 +4,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/stylesheets/styles.css" rel="stylesheet">
   <title>Game</title>
 </head>
 <body>
-  <div>
-    <h1>Game: <%= @game_id %> </h1>
-    <p id="player_one">Player 1: <%= @player_one %> </p>
-    <p id="player_two">Player 2: <%= @player_two %> </p>
-  </div>
-  <div>
+  <div class="game">
+    <div class="game_title">
+      <span class="player" id="player_one"><%= @player_one %></span>
+      <p class="vs">VS</p>
+      <span class="player" id="player_two"><%= @player_two %></span>
+    </div>
+    <hr class="spacer">
+    <div>
     <form method="post" action="/play-round">
-      <input id="rock-option" type="radio" name="move" value="Rock" required>
-      <label for="rock-option">Rock</label>
-      <input id="paper-option" type="radio" name="move" value="Paper">
-      <label for="paper-option">Paper</label>
-      <input id="scissors-option" type="radio" name="move" value="Scissors">
-      <label for="scissors-option">Scissors</label>
-      <input type="hidden" id="game_id" name="game_id" value="<%= @game_id %>" >
-      <input type="hidden" id="current_player" name="current_player" value="<%= @current_player %>" >
-      <input type="submit" id="start-vs-pc" value="Go!"/>
+      <div class="move-selection" id="moves">
+        <div class="option">
+          <img width="100px" height="100px" src="https://cdn.pixabay.com/photo/2014/12/22/00/03/rocks-576663_1280.png">
+          <div>
+            <input id="rock-option" type="radio" name="move" value="Rock" required>
+            <label class="visuallyhidden" for="rock-option" >Rock</label>
+          </div>
+        </div>
+         <div class="option">
+          <img width="100px" height="100px" src="https://cdn.pixabay.com/photo/2014/03/25/16/27/sheet-297179_1280.png">
+          <div>
+            <input id="paper-option" type="radio" name="move" value="Paper">
+            <label class="visuallyhidden" for="paper-option">Paper</label>
+          </div>
+        </div>
+         <div class="option">
+          <img width="100px" height="100px" src="https://cdn.pixabay.com/photo/2014/05/04/15/32/scissors-337633_1280.png">
+         <div>
+          <input id="scissors-option" type="radio" name="move" value="Scissors">
+          <label class="visuallyhidden" for="scissors-option">Scissors</label>
+        </div>
+      </div>
+      </div>
+      <div id=seesion_details>
+        <input type="hidden" id="game_id" name="game_id" value="<%= @game_id %>" >
+        <input type="hidden" id="current_player" name="current_player" value="<%= @current_player %>" >
+      </div>
+      <div>
+        <input class="button" type="submit" id="start-vs-pc" value="Go!"/>
+      </div>
     </form>
-    
+    <p class="game_id">Game: <%= @game_id %> </p>
   </div>
+        
+  
 </body>
 </html>

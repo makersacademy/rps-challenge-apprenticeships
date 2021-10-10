@@ -18,15 +18,23 @@ describe Game do
   end
 
   describe '#play_single_player_round' do
-    it 'player loses' do
+    it 'player one wins' do
+      result = subject.play_single_player_round(player_one.name, GameStatusCodes::ROCK, GameStatusCodes::SCISSORS)
+      expected = { player_one.name => 1, player_two.name => 0 }
+      expect(result).to eq expected
+      expect(subject.round_winner).to eq player_one
+    end
+    it 'player two wins' do
       result = subject.play_single_player_round(player_one.name, GameStatusCodes::ROCK, GameStatusCodes::PAPER)
       expected = { player_one.name => 0, player_two.name => 1 }
       expect(result).to eq expected
+      expect(subject.round_winner).to eq player_two
     end
-    it 'player wins' do
-      result = subject.play_single_player_round(player_one.name, GameStatusCodes::ROCK, GameStatusCodes::SCISSORS)
-      expected = { player_one.name => 0, player_two.name => 1 }
+    it 'its a draw' do
+      result = subject.play_single_player_round(player_one.name, GameStatusCodes::ROCK, GameStatusCodes::ROCK)
+      expected = { player_one.name => 0, player_two.name => 0 }
       expect(result).to eq expected
+      expect(subject.round_winner).to eq GameStatusCodes::DRAW
     end
   end
 
