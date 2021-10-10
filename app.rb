@@ -1,14 +1,17 @@
-require 'sinatra'
-require "sinatra/reloader" if development?
+# in app.rb
 
-get '/' do
-  'hello!'
-end
+require 'sinatra/base'
+require 'sinatra/reloader'
 
-get '/secret' do
-  'This is a secret page'
-end
+class RockPaperScissors < Sinatra::Base
+  configure :development do
+    register Sinatra::Reloader
+  end
 
-get '/game' do
-  erb(:index)
+  get '/' do
+    'Hello Game!'
+  end
+
+  # start the server if ruby file executed directly
+  run! if app_file == $0
 end
