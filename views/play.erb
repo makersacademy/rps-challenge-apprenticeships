@@ -5,18 +5,52 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hi, <%= @player %>! | Rock, Paper, Scissors</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .form {
+      display: flex;
+      flex-direction: column;
+    }
+    .input-radio {
+      display: none;
+    }
+    .icon {
+      height: 2.5em;
+      margin: 0 .5rem 0 0;
+      /* background-color: pink; */
+    }
+    .label-radio-with-img {
+      display: inline-flex;
+      align-items: center;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+    .label-radio-with-img:hover {
+      background-color: #baefef;
+    }
+    .input-radio:checked + .label-radio-with-img {
+      background-color: #aadfdf;
+    }
+  </style>
 </head>
 <body>
   <h2><%= @player.nil? ? "Stranger" : @player %>, please, choose one:</h2>
-  <form action="/choose" method="post">
-    <input type="radio" name="move" value="rock" id="rock" checked />
-    <label for="rock">Rock</label>
+  <form class="form" action="/choose" method="post">
+    <input class="input-radio" type="radio" name="move" value="rock" id="rock" checked />
+    <label class="label-radio-with-img" for="rock">
+      <img class="icon" src="http://sergeychikin.ru/365/animal/human/body/stone.svg" alt="rock" title="by Sergey Chikin" />
+      <span class="label-text">Rock</span>
+    </label>
 
-    <input type="radio" name="move" value="paper" id="paper" />
-    <label for="paper">Paper</label>
+    <input class="input-radio" type="radio" name="move" value="paper" id="paper" />
+    <label class="label-radio-with-img" for="paper"><img class="icon" src="http://sergeychikin.ru/365/animal/human/body/paper.svg" alt="paper" title="by Sergey Chikin" /><span class="label-text">Paper</span></label>
 
-    <input type="radio" name="move" value="scissors" id="scissors" />
-    <label for="scissors">Scissors</label>
+    <input class="input-radio" type="radio" name="move" value="scissors" id="scissors" />
+    <label class="label-radio-with-img" for="scissors"><img class="icon" src="http://sergeychikin.ru/365/animal/human/body/scissors.svg" alt="scissors" title="by Sergey Chikin" /><span class="label-text">Scissors</span></label>
 
     <input type="submit" value="choose" />
   </form>
