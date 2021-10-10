@@ -1,7 +1,7 @@
 require "sinatra/base"
-require './lib/computer'
-require './lib/player'
-require './lib/game'
+require "./lib/computer"
+require "./lib/player"
+require "./lib/game"
 
 class RockPaperScissor < Sinatra::Base
   enable :sessions
