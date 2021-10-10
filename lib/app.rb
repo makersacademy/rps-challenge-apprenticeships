@@ -7,6 +7,10 @@ class RockPaperScissors < Sinatra::Base
   use Rack::Session::Cookie
 
   enable :sessions
+  
+  before do
+    @game = Game.instance
+  end
 
   get "/" do
     erb(:index)
@@ -15,26 +19,23 @@ class RockPaperScissors < Sinatra::Base
   post "/name-info" do
     player = Player.new(params[:name])
     computer = Computer.new
-    $game = Game.new(player, computer)
+    @game = Game.create(player, computer)
     redirect "/play"
   end
 
   get "/play" do
-    @game = $game
     @name = @game.player.name
     erb(:play)
   end
 
   post "/outcome" do
     session[:choice] = params[:choice]
-    @game = $game
     @game.player.selection(session[:choice])
     redirect "/result"
   end
 
   get "/result" do
     @player_choice = session[:choice]
-    @game = $game
     @computer_choice = @game.computer.generate_choice
     @game_result = @game.result(@player_choice, @computer_choice)
     erb(:result)

@@ -13,4 +13,12 @@ class Game
     return "It's a draw!" if player_choice == computer_choice
     return "The computer won!"
   end
+
+  def self.create(player, computer)
+    @game = Game.new(player, computer)
+  end
+
+  def self.instance
+    @game
+  end
 end
