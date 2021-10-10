@@ -1,0 +1,7 @@
+I approached this challenge by using the steps of the walkthrough from the Battle pairing task we had this week. This allowed me to set up everything correctly and create a solid base on which to build on. Unfortunately this still takes me a lot of time to do as I can often still get stuck on a simple issue that eats up time that could be spent coding.
+
+I looked at the User Stories and made a note of what was required by looking at nouns and verbs. This week was a lot simple with regards to User Stories so I felt confident that I had done this quickly and correctly. I used them as constant reference to ensure I was on the right track whilst coding.
+
+I drew a process diagram that really helped me visualise the flow and sequence that I was trying to create. This helped me a lot as I am a very visual person and naturally do this anyway. To see it encouraged and sold as an essential tool is very reassuring and I feel it has definetly helped with my coding this week. I have a plan which I have been lacking in previous weeks which has led to me being confused.
+
+I managed to create two pages that link and pass all tests with 100% coverage. Visually it does exactly what I planned it to do and I can see where I can build further. It as all written using TDD. This is a place I haven't found myself before and I feel happy and confident in what I have done and learnt this week.
