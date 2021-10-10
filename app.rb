@@ -6,6 +6,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    player = params[:player_name]
     erb(:index)
   end
 
