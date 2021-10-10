@@ -22,5 +22,32 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post '/choice' do
+    @rock = params[:rock]
+    @paper = params[:paper]
+    @scissors = params[:scissors]
+
+    if @rock
+      @choices << @rock
+    elsif @paper 
+      @choices << @paper
+    elsif @scissors
+      @choices << @scissors
+    end
+
+    redirect '/game'
+  end
+
   run! if app_file == $0
 end
+
+# class Choices
+
+#   attr_accessor :choices
+
+#   def initialize
+#     @choices = []
+#   end
+# end
+
+# @choices = Choices.new

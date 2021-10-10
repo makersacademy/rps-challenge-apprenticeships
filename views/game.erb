@@ -2,10 +2,29 @@
   button {
     cursor: pointer;
   }
+  .choice {
+    /* visibility: hidden; */
+  }
 </style>
 
 <%= @player_name %>
 
-<button type='button'>rock</button>
-<button type='button'>paper</button>
-<button type='button'>scissors</button>
+<p>Your turn to select</p>
+
+<form action='/choice' method='post'>
+  <input class='choice' type="text" name='rock' value='rock'>
+  <button type='submit'>rock</button>
+</form>
+
+<form action='/choice' method='post'>
+  <input class='choice' type="text" name='paper' value='paper'>
+  <button type='submit'>paper</button>
+</form>
+
+<form action='/choice' method='post'>
+  <input class='choice' type="text" name='scissors' value='scissors'>
+  <button type='submit'>scissors</button>
+</form>
+
+
+<%= @choices %>
