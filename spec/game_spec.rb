@@ -28,14 +28,8 @@ describe Game do
 
   describe "#user_turn" do
     it "accepts the users choice as a parameter" do
-      my_game = described_class.new("bob")
       expect{my_game.user_turn(:rock)}.not_to raise_error
     end
-
-    # it "throws error if the user doesn't provide a valid argument" do
-    #   my_game = described_class.new("susan")
-    #   expect{my_game.user_turn()}.to raise_error
-    # end
 
     it "assigns the user choice to an instance variable" do
       my_game.user_turn(:paper)
