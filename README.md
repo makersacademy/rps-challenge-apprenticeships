@@ -18,6 +18,8 @@ I would like to be able to play rock/paper/scissors
 2. Make new directory in your projects folder
 3. Pull all the information from the fork 
 4. Run bundle
+5. Do rackup in the terminal to start the server
+
 
 # User stories plan
 ## User story 1 - completed
