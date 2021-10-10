@@ -36,6 +36,3 @@ __Functionality__
 __Diagram__
 
 ![RPS Diagram](rps-diagram.png)
-
-__Blockers__
-- I wasn't able to write a test for declaring a winner on /outcome as I wasn't sure how to implement doubles with Capybara 
