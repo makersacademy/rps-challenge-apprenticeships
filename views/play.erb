@@ -1,0 +1,9 @@
+<h2>Welcome <%= @player_name.capitalize %>!</h2>
+<br>
+<h3>What will it be? :</h3>
+<br>
+<form action='/choice' method="post">
+  <input type="submit" name='player_choice' value="Rock">
+  <input type="submit" name='player_choice' value="Paper">
+  <input type="submit" name='player_choice' value="Scissors">
+</form>
