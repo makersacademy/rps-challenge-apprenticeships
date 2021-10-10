@@ -1,7 +1,8 @@
 <h1>Welcome <%= @name %></h1>
 
-<% if @move %>
-<% end%>
+<h2>Scores<h2>
+<h3><%= @name%> : <%= @player_score%></h3>
+<h3>Computer : <%= @computer_score%></h3>
 
 <h4>Choose move</h4>
 <form action="/move" method="post">

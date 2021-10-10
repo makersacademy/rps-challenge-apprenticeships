@@ -5,8 +5,10 @@ describe Game do
   subject(:game) {described_class.new}
 
   describe '#initialize' do
-    it 'should initialize with an attribute of most recent message' do
-      
+    it 'should initialize with a player and computer score attributes' do
+      Game.new
+      expect(Game.player_score).to eq(0)
+      expect(Game.computer_score).to eq(0)
     end
   end
 

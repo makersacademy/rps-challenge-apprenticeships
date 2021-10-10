@@ -28,6 +28,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
+    @player_score = Game.player_score
+    @computer_score = Game.computer_score
     @name = Player.name
     erb(:play)
   end
