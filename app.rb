@@ -9,23 +9,26 @@ class RockPaperScissors < Sinatra::Base
 
   get '/' do
     erb(:index)
+    
   end
 
   post '/names' do
+    @game = Game.new
     @player = params[:player_name]
     @player_name = @player
     erb(:play)
   end
 
-  get '/play' do
-    erb(:play)
-  end
 
   post '/decision' do
     @decision = params[:choice]
-    @game.turn(@decision)
-
+    erb :result
   end
+
+  get '/result' do
+    erb(:result)
+  end
+
 
   run! if app_file == $0
 end

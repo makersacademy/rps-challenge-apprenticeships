@@ -1,13 +1,6 @@
 class Game
   attr_accessor :player
 
- 
-  
-
-  def initialize(player)
-    @player = player
-  end
-
   def returnplayer
     return @player
   end
