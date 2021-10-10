@@ -31,11 +31,11 @@ class RockPaperScissors < Sinatra::Base
     @bot_choice = [:rock,:paper,:scissors].sample
     
     if(@move_hierachy[@bot_choice]==@player_choice.to_sym)
-      @winner = "bot"
+      @winner = "the bot"
       @loser = @name
     elsif(@move_hierachy[@player_choice.to_sym]==@bot_choice)
       @winner = @name
-      @loser = "bot"
+      @loser = "the bot"
     else
       @draw = true
     end
