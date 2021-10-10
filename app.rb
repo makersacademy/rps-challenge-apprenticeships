@@ -1,5 +1,4 @@
 require "sinatra/base"
-require "./lib/computer.rb"
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions

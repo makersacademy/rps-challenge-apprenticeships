@@ -7,7 +7,25 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-  <h1><%= @player_name %> chose <%= @player_turn %></h1>
-  <h1>The computer chose <%= @computer_turn %></h1>
+  <p><%= @player_name %> chose <%= @player_turn %></p>
+  <p>The computer chose <%= @computer_turn %></p>
+
+  <% if @player_turn == "Rock" && @computer_turn == "Scissors" %>
+  <h1>You win!</h1>
+  <% elsif @player_turn == "Rock" && @computer_turn == "Paper" %>
+  <h1>Computer wins!</h1>
+  <% elsif @player_turn == "Paper" && @computer_turn == "Rock" %>
+  <h1>You win!</h1>
+  <% elsif @player_turn == "Paper" && @computer_turn == "Scissors" %>
+  <h1>Computer wins!</h1>
+  <% elsif @player_turn == "Scissors" && @computer_turn == "Paper" %>
+  <h1>You win!</h1>
+  <% elsif @player_turn == "Scissors" && @computer_turn == "Rock" %>
+  <h1>Computer wins!</h1>
+  <% else %> 
+  <h1>It's a draw!</h1>
+  <% end %>
+
+
 </body>
 </html>
