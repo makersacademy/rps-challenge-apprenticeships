@@ -1,13 +1,9 @@
 class Game
-  attr_accessor :player
-
-  def returnplayer
-    return @player
-  end
+  attr_reader :comp_move
 
   def generatemove()
     moves =["rock","paper","scissors"]
-    num = rand(2)
+    num = rand(3)
     return moves[num]
   end
 
@@ -15,7 +11,7 @@ class Game
   @comp_move = generatemove
   @player_move = player_move
   if @comp_move == @player_move 
-    return "draw"
+    return "You drawed"
   elsif (@player_move == "rock" && @comp_move == "scissors" )
     return "Player wins"
   elsif (@player_move == "rock" && @comp_move == "paper")

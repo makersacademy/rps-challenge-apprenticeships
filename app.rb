@@ -22,6 +22,9 @@ class RockPaperScissors < Sinatra::Base
 
   post '/decision' do
     @decision = params[:choice]
+    @game = Game.new
+    @result = @game.turn(@decision)
+
     erb :result
   end
 
