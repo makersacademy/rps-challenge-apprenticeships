@@ -4,8 +4,6 @@ describe Game do
   subject(:game) { described_class.new(player, computer) }
   let(:player) { double :player, name: "Ewa" }
   let(:computer) { double :computer, name: "Salem" }
-  # let(:player_weapon) { instance_double Game, player_weapon: :rock }
-  # let(:computer_weapon) { instance_double Game, computer_weapon: :rock }
 
   describe "#initialize" do
     it "returns the player name" do
