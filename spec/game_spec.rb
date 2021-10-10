@@ -3,12 +3,6 @@ require_relative "../lib/game.rb"
 describe Game do
   user_name = "larry"
   subject(:my_game) {described_class.new(user_name)}
-  subject(:completed_turn) {my_game}
-  
-  before do
-    completed_turn.bot_turn()
-    completed_turn.user_turn(:rock)
-  end
 
   describe "#initialize" do
     it "takes the user's name as an argument" do
@@ -23,7 +17,7 @@ describe Game do
       my_game = described_class.new("Susan")
       expect(described_class.current_game).to eq(my_game)
     end
-  end
+  end 
 
   describe ".current_game" do
     it "returns the currently active game object" do
@@ -61,23 +55,47 @@ describe Game do
   end
 
   describe "#declare_winner" do
-    it "assigns the winner's name to the winner instance variable, or nil if draw" do
-      completed_turn.declare_winner()
-      if !(completed_turn.bot_choice == completed_turn.user_choice)
-        expect(completed_turn.winner).to eq("the bot") | eq(completed_turn.name)
+    context "when the user wins" do
+      before do
+        my_game.instance_variable_set(:@user_choice, :rock)
+        my_game.instance_variable_set(:@bot_choice, :scissors)
+        my_game.declare_winner()
+      end
+
+      it "assigns the user's name to the winner instance variable" do
+        expect(my_game.winner).to eq(my_game.name)
+      end
+
+      it "assigns 'the bot' to the loser instance variable" do
+        expect(my_game.loser).to eq("the bot")
       end
     end
 
-    it "assigns the loser's name to the loser instance variable" do
-      completed_turn.declare_winner()
-      if !(@user_choice == @bot_choice)
-        expect(completed_turn.loser).to eq(completed_turn.name) | eq("the bot")
+    context "when the bot wins" do
+      before do
+        my_game.instance_variable_set(:@user_choice, :paper)
+        my_game.instance_variable_set(:@bot_choice, :scissors)
+        my_game.declare_winner()
+      end
+
+      it "assigns 'the bot' to the winner instance variable" do
+        expect(my_game.winner).to eq("the bot")
+      end
+
+      it "assigns the user's name to the loser instance variable" do
+        expect(my_game.loser).to eq(my_game.name)
       end
     end
 
-    it "sets draw if neither wins" do
-      if(completed_turn.user_choice == completed_turn.bot_choice)
-        expect(completed_turn.draw).to eq(nil)
+    context "when it's a draw" do
+      before do
+        my_game.instance_variable_set(:@user_choice, :rock)
+        my_game.instance_variable_set(:@bot_choice, :rock)
+        my_game.declare_winner()
+      end
+
+      it "sets the draw instance variable to true" do
+        expect(my_game.draw).to eq(true)
       end
     end
   end

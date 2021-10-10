@@ -27,9 +27,11 @@ class Game
     cmp_move = {rock: :scissors, scissors: :paper, paper: :rock}
     if @bot_choice == cmp_move[@user_choice]
       @winner = @name
+      @loser = "the bot"
 
     elsif @user_choice == cmp_move[@bot_choice]
      @winner = "the bot"
+     @loser = @name
 
     else
       @draw = true
