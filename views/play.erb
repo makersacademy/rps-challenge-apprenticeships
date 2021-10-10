@@ -1,0 +1,12 @@
+<h1>Welcome <%= @name %></h1>
+
+<h2>Scores<h2>
+<h3><%= @name%> : <%= @player_score%></h3>
+<h3>Computer : <%= @computer_score%></h3>
+
+<h4>Choose move</h4>
+<form action="/move" method="post">
+<input type="submit" name="move" value="Rock">
+<input type="submit" name="move" value="Paper">
+<input type="submit" name="move" value="Scissors">
+</form>

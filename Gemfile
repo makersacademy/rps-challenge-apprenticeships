@@ -13,4 +13,6 @@ end
 
 group :development, :test do
   gem 'rubocop', '1.20'
+  gem "sinatra-contrib"
+  gem "webrick", "~> 1.7"
 end
