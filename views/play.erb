@@ -1,7 +1,8 @@
- 
- 
- <form action="/decision">
-   <input type="submit" value="Rock">
-   <input type="submit" value="Paper">
-   <input type="submit" value="Scissors">
+ <div>
+ <%= @player_name%> vs. Computer
+ <form action="/decision" method "post">
+   <label for="choice">Enter your choice:</label>
+   <input type="text">
+   <input type="submit" value="Submit">
  </form>
+ </div>

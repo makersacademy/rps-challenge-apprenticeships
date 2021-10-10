@@ -2,6 +2,7 @@ require 'sinatra/base'
 require './lib/game'
 class RockPaperScissors < Sinatra::Base
   
+
   get '/test' do
     'test page'
   end
@@ -10,17 +11,19 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
-    @player = params[:name]
-
-    erb :play
+  post '/names' do
+    @player = params[:player_name]
+    @player_name = @player
+    redirect '/play'
   end
 
   get '/play' do
     erb(:play)
   end
 
-  get '/decision' do
+  post '/decision' do
+    @decision = params[:choice]
+    @game.turn(@decision)
 
   end
 
