@@ -1,28 +1,6 @@
-# RPS Challenge
-
-## Instructions
-
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
-
-## Set up
-
-```bash
-$ bundle install
-$ rspec
-# You should output that includes:
-# 1 example, 0 failures
-```
+# Rock Paper Scissors Challenge
 
 ## Task
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
 
 Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
 
@@ -36,63 +14,56 @@ So that I can enjoy myself away from the daily grind
 I would like to be able to play rock/paper/scissors
 ```
 
-Hints on functionality
+_Bonus level 1: Multiplayer_
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+> Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
-As usual please start by:
+_Bonus level 2: Rock, Paper, Scissors, Spock, Lizard_
 
-* Forking this repo
-* Test-driving development of your app
+> Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
 
 ## Resources
 
-* [HTML forms](https://www.w3schools.com/html/html_forms.asp)
-* [Capybara cheatsheet](https://devhints.io/capybara)
-* [Twitter bootstrap css library](https://getbootstrap.com/)
-* [Hosting on heroku](https://heroku.com)
+- [HTML forms](https://www.w3schools.com/html/html_forms.asp)
+- [Capybara cheatsheet](https://devhints.io/capybara)
+- [Twitter bootstrap css library](https://getbootstrap.com/)
+- [Hosting on heroku](https://heroku.com)
 
-## Bonus level 1: Multiplayer
+## Installation
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+- fork this repo
+- clone to your own repo
+- push any updates
+  `bundle install`
+  `rspec`
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+## Demo
+https://user-images.githubusercontent.com/78110998/136797162-f000386c-d5f6-45e9-b107-a9c0d15dc933.mov
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
+## Project Planning
 
-## Basic Rules
+1. Read all user stories
+2. Identify objects(classes) and methods
+3. Write down unit tests that fail
+4. Write methods to satisfy the requirements of the unit tests above, until they all pass
+5. Review code before submissions to ensure:
 
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
+- Is this code presentable? Am I proud to show it off to others?
+- Have I cleaned up things like whitespace, commented-out code, debugger statements from my code?
+- Does the indentation look right?
+- Have I conformed my code to styleguide rules (Hound will help you out here)?
+- Is it clear to someone unfamiliar with my codebase what's going on?
 
-In code review we'll be hoping to see:
+6. Raise a pull request and commit updates
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-* Commits and short and scoped
+## Project Features
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+- [x] the marketeer should be able to enter their name before the game
+- [x] the marketeer will be presented the choices (rock, paper and scissors)
+- [x] the marketeer can choose one option
+- [x] the game will choose a random option
+- [x] a winner will be declared
 
-## Notes on test coverage
+## HTTP Process Modelling
 
-Please ensure you have the following **AT THE TOP** of your `spec/spec_helper.rb` in order to have test coverage stats generated on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+![Client-Server](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/524f0c68-c049-453d-a9c2-0f780673178c/Screenshot_2021-10-09_at_21.43.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211009T204443Z&X-Amz-Expires=86400&X-Amz-Signature=528f9f8cc1815843d73ad7be46006283c9aff599d56a94f2bfda1181e14b46ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202021-10-09%2520at%252021.43.47.png%22)

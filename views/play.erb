@@ -1,0 +1,21 @@
+<div>
+Are you ready, <%=@game.player1.name%>?<br><br>
+</div>
+<body style="text-align:center;background-color:#ccffcc">
+
+<form action='/options' method='post'>
+<fieldset>
+  <legend>Choose your preference</legend>
+<div>
+        <label for="rock">Rock</label>
+    <input type="radio" name="game" value="rock" id="1">
+        <label for="paper">Paper</label>
+    <input type="radio" name="game" value="paper" id ="2">
+        <label for="scissors">Scissors</label>
+    <input type="radio" name="game" value="scissors" id ="3"><br><br>
+</div>
+<div>
+    <button type="submit">Go!</button>
+</div>
+</fieldset>
+</form>
