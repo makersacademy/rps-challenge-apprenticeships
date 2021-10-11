@@ -2,7 +2,7 @@
 
 Second user story incomplete.
 Reoccuring error with instance variables @player_name and @option the values would not
-diplay on localhost. 
+display on localhost. 
 
 ## Instructions
 
