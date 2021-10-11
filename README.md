@@ -37,6 +37,9 @@ _Bonus level 2: Rock, Paper, Scissors, Spock, Lizard_
   `bundle install`
   `rspec`
 
+## Demo
+https://user-images.githubusercontent.com/78110998/136797162-f000386c-d5f6-45e9-b107-a9c0d15dc933.mov
+
 ## Project Planning
 
 1. Read all user stories
