@@ -25,11 +25,13 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player_name = session[:player_name]
     @option = session[:option]
+    @computer_chose = session[:computer_chose]
     erb :play
   end
 
   post '/play' do
     session[:option] = params[:option]
+    session[:computer_chose] = :Rock 
     redirect '/play'
   end 
   # start the server if ruby file executed directly

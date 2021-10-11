@@ -13,5 +13,9 @@ feature 'playing the game' do
 
 	scenario 'computer chooses Rock' do 
 		click_button 'Rock'
-		expect(page).to have_content 'You chose Rock'
+		expect(random_choice).to include choice 
+	end 
+
+	def random_choice
+		[:Rock, :Paper, Scissors].map { |option| "Computer chose #{option}"}
 end 

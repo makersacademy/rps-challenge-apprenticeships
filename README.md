@@ -1,5 +1,9 @@
 # RPS Challenge
 
+Second user story incomplete.
+Reoccuring error with instance variables @player_name and @option the values would not
+diplay on localhost. 
+
 ## Instructions
 
 * Challenge time: until the end of the day
@@ -39,10 +43,29 @@ I would like to be able to play rock/paper/scissors
 Hints on functionality
 
 - the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
+Name: submit
+•	Visit the home page ('/')
+•	Fill in a text field with a name
+•	Click a Submit button
+Output: A page with the (name)
+
+- the marketeer will be presented the choices (rock, paper, scissors)
+Choices: rock, paper, and scissors
+Output: A page with choices
+
 - the marketeer can choose one option
+Option: submit 
+Output: Choices as buttons
+
 - the game will choose a random option
+Random option
+Build rock, paper, scissors programme 
+If user choice is x and if computer choice is y do this … 
+
 - a winner will be declared
+Display winner and what they chose
+Output: Display name of winner and they chose 
+
 
 As usual please start by:
 
