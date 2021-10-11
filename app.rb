@@ -30,12 +30,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/options" do
-    @type = params[:type]
-    @computer_choice = @game.opponent_choice
+    session[:game] = params[:game]
     redirect "/winner"
   end
 
   get "/winner" do
+    @player_choice = session[:game]
+    @computer_choice = @game.opponent_choice
     erb :winner
   end
 

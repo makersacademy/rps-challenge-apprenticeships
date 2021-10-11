@@ -1,10 +1,4 @@
 
-<% if @type == 'rock' && @computer_choice == 'scissors' %>
-<%= 'You won! Computer chose scissors' %>
-<% elsif @type == 'paper' && @computer_choice == 'rock' %>
-<%= 'You won! Computer chose rock' %>
-<% elsif @type == 'scissors' && @computer_choice == 'paper' %>
-<%= 'You won! Computer chose paper' %>
-<% else %>
-You lost! Computer chose <%=@computer_choice%>
-<% end %>
+
+Computer chose: <%=@computer_choice%>
+You chose: <%=@player_choice%>
