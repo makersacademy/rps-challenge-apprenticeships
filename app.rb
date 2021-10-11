@@ -8,7 +8,11 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game' do
     @name = params[:name]
-    erb "The Game"
+    @player_score = 0
+    @computer_score = 0
+    @choices = ['Rock', 'Paper', 'Scissors']
+    @player_choice = nil
+    erb :game
   end
 
   run! if app_file == $0
