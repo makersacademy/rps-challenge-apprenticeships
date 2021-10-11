@@ -1,98 +1,43 @@
-# RPS Challenge
+# Rock, Paper, Scissors
 
-## Instructions
+Welcome to RPS a real-time strategy game - completely original and not a thing like anything else that has ever existed!
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
+This is a browser-based rock, paper, scissors game. The player can enter their name to start up a competition against the server. Originally I planned the game to work with a multiplayer aspect against another human, but the amount of work needed to get that up and running for a Friday challenge was too much, so changed focus and just kept it as a single player game.
 
-## Set up
+There are three main screens:
 
-```bash
-$ bundle install
-$ rspec
-# You should output that includes:
-# 1 example, 0 failures
-```
+## Home Page
 
-## Task
+This is the page the user can sign-up on and start the game.
 
-Knowing how to build web applications is getting us almost there as web developers!
+![image](docs/home.png)
 
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
+## Game Screen
 
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+This is the page where the user sees who they are up against and can select their move for the next round.
 
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
+![image](docs/game.png)
 
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
+## Result Page
 
-Hints on functionality
+This is the page the user sees the results of the game, and can choose to play another round.
 
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
+![image](docs/result.png)
 
-As usual please start by:
+# Install
 
-* Forking this repo
-* Test-driving development of your app
+To install the app, clone the repo, then run `bundle install` this will install all required dependencies. To start the application, run `rackup` and optionally set the port by adding the `-p` flag. Then navigate to your web browser and go to localhost at the default port of `9292` or the port you set manually.
 
-## Resources
+# Logic
 
-* [HTML forms](https://www.w3schools.com/html/html_forms.asp)
-* [Capybara cheatsheet](https://devhints.io/capybara)
-* [Twitter bootstrap css library](https://getbootstrap.com/)
-* [Hosting on heroku](https://heroku.com)
+Most of my game logic lives in `GameService` and `RockPaperScissorsDecider`. The GameService is a dependency injected into the controller to ensure there is only one of them each time the server runs. The RockPaperScissorsDecider is simply a static class with a single method that take the two moves as arguments and calculates which player won based on the default rock, paper, scissors moves.
 
-## Bonus level 1: Multiplayer
+# Thoughts, problems and challenges
 
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
+This app does not do everything I wanted it to do, when starting out I focused on the multiplayer aspects. However after getting the basic web server http services up and running the main challenge I came up against was figuring out the flow of data between the client and the server and ensuring both sides were given everything they need. This took much longer than expected to do correctly with a full test suite f unit and feature tests.
 
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
+One of the main challenges I came up against was if multiple games were running at once. This would override the session data managed by Sinatra. To overcome this, I used hidden form fields on the client side to store a game_id and the current user. This meant the client would help me keep at track of the users session behind the scenes. Each time a POST request was made, the parameters contained all the information I need to target the correct game session and run logic against it - and then be passed as session data to the redirect.
 
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
+# Next Steps
 
-## Basic Rules
-
-- Rock beats Scissors
-- Scissors beats Paper
-- Paper beats Rock
-
-In code review we'll be hoping to see:
-
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-* Commits and short and scoped
-
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
-
-## Notes on test coverage
-
-Please ensure you have the following **AT THE TOP** of your `spec/spec_helper.rb` in order to have test coverage stats generated on your pull request:
-
-```ruby
-require 'simplecov'
-require 'simplecov-console'
-
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
-
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+If I were to carry on adding to this app there are a few next steps I have in mind. First of all I would add a few conveniences to the client-side such as an exit button to leave the current game. Second would be to implement the multiplayer aspect of the game. A lot of my code was written with that in mind so it is a lot more complex that it needed to be for a single player game with just the basic game mode, but because of this, it would make it easier to add the multiplayer aspects to it at a later date.
