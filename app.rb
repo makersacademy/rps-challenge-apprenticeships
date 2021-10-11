@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player.rb'
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
@@ -17,8 +18,8 @@ class RockPaperScissors < Sinatra::Base
   post '/play' do
     # @player_1_name = params[:player_1_name]
     name = params[:player_1_name]
-    Player.new(name)
-    @name = Player.name
+    player_1 = Player.new(name)
+    @name = player_1.name
     erb :play
   end
 end
