@@ -1,0 +1,71 @@
+<head>
+  <style>
+    body {
+      text-align: center;
+      padding: 30px;
+      /* background: #7986CB; */
+      background-image: linear-gradient(#7986CB, #0D47A1);
+      color: white;
+      font-size: 20px;
+    }
+
+    #name {
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      padding: 10px 30px 10px 30px;
+      margin: 10px;
+      font-size: 20px;
+    
+    }
+
+    #playGame {
+      background: #92CD41;
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      font-size: 30px;
+      padding: 6px 30px 6px 30px;
+      margin: 10px;
+      color: white;
+      /* font-family: 'Press Start 2P', cursive; */
+      text-decoration: none; 
+      box-shadow: inset -4px -4px 0px 0px #4AA52E;
+    }
+
+    #playGame:before,
+    #playGame:after {
+      content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          box-sizing: content-box;
+      }
+
+    #playGame:before {
+        top: -6px;
+        left: 0;
+        border-top: 6px black solid;
+        border-bottom: 6px black solid;
+    }
+
+    #playGame:after {
+        left: -6px;
+        top: 0;
+        border-left: 6px black solid;
+        border-right: 6px black solid;
+    }
+  </style>
+</head>
+<body>
+  <h1> Rock Paper Scissors </h1>
+  <%# <img src="../images/rock_paper_scissors.png"> %>
+  <div>
+    <p>Enter your name to immerse yourself in the joys of Rock Paper Scissors</p>
+    <form action="/name" method="post">
+      <label for="player_1_name">Name: </label>
+      <input type = "text" placeholder="Your name here" name="player_name" id="name"/>
+      <br><input type="submit" value="Play Game" id="playGame"/> 
+    </form>
+  </div>
+</body>

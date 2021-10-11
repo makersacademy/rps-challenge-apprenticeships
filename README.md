@@ -40,11 +40,11 @@ $ rspec
 
 ### Planning
 
-- [ ] Include a _diagram_ of how the browser interacts with a server
+- [x] Include a _diagram_ of how the browser interacts with a server
 
 ### The Program
 
-- [ ] The Marketer can enter their name before game
+- [x] The Marketer can enter their name before game
 - [ ] The marketeer will be presented the choices (rock, paper and scissors)
 - [ ] The marketeer can choose one option
 - [ ] The game will choose a random option
