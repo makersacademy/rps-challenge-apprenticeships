@@ -1,9 +1,8 @@
 class Player
-    attr_reader :name, :chosen_item
+    attr_accessor :name, :sign
 
-    def initialize(name, sign)
+    def initialize(name)
         @name = name
-        @sign = sign
     end
 
 end 
