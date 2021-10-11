@@ -1,0 +1,63 @@
+<head>
+  <style>
+    body {
+        text-align: center;
+        padding: 30px;
+        background-image: linear-gradient(#7986CB, #0D47A1);
+        color: white;
+font-size: 20px;
+    }
+    @font-face {
+      font-family: myFirstFont;
+      src: url(sansation_light.woff);
+    }
+
+    .button {
+      background: #ABB2B9;
+      display: inline-block;
+      position: relative;
+      text-align: center;
+      font-size: 30px;
+      padding: 6px 30px 6px 30px;
+      margin: 10px;
+      color: white;
+      /* font-family: 'Press Start 2P', cursive; */
+      text-decoration: none; 
+      box-shadow: inset -4px -4px 0px 0px #808B96;
+    }
+
+    .button:before,
+    .button:after {
+    content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        box-sizing: content-box;
+    }
+
+    .button:before {
+        top: -6px;
+        left: 0;
+        border-top: 6px black solid;
+        border-bottom: 6px black solid;
+    }
+
+    .button:after {
+        left: -6px;
+        top: 0;
+        border-left: 6px black solid;
+        border-right: 6px black solid;
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Welcome to Rock, Paper, Scissors <%= @player %>!</h1>
+  <div>
+    <p>What would you like to play?</p>
+    <a href="/winner" class="button" name="choice" type="submit" value="Rock">Rock</a><br>
+    <a href="/winner" class="button" name="choice" type="submit" value="Paper">Paper</a><br>
+    <a href="/winner" class="button" name="choice" type="submit" value="Scissors">Scissors</a><br>
+  </div>
+</body>
