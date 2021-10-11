@@ -5,7 +5,7 @@
         padding: 30px;
         background-image: linear-gradient(#7986CB, #0D47A1);
         color: white;
-        font-size: 20px;
+font-size: 20px;
     }
     @font-face {
       font-family: myFirstFont;
@@ -56,8 +56,8 @@
   <h1>Welcome to Rock, Paper, Scissors <%= @player %>!</h1>
   <div>
     <p>What would you like to play?</p>
-    <a href="javascript:void(0)" class="button">Rock</a><br>
-    <a href="javascript:void(0)" class="button">Paper</a><br>
-    <a href="javascript:void(0)" class="button">Scissors</a><br>
+    <a href="/winner" class="button" name="choice" type="submit" value="Rock">Rock</a><br>
+    <a href="/winner" class="button" name="choice" type="submit" value="Paper">Paper</a><br>
+    <a href="/winner" class="button" name="choice" type="submit" value="Scissors">Scissors</a><br>
   </div>
 </body>

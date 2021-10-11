@@ -19,7 +19,7 @@
     
     }
 
-    #playGame {
+    .button {
       background: #92CD41;
       display: inline-block;
       position: relative;
@@ -33,8 +33,8 @@
       box-shadow: inset -4px -4px 0px 0px #4AA52E;
     }
 
-    #playGame:before,
-    #playGame:after {
+    .button:before,
+    .button:after {
       content: '';
           position: absolute;
           width: 100%;
@@ -42,14 +42,14 @@
           box-sizing: content-box;
       }
 
-    #playGame:before {
+    .button:before {
         top: -6px;
         left: 0;
         border-top: 6px black solid;
         border-bottom: 6px black solid;
     }
 
-    #playGame:after {
+    .button:after {
         left: -6px;
         top: 0;
         border-left: 6px black solid;
@@ -64,8 +64,8 @@
     <p>Enter your name to immerse yourself in the joys of Rock Paper Scissors</p>
     <form action="/name" method="post">
       <label for="player_1_name">Name: </label>
-      <input type = "text" placeholder="Your name here" name="player_name" id="name"/>
-      <br><input type="submit" value="Play Game" id="playGame"/> 
+      <input type = "text" placeholder="Your name here" name="player_name" id="name"/> 
     </form>
+    <a href="/play" class="button">Play Game</a><br>
   </div>
 </body>
