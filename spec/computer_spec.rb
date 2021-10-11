@@ -5,7 +5,7 @@ describe Computer do
 
   describe "#initialize" do
     it "returns the player name" do
-      expect(salem.name).to eq "Salem"
+      expect(salem.name).to eq "Computer"
     end
   end
 end
