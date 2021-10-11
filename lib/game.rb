@@ -1,5 +1,3 @@
-require "weapon"
-
 class Game
   attr_reader :player1, :player2, :weapon
 

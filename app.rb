@@ -11,8 +11,8 @@ class RockPaperScissors < Sinatra::Base
 
   enable :sessions
 
-  get "/test" do
-    "test page"
+  before do
+    @game = Game.instance
   end
 
   get "/" do
@@ -26,13 +26,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get "/play" do
-    @game = Game.instance
     erb :play
   end
 
   post "/options" do
     @type = params[:type]
-    @game = Game.instance
     @computer_choice = @game.opponent_choice
     redirect "/winner"
   end
