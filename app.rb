@@ -2,6 +2,7 @@ require "sinatra/base"
 require "sinatra/reloader"
 require "./lib/player"
 require "./lib/game"
+require "./lib/weapon"
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -30,6 +31,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/options" do
+    @type = params[:type]
+    @game = Game.instance
+    @computer_choice = @game.opponent_choice
+    redirect "/winner"
+  end
+
+  get "/winner" do
     erb :winner
   end
 
