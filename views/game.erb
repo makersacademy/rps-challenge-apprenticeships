@@ -1,0 +1,20 @@
+<style>
+  button {
+    cursor: pointer;
+  }
+  .choice {
+    /* visibility: hidden; */
+  }
+</style>
+
+<%= @player_name %>
+
+<p>Your turn to select</p>
+
+<form action='/choice' method='post'>
+  <input type="submit" name='choice' value='rock'>
+  <input type="submit" name='choice' value='paper'>
+  <input type="submit" name='choice' value='scissors'>
+</form>
+
+<%= @choices %>
