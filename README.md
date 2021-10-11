@@ -58,8 +58,8 @@ _Bonus level 2: Rock, Paper, Scissors, Spock, Lizard_
 - [x] the marketeer should be able to enter their name before the game
 - [x] the marketeer will be presented the choices (rock, paper and scissors)
 - [x] the marketeer can choose one option
-- [ ] the game will choose a random option
-- [ ] a winner will be declared
+- [x] the game will choose a random option
+- [x] a winner will be declared
 
 ## HTTP Process Modelling
 
