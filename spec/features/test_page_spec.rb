@@ -4,3 +4,8 @@ feature 'test page' do
     expect(page).to have_content('test page')
   end
 end
+feature 'Enter name' do
+  scenario 'visit / page' do
+    expect(page).to have_content('Player')
+  end
+end
