@@ -3,7 +3,7 @@ require "./lib/game"
 describe Game do
   subject(:game) { described_class.new(player, computer) }
   let(:player) { double :player, name: "Ewa" }
-  let(:computer) { double :computer, name: "Salem" }
+  let(:computer) { double :computer, name: "Computer" }
 
   describe "#initialize" do
     it "returns the player name" do
@@ -11,7 +11,7 @@ describe Game do
     end
 
     it "returns the computer name" do
-      expect(game.computer).to eq "Salem"
+      expect(game.computer).to eq "Computer"
     end
   end
 

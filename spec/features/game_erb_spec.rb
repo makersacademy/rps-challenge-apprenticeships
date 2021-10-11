@@ -5,6 +5,6 @@ feature "choosing a weapon" do
     click_button "Submit"
     find_field("rock").set("rock")
     click_button "Submit"
-    expect(page).to have_content("Ewa vs. Salem!")
+    expect(page).to have_content("Ewa vs. Computer!")
   end
 end
