@@ -1,5 +1,6 @@
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
   get '/test' do
     'test page'
   end
@@ -9,16 +10,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    $player_1_name = params[:player_1_name]
+    session[:player_1_name] = params[:player_1_name]
     redirect '/play'
   end
 
   get '/play' do
+    @player_1_name = session[:player_1_name]
+    @player_1_selection = session[:player_1_selection]
     erb :play
   end
 
   post '/selection' do
-    $player_1_selection = params[:selection]
+    session[:player_1_selection] = params[:selection]
     redirect '/play'
   end
 
