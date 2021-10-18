@@ -1,1 +1,20 @@
-<h2>Result: <%= @game_result %></h2>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: lightgrey; font-family:verdana; text-align:center;}
+h1 {padding:150px;}
+.button {background-color:grey; border:none; color:white; padding:15px 32px; text-align:center; font-size:18}
+form {padding:15px 15px;}
+</style>
+</head>
+<body>
+<h1>Result: <%= @game_result %></h2>
+<form action="/play" method="get">
+    <button class=button type="submit" name="play again" value="Play Again">PLAY AGAIN</button>
+</form>
+<form action="/" method="get">
+    <button class=button type="submit" name="return" value="Return">RETURN TO HOMEPAGE</button>
+</form>
+</body>
+</html>

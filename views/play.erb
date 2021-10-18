@@ -1,10 +1,22 @@
-<h2>Ready to play <%= @player_name %>?</h2>
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {background-color: lightgrey; font-family:verdana; text-align:center;}
+h1 {padding:150px;}
+.button {background-color:grey; border:none; color:white; padding:15px 32px; text-align:center; font-size:18}
+input {padding:13px 40px; text-align:center; font-size:20;}
+</style>
+</head>
+</body>
+<h1>Ready to play, <%= @player_name %>?</h2>
 
 <h3>Choose your weapon!</h3>
 
 <form action="/choice" method="post">
-    <button type="submit" name="choice" value="rock">ROCK</button>
-    <button type="submit" name="choice" value="paper">PAPER</button>
-    <button type="submit" name="choice" value="scissors">SCISSORS</button>
+    <button class=button type="submit" name="choice" value="rock">ROCK</button>
+    <button class=button type="submit" name="choice" value="paper">PAPER</button>
+    <button class=button type="submit" name="choice" value="scissors">SCISSORS</button>
 </form>
-
+</body>
+</html>
