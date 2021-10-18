@@ -37,6 +37,9 @@ _Bonus level 2: Rock, Paper, Scissors, Spock, Lizard_
   `bundle install`
   `rspec`
 
+## Demo
+https://user-images.githubusercontent.com/78110998/136797162-f000386c-d5f6-45e9-b107-a9c0d15dc933.mov
+
 ## Project Planning
 
 1. Read all user stories
@@ -63,4 +66,4 @@ _Bonus level 2: Rock, Paper, Scissors, Spock, Lizard_
 
 ## HTTP Process Modelling
 
-![Client-Server](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/524f0c68-c049-453d-a9c2-0f780673178c/Screenshot_2021-10-09_at_21.43.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211009%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211009T204443Z&X-Amz-Expires=86400&X-Amz-Signature=528f9f8cc1815843d73ad7be46006283c9aff599d56a94f2bfda1181e14b46ce&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202021-10-09%2520at%252021.43.47.png%22)
+![Client-Server](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/524f0c68-c049-453d-a9c2-0f780673178c/Screenshot_2021-10-09_at_21.43.47.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211015%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211015T135418Z&X-Amz-Expires=86400&X-Amz-Signature=5f124a170a7b3cf76f6570b4427e6aa0584259d6dea7d2d8ad10d4db054c0be7&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Screenshot%25202021-10-09%2520at%252021.43.47.png%22)
