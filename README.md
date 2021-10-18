@@ -1,4 +1,4 @@
-The aim of this challenge is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
+The aim of this challenge is to provide a _Rock, Paper, Scissors_ game that can be played on the web with the following user stories:
 
 ```
 As a marketeer
