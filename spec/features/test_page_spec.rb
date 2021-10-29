@@ -21,4 +21,17 @@ feature 'test page' do
     click_button 'Submit'
     expect(page).to have_content('Game time')
     end
+
+  scenario 'start game' do
+    visit('/')
+    click_button 'Submit'
+    expect(page).to have_content('Start')
+  end
+
+  scenario 'Results of the game' do
+    visit('/')
+    click_button 'Submit'
+    expect(page).to have_content('game')
+  end
+
 end

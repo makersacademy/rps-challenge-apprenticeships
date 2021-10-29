@@ -23,8 +23,8 @@ class RockPaperScissors < Sinatra::Base
   end 
 
   post '/game' do
-    p @choice = params[:rock]
-    p @winner = PlayGame.new('Hello')
+    @choice = params[:rock]
+     @winner = PlayGame.new(params[:rock])
     erb :result
   end 
 
