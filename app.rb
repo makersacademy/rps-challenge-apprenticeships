@@ -1,4 +1,5 @@
 require 'computer'
+require 'player'
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -14,10 +15,8 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
   get '/game_over' do
-    @weapon1 = params[:weapon]
-    @username1 = session[:username]
-    @weapon2 = Computer.new.weapon
-    @username2 = "Computron"
+    @player1 = Player.new(session[:username],params[:weapon])
+    @player2 = Computer.new("Computron")
     erb :game_over
   end
   run! if app_file == $0

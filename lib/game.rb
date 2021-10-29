@@ -1,10 +1,8 @@
 class Game
 
-  def initialize(player1_name, player1_weapon, player2_name, player2_weapon) 
-    @player1_name = player1_name
-    @player1_weapon = player1_weapon
-    @player2_name = player2_name
-    @player2_weapon = player2_weapon
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
   def winner
