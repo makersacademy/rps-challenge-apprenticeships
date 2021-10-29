@@ -5,15 +5,16 @@
 </style>
 
 <h1 style="text-align: center; font-family: Courier"> REGISTER TO PLAY </h1>
+
 <%if !@solo && !@multiplayer %>
 
 <p style="font-family: American Typewriter;">Player 1:</p>
 
 <label for="player1_name">
 
-  <form action="/storeplayer" method="post">
+  <form action="/player" method="get">
     <input type="text" name="player1_name">
-    <input type="submit" name="Sumbit">
+    <input type="submit" value="add player" id="add player" >
   </form>
 
 </label>
@@ -27,7 +28,7 @@
   </form>
 
   <form style="display: inline;" action="/multiplayer" method="post">
-    <input type="submit" value="MULTIPLAYER" id="SOLO">
+    <input type="submit" value="MULTIPLAYER" id="MULTIPLAYER">
   </form>
 
 </div>
@@ -38,9 +39,9 @@
 
 <label for="player1_name">
 
-  <form action="/storeplayer" method="post">
+  <form action="/player" method="get">
     <input type="text" name="player1_name">
-    <input type="submit" name="Sumbit">
+    <input type="submit" value="add player">
   </form>
   
 </label>
@@ -53,7 +54,7 @@
   </form>
 
   <form style="display: inline;" action="/multiplayer" method="post">
-    <input type="submit" value="MULTIPLAYER" id="SOLO">
+    <input type="submit" value="MULTIPLAYER" id="MULTIPLAYER">
   </form>
 
 </div>
@@ -66,25 +67,14 @@
 
 <label for="player1_name">
 
-  <form action="/storeplayers" method="post">
+  <form action="/players" method="get">
     <input style="position: absolute; top: 10%; right: 44%;"type="text" name="player1_name">
     <p style= "position: absolute; top: 11%; right: 47.5%; font-family: American Typewriter;">Player 2:<p>
     <input style="position: absolute; top: 15%; right: 44%;"type="text" name="player2_name">
-    <input style="position: absolute; top: 18%; right: 48%;"type="submit" name="Sumbit">
+    <input style="position: absolute; top: 18%; right: 48%;"type="add players" value="add players">
   </form>
   
 </label>
-
-<%# <p>Player 2:</p>
-
-<label for="player2_name">
-
-  <form action="/storeplayer" method="post">
-    <input type="text" name="player2_name">
-    <input type="submit" name="Sumbit">
-  </form>
-  
-</label> %>
 
 <div style="border: 3px dashed silver; position: absolute; top: 78.5%; left: 68%;">
   
@@ -95,7 +85,7 @@
   </form>
 
   <form style="display: inline;" action="/multiplayer" method="post">
-    <input style="background-color: Silver;" type="submit" value="MULTIPLAYER" id="SOLO">
+    <input style="background-color: Silver;" type="submit" value="MULTIPLAYER" id="MULTIPLAYER">
   </form>
 
 </div>

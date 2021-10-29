@@ -1,6 +1,7 @@
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
 require 'sinatra/reloader' if development?
+require_relative 'model/players'
 
   get '/' do
     erb :index
@@ -22,13 +23,17 @@ require 'sinatra/reloader' if development?
     erb :register
   end 
 
-  post '/players' do 
-
+  get '/players' do 
+    players = [params[:player1_name],params[:player2_name]]
+    @players = Players.new(players)
+    erb :game
   end 
 
-  post '/player' do 
-
+  get '/player' do 
+    player = params[:player1_name]
+    @player = Players.new(player)
+    erb :game
   end 
-  
+
   run! if app_file == $0
 end
