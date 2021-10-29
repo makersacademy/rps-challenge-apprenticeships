@@ -13,9 +13,8 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
   get '/game_over' do
-    p params
-    @username = session[:username]
-    @weapon = params[:weapon]
+    @weapon_1 = params[:weapon]
+    @username_1 = session[:username]
     erb :game_over
   end
   run! if app_file == $0
