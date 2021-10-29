@@ -1,3 +1,8 @@
+# Personal Entry
+
+To start this challenge I have created a diagram to clearly show the interaction and layout I desire for my application. Once this step had been completed I moved on to setting out the layout/framework according to my diagram but leaving the files blank to allow for changes and a TTD process.
+
+
 # RPS Challenge
 
 ## Instructions
