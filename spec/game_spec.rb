@@ -28,4 +28,12 @@ describe Game do
 
     expect { subject.play }.to raise_error 'Empty choice player 1'
   end
- end
+  it "should draw if same choice" do
+    player2 = double('mock', :name => 'Jenaro', :choice => 'paper')
+    player1 =double('mock', :name => 'Mike', :choice => 'paper')
+    subject = Game.new(player1, player2)
+
+    expect(subject.play).to eq "draw"
+  end
+
+end
