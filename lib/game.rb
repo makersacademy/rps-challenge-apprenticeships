@@ -1,7 +1,16 @@
 class Game
+  attr_reader :player1, :player2
 
-  def play(player1, player2)
-    raise 'Empty player 2 choice' if player2.nil?
-    raise 'Empty player 1 choice' if player1.nil?
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
+  end
+
+  def play
+    raise 'Empty player 2' if player2.nil?
+    raise 'Empty player 1' if player1.nil?
+    raise 'Empty choice player 2' if player2.choice.nil?
+    raise 'Empty choice player 1' if player1.choice.nil?
+
   end
 end
