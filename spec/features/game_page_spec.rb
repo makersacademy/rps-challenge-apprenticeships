@@ -15,4 +15,12 @@ feature 'game_page checks' do
 
   end
 
+  scenario 'checks if we have no names input we get error message' do 
+
+    register_page
+    click_on "add player"
+    expect(page).to have_content "Error: Not enough players for multiplayer"
+
+  end 
+
 end 

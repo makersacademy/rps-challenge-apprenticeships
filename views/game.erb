@@ -1,7 +1,7 @@
-<% if @player %>
+<% if @player.respond_to?('player1') && !@player.player1.empty? %>
 <%= @player.player1 %>
-<% elsif @players %>
+<% elsif @players.respond_to?('player2') && !@players.player1.empty? && !@players.player2.empty? %>
 <%= @players.player1 %> vs <%=@players.player2%>
 <% else %>
-Error: Not enough players for multiplayer
+<h1>Error: Not enough players for multiplayer</h1>
 <% end %>
