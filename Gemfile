@@ -7,6 +7,9 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'selenium-webdriver'
+  gem 'shotgun'
+  gem 'launchy'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
