@@ -1,5 +1,5 @@
 feature 'Enter user name' do
-  scenario 'visit test page' do
+  scenario 'visit home page' do
     visit('/')
     fill_in :player_name, with: 'Tom'
     click_button 'Submit'
