@@ -18,7 +18,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/rps' do
-    "test page"
+    erb :rps
   end
 
   run! if app_file == $0
