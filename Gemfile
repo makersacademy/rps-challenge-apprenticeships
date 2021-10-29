@@ -10,6 +10,7 @@ group :test do
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
   gem 'webrick'
+  gem 'sinatra-reloader'
 end
 
 group :development, :test do
