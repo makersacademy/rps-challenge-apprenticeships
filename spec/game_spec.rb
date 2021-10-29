@@ -15,7 +15,17 @@ describe Game do
     it 'retrieves the computer' do
       expect(game.computer).to eq computer
     end
-  end 
+  end
+
+  describe '#result' do
+
+    context 'when player chooses rock' do
+
+      it 'returns "draw" if computer also chooses rock' do
+        expect(game.result('Rock', 'Rock')).to eq 'draw'
+      end
+    end
+  end
 
 
 end
