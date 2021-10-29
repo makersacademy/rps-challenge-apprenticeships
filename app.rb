@@ -10,5 +10,8 @@ class RockPaperScissors < Sinatra::Base
     @username = params[:user_name]
     erb :play
   end
+  get '/game_over' do
+    
+  end
   run! if app_file == $0
 end

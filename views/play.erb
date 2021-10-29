@@ -1,2 +1,8 @@
 <h1> Prepare... for an epic battle!</h1>
 Hi <%= @username %>!
+<h4> Choose a weapon. Choose wisely!<h4>
+  <form action="/game_over" method="get">
+    <input type="button" value="Rock">
+    <input type="button" value="Paper">
+    <input type="button" value="Scissors">
+  </form>
