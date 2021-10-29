@@ -1,1 +1,5 @@
-<%= @game.player.name %> Chooses Rock!
+<% if @game.player.weapon == 'Rock' %>
+<% elsif @game.player.weapon == 'Paper' %>
+<% elsif @game.player.weapon == 'Scissors' %>
+<% end %>
+<%= @game.player.name %> chose: <%= @game.player.weapon %>

@@ -23,9 +23,13 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  get '/move' do
+  post '/move' do
     @game = $game
+    @game.player.weapon = params[:weapon]
     erb :move
+  end
+
+  get '/result' do
   end
 
   run! if app_file == $0
