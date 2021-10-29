@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
 require './lib/game'
+require './lib/computer'
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
@@ -12,8 +13,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/player_name' do
     @player = Player.new(params[:player_name])
-    $game = Game.new(@player)
-    p $game
+    @computer = Player.new(@computer)
+    $game = Game.new(@player, @computer)
     redirect '/play'
   end
 
