@@ -4,12 +4,11 @@ require './app'
 # So that I can see my name in lights
 # I would like to register my name before playing an online game
 
-feature '#registration' do 
+feature '#play' do 
   scenario 'entering players name' do 
-    visit '/'
-    fill_in :player_name, with: "Shanice"
-    click_button 'Submit'
-    save_and_open_page
-    expect(page).to have_content "Shanice"
+      visit '/'
+      fill_in :player_name, with: 'Shanice'
+      click_button 'Submit'
+      expect(page).to have_content 'Player registered: Shanice'
   end 
 end 

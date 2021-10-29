@@ -7,17 +7,17 @@ enable :sessions
   end
 
   post '/named_player' do 
-    session[:player_name] = params[:player_name]
+    $player = Player.new(params[:player_name])
     redirect '/registered'
   end 
   
   get '/registered' do
-    @player_name = session[:player_name]
+    @player_name = $player.name
     erb :registered
   end 
 
   get '/play_game' do
-    @player_name = session[:player_name] 
+    @player_name = $player.name
     erb :play_game
   end
 
