@@ -12,12 +12,8 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
+  post '/rps' do
     @name = params[:name]
-    erb :name
-  end
-
-  get '/rps' do
     erb :rps
   end
 
