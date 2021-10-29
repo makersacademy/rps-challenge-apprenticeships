@@ -1,11 +1,45 @@
-<p>Player 1:</p>
+
 <style>
   form { display: inline;}
 </style>
+
+<%if !@solo && !@multiplayer %>
+
+<p>Player 1:</p>
+
+
 <form action="/solo" method="post">
-  <input type="submit" value="SOLO" id="SOLO">
+  <input style="background-color: Silver;"type="submit" value="SOLO" id="SOLO">
 </form>
+
 <form action="/multiplayer" method="post">
   <input type="submit" value="MULTIPLAYER" id="SOLO">
 </form>
+
+<% elsif @solo && !@multiplayer %>
+
+<p>Player 1:</p>
+
+<form action="/solo" method="post">
+  <input style="background-color: Silver;"type="submit" value="SOLO" id="SOLO">
+</form>
+
+<form action="/multiplayer" method="post">
+  <input type="submit" value="MULTIPLAYER" id="SOLO">
+</form>
+
+<% elsif !@solo && @multiplayer %>
+
+<p>Player 1:</p>
+<p>Player 2:</p>
+
+<form action="/solo" method="post">
+  <input type="submit" value="SOLO" id="SOLO">
+</form>
+
+<form action="/multiplayer" method="post">
+  <input style="background-color: Silver;" type="submit" value="MULTIPLAYER" id="SOLO">
+</form>
+
+<%end%>
 

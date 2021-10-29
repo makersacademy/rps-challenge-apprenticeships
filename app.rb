@@ -10,5 +10,17 @@ require 'sinatra/reloader' if development?
     erb :register
   end 
 
+  post '/solo' do 
+    @solo = true 
+    @multiplayer = false
+    erb :register
+  end 
+
+  post '/multiplayer' do 
+    @solo = false 
+    @multiplayer = true 
+    erb :register
+  end 
+
   run! if app_file == $0
 end
