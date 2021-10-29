@@ -6,7 +6,7 @@
 
 <h1 style="text-align: center; font-family: Courier"> REGISTER TO PLAY </h1>
 
-<%if !@solo && !@multiplayer %>
+<%if !$solo && !$multiplayer %>
 
 <p style="font-family: American Typewriter;">Player 1:</p>
 
@@ -33,7 +33,7 @@
 
 </div>
 
-<% elsif @solo && !@multiplayer %>
+<% elsif $solo && !$multiplayer %>
 
 <p style="font-family: American Typewriter;">Player 1:</p>
 
@@ -61,7 +61,7 @@
 
 
 
-<% elsif !@solo && @multiplayer %>
+<% elsif !$solo && $multiplayer %>
 
 <p style="font-family: American Typewriter">Player 1:</p>
 

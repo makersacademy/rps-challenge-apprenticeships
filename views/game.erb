@@ -1,7 +1,36 @@
-<% if @player.respond_to?('player1') && !@player.player1.empty? %>
-<%= @player.player1 %>
-<% elsif @players.respond_to?('player2') && !@players.player1.empty? && !@players.player2.empty? %>
-<%= @players.player1 %> vs <%=@players.player2%>
+<style>
+  h1 {text-align: center;}
+  form {display: inline;}
+</style>
+
+<% if $player.respond_to?('player1') && !$player.player1.empty? && !$multiplayer %>
+
+<h1>Single Player: <%= $player.player1 %></h1>
+
+<div style="position: absolute; right: 35%; top: 50%;">
+
+  <form action="/rock" method="post">
+    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="rock">
+  </form>
+
+  <form action="/paper" method="post">
+    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="Paper">
+  </form>
+
+  <form action="/scissors" method="post">
+    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="Scissors">
+  </form>
+
+</div>
+
+<p>you chose <%=@player1_move%></p>
+
+<% elsif $players.respond_to?('player2') && !$players.player1.empty? && !$players.player2.empty? && !$solo %>
+
+<h1> <%= $players.player1 %> vs <%=$players.player2%> </h1>
+
 <% else %>
+
 <h1>Error: Not enough players for multiplayer</h1>
+
 <% end %>
