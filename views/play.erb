@@ -1,0 +1,13 @@
+<h1>Welcome <%= @player_name.user_name%>!</h1>
+
+<form action="/start" method="get">
+  <input type="submit" value="Start Game">
+</form>
+
+
+<form action="/choice" method="post" style="<%= @style %>">
+    <h3>Please make a choice:</h3>
+    <input type="submit" name="rock" value="Rock" style="margin:7px">
+    <input type="submit" name="paper" value="Paper" style="margin:7px">
+    <input type="submit" name="scissors" value="Scissors" style="margin:7px">
+</form>

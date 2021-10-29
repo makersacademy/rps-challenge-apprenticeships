@@ -7,12 +7,26 @@ class RockPaperScissors < Sinatra::Base
 
   post '/handle_user_date' do
     $player_name =  Player.new(params[:player_name])
-    redirect '/register'
+    @player_name = $player_name
+    redirect '/play'
+  end
+  
+
+  get '/play' do
+    @player_name = $player_name
+    @style = "display:none"
+    erb :play
   end
 
-  get '/register' do
-    @player_name = $player_name.user_name
-    erb :register
+  get '/start' do
+    @player_name = $player_name
+    @style = "display:block"
+    erb :play
+  end
+
+  post "/choice" do
+    @player_name = $player_name
+    erb :game
   end
 
   run! if app_file == $0
