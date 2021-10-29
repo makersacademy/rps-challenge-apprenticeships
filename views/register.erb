@@ -1,45 +1,104 @@
 
 <style>
-  form { display: inline;}
+  form {text-align: center;}
+  p {text-align: center;}
 </style>
 
+<h1 style="text-align: center; font-family: Courier"> REGISTER TO PLAY </h1>
 <%if !@solo && !@multiplayer %>
 
-<p>Player 1:</p>
+<p style="font-family: American Typewriter;">Player 1:</p>
 
+<label for="player1_name">
 
-<form action="/solo" method="post">
-  <input style="background-color: Silver;"type="submit" value="SOLO" id="SOLO">
-</form>
+  <form action="/storeplayer" method="post">
+    <input type="text" name="player1_name">
+    <input type="submit" name="Sumbit">
+  </form>
 
-<form action="/multiplayer" method="post">
-  <input type="submit" value="MULTIPLAYER" id="SOLO">
-</form>
+</label>
+
+<div style="border: 3px dashed silver; position: absolute; top: 78.5%; left: 68%;">
+  
+  <p> Game Type:<p>
+
+  <form style="display: inline;" action="/solo" method="post">
+    <input style="background-color: Silver;"type="submit" value="SOLO" id="SOLO">
+  </form>
+
+  <form style="display: inline;" action="/multiplayer" method="post">
+    <input type="submit" value="MULTIPLAYER" id="SOLO">
+  </form>
+
+</div>
 
 <% elsif @solo && !@multiplayer %>
 
-<p>Player 1:</p>
+<p style="font-family: American Typewriter;">Player 1:</p>
 
-<form action="/solo" method="post">
-  <input style="background-color: Silver;"type="submit" value="SOLO" id="SOLO">
-</form>
+<label for="player1_name">
 
-<form action="/multiplayer" method="post">
-  <input type="submit" value="MULTIPLAYER" id="SOLO">
-</form>
+  <form action="/storeplayer" method="post">
+    <input type="text" name="player1_name">
+    <input type="submit" name="Sumbit">
+  </form>
+  
+</label>
+
+<div style="border: 3px dashed silver; position: absolute; top: 78.5%; left: 68%;">
+  <p> Game Type:<p>
+
+  <form style="display: inline;" action="/solo" method="post">
+    <input style="background-color: Silver;"type="submit" value="SOLO" id="SOLO">
+  </form>
+
+  <form style="display: inline;" action="/multiplayer" method="post">
+    <input type="submit" value="MULTIPLAYER" id="SOLO">
+  </form>
+
+</div>
+
+
 
 <% elsif !@solo && @multiplayer %>
 
-<p>Player 1:</p>
-<p>Player 2:</p>
+<p style="font-family: American Typewriter">Player 1:</p>
 
-<form action="/solo" method="post">
-  <input type="submit" value="SOLO" id="SOLO">
-</form>
+<label for="player1_name">
 
-<form action="/multiplayer" method="post">
-  <input style="background-color: Silver;" type="submit" value="MULTIPLAYER" id="SOLO">
-</form>
+  <form action="/storeplayers" method="post">
+    <input style="position: absolute; top: 10%; right: 44%;"type="text" name="player1_name">
+    <p style= "position: absolute; top: 11%; right: 47.5%; font-family: American Typewriter;">Player 2:<p>
+    <input style="position: absolute; top: 15%; right: 44%;"type="text" name="player2_name">
+    <input style="position: absolute; top: 18%; right: 48%;"type="submit" name="Sumbit">
+  </form>
+  
+</label>
+
+<%# <p>Player 2:</p>
+
+<label for="player2_name">
+
+  <form action="/storeplayer" method="post">
+    <input type="text" name="player2_name">
+    <input type="submit" name="Sumbit">
+  </form>
+  
+</label> %>
+
+<div style="border: 3px dashed silver; position: absolute; top: 78.5%; left: 68%;">
+  
+  <p> Game Type:<p>
+
+  <form style="display: inline;" action="/solo" method="post">
+    <input type="submit" value="SOLO" id="SOLO">
+  </form>
+
+  <form style="display: inline;" action="/multiplayer" method="post">
+    <input style="background-color: Silver;" type="submit" value="MULTIPLAYER" id="SOLO">
+  </form>
+
+</div>
 
 <%end%>
 

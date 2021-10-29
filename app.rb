@@ -22,5 +22,13 @@ require 'sinatra/reloader' if development?
     erb :register
   end 
 
+  post '/players' do 
+
+  end 
+
+  post '/player' do 
+
+  end 
+  
   run! if app_file == $0
 end
