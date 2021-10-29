@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
