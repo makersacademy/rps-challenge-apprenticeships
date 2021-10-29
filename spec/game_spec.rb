@@ -24,6 +24,14 @@ describe Game do
       it 'returns "draw" if computer also chooses rock' do
         expect(game.result('Rock', 'Rock')).to eq 'draw'
       end
+
+      it 'returns "win" if computer chooses scissors' do
+        expect(game.result('Rock', 'Scissors')).to eq 'win'
+      end
+
+      it 'returns "lose" if computer chooses paper' do
+        expect(game.result('Rock', 'Paper')).to eq 'lose'
+      end
     end
   end
 
