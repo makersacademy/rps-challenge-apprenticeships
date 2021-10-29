@@ -1,5 +1,6 @@
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
   get '/test' do
     'test page'
   end
@@ -14,6 +15,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do 
+    @name = session[:name]
     erb (:play)
   end
 

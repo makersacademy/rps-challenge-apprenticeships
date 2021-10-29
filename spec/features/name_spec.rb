@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'register name' do 
+feature 'enter name' do 
   scenario 'display the name' do 
     visit '/'
     fill_in 'name', with: 'Urs'
