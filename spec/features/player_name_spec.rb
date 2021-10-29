@@ -3,7 +3,9 @@ feature 'Player registration' do
     visit '/'
     fill_in :player1, with: 'Rich'
     click_button 'Start game'
+    
+    # save_and_open_page
 
-    # expect(page).to have_content("Let's go, Rich")
+    expect(page).to have_content("Let's go")
   end
 end
