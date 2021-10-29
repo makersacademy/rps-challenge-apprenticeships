@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body style="background-color:powderblue;">
+
+<h1> Choose your <mark>fighter!</mark> </h1>
+<%= @player_1_name %> vs. <%= @player_2_name %>
+
+<form action="/play" method="get">
+  <label for="fighter">Fighter:
+</label>   
+ <select name="fighter" id="fighter">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+ </select>
+  <input type="submit" value="GO!">
+</form>
+
+
+</body>
+<html>
+ 

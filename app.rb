@@ -14,7 +14,19 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do 
     @player_1_name = params[:player_1_name]
     @player_2_name = params[:player_2_name]
-    erb :play 
+    erb :choose
+  end 
+
+  # get '/names' do 
+  #   erb :choose
+  # end 
+
+  get '/play' do 
+    erb :start
+  end 
+
+  post '/play' do 
+    erb :start
   end 
 
 
