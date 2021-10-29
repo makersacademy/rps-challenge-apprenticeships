@@ -13,11 +13,11 @@ class PlayGame
     player = @player_choice
     p computer = ["rock", "paper", "scissors"].sample
     if player == "rock" && computer == "scissors"
-      return "you:#{player} VS computer:#{computer}. You wins"
+      return "you:#{player} VS computer:#{computer}. You win"
     elsif player == "scissors" && computer == "paper"
-      return "you:#{player} VS computer:#{computer}. You wins"
+      return "you:#{player} VS computer:#{computer}. You win"
     elsif player == "paper" && computer == "rock"
-     return  "you:#{player} VS computer:#{computer}. You wins"
+     return  "you:#{player} VS computer:#{computer}. You win"
     else 
      return "you:#{player} VS computer:#{computer}. Computer wins"
     end 

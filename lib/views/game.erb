@@ -1,15 +1,17 @@
-<div> <h3> Welcome <%= @name %> Game time </h3>
+<div style="background-color: lightblue; height: 100%;">
+<div style="text-align: center; position: relative; top: 25%; font-size: 40px; ">
+  <h3> Welcome <%= @name %> Game time </h3>
 
-<h4> Rules of the game 
-  <p> - Rock beats Scissors
-  - Scissors beats Paper
-  - Paper beats Rock
-  </p>
-</h4> 
-<p> Start when your ready </p>
+<h4> Rules of the game </h4> 
+  <p> - Rock beats Scissors 
+   - Scissors beats Paper 
+   - Paper beats Rock </p>
+
+<p> Click any to Start  </p>
 <form action="/game" method="post" >
-<input type="submit" name="rock" value="rock">
-<input type="submit" name="rock" value="paper">
-<input type="submit" name="rock" value="scissors">
+<input style="width: 15%; height:3%;" type="submit" name="rock" value="rock">
+<input style="width: 15%; height:3%;" type="submit" name="rock" value="paper">
+<input style="width: 15%; height:3%;" type="submit" name="rock" value="scissors">
 </form>
 </div>
+<div>
