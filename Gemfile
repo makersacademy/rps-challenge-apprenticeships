@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
+gem 'webrick'
+gem 'rerun'
+gem 'sinatra-contrib'
 
 group :test do
   gem 'capybara'
