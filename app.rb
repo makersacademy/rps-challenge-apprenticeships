@@ -43,17 +43,26 @@ require_relative 'model/game'
   end 
 
   post '/rock' do 
-    @player1_move = "rock"
+    @player1_move = "Rock"
+    opponent = Game.new
+    @opponent_move = opponent.opponent
+    @result = opponent.win_or_lose(@player1_move, @opponent_move)
     erb :game
   end 
 
   post '/paper' do 
-    @player1_move = "paper"
+    @player1_move = "Paper"
+    opponent = Game.new
+    @opponent_move = opponent.opponent
+    @result = opponent.win_or_lose(@player1_move, @opponent_move)
     erb :game
   end 
 
   post '/scissors' do 
-    @player1_move = "scissors"
+    @player1_move = "Scissors"
+    opponent = Game.new
+    @opponent_move = opponent.opponent
+    @result = opponent.win_or_lose(@player1_move, @opponent_move)
     erb :game
   end 
 

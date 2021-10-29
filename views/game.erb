@@ -10,7 +10,7 @@
 <div style="position: absolute; right: 35%; top: 50%;">
 
   <form action="/rock" method="post">
-    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="rock">
+    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="Rock">
   </form>
 
   <form action="/paper" method="post">
@@ -22,8 +22,10 @@
   </form>
 
 </div>
+  
+<h1 style="text-align: center;">your choice: <%=@player1_move%> | your opponent's choice: <%= @opponent_move %> </h1>
 
-<p>you chose <%=@player1_move%></p>
+<h1>Results: <%= @result %> </h1>
 
 <% elsif $players.respond_to?('player2') && !$players.player1.empty? && !$players.player2.empty? && !$solo %>
 

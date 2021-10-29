@@ -26,8 +26,12 @@ feature 'game_page checks' do
   scenario 'checks we can select rock paper or scissors' do 
 
     fill_in_register_1player
-    click_on 'rock'
-    expect(page).to have_content "you chose rock"
+    click_on 'Rock'
+    expect(page).to have_content "your choice: Rock"
+    click_on 'Paper'
+    expect(page).to have_content "your choice: Paper"
+    click_on 'Scissors'
+    expect(page).to have_content "your choice: Scissors"
     
   end 
 
