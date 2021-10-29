@@ -20,5 +20,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  get '/startgame' do
+    erb(:startgame)
+  end
+
   run! if app_file == $0
 end
