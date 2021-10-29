@@ -13,5 +13,6 @@ def fill_in_register_2player
   register_page
   click_on "MULTIPLAYER"
   fill_in :player1_name, with: "MyBrain"
-  fill_in :player2_mame, with: "Code"
+  fill_in :player2_name, with: "Code"
+  click_on "add players"
 end   

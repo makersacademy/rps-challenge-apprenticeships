@@ -1,1 +1,7 @@
+<% if @player %>
 <%= @player.player1 %>
+<% elsif @players %>
+<%= @players.player1 %> vs <%=@players.player2%>
+<% else %>
+Error: Not enough players for multiplayer
+<% end %>
