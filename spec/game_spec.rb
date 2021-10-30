@@ -71,8 +71,22 @@ describe Game do
     expect(subject.play).to eq "Jenaro wins"
   end
   it "should player1 win with rock if other is scissors" do
+    player1 = double('mock', :name => 'Jenaro', :choice => 'paper')
+    player2 = double('mock', :name => 'Mike', :choice => 'rock')
+    subject = Game.new(player1, player2)
+
+    expect(subject.play).to eq "Jenaro wins"
+  end
+  it "should player1 win with rock if other is scissors" do
     player2 = double('mock', :name => 'Jenaro', :choice => 'paper')
     player1 = double('mock', :name => 'Mike', :choice => 'scissors')
+    subject = Game.new(player1, player2)
+
+    expect(subject.play).to eq "Mike wins"
+  end
+  it "should player2 win with rock if other is scissors" do
+    player1 = double('mock', :name => 'Jenaro', :choice => 'paper')
+    player2 = double('mock', :name => 'Mike', :choice => 'scissors')
     subject = Game.new(player1, player2)
 
     expect(subject.play).to eq "Mike wins"

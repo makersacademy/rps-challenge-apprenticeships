@@ -1,4 +1,5 @@
 class Game
+  CHOICES = %w[rock paper scissors]
   @@outcome = {
     draw: "It's a draw",
     win: "wins",
@@ -9,7 +10,6 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @choices = %w[rock paper scissors]
     @rules = [
       [@@outcome[:draw], @@outcome[:lose], @@outcome[:win]],
       [@@outcome[:win], @@outcome[:draw], @@outcome[:lose]],
@@ -17,8 +17,16 @@ class Game
     ]
   end
 
-  def wins?(choice1, choice2)
-    @rules[@choices.find_index(choice1.choice)][@choices.find_index(choice2.choice)] == @@outcome[:win]
+  private def wins?(choice1, choice2)
+    @rules[CHOICES.find_index(choice1.choice)][CHOICES.find_index(choice2.choice)] == @@outcome[:win]
+  end
+
+  private def winner
+    wins?(player1, player2) ? player1.name : player2.name
+  end
+
+  private def not_valid?(choice)
+    CHOICES.find_index(choice).nil?
   end
 
   def play
@@ -32,11 +40,4 @@ class Game
     return "#{winner} wins"
   end
 
-  private def winner
-    wins?(player1, player2) ? player1.name : player2.name
-  end
-
-  def not_valid?(choice)
-    @choices.find_index(choice).nil?
-  end
 end
