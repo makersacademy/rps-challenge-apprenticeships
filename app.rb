@@ -1,3 +1,4 @@
+require 'player'
 require 'sinatra/base'
 # require 'sinatra/reloader'
 
@@ -13,5 +14,18 @@ class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
   end
+
+  post '/name' do
+    $player_1 = Player.new(params[:login_box])
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player1 = $player_1
+    erb :play
+  end
+
+
+
   run! if app_file == $0
 end
