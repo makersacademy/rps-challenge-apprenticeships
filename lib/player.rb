@@ -1,6 +1,6 @@
 class Player
   attr_reader :name, :choice
-  CHOICES = %w[rock paper scissors]
+  CHOICES = %w[rock paper scissors].freeze
 
   def initialize(name, *choice)
     @name = name

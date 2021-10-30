@@ -91,5 +91,12 @@ describe Game do
 
     expect(subject.play).to eq "Mike wins"
   end
+  it "initial status should be make a choice" do
+    player1 = double('mock', :name => 'Jenaro', :choice => 'paper')
+    player2 = double('mock', :name => 'Mike', :choice => 'scissors')
+    subject = Game.new(player1, player2)
 
-end
+    expect(subject.status).to eq Game::STATUSSES[:make_choice]
+  end
+
+ end

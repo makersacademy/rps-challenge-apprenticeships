@@ -22,10 +22,9 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
     @player1 = $player_1
+    @game = Game.new(@player1, Player.new("Computer"))
     erb :play
   end
-
-
 
   run! if app_file == $0
 end

@@ -1,15 +1,17 @@
 class Game
   CHOICES = %w[rock paper scissors]
+  STATUSSES = { choice: 'make a choice', waiting: 'waiting', win: 'win', lose: 'lose' }.freeze
   @@outcome = {
     draw: "It's a draw",
     win: "wins",
     lose: "lose"
   }
-  attr_reader :player1, :player2
+  attr_reader :player1, :player2, :status
 
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
+    @status = STATUSSES[:make_choice]
     @rules = [
       [@@outcome[:draw], @@outcome[:lose], @@outcome[:win]],
       [@@outcome[:win], @@outcome[:draw], @@outcome[:lose]],

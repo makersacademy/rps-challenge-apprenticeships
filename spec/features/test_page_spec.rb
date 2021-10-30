@@ -11,4 +11,8 @@ feature 'test page' do
     sign_in_and_play
     expect(page).to have_content 'Charlotte'
   end
+  scenario 'login should show user name' do
+    sign_in_and_play
+    expect(page).to have_content 'Charlotte'
+  end
 end
