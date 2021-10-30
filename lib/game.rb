@@ -1,6 +1,6 @@
 class Game
   CHOICES = %w[rock paper scissors]
-  STATUSSES = { choice: 'make a choice', waiting: 'waiting', win: 'win', lose: 'lose' }.freeze
+  STATUSSES = { make_choice: 'make a choice', waiting: 'waiting', win: 'win', lose: 'lose' }.freeze
   @@outcome = {
     draw: "It's a draw",
     win: "wins",
