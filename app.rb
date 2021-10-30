@@ -1,5 +1,8 @@
 require 'sinatra/base'
 require_relative 'lib/player.rb'
+require_relative 'lib/game.rb'
+require_relative 'lib/user_pick.rb'
+
 class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
@@ -26,7 +29,13 @@ class RockPaperScissors < Sinatra::Base
 
   post "/choice" do
     @player_name = $player_name
+    @handler = User_Pick.new(params[:rock],params[:paper],params[:scissors])
+    @game = Game.new(@handler.user_decided)
     erb :game
+  end
+
+  post '/start' do
+    redirect '/'
   end
 
   run! if app_file == $0

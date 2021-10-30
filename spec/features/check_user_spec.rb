@@ -1,7 +1,7 @@
-feature 'Check user name' do
+feature '>>>Check user signed it' do
     scenario 'visit play page' do
+        sign_in
       visit('/play')
-      fill_in :user_name, with: 'Tom'
       expect(page).to have_content 'Welcome Tom!'
     end
   end

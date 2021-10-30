@@ -1,3 +1,15 @@
 
-<h1> Result </h1>
-<h3> <%= @player_name.user_name%>!</h3>
+<h1> Results </h1>
+
+
+<h2>Player 1 </h2> 
+<h4> <%= @player_name.user_name%> chose >>> <%= @handler.user_decided %> <<< </h4>
+
+<h2>Player 2 </h2> 
+<h4>  Computer chose >>> <%= @game.compututer_choice %> <<< </h4>
+
+<h2 style='color:red;text-decoration: underline'>  <%= @game.game_on %> </h2>
+
+<form action="/start" method="post" >
+    <input type="submit"  value="Start again" style="margin:7px">
+</form>
