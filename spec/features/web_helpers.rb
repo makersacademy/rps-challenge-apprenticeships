@@ -4,3 +4,10 @@ def sign_in_and_play
   click_button 'Submit'
   save_and_open_page
 end
+
+def choose_and_play
+  visit('/play')
+  fill_in :player_choice, with: 'Scissors'
+  click_button 'Submit'
+  save_and_open_page
+end
