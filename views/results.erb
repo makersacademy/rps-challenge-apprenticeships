@@ -8,18 +8,18 @@
 </head>
 <body>
 <div>name: <%= @player1.name %></div>
-<div><%= @game.status %>:</div>
+<div> your option: <%= @player1.choice %></div>
+<div>name: <%= @player2.name %></div>
+<div> your option: <%= @player2.choice %></div>
+
+<div>Results: You <%= @game.status %></div>
+
 <div>
-  <form action="/rock" method="post">
-    <input type="submit" value="Rock">
-  </form>
-  <form action="/paper" method="post">
-    <input type="submit" value="Paper">
-  </form>
-  <form action="/scissors" method="post">
-    <input type="submit" value="Scissors">
+  <form action="/choice" method="post">
+    <input type="submit" value="Play Again">
   </form>
 </div>
+
 <script src="js/scripts.js"></script>
 </body>
 </html>

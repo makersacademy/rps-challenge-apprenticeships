@@ -1,5 +1,5 @@
 class Game
-  CHOICES = %w[rock paper scissors]
+  CHOICES = %w[rock paper scissors].freeze
   STATUSSES = { make_choice: 'make a choice', waiting: 'waiting', win: 'win', lose: 'lose' }.freeze
   @@outcome = {
     draw: "It's a draw",
@@ -40,6 +40,10 @@ class Game
     raise 'Invalid option for choice for player 2' if not_valid?(player2.choice)
     return "draw" if player1.choice == player2.choice
     return "#{winner} wins"
+  end
+
+  def submit_choice
+    @status = STATUSSES[:waiting]
   end
 
 end

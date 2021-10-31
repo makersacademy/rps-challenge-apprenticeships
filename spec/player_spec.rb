@@ -1,5 +1,5 @@
 require 'player'
-describe 'make_choice' do
+describe Player do
   it 'should raise error if make_choice is null' do
     subject = Player.new("John")
     expect { subject.make_choice(nil) }.to raise_error 'null choice'

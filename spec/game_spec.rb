@@ -98,5 +98,12 @@ describe Game do
 
     expect(subject.status).to eq Game::STATUSSES[:make_choice]
   end
+  it "submit choice should make choice to wait" do
+    player1 = double('mock', :name => 'Jenaro', :choice => 'paper')
+    player2 = double('mock', :name => 'Mike', :choice => 'scissors')
+    subject = Game.new(player1, player2)
+    subject.submit_choice
 
- end
+    expect(subject.status).to eq Game::STATUSSES[:waiting]
+  end
+end
