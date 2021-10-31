@@ -1,10 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors</title>
+  <meta name="description" content="Description Goes Here">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 name: <%= @player1.name %>
 status : <%= @game.status %>
+
 <form>
-  <input type="radio" id="html" name="fav_language" value="HTML">
-  <label for="html">HTML</label><br>
-  <input type="radio" id="css" name="fav_language" value="CSS">
-  <label for="css">CSS</label><br>
-  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-  <label for="javascript">JavaScript</label>
+  <input type="radio" id="Rock" name="choices" value="Rock">
+  <label for="Rock">Rock</label><br>
+  <input type="radio" id="Paper" name="choices" value="Paper">
+  <label for="Paper">Paper</label><br>
+  <input type="radio" id="Scissors" name="choices" value="Scissors">
+  <label for="Scissors">Scissors</label>
 </form>
+
+// if scripts is required add:
+<script src="js/scripts.js"></script>
+</body>
+</html>
