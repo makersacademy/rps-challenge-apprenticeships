@@ -1,7 +1,7 @@
-feature 'Start game' do
+feature 'Register name' do
   scenario 'register player name' do
     visit '/'
-    fill_in('player_1', with: 'John Wick')
+    fill_in('name', with: 'John Wick')
     click_button('Submit')
     expect(page).to have_content('John Wick')
   end
