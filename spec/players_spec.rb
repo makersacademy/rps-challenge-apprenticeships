@@ -20,7 +20,7 @@ describe Players do
       player_entry = ["Dave","Mike"]
       players = Players.new(player_entry)
       expect(players.player2).to eq "Mike"
-      
+
     end  
 
   end 

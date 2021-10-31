@@ -1,10 +1,9 @@
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
-require 'sinatra/reloader' if development?
-require_relative 'model/players'
-require_relative 'model/game'
+  require 'sinatra/reloader' if development?
+  require_relative 'model/players'
+  require_relative 'model/game'
 
-  
   get '/' do
     $solo = true 
     $multiplayer = false
@@ -67,4 +66,5 @@ require_relative 'model/game'
   end 
 
   run! if app_file == $0
+
 end

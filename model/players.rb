@@ -5,21 +5,15 @@ class Players
   end
 
   def player1
-
     if @players.is_a?(Array)
       @players[0]
     else 
       @players
     end
-
   end 
 
   def player2
-
-    if @players.is_a?(Array)
-      @players[1]
-    end 
-
+    return @players[1] if @players.is_a?(Array)
   end 
   
 end

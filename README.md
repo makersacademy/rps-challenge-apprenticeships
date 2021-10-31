@@ -2,6 +2,11 @@
 
 To start this challenge I have created a diagram to clearly show the interaction and layout I desire for my application. Once this step had been completed I moved on to setting out the layout/framework according to my diagram but leaving the files blank to allow for changes and a TTD process.
 
+I started-off by writing the rspec files for the index.erb. This started with a small implementation such as being able to see a welcome message on the screen and slowly developed complexity into creating a button that we can click on and for it to then change the view/page by sending a get request to '/register' and subsequently register.erb. From here I created the rspec feature test files for register.erb and the rspec unit test files in order to test any features such as name saving present in my players.rb modelling file. This 3 way set-up of view/controller/modeller helps me achieve the single responsibility pricinple that is desired. From here the application rapidly expanded following test driven developement and closely matched what was originally conceived in the origian diagram.
+
+I focused heavily on getting the visuals right for this project as this is the first visual project I have been able to work on. I wanted the pages to be easily understandable and operated by the user and therefore given more time I would implement buttons that would allow the user to return to the previous page. I would also like to make improvements such as to remove global variables and introduce multiplayer functionality. 
+
+--Thanks for reading; Jamie Bowers
 
 # RPS Challenge
 

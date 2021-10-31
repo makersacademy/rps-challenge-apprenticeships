@@ -15,4 +15,5 @@ def fill_in_register_2player
   fill_in :player1_name, with: "MyBrain"
   fill_in :player2_name, with: "Code"
   click_on "add players"
-end   
+end 
+  
