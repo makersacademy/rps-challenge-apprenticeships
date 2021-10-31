@@ -1,10 +1,17 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+# require 'computers_choice'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
+  attr_reader :players_choice  
+
+  def initialise(computer = Computer.new)
+    @players_choice = ""
+    @computers_choice = computer.random
+  end 
 
   enable :sessions
 

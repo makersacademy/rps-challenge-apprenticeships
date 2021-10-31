@@ -7,12 +7,12 @@ feature 'Play' do
     expect(page).to have_button("Rock!")
   end
 
-  scenario 'Player can click rock button' do 
+  scenario 'Player can choose rock as their choice' do 
     visit '/'
     fill_in :player_1_name, with:'Rebecca'
     click_button 'Submit'
     save_and_open_page
-    expect(page). to
-
+    click_button 'Rock'
+    expect(players_choice).to eq 'Rock'
   end 
 end
