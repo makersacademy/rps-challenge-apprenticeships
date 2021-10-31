@@ -10,14 +10,19 @@
 <div>name: <%= @player1.name %></div>
 <div><%= @game.status %>:</div>
 <div>
-<form>
-  <input type="radio" id="Rock" name="choices" value="Rock">
-  <label for="Rock">Rock</label><br>
-  <input type="radio" id="Paper" name="choices" value="Paper">
-  <label for="Paper">Paper</label><br>
-  <input type="radio" id="Scissors" name="choices" value="Scissors">
-  <label for="Scissors">Scissors</label>
-</form>
+  <form>
+    <input type="radio" id="Rock" name="choices" value="Rock">
+    <label for="Rock">Rock</label><br>
+    <input type="radio" id="Paper" name="choices" value="Paper">
+    <label for="Paper">Paper</label><br>
+    <input type="radio" id="Scissors" name="choices" value="Scissors">
+    <label for="Scissors">Scissors</label>
+  </form>
+</div>
+<div>
+  <form action="/choice" method="post">
+    <input type="submit" value="Submit">
+  </form>
 </div>
 <script src="js/scripts.js"></script>
 </body>
