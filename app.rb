@@ -3,6 +3,7 @@ require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
+  
   get '/test' do
     'test page'
   end
