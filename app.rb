@@ -1,6 +1,6 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
-# require 'computers_choice'
+require_relative 'computer_random.rb'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -9,8 +9,7 @@ class RockPaperScissors < Sinatra::Base
   attr_reader :players_choice  
 
   def initialise(computer = Computer.new)
-    @players_choice = ""
-    @computers_choice = computer.random
+    @computers_choice = computer
   end 
 
   enable :sessions
@@ -33,5 +32,17 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end 
 
+  post '/player_chose' do
+    session[:players_choice] = params[:players_choice]
+    redirect '/game_outcome'
+  end 
+
+  get '/game_outcome' do 
+    @player_1_name = session[:player_1_name]
+    @players_choice = session[:players_choice]
+    erb :outcome
+  end 
+
   run! if app_file == $0
 end
+
