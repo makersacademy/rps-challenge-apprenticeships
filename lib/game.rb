@@ -1,23 +1,19 @@
-
-
 class Game
-    
+    attr_reader :user_choice
     def initialize(user_choice)
         @user_choice = user_choice
         @choice_arr = ['Rock', 'Paper', 'Scissors']
         @random_num = rand(0..2)
     end
 
-    def compututer_choice
+    def computer_choice
          @choice_arr[@random_num]
     end
 
     def game_on 
         player_one =  @user_choice.downcase
-        player_two = compututer_choice.downcase
-        p player_one
-        p player_two
-
+        player_two = computer_choice.downcase
+       
         if player_one == 'rock' && player_two == 'scissors'
             'Player 1 wins'
         elsif player_one == 'paper' && player_two == 'rock'
@@ -32,7 +28,6 @@ class Game
             'Player 2 wins'
         else
             "It's a draw"
-
         end
     end
 end
