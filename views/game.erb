@@ -30,6 +30,23 @@
 <% elsif $players.respond_to?('player2') && !$players.player1.empty? && !$players.player2.empty? && !$solo %>
 
 <h1> <%= $players.player1 %> vs <%=$players.player2%> </h1>
+<h1 style="text-align: center;"> <%= $game.currentplayer %>'s Turn </h1>
+
+<div style="position: absolute; right: 35%; top: 50%;">
+
+  <form action="/multiplayer_rock" method="post">
+    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="Rock">
+  </form>
+
+  <form action="/multiplayer_paper" method="post">
+    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="Paper">
+  </form>
+
+  <form action="/multiplayer_scissors" method="post">
+    <input style="width: 120px; height: 50px; font-family: Courier; font-size: 20px;" type="submit" value="Scissors">
+  </form>
+
+</div>
 
 <% else %>
 
