@@ -1,13 +1,18 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'features/web_helpers'
+require 'rspec'
+require 'capybara'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
   # SimpleCov::Formatter::HTMLFormatter
 ])
-SimpleCov.start
+SimpleCov.start do
+  add_filter 'vendor'
+end
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
