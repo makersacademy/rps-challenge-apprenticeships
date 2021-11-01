@@ -7,7 +7,7 @@ class Game
 
   def outcome
     if @player1.weapon == @player2.weapon
-      nil
+      { winner: :Nobody, loser: :Nobody }
     else 
       winner_and_loser
     end

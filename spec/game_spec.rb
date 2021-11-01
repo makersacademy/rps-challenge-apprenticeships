@@ -35,5 +35,17 @@ describe Game do
       end
       expect(actual_outcome).to eq expected_outcome
     end
+    it 'determines a draw correclty' do
+      weapons = [:Rock, :Paper, :Scissors]
+      expected_outcome = Array.new(3) { { winner: :Nobody, loser: :Nobody } }
+      actual_outcome = []
+      weapons.each do |weapon|
+        player1 = double(name: :player1, weapon: weapon)
+        player2 = double(name: :player2, weapon: weapon)
+        game = Game.new(player1, player2)
+        actual_outcome << game.outcome
+      end
+      expect(actual_outcome).to eq expected_outcome
+    end
   end
 end
