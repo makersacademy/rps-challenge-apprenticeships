@@ -5,6 +5,7 @@ ruby '3.0.2'
 gem 'sinatra'
 
 group :test do
+  gem 'webrick'
   gem 'capybara'
   gem 'rspec'
   gem 'simplecov', require: false
