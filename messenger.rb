@@ -2,8 +2,8 @@
 class Messenger
 
   def message(player_name, outcome)
-  p @player_name = player_name
-  p @outcome = outcome
+  @player_name = player_name
+  @outcome = outcome
     
     case @outcome[1]
       when 0

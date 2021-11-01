@@ -9,10 +9,6 @@ class RockPaperScissors < Sinatra::Base
   #   register Sinatra::Reloader
   # end
 
-  # get '/test' do
-  #   'test page'
-  # end
-
  @outcome
 
   get '/' do
@@ -31,12 +27,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/show_results' do
-    p "app.rb params[:choice]"
-    p params[:choice]
     @outcome = RPS.new.play(params[:choice])
-    # p session['name_1']
     @message = Messenger.new.message(session['name_1'],@outcome)
     erb(:result)
+  end
+
+  get '/replay' do
+    redirect to '/play'
   end
 
   run! if app_file == $0
