@@ -1,9 +1,9 @@
 class ComputerPlayer
-def initialize
-  @array = ["Rock", "Paper", "Scissors"]
-end
+  def initialize
+    @array = ["Rock", "Paper", "Scissors"]
+  end
 
-def computerchoice
-  @array.sample
-end
+  def computerchoice
+    @array.sample
+  end
 end

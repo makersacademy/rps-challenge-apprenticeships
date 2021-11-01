@@ -1,7 +1,7 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
-require 'features/web_helpers.rb'
+require 'features/web_helpers'
 require 'rspec'
 require 'capybara'
 

@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/computerplayer'
+require './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -31,11 +33,14 @@ class RockPaperScissors < Sinatra::Base
   post '/choice' do
     @player1 = $player1
     @player1.playerchoice(params[:value])
+    $computerplayer = ComputerPlayer.new
     redirect '/result'
   end
 
   get '/result' do
-    @player1 = $player1
+    @player1 = $player1.choice
+    @computerplayer = $computerplayer.computerchoice
+    @result = Game.new(@player1, @computerplayer)
     erb(:result)
   end
 
