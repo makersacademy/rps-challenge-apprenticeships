@@ -13,7 +13,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/test' do
     'test page'
-    p @computers
   end
 
   get '/' do
