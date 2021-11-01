@@ -15,4 +15,12 @@ describe Game do
       expect(subject.player_1).to eq "rock"
     end
   end
+
+  describe 'selector' do
+    it 'randomly selects rock, paper or scissors' do
+      options = ["rock", "paper", "scissors"]
+      subject.selector
+      expect(options).to inlcude(subject.selector_result)
+    end
+  end
 end
