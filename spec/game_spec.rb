@@ -9,8 +9,10 @@ describe Game do
     expect(subject.players).to eq(player_1)
   end
 
-  describe 'player_1_move' do
-    it "retrieves player's move" do
+  describe 'player_1_choice' do
+    it "retrieves player's choice" do
+      player_1.make_choice('rock')
+      expect(subject.player_1).to eq "rock"
     end
   end
 end

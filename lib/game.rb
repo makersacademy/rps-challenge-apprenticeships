@@ -9,4 +9,8 @@ class Game
   def player_1
     @players
   end
+
+  def player_1_choice
+    player_1.choice
+  end
 end
