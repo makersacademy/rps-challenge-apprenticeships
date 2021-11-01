@@ -4,6 +4,8 @@ ruby '3.0.2'
 
 gem 'sinatra'
 
+gem 'thin'
+
 group :test do
   gem 'capybara'
   gem 'rspec'
