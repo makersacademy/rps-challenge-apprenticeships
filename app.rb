@@ -21,5 +21,9 @@ class RockPaperScissors < Sinatra::Base
     erb :rps
   end
 
+  get '/winner' do
+    erb :winner
+  end
+
   run! if app_file == $0
 end
