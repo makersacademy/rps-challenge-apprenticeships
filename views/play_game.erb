@@ -1,8 +1,7 @@
 
-<p>Please select a button:</p>
-
-<form action="/choices" method="get">
-  <button type="button">Rock</button>
-  <button type="button">Paper</button>
-  <button type="button">Scissors</button>
+<p>Please enter your choice:</p>
+<form action="/players_choice" method="post">
+  <label for="player_selection">Rock, Paper or Scissors?</label>
+  <input type ="text" name="player_selection">
+  <input type ="submit" value="Submit">
 </form>

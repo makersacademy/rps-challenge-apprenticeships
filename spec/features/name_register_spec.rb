@@ -7,7 +7,7 @@ require './app'
 feature '#play' do 
   scenario 'entering players name' do 
       visit '/'
-      fill_in :player_name, with: 'Shanice'
+      fill_in :player, with: 'Shanice'
       click_button 'Submit'
       expect(page).to have_content 'Player registered: Shanice'
   end 
