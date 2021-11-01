@@ -23,7 +23,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     session[:shape] = params[:shape]
-    session[:computer_shape] = :rock
+    session[:computer_shape] = Computer.new.shape
     redirect '/play'
   end  
 

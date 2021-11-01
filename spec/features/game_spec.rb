@@ -26,6 +26,13 @@ feature 'play RPS' do
     expect(possible_computer_choices).to include message
   end
 
+  scenario 'computer choose an random option' do 
+    srand(74.688)
+    click_button 'Rock'
+
+    expect(page).to have_content 'Computer chose Scissors'
+  end
+
   def possible_computer_choices
     [:rock, :paper, :scissors].map { |shape| "Computer chose #{shape.to_s.capitalize}" }
   end
