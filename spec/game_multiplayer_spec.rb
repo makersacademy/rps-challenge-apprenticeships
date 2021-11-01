@@ -1,7 +1,7 @@
 require_relative '../model/game_multiplayer'
 describe Multiplayer do 
 
-  let(:game){Multiplayer.new("player1", "player2")}
+  let(:game) { Multiplayer.new("player1", "player2") }
 
   describe '#currentplayer' do 
 

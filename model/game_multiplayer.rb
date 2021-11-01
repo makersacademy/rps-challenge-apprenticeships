@@ -10,7 +10,6 @@ class Multiplayer
     @rps = ['Rock','Paper','Scissors']
   end 
 
-
   def win_or_lose(player1, player2)
     return "#{@player1} Wins" if player1_wins(player1, player2)
     return "Draw" if draw(@player1, @player2)
@@ -28,7 +27,7 @@ class Multiplayer
   end 
 
   def switchturn
-    @currentplayer =  (@players.select {|player| player != currentplayer}).join("")
+    @currentplayer = (@players.select { |player| player != currentplayer }).join
   end   
 
 end
