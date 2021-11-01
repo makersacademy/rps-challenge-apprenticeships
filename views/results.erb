@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors</title>
+  <meta name="description" content="Description Goes Here">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>Results:  <%= @game.results %></div>
+<div> You</div>
+<div>   name: <%= @player1.name %></div>
+<div>   Option: <%= @player1.choice %></div>
+<div> Opponent</div>
+<div>   name: <%= @player2.name %></div>
+<div>   Option: <%= @player2.choice %></div>
+
+
+<div>
+  <form action="/play_again" method="post">
+    <input type="submit" value="Play Again">
+  </form>
+</div>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>

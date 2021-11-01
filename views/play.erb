@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Rock Paper Scissors</title>
+  <meta name="description" content="Description Goes Here">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div>name: <%= @player1.name %></div>
+<div><%= @game.status %>:</div>
+<div>
+  <form action="/rock" method="post">
+    <input type="submit" value="Rock">
+  </form>
+  <form action="/paper" method="post">
+    <input type="submit" value="Paper">
+  </form>
+  <form action="/scissors" method="post">
+    <input type="submit" value="Scissors">
+  </form>
+</div>
+<script src="js/scripts.js"></script>
+</body>
+</html>
