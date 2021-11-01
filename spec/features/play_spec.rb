@@ -3,7 +3,6 @@ feature 'Player' do
     visit '/'
     fill_in :player_1_name, with:'Rebecca'
     click_button 'Submit'
-    # save_and_open_page
     expect(page).to have_button("Rock")
   end
 
@@ -11,7 +10,6 @@ feature 'Player' do
     visit '/'
     fill_in :player_1_name, with:'Rebecca'
     click_button 'Submit'
-    # save_and_open_page
     click_button "Rock"
     expect(page).to have_content "Rock"
   end 

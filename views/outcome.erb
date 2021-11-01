@@ -1,9 +1,9 @@
 <h1> <%= @player_1_name %> </h1>
-<h2> You chose </h2>
-<h3> <%=@players_choice %> </h3>
+<h2> <%=@players_choice %> </h2>
 
-<h1> The Computer Chose </h1>
+<h1> Computer </h1>
 <h2> <%=  @computers_choice %> </h2> 
+
 <% if @win_lose == 'draw' %> 
   Draw
 <% end %>
@@ -14,4 +14,6 @@
 
 <% if @win_lose == 'win' %> 
   win
+  <img src="https://media.istockphoto.com/vectors/winner-message-word-bubble-in-retro-pop-art-style-on-blue-background-vector-id1135369578?k=20&m=1135369578&s=612x612&w=0&h=nPrM4y7U8H6WTh-I5xjIy1tAHzbC9YOPVl9jsNuOTmo=">
 <% end %>
+
