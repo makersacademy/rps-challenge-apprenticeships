@@ -6,16 +6,14 @@ class RockPaperScissors < Sinatra::Base
   configure :development do
     register Sinatra::Reloader
   end
-  attr_reader :players_choice  
+  attr_reader :players_choice, :computers_choice, :computers, :win_lose
 
-  def initialise(computer = Computer.new)
-    @computers_choice = computer
-  end 
 
   enable :sessions
 
   get '/test' do
     'test page'
+    p @computers
   end
 
   get '/' do
@@ -40,7 +38,20 @@ class RockPaperScissors < Sinatra::Base
   get '/game_outcome' do 
     @player_1_name = session[:player_1_name]
     @players_choice = session[:players_choice]
+    @computers = Computer.new
+    @computers_choice = @computers.pick_choice
+    game_outcome
     erb :outcome
+  end 
+
+  def game_outcome
+    if (@players_choice == 'Rock' && @computers_choice == 'Rock') || (@players_choice == 'Paper' && @computers_choice == 'Paper') || (@players_choice == 'Scissors' && @computers_choice == 'Scissors')
+      @win_lose = 'draw'
+    elsif (@players_choice == 'Rock' && @computers_choice == 'Scissors') || (@players_choice == 'Paper' && @computers_choice == 'Rock') || (@players_choice == 'Scissors' && @computers_choice == 'Paper')
+      @win_lose = 'win'
+    else 
+      @win_lose = 'lose'
+    end 
   end 
 
   run! if app_file == $0
