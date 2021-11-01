@@ -19,6 +19,7 @@ class RockPaperScissors < Sinatra::Base
   post '/name' do
     $player_1 = Player.new(params[:login_box])
     $player_2 = Player.new("Computer")
+    $player_2.make_choice(Player::CHOICES[0])
     redirect '/enter_game'
   end
 
@@ -30,20 +31,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/rock' do
-    p "------"
-    p "rock"
     $player_1.make_choice(Player::CHOICES[0])
     redirect '/play'
   end
   post '/paper' do
-    p "------"
-    p "paper"
     $player_1.make_choice(Player::CHOICES[1])
     redirect '/play'
   end
   post '/scissors' do
-    p "------"
-    p "scissors"
     $player_1.make_choice(Player::CHOICES[2])
     redirect '/play'
   end
@@ -53,6 +48,7 @@ class RockPaperScissors < Sinatra::Base
     @player1 = $player_1
     @player2 = $player_2
     @game.submit_choice
+    @game.received_player_2_choice
     erb :results
   end
 

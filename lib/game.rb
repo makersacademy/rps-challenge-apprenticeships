@@ -1,26 +1,27 @@
 class Game
   CHOICES = %w[rock paper scissors].freeze
-  STATUSSES = { make_choice: 'make a choice', waiting: 'waiting', win: 'win', lose: 'lose' }.freeze
-  @@outcome = {
+  STATUSSES = { make_choice: 'make a choice', waiting: 'waiting', played: 'played' }.freeze
+  OUTCOME = {
     draw: "It's a draw",
     win: "wins",
     lose: "lose"
-  }
-  attr_reader :player1, :player2, :status
+  }.freeze
+  attr_reader :player1, :player2, :status, :results
 
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
     @status = STATUSSES[:make_choice]
     @rules = [
-      [@@outcome[:draw], @@outcome[:lose], @@outcome[:win]],
-      [@@outcome[:win], @@outcome[:draw], @@outcome[:lose]],
-      [@@outcome[:lose], @@outcome[:win], @@outcome[:draw]]
+      [OUTCOME[:draw], OUTCOME[:lose], OUTCOME[:win]],
+      [OUTCOME[:win], OUTCOME[:draw], OUTCOME[:lose]],
+      [OUTCOME[:lose], OUTCOME[:win], OUTCOME[:draw]]
     ]
+    @results = ""
   end
 
   private def wins?(choice1, choice2)
-    @rules[CHOICES.find_index(choice1.choice)][CHOICES.find_index(choice2.choice)] == @@outcome[:win]
+    @rules[CHOICES.find_index(choice1.choice)][CHOICES.find_index(choice2.choice)] == OUTCOME[:win]
   end
 
   private def winner
@@ -44,6 +45,11 @@ class Game
 
   def submit_choice
     @status = STATUSSES[:waiting]
+  end
+
+  def received_player_2_choice
+    @status = STATUSSES[:played]
+    @results = play
   end
 
 end

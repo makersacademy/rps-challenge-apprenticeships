@@ -7,12 +7,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div>name: <%= @player1.name %></div>
-<div> your option: <%= @player1.choice %></div>
-<div>name: <%= @player2.name %></div>
-<div> your option: <%= @player2.choice %></div>
+<div>Results:  <%= @game.results %></div>
+<div> You</div>
+<div>   name: <%= @player1.name %></div>
+<div>   Option: <%= @player1.choice %></div>
+<div> Opponent</div>
+<div>   name: <%= @player2.name %></div>
+<div>   Option: <%= @player2.choice %></div>
 
-<div>Results: You <%= @game.status %></div>
 
 <div>
   <form action="/choice" method="post">

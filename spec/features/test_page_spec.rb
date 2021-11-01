@@ -8,11 +8,11 @@ feature 'pages' do
     visit '/'
     expect(page).to have_content('login')
   end
-  scenario 'login should show user name' do
+  scenario 'play should show user name' do
     sign_in_and_play
     expect(page).to have_content 'Charlotte'
   end
-  scenario 'login should brings status' do
+  scenario 'play should brings status' do
     sign_in_and_play
     expect(page).to have_content Game::STATUSSES[:make_choice]
   end
@@ -21,15 +21,19 @@ feature 'pages' do
     click_button 'Rock'
     expect(page).to have_content 'Results'
   end
-  scenario 'rock play should display results' do
+  scenario 'paper play should display results' do
     sign_in_and_play
     click_button 'Paper'
     expect(page).to have_content 'Results'
   end
-  scenario 'rock play should display results' do
+  scenario 'scissors play should display results page' do
     sign_in_and_play
     click_button 'Scissors'
-    expect(page).to have_content 'Results'
+    expect(page).to have_content 'Opponent\'s'
   end
-
+  scenario 'scissors play, player 2 plays rock should result player2 wins' do
+    sign_in_and_play
+    click_button 'Scissors'
+    expect(page).to have_content 'Computer wins'
+  end
 end

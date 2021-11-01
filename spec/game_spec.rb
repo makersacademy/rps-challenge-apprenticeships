@@ -106,4 +106,11 @@ describe Game do
 
     expect(subject.status).to eq Game::STATUSSES[:waiting]
   end
+  it "player2 played to win should set game state to played" do
+    player1 = double('mock', :name => 'Jenaro', :choice => 'paper')
+    player2 = double('mock', :name => 'Mike', :choice => 'scissors')
+    subject = Game.new(player1, player2)
+    subject.received_player_2_choice
+    expect(subject.status).to eq Game::STATUSSES[:played]
+  end
 end
