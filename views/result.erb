@@ -1,0 +1,22 @@
+<h1>Let's find out who won!!!!</h1>
+<div>
+<% if @game.player.weapon == 'Rock' %>
+<% elsif @game.player.weapon == 'Paper' %>
+<% elsif @game.player.weapon == 'Scissors' %>
+<% end %>
+<%= @game.player.name %> chose: <%= @game.player.weapon %>
+</div>
+<div>
+<% if @game.computer.weapon == 'Rock' %>
+<% elsif @game.computer.weapon == 'Paper' %>
+<% elsif @game.computer.weapon == 'Scissors' %>
+<% end %>
+Computer chose: <%= @game.computer.weapon %>
+</div>
+<% if @game.result(@game.player.weapon, @game.computer.weapon) == 'draw' %>
+<h1>It's a draw.</h1>
+<% elsif @game.result(@game.player.weapon, @game.computer.weapon) == 'win' %>
+<h1><%= @game.player.name %> wins!</h1>
+<% elsif @game.result(@game.player.weapon, @game.computer.weapon) == 'lose' %>
+<h1>Computer wins...better luck next time!</h1>
+<% end %>
