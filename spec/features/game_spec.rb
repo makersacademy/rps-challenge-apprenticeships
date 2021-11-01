@@ -13,9 +13,20 @@ feature 'play RPS' do
     expect(page).to have_button 'Scissors'
   end
 
-  scenario 'choose a option' do 
+  scenario 'choose an option' do 
     click_button 'Rock'
     expect(page).to have_content 'You chose Rock'
+  end
 
+  scenario 'computer choose an option' do 
+    click_button 'Rock'
+
+    message = find(:css, "#computer").text
+
+    expect(possible_computer_choices).to include message
+  end
+
+  def possible_computer_choices
+    [:rock, :paper, :scissors].map { |shape| "Computer chose #{shape.to_s.capitalize}" }
   end
 end
