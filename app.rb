@@ -20,7 +20,6 @@ class RockPaperScissors < Sinatra::Base
     @player1 = Player.new(session[:username],params[:weapon].to_sym)
     @player2 = Computer.new("Computron")
     @game = Game.new(@player1, @player2)
-    p @game.loser
     erb :game_over
   end
   run! if app_file == $0

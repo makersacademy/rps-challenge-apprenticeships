@@ -5,26 +5,26 @@ class Game
     @player2 = player2
   end
 
-  def winner
-    if @player1.weapon == beats(@player2.weapon)
-      @player1.name
-    elsif @player2.weapon == beats(@player1.weapon)
-      @player2.name
-    else
+  def outcome
+    if @player1.weapon == @player2.weapon
+      nil
+    else 
+      winner_and_loser
     end
   end
 
-  def loser 
+  def winner_and_loser
     if @player1.weapon == beats(@player2.weapon)
-      @player2.name
-    elsif @player2.weapon == beats(@player1.weapon)
-      @player1.name
-    else
+      { winner: @player1.name, loser: @player2.name }
+    else 
+      { winner: @player2.name, loser: @player1.name }
     end
   end
 
   def beats(weapon)
-    what_beats = { Rock: :Paper, Scissors: :Rock, Paper: :Scissors }
+    what_beats = { Rock: :Paper, 
+      Scissors: :Rock, 
+      Paper: :Scissors }
     what_beats[weapon]
   end
 
