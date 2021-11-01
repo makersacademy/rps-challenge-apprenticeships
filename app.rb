@@ -4,7 +4,9 @@ require 'sinatra/base'
 require 'game'
 
 class RockPaperScissors < Sinatra::Base
+
   enable :sessions
+  
   get '/test' do
     'test page'
   end
@@ -22,5 +24,6 @@ class RockPaperScissors < Sinatra::Base
     @game = Game.new(@player1, @player2)
     erb :game_over
   end
+
   run! if app_file == $0
 end
