@@ -20,7 +20,7 @@ describe Game do
     it 'randomly selects rock, paper or scissors' do
       options = ["rock", "paper", "scissors"]
       subject.selector
-      expect(options).to inlcude(subject.selector_result)
+      expect(options).to include(subject.selector_result)
     end
   end
 end
