@@ -29,11 +29,18 @@ feature 'pages' do
   scenario 'scissors play should display results page' do
     sign_in_and_play
     click_button 'Scissors'
-    expect(page).to have_content 'Opponent\'s'
+    expect(page).to have_content 'Opponent'
   end
   scenario 'scissors play, player 2 plays rock should result player2 wins' do
     sign_in_and_play
     click_button 'Scissors'
     expect(page).to have_content 'Computer wins'
   end
+  scenario 'play again take us back to play' do
+    sign_in_and_play
+    click_button 'Scissors'
+    click_button 'Play Again'
+    expect(page).to have_content 'make a choice'
+  end
+
 end

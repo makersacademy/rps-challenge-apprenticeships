@@ -113,4 +113,12 @@ describe Game do
     subject.received_player_2_choice
     expect(subject.status).to eq Game::STATUSSES[:played]
   end
+  it "play again should make status back to make a choice" do
+    player1 = double('mock', :name => 'Jenaro', :choice => 'paper')
+    player2 = double('mock', :name => 'Mike', :choice => 'scissors')
+    subject = Game.new(player1, player2)
+    subject.received_player_2_choice
+    subject.restart_game
+    expect(subject.status).to eq Game::STATUSSES[:make_choice]
+  end
 end

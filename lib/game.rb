@@ -52,4 +52,8 @@ class Game
     @results = play
   end
 
+  def restart_game
+    @status = STATUSSES[:make_choice]
+  end
+
 end
