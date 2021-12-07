@@ -45,8 +45,8 @@ $ rspec
 ### The Program
 
 - [x] The Marketer can enter their name before game
-- [ ] The marketeer will be presented the choices (rock, paper and scissors)
-- [ ] The marketeer can choose one option
+- [x] The marketeer will be presented the choices (rock, paper and scissors)
+- [x] The marketeer can choose one option
 - [ ] The game will choose a random option
 - [ ]A winner will be declared folowing rules: Rock beats Scissors | Scissors beats Paper| Paper beats Rock
 

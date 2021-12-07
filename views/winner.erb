@@ -13,6 +13,13 @@
 <body>
   <h1> Rock Paper Scissors </h1>
   <p>Player: <%= @player %></p>
-  <h1 <%= @winner %> wins!>
+  <% if @choice == "Rock" %>
+	  <h2> You win!> </h2>
+  <% elsif @choice == Paper %>
+	  <h2> It's a draw.> </h2>
+  <% else %>
+	  <h2> You lost!> </h2>
+  <% end %>
+  
   
 </body>
