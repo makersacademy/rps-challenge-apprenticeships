@@ -1,8 +1,6 @@
 feature 'Display players'do
   scenario "it displays the players names" do
-  visit ('/')
-  fill_in :PlayerName, with: 'Justine'
-  click_button "Start Game!"
+  register_and_play
   expect(page).to have_content("Justine vs Computer")
   # save_and_open_page
   end

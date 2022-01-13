@@ -1,8 +1,6 @@
 feature 'landing page for RPS' do
   scenario "user registers their name" do
-    visit ('/')
-    fill_in :PlayerName, with: 'Justine'
-    click_button 'Start Game!'
+    register_and_play
   end
 end
 

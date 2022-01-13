@@ -1,8 +1,6 @@
 feature 'Users picks a move' do
   scenario 'User selects from rock, paper, scissors'do
-  visit ('/')
-  fill_in :PlayerName, with: 'Justine'
-  click_button "Start Game!"
+  register_and_play
   click_button 'Rock'
   end
 end
