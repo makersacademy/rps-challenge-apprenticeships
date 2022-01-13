@@ -2,3 +2,10 @@
 <%= @PlayerName%> vs Computer 
 </h1>
 <br>
+<h3> <%= @PlayerName%>, your move!</h3>
+<br>
+<form action= 'comp/move' method='post'>
+  <input type='submit' value='Rock'>
+  <input type='submit' value='Paper'>
+  <input type='submit' value='Scissors'>
+</form>
