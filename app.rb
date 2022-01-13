@@ -15,5 +15,10 @@ class RockPaperScissors < Sinatra::Base
     erb (:index)
   end
 
+  post '/players' do
+    @PlayerName = params[:PlayerName]
+    erb(:players)
+  end
+
   run! if app_file == $0
 end
