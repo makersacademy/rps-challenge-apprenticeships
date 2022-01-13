@@ -8,5 +8,4 @@ class Computer
     index = rand (0..2)
     comp_choice = @rps_outcomes[index]
   end
-
 end
