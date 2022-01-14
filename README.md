@@ -32,7 +32,7 @@ I would like to be able to play rock/paper/scissors
 - Scissors beats Paper
 - Paper beats Rock
 
-## Bonus level 1: Multiplayer (NOT COMPLETE)
+## Bonus level 1: Multiplayer
 
 Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
 
