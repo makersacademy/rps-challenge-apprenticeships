@@ -1,8 +1,6 @@
 feature 'play' do
   scenario 'is given 3 choices' do
-    visit('/')
-    fill_in :player_name, with: 'Alex'
-    click_button 'Submit'
+  sign_in
     # save_and_open_page
     expect(page).to have_button("Rock")
     expect(page).to have_button("Paper")
@@ -10,9 +8,7 @@ feature 'play' do
   end
 
   scenario 'can pick 1 option' do
-    visit('/')
-    fill_in :player_name, with: 'Alex'
-    click_button 'Submit'
+    sign_in
     click_button 'Rock'
     expect(page).to have_content 'Rock'
   end

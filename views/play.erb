@@ -1,7 +1,19 @@
-<h1><%= @player_name %></h1>
+<style>
+  .normal { 
+    border-style: solid;
+    border-color: black;
+    border-width: 5px;
+    text-align: center;
+    background-color:powderblue;    
+  }
+</style>
+
+<body class="normal">
+<h1 style="font-family:verdana"><%= @player_name %></h1>
 
 <form action="/player_choice" method="post">
   <button name="player_choice" type="submit" value="Rock">Rock</button> 
   <button name="player_choice" type="submit" value="Paper">Paper</button> 
   <button name="player_choice" type="submit"value="Scissors">Scissors</button> 
 </form>
+</body>
