@@ -12,9 +12,23 @@ class Game
 
   def run_game
     @game_turn = self.choice
-    return 'draw' if @player_turn == @game_turn
-    return 'win' if @player_turn == 'Rock' && @game_turn == 'Scissors' || @player_turn == 'Paper' && @game_turn == 'Rock' || @player_turn == 'Scissors' && @game_turn == 'Paper'
-    return 'lose' if @player_turn == 'Rock' && @game_turn == 'Paper' || @player_turn == 'Paper' && @game_turn == 'Scissors' || @player_turn == 'Scissors' && @game_turn == 'Rock'
+    return 'draw' if draw?
+    return 'win' if win?
+    return 'lose' if lose?
+  end
+
+  private 
+  
+  def win?
+    return true if @player_turn == 'Rock' && @game_turn == 'Scissors' || @player_turn == 'Paper' && @game_turn == 'Rock' || @player_turn == 'Scissors' && @game_turn == 'Paper'
+  end
+
+  def lose?
+    return true if @player_turn == 'Rock' && @game_turn == 'Paper' || @player_turn == 'Paper' && @game_turn == 'Scissors' || @player_turn == 'Scissors' && @game_turn == 'Rock'
+  end
+
+  def draw?
+    return true if @player_turn == @game_turn
   end
 
 end

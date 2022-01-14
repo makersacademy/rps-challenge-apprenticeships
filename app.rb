@@ -34,7 +34,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/outcome' do
-    @outcome = Game.new(session[:player_choice]).run_game
+    new_game = Game.new(session[:player_choice])
+    @outcome = new_game.run_game
+    @game_choice = new_game.game_turn
     erb :outcome
   end
 
