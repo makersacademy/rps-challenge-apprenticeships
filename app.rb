@@ -36,5 +36,10 @@ class RockPaperScissors < Sinatra::Base
     erb :paper
   end
 
+  get'/scissors' do
+    @player = session[:player]
+    erb :scissors
+  end
+    
   run! if app_file == $0
 end
