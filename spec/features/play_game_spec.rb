@@ -3,7 +3,7 @@
 # I would like to register my name before playing an online game
 
 feature "registering" do
-  scenario "player can register their name"do
+  scenario "player can register their name" do
     register_name
     welcome_message = "Welcome #{@name}!"
     expect(page).to have_content(welcome_message)
