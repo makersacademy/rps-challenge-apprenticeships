@@ -7,6 +7,4 @@ class RPSGame
     @player_2 = player2
   end
 
-
-
 end
