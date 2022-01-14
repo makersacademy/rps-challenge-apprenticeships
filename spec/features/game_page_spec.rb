@@ -1,8 +1,7 @@
 feature 'user can choose rock, paper or scissors' do
   scenario 'user chooses rock' do
     enter_name_and_start
-    select "Rock", :from => "choice"
-    click_button "Go!"
+    choose_rock
     expect(page).to have_content "Result"
   end
 

@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative './lib/rps'
+require_relative './lib/opponent'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -27,7 +29,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    "Result"
+    @name = session[:player]
+    @round = RPS.new(session[:choice], Opponent.new)
+    erb(:result)
   end
   
   get '/test' do

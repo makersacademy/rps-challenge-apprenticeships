@@ -3,7 +3,7 @@ class RPS
   attr_reader :player, :opponent
 
   def initialize(player, opponent)
-    @player = player
+    @player = player.downcase
     @opponent = opponent.generate_choice
   end
 
