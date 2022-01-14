@@ -41,4 +41,16 @@ The below is a screenshot of the diagram I developed using **Miro** which depict
 ![A screenshot of the diagram used to develop this mode](./assets/Diagram.png)
 
 ## Output
-Below will be captures of the different webpages
+Below is the visual of some of the different pages...
+
+### Home Screen
+![A screenshot of the diagram used to develop this mode](./assets/Home.png)
+
+### One-Player Mode
+![A screenshot of the diagram used to develop this mode](./assets/1P.png)
+
+### Multiplayer Mode
+![A screenshot of the diagram used to develop this mode](./assets/2P.png)
+
+### Result Screen
+![A screenshot of the diagram used to develop this mode](./assets/Result.png)
