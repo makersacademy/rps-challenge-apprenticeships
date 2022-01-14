@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
+
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
