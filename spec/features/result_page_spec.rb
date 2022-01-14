@@ -11,6 +11,13 @@ feature 'displays the result of the match' do
     find('#replay').click
     expect(page).to have_current_path("/play")
   end
+
+  scenario 'user can click "home" to be brought back to the homepage' do 
+    enter_name_and_start
+    choose_rock
+    find('#home').click
+    expect(page).to have_current_path("/")
+  end
 end
 
 # given (:other_user) { User.make(email: 'other@example.com', password: 'rous')}
