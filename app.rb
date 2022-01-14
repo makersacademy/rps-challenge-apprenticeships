@@ -13,7 +13,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    p params
     session[:name] = params['name']
     redirect '/play'
   end
