@@ -44,6 +44,12 @@ class RockPaperScissors < Sinatra::Base
     erb(:twoplayer)
   end
 
+  post '/names' do
+    session[:player] = params[:player_one]
+    session[:player_two] = params[:player_two]
+    redirect '/one-choose'
+  end
+
   get '/result' do
     @name = session[:player]
     if session[:player_two].nil?
