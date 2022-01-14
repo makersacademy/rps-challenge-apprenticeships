@@ -3,6 +3,6 @@ describe 'enter name', type: :feature do
     visit ('/')
     fill_in('player', with: 'John')
     click_button('Start!')
-    expect(page).to have_content 'John vs Computer'
+    expect(page).to have_content 'John'
   end
 end
