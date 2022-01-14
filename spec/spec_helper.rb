@@ -8,6 +8,8 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+require 'capybara'
+require 'rspec'
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
