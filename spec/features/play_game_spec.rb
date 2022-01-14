@@ -8,7 +8,6 @@ feature 'Play game:' do
     choose('Rock')
     click_button 'Go!'
 
-    expect(page).to have_title 'Rock, Paper, Scissors - Result'
     expect(page).to have_content "#{@player_name} attacks with Rock"
     expect(page).to have_content("Computer attacks with Paper")
     expect(page).to have_content("The winner is: Computer")

@@ -2,7 +2,8 @@ class Game
   def initialize(player1, player2)
     @player1 = player1
     @player2 = player2
-    @winner = nil
+    @winner = @player1
+    @choices = ["Scissors", "Paper", "Rock"]
   end
 
   attr_reader :player1, :player2, :winner
@@ -10,11 +11,13 @@ class Game
   def play(attack1, attack2)
     @player1.action(attack1)
     @player2.action(attack2)
+    
+    index = @choices.index(attack1)
+    winning_choice = @choices[index - 1]
+
     if attack1 == attack2
       @winner = "Draw"
-    elsif (attack1 == "Rock" && attack2 == "Scissors") || (attack1 == "Paper" && attack2 == "Rock") || (attack1 == "Scissors" && attack2 == "Paper")
-      @winner = @player1
-    else
+    elsif attack2 == winning_choice
       @winner = @player2
     end
   end

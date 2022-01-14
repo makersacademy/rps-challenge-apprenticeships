@@ -1,4 +1,7 @@
 require 'sinatra/base'
+require_relative './lib/game'
+require_relative './lib/player'
+require_relative './lib/decide'
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
