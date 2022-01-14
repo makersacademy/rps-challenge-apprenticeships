@@ -3,6 +3,8 @@ require 'sinatra/reloader'
 
 class RockPaperScissors < Sinatra::Base
 
+  enable :sessions
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -15,8 +17,13 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/welcome' do
-    @player_name = params[:name]
+  post '/name-registered' do
+    session[:player_name] = params[:name]
+    redirect '/welcome'
+  end
+
+  get '/welcome' do
+    @player_name = session[:player_name]
     erb :welcome
   end
 
