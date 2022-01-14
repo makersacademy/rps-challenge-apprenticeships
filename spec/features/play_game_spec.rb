@@ -16,6 +16,10 @@ end
 
 feature "play a game" do
 
+  before(:each) do
+    allow_any_instance_of(Game).to receive(:choice).and_return('Paper')
+  end
+
   scenario "player can choose rock" do
     register_name
     expect(page).to have_selector(:button, 'Rock')
@@ -32,16 +36,12 @@ feature "play a game" do
   end
 
   scenario "player selects a losing option" do
-    game = double game
-    # allow(game).to receive(:choice) { 'Paper' }
     register_name
     click_button('rock')
     expect(page).to have_content("You LOSE!!!")
   end
 
   scenario "player selects a winning option" do
-    game = double game
-    # allow(game).to receive(:choice) { 'Paper' }
     register_name
     click_button('scissors')
     expect(page).to have_content("You WIN!!!")
@@ -49,7 +49,6 @@ feature "play a game" do
 
   scenario "player selects a drawing option" do
     register_name
-    # allow(game).to receive(:choice) { 'Paper' }
     click_button('paper')
     expect(page).to have_content("It's a DRAW!!!")
   end
