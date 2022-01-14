@@ -6,15 +6,15 @@ RSpec.describe RPSGame do
   describe '#initialize' do
     context 'when single player' do
       it 'stores the players name' do
-        expect(singleplayer_game.player_1).to eq("Freddy")
+        expect(singleplayer_game.player1).to eq("Freddy")
       end
       it 'stores Computer in player 2' do
-        expect(singleplayer_game.player_2).to eq("Computer")
+        expect(singleplayer_game.player2).to eq("Computer")
       end
     end
     context 'when two players' do
       it 'stores the second players name' do
-        expect(multiplayer_game.player_2).to eq("Jason")
+        expect(multiplayer_game.player2).to eq("Jason")
       end
     end
   end

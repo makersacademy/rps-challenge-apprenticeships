@@ -10,8 +10,8 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/sign_in' do
-    session[:player_1] = params[:player_1]
-    session[:player_2] = params[:player_2]
+    session[:player1] = params[:player1]
+    session[:player2] = params[:player2]
     redirect '/play'
   end
 
@@ -28,7 +28,7 @@ class RockPaperScissors < Sinatra::Base
   post '/player_1_choice' do
     @game = session[:game]
     session[:player_1_choice] = params[:player_1_choice]
-    redirect '/player_2_choice' if @game.player_2 != 'Computer'
+    redirect '/player_2_choice' if @game.player2 != 'Computer'
     redirect '/winner'
   end
 
@@ -53,16 +53,16 @@ class RockPaperScissors < Sinatra::Base
   private
 
   def create_game
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
-    return RPSGame.new(@player_1) if @player_2.empty?
-    return RPSGame.new(@player_1, @player_2)
+    @player1 = session[:player1]
+    @player2 = session[:player2]
+    return RPSGame.new(@player1) if @player2.empty?
+    return RPSGame.new(@player1, @player2)
   end
 
   def define_winner
     @game = session[:game]
     player_1_choice = session[:player_1_choice]
-    return @game.play(player_1_choice) if @game.player_2 == 'Computer'
+    return @game.play(player_1_choice) if @game.player2 == 'Computer'
     
     player_2_choice = session[:player_2_choice]
     return @game.play(player_1_choice, player_2_choice)
