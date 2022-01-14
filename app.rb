@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require_relative 'lib/game'
 require_relative 'lib/player'
+require_relative 'lib/computer'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -21,15 +22,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do
     session[:player].set_choice(params[:player_choice])
-    session[:computer_choice] = ['rock', 'paper', 'scissors'].sample
     redirect '/result'
   end
 
   get '/result' do
     @player = session[:player]
     @computer_choice = session[:computer_choice]
-    @result = Game.new(@player.choice, @computer_choice).result
-
+    @result = Game.new(@player.choice, Computer.choice).result
     erb :result
   end
 
