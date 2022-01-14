@@ -42,7 +42,14 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @name = session[:player]
-    @round = RPS.new(session[:choice], Opponent.new)
+    if session[:player_two].nil?
+      @player_two_name = "The Computer"
+      @round = RPS.new(session[:choice], Opponent.new.generate_choice)
+    else
+      # @player_two_name = session[:player_two]
+      # @round = RPS.new(session[:choice] REWORK RPS so just feed Opponent.new.generate_choice????)
+      "Happy dance"
+    end
     erb(:result)
   end
   

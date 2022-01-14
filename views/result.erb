@@ -27,14 +27,15 @@
         </div>
         <center>
         <div class="app-text">
+          <font color="#fd00da";>
           <% if @round.result == "draw" %>
-          <h1><font color="#fd00da";>Result:</font> Draw</h1>
+          <h1>Draw</h1>
           <% elsif @round.result == "win" %>
-          <h1><font color="#fd00da";>Result:</font> <%=@name%> won!</h1>
+          <h1><%=@name%> won!</h1>
           <% elsif @round.result == "lose" %>
-          <h1><font color="#fd00da";>Result:</font> You lose :(</h1>
-          <% end %>
-          <p> If you wish to play again (keeping the same name), please select the button below,
+          <h1><%=@player_two_name%> won!</h1>
+          <% end %> </font>
+          <p> If you wish to play again using the same name(s), please select the button below,
           otherwise select the home button to start all over again. </p>
           <br> 
               <a href="/og-play" id="replay"><svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-repeat" viewBox="0 0 16 16">

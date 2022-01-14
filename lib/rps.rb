@@ -4,7 +4,7 @@ class RPS
 
   def initialize(player, opponent)
     @player = player.downcase
-    @opponent = opponent.generate_choice
+    @opponent = opponent
   end
 
   def result
