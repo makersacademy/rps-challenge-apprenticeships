@@ -24,4 +24,7 @@ class Player
     @move = ["Rock", "Paper", "Scissors"].sample
   end
 
+  def spock_move
+    @move = ["Rock", "Paper", "Scissors", "Lizard", "Spock"].sample
+  end
 end

@@ -1,4 +1,10 @@
-<body>
+<style>
+  #body {
+    text-align: center;
+  }
+</style>
+
+<div id="body">
   <div>
     <h1 style="font-family: helvetica">This is Rock, Paper, Scissors</h1>
   </div>
@@ -19,7 +25,9 @@
           <input type="checkbox" id="player_one_CPU" name="player_one_CPU" value="true">
           <label for="player_one_CPU">CPU?</label>
         </div>
-      <div id="two">
+      </div>
+
+      <div id="player_two">
         <div id="player_two_name_input">
           <label for="player_two_name">Player Two: </label>
           <input type="text" id="player_two_name" name="player_two_name">
@@ -28,7 +36,14 @@
           <input type="checkbox" id="player_two_CPU" name="player_two_CPU" value="true">
           <label for="player_two_CPU">CPU?</label>
         </div>
+      </div>
+      <div>
+        <input type="checkbox" id="spock_game" name="spock_game" value="true">
+        <label for="spock_game">Rock, Paper, Scissors, Lizard, Spock?</label>
+      </div>
+      <div>
         <input type="submit" value="Ready!">
+      </div>
     </form>
   </div>
-</body>
+</div>

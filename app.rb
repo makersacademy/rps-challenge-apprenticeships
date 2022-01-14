@@ -16,15 +16,27 @@ class RockPaperScissors < Sinatra::Base
 
   post '/players' do
     p params
-    p @player_one = Player.new(params[:player_one_name], params[:player_one_CPU])
-    p @player_two = Player.new(params[:player_two_name], params[:player_two_CPU])
-    $game = Game.new(@player_one, @player_two)
-    redirect '/moves'
+    @player_one = Player.new(params[:player_one_name], params[:player_one_CPU])
+    @player_two = Player.new(params[:player_two_name], params[:player_two_CPU])
+    @spock_game = params[:spock_game]
+    $game = Game.new(@player_one, @player_two, @spock_game)
+    if $game.spock_game?
+      redirect '/spock-moves'
+    else
+      redirect '/moves'
+    end
+  end
+
+  get '/spock-moves' do
+    if $game.current_turn.robot?
+      redirect '/next-move'
+    else
+      erb(:spock_moves)
+    end
   end
 
   get '/moves' do
-    @game = $game
-    if @game.current_turn.robot?
+    if $game.current_turn.robot?
       redirect '/next-move'
     else
       erb(:moves)
@@ -39,11 +51,19 @@ class RockPaperScissors < Sinatra::Base
 
   get '/next-move' do
     if $game.current_turn.robot?
-      $game.current_turn.computer_move
+      if $game.spock_game?
+        $game.current_turn.spock_move
+      else
+        $game.current_turn.computer_move
+      end
     end
     $game.switch_turn
     if $game.current_turn.move.nil?
-      redirect '/moves'
+      if $game.spock_game?
+        redirect '/spock-moves'
+      else
+        redirect '/moves'
+      end
     else
       redirect '/result'
     end
@@ -54,10 +74,16 @@ class RockPaperScissors < Sinatra::Base
     erb(:result)
   end
 
-  get '/play-again' do
+  post '/play-again' do
+    p params
+    $game.spock_update(params[:spock_game])
     $game.player_one.reset_move
     $game.player_two.reset_move
-    redirect '/moves'
+    if $game.spock_game?
+      redirect '/spock-moves'
+    else
+      redirect '/moves'
+    end
   end
 
   get '/test' do

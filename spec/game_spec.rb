@@ -8,7 +8,7 @@ describe Game do
   let (:paper) { double :player, name: "paper", move: "Paper" }
   let (:scissors) { double :player, name: "scissors", move: "Scissors" }
 
-  subject { described_class.new(player_one, player_two) }
+  subject { described_class.new(player_one, player_two, nil) }
 
   it { is_expected.to respond_to(:player_one) }
   it { is_expected.to respond_to(:player_two) }

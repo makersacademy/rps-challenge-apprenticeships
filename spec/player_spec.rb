@@ -19,4 +19,12 @@ describe Player do
       expect { subject.reset_move }.to change { subject.move }.from("Rock").to(nil)
     end
   end
+
+  describe "#computer_move" do
+    it { is_expected.to respond_to(:computer_move) }
+  end
+
+  describe "#spock_move" do
+    it { is_expected.to respond_to(:spock_move) }
+  end
 end
