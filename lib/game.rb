@@ -39,20 +39,46 @@ class Game
   end
 
   def outcome(player_one, player_two)
-    if (player_one.move == "Rock" && (player_two.move == "Scissors" || player_two.move == "Lizard")) ||
-       (player_one.move == "Paper" && (player_two.move == "Rock" || player_two.move == "Spock")) ||
-       (player_one.move == "Scissors" && (player_two.move == "Paper" || player_two.move == "Lizard")) ||
-       (player_one.move == "Lizard" && (player_two.move == "Paper" || player_two.move == "Spock")) ||
-       (player_one.move == "Spock" && (player_two.move == "Scissors" || player_two.move == "Rock"))
-      @result = player_one
-    elsif (player_one.move == "Rock" && (player_two.move == "Paper" || player_two.move == "Spock")) ||
-      (player_one.move == "Paper" && (player_two.move == "Scissors" || player_two.move == "Lizard")) ||
-      (player_one.move == "Scissors" && (player_two.move == "Rock" || player_two.move == "Spock"))
-      (player_one.move == "Lizard" && (player_two.move == "Rock" || player_two.move == "Scissors")) ||
-      (player_one.move == "Spock" && (player_two.move == "Paper" || player_two.move == "Lizard"))
-      @result = player_two
-    elsif player_one.move == player_two.move
-      @result = "Draw"
+    if player_one.move == "Rock"
+      if player_two.move == "Scissors" || player_two.move == "Lizard"
+        @result = player_one
+      elsif player_two.move == "Paper" || player_two.move == "Spock"
+        @result = player_two
+      elsif player_two.move == "Rock"
+        @result = "Draw"
+      end
+    elsif player_one.move == "Paper" 
+      if player_two.move == "Rock" || player_two.move == "Spock"
+        @result = player_one
+      elsif player_two.move == "Scissors" || player_two.move == "Lizard"
+        @result = player_two
+      elsif player_two.move == "Paper"
+        @result = "Draw"
+      end
+    elsif player_one.move == "Scissors"
+      if player_two.move == "Paper" || player_two.move == "Lizard"
+        @result = player_one
+      elsif player_two.move == "Rock" || player_two.move == "Spock"
+        @result = player_two
+      elsif player_two.move == "Scissors"
+        @result = "Draw"
+      end
+    elsif player_one.move == "Lizard"
+      if player_two.move == "Paper" || player_two.move == "Spock"
+        @result = player_one
+      elsif player_two.move == "Rock" || player_two.move == "Scissors"
+        @result = player_two
+      elsif player_two.move == "Lizard"
+        @result = "Draw"
+      end
+    elsif player_one.move == "Spock" 
+      if player_two.move == "Scissors" || player_two.move == "Rock"
+        @result = player_one
+      elsif player_two.move == "Paper" || player_two.move == "Lizard"
+        @result = player_two
+      elsif player_two.move == "Spock"
+        @result = "Draw"
+      end
     end
   end
 end

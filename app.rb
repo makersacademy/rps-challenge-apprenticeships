@@ -4,7 +4,6 @@ require './lib/game'
 require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
-  enable :sessions
 
   configure :development do
     register Sinatra::Reloader
