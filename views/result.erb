@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Rock, Paper, Scissors - Result</title>
+  </head>
+  <body>
+    <p>
+      <%= @game.player1.name %> attacks with <%= @game.player1.attack %>
+    </p>
+    <p>
+      <%= @game.player2.name %> attacks with <%= @game.player2.attack %>
+    </p>
+    <h1>
+      <% if @game.winner == "Draw" %>
+        Its a draw!
+      <% else %>
+        The winner is: <%= @game.winner.name %>
+      <% end %>
+    </h1>
+  </body>
+</html>
