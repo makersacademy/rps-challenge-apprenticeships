@@ -1,1 +1,66 @@
-<div id="lights"><%= @player_name %></div>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway+Dots&display=swap" rel="stylesheet">
+    <style type="text/css">
+    input { display: inline; }
+
+    :root {
+      --image-url: url('https://pbs.twimg.com/media/ETC8x-kWsAA0BkB?format=png&name=small');
+    }
+
+    body {
+      text-align: center;
+      background-color: #4646AA;
+      color: white;
+      font-family: 'Segoe UI', 'Helvetica';
+      font-size: 16pt;
+    }
+
+    input {
+      width: 72px;
+      height: 72px;
+      border: 0;
+      background-image: var(--image-url);
+      margin: 0px 8px 0px 8px;
+    }
+
+    #lights {
+      background-image: url('https://thumbs.gfycat.com/RecklessWellgroomedHummingbird-size_restricted.gif');
+      background-size: 3  0%;
+      font-size: 72pt;
+      -webkit-background-clip: text;
+      color: transparent;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    #rock {
+      background-position: -140px -128px;
+    }
+
+    #paper {
+      background-position: -220px -128px;
+    }
+
+    #scissors {
+      background-position: -300px -128px;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div id="lights"><%= @player_name %></div>
+    <% if @player_move %>
+    <p>Your move: <%= @player_move.capitalize %></p>
+    <p>Their move: <%= @opponent_move.capitalize %></p>
+    <% end %>
+    <p>Score: <%= @wins%>/<%= @draws %>/<%= @losses %>
+    <form method="post">
+      <input type="submit" value=" " id="rock" formaction="/move/rock">
+      <input type="submit" value=" " id="paper" formaction="/move/paper">
+      <input type="submit" value=" " id="scissors" formaction="/move/scissors">
+    </form>
+  </body>
+</html>
