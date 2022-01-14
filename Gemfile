@@ -8,6 +8,8 @@ group :test do
   gem 'capybara'
   gem 'rspec'
   gem 'launchy'
+  gem 'sinatra'
+  gem 'sinatra-reloader'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
