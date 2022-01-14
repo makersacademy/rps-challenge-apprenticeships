@@ -8,4 +8,11 @@ feature 'home page' do
     enter_name_and_start
     expect(page).to have_content "Megan, make your choice"
   end
+
+  scenario 'user can choose multiplater mode' do
+    visit '/'
+    select "Two Player", :from => "mode"
+    click_button "Load"
+    expect(page).to have_current_path("/two-player")
+  end
 end

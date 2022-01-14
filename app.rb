@@ -40,6 +40,10 @@ class RockPaperScissors < Sinatra::Base
     redirect '/result'
   end
 
+  get '/two-player' do
+    erb(:twoplayer)
+  end
+
   get '/result' do
     @name = session[:player]
     if session[:player_two].nil?
