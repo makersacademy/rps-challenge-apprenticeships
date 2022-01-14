@@ -7,8 +7,7 @@
 </head>
 <body>
   <h1>Result: <%= @result %></h1>
-  <h3>You Picked:  <%= @player.choice %> </h3>
-  <h3>Computer Picked: <%= @computer_choice %></h3>
+  <h3><%= @player.name %> Picked:  <%= @player.choice.capitalize %> | Computer Picked: <%= @computer_choice.capitalize %></h3>
 
   <a href='/play'>Play Again<a>
   <a href='/'>Quit<a>
