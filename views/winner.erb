@@ -13,18 +13,16 @@
   <body>
 
     <div class="text-center mt-5">
-      <form style="max-width:320px;margin:auto;" action="/player_2_choice" method="post">
+      <form style="max-width:320px;margin:auto;" action="/player_1_choice" method="get">
       
         <img class="mb-5" src="https://wearetechwomen.com/wp-content/uploads/2019/04/makers-logo-lockupv-black.png" >
       
-        <h1 class="h3 mb-5"> <%= @game.player_1 %> vs. <%= @game.player_2 %> </h1>
+        <h1 class="h3 mb-5"> <%= @winner_message %> </h1>
 
-        <h1 class="h5"> Your turn: <%= @game.player_2 %> </h5>
-        
+        <h1 class="h5"> Want to play again? </h5>   
+
         <div class="mt-3">
-          <button class="bth btn-primary col-3" name="player_2_choice" value="Rock"> Rock </button>
-          <button class="bth btn-primary col-3" name="player_2_choice" value="Paper"> Paper </button>
-          <button class="bth btn-primary col-3" name="player_2_choice" value="Scissors"> Scissors </button>
+          <button class="bth btn-primary col-9" > Play Again </button>
         </div>
       
       </form>    

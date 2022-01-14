@@ -16,12 +16,18 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @game = session[:game] = create_game()
+    session[:game] = create_game()
+    redirect 'player_1_choice'
+  end
+
+  get '/player_1_choice' do
+    @game = session[:game]
     erb(:turn_1)
   end
 
   post '/player_1_choice' do
     @game = session[:game]
+    session[:player_1_choice] = params[:player_1_choice]
     redirect '/player_2_choice' if @game.player_2 != 'Computer'
     redirect '/winner'
   end
@@ -32,11 +38,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_2_choice' do
-    redirect '/winner'      
+    session[:player_2_choice] = params[:player_2_choice]
+    redirect '/winner'
   end
 
   get '/winner' do
-    'Freddy won'
+    @winner_message = define_winner()
+    @winner_message += " won" unless @winner_message == 'Draw'
+    erb(:winner)
   end
 
   run! if app_file == $0
@@ -48,6 +57,15 @@ class RockPaperScissors < Sinatra::Base
     @player_2 = session[:player_2]
     return RPSGame.new(@player_1) if @player_2.empty?
     return RPSGame.new(@player_1, @player_2)
+  end
+
+  def define_winner()
+    @game = session[:game]
+    player_1_choice = session[:player_1_choice]
+    return @game.play(player_1_choice) if @game.player_2 == 'Computer'
+    
+    player_2_choice = session[:player_2_choice]
+    return @game.play(player_1_choice, player_2_choice)
   end
 
 end
