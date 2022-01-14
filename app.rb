@@ -50,15 +50,34 @@ class RockPaperScissors < Sinatra::Base
     redirect '/one-choose'
   end
 
+  get '/one-choose' do
+    @name = session[:player]
+    erb(:onechoose)
+  end
+
+  post '/choice-1' do
+    session[:choice] = params[:choice]
+    redirect "/two-choose"
+  end
+
+  get '/two-choose' do
+    @name = session[:player_two]
+    erb(:twochoose)
+  end
+
+  post '/choice-2' do
+    session[:p2_choice] = params[:choice]
+    redirect "/result"
+  end
+
   get '/result' do
     @name = session[:player]
     if session[:player_two].nil?
       @player_two_name = "The Computer"
       @round = RPS.new(session[:choice], Opponent.new.generate_choice)
     else
-      # @player_two_name = session[:player_two]
-      # @round = RPS.new(session[:choice] REWORK RPS so just feed Opponent.new.generate_choice????)
-      "Happy dance"
+      @player_two_name = session[:player_two]
+      @round = RPS.new(session[:choice], session[:p2_choice])
     end
     erb(:result)
   end

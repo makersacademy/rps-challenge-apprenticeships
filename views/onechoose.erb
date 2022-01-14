@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+      a:link, a:visited {
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+      a:hover, a:active {
+        color: #fd00da;
+      }
+  </style>
+    <meta charset="utf-8">
+    <title></title>
+        <title> "RPS Game" </title>
+        <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <div class="container">
+      <div class="menu">
+      <ul>
+        <li><a href="/" id="home">Home</a></li>
+      </ul>
+      </div>
+        <center>
+        <div class="app-text">
+            <p><font color="#fd00da";><%=@name%></font>, make your choice</p>
+            <form action="/choice-1" method="post">
+              <select name ="choice" id="chocie">
+                <option value="Rock">Rock</option>
+                <option value="Paper">Paper</option>
+                <option value="Scissors">Scissors</option>
+              </select>
+            <input type="submit" value=" Go! ">
+        </div>
+        </center>
+      </div>
+  </body>
+</html>
