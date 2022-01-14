@@ -1,2 +1,19 @@
-<h1><%= @player_choice %></h1>
-<h1><%= @game_choice %></h1>
+<h1><%= @player_name %>, you picked: <%= @player_choice %></h1>
+<h1>Your opponent picked: <%= @game_choice %></h1>
+
+<% if @player_choice == @game_choice %>
+  <h3>it's a draw!</h3>
+<% end %>
+
+<% if @score == 1%>
+  <h3>You win!</h3>
+<% end %>
+
+<% if @score == 0%>
+  <h3>You lose!</h3>
+<% end %>
+
+<p>play again?</p>
+<a href="/play">
+ <button type="button">return</button> 
+</a>
