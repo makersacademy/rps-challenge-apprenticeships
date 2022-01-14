@@ -1,24 +1,12 @@
 <h1> You chose <%= @player_choice %>, the game chose <%= @game_choice %> </h1>
 
-<% if @player_choice == @game_choice %>
+<% if @outcome == 'draw' %>
 <h2> They're the same THING! It's a DRAW!!! </h2>
 
-<% elsif @player_choice == 'Rock' && @game_choice == 'Paper' %>
+<% elsif @outcome == 'lose' %>
 <h2> <%= @game_choice %> beats <%= @player_choice %>. You LOSE!!! </h2>
 
-<% elsif @player_choice == 'Rock' && @game_choice == 'Scissors' %>
+<% elsif @outcome == 'win' %>
 <h2> <%= @player_choice %> beats <%= @game_choice %>. You WIN!!! </h2>
-
-<% elsif @player_choice == 'Paper' && @game_choice == 'Rock' %>
-<h2> <%= @player_choice %> beats <%= @game_choice %>. You WIN!!! </h2>
-
-<% elsif @player_choice == 'Paper' && @game_choice == 'Scissors' %>
-<h2> <%= @game_choice %> beats <%= @player_choice %>. You LOSE!!! </h2>
-
-<% elsif @player_choice == 'Scissors' && @game_choice == 'Paper' %>
-<h2> <%= @player_choice %> beats <%= @game_choice %>. You WIN!!! </h2>
-
-<% elsif @player_choice == 'Scissors' && @game_choice == 'Rock' %>
-<h2> <%= @game_choice %> beats <%= @player_choice %>. You LOSE!!! </h2>
 
 <% end %>

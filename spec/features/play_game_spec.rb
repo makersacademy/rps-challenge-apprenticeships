@@ -31,25 +31,25 @@ feature "play a game" do
     expect(page).to have_selector(:button, 'Scissors')
   end
 
-  scenario "player selects a losing option" do
-    game = double game
-    allow(game).to receive(:choice) { 'Paper' }
-    register_name
-    click_button('rock')
-    expect(page).to have_content("You LOSE!!!")
-  end
+  # scenario "player selects a losing option" do
+  #   game = double game
+  #   allow(game).to receive(:choice) { 'Paper' }
+  #   register_name
+  #   click_button('rock')
+  #   expect(page).to have_content("You LOSE!!!")
+  # end
 
-  scenario "player selects a winning option" do
-    game = double game
-    allow(game).to receive(:choice) { 'Paper' }
-    register_name
-    click_button('scissors')
-    expect(page).to have_content("You WIN!!!")
-  end
+  # scenario "player selects a winning option" do
+  #   game = double game
+  #   allow(game).to receive(:choice) { 'Paper' }
+  #   register_name
+  #   click_button('scissors')
+  #   expect(page).to have_content("You WIN!!!")
+  # end
 
-  scenario "player selects a drawing option" do
-    register_name
-    click_button('paper')
-    expect(page).to have_content("It's a DRAW!!!")
-  end
+  # scenario "player selects a drawing option" do
+  #   register_name
+  #   click_button('paper')
+  #   expect(page).to have_content("It's a DRAW!!!")
+  # end
 end
