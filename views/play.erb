@@ -1,10 +1,20 @@
-<h1><%= @player.name %> vs Computer</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors | Playing</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+<body>
+  <h1><%= @player.name %> vs Computer</h1>
 
-<form action='/result' method='post'>
-  <select name='player_choice' id='player_choice'>
-    <option value='rock'>rock</option>
-    <option value='paper'>paper</option>
-    <option value='scissors'>scissors</option>
-  </select>
-  <input type='submit' value='Play'>
-</form>
+  <form action='/result' method='post'>
+    <select name='player_choice' id='player_choice'>
+      <option value='rock'>rock</option>
+      <option value='paper'>paper</option>
+      <option value='scissors'>scissors</option>
+    </select>
+    <input type='submit' value='Play'>
+  </form>
+</body>
+</html>
