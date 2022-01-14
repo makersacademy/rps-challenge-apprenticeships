@@ -3,11 +3,12 @@
     <title>Rock, Paper, Scissors - Choose your attack</title>
   </head>
   <body>
-    <h1><%= $name %>, choose your attack:</h1>
+    <h1><%= @game.player1.name %>, choose your attack:</h1>
     <form action="/attack" method="post">
-      <input type="submit" name="rock" value="Rock">
-      <input type="submit" name="paper" value="Paper">
-      <input type="submit" name="scissors" value="Scissors">
+      <label for="rock">Rock</label><input type="radio" name="attack" value="Rock" id="rock"><br>
+      <label for="paper">Paper</label><input type="radio" name="attack" value="Paper" id="paper"><br>
+      <label for="scissors">Scissors</label><input type="radio" name="attack" value="Scissors" id="scissors"><br>
+      <input type="submit" value="Go!">
     </form>
   </body>
 </html>

@@ -13,9 +13,10 @@ feature 'Start game:' do
     fill_in :name, with: @player_name
     click_button 'Start'
     expect(page).to have_content "#{@player_name}, choose your attack:"
-    expect(page).to have_button 'Rock'
-    expect(page).to have_button 'Paper'
-    expect(page).to have_button 'Scissors'
+    expect(page).to have_field 'Rock'
+    expect(page).to have_field 'Paper'
+    expect(page).to have_field 'Scissors'
+    expect(page).to have_button 'Go'
     expect(page).to have_title 'Rock, Paper, Scissors - Choose your attack'
   end
 end

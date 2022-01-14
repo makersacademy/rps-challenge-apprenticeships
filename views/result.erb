@@ -4,13 +4,17 @@
   </head>
   <body>
     <p>
-      <%= @player.name %> attacks with <%= @player.attack %>
+      <%= @game.player1.name %> attacks with <%= @game.player1.attack %>
     </p>
     <p>
-      <%= @computer.name %> attacks with <%= @computer.attack %>
+      <%= @game.player2.name %> attacks with <%= @game.player2.attack %>
     </p>
     <h1>
-      The winner is: <%= @game.winner.name %>
+      <% if @game.winner == "Draw" %>
+        Its a draw!
+      <% else %>
+        The winner is: <%= @game.winner.name %>
+      <% end %>
     </h1>
   </body>
 </html>
