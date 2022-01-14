@@ -5,7 +5,11 @@
   <body>
     <h1>Rock, Paper, Scissors!</h1>
     <div name="sign_in">
-      Start new game
+      Start new game<br>
+      <form action="/start" method="post">
+        Name:<input type="text" name="name"><br>
+        <input type="submit" value="Start">
+      </form>
     </div>
   </body>
 </html>

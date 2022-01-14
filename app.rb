@@ -8,5 +8,14 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
+  post '/start' do
+    $name = params[:name]
+    redirect '/game'
+  end
+
+  get '/game' do
+    erb :game
+  end
+
   run! if app_file == $0
 end

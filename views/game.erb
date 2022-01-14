@@ -1,0 +1,13 @@
+<html>
+  <head>
+    <title>Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <h1><%= $name %>, choose your attack:</h1>
+    <form action="/attack" method="post">
+      <input type="submit" name="rock" value="Rock">
+      <input type="submit" name="paper" value="Paper">
+      <input type="submit" name="scissors" value="Scissors">
+    </form>
+  </body>
+</html>
