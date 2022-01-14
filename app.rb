@@ -1,9 +1,11 @@
 require 'sinatra/base'
+require_relative './lib/game.rb'
+
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
   end
-  attr_reader :player_choice
+  attr_reader :player_choice, :game, :game_choice
   enable :sessions
 
   get '/' do
@@ -27,6 +29,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/outcome' do
     @player_choice = session[:player_choice]
+    @game = Game.new
+    @game_choice = @game.choices
     erb :outcome
   end
 
