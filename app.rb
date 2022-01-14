@@ -13,14 +13,26 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  post '/name' do
-    session[:player] = params[:name]
-    redirect '/play'
+  post '/mode' do
+    if params[:mode] == "one-player"
+      redirect '/one-player'
+    else 
+      redirect '/two-player'
+    end
   end
 
-  get '/play' do 
+  get '/one-player' do
+    erb(:oneplayer)
+  end
+
+  post '/name' do
+    session[:player] = params[:name]
+    redirect '/og-play'
+  end
+
+  get '/og-play' do 
     @name = session[:player]
-    erb(:play)
+    erb(:ogplay)
   end
 
   post '/choice' do
