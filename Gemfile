@@ -3,6 +3,10 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
+gem 'webrick'
+gem 'sinatra-contrib'
+gem 'selenium-webdriver'
+gem 'launchy'
 
 group :test do
   gem 'capybara'
@@ -14,3 +18,9 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
+
+
+
+
+        
