@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <style>
+      a:link, a:visited {
+        color: white;
+        padding: 15px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+      a:hover, a:active {
+        color: #fd00da;
+      }
+  </style>
     <meta charset="utf-8">
     <title></title>
         <title> "RPS Game" </title>
@@ -8,14 +20,14 @@
   </head>
   <body>
       <div class="container">
+      <div class="menu">
+      <ul>
+        <li><a href="/" id="home">Home</a></li>
+      </ul>
+      </div>
         <center>
-        <div class="menu">
-        <ul>
-          <li><h1><%=@name%>, make your choice</h1></li>
-        </ul>
-        </div>
         <div class="app-text">
-            [ GAME GOES HERE ]
+            <p><font color="#fd00da";><%=@name%></font>, make your choice</p>
             <form action="/choice" method="post">
               <select name ="choice" id="chocie">
                 <option value="Rock">Rock</option>

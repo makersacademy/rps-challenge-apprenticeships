@@ -31,6 +31,12 @@ body {
   width: 640px;
   margin: 40px;
 }
+.app-text p{
+  width: 650px;
+  font-size: 20px;
+  margin: 0px 30px 5px 30px;
+  line-height: 25px;
+}
 .app_titles{
   font-size: 43px;
   margin: 40px

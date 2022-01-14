@@ -18,4 +18,10 @@ feature 'user can choose rock, paper or scissors' do
     click_button "Go!"
     expect(page).to have_content "Result"
   end
+
+  scenario 'the user can click the home botton to go back home' do
+    enter_name_and_start
+    find('#home').click
+    expect(page).to have_current_path("/")
+  end
 end
