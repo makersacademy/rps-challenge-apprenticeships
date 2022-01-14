@@ -15,6 +15,5 @@ feature 'play' do
     click_button 'Submit'
     click_button 'Rock'
     expect(page).to have_content 'Rock'
-    expect(page).to_not have_content 'Scissors'
   end
 end

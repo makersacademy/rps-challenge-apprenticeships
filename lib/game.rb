@@ -4,12 +4,11 @@ class Game
     @choices = ["Rock", "Paper", "Scissors"]
   end
 
-  def choices
+  def choice
     @choices
   end
 
   def choices
     @choices.sample
   end
-
 end
