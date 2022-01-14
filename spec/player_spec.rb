@@ -5,4 +5,16 @@ describe Player do
 
   it { is_expected.to respond_to (:name) }
   
+  describe "#select_move" do
+    it "updates the move variable" do
+      expect { subject.select_move("Rock") }.to change { subject.move }.from(nil).to("Rock")
+    end
+  end
+
+  describe "#reset_move" do
+    it "sets the move variable to nil" do
+      subject.select_move("Rock")
+      expect { subject.reset_move }.to change { subject.move }.from("Rock").to(nil)
+    end
+  end
 end

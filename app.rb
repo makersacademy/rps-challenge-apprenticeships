@@ -26,6 +26,23 @@ class RockPaperScissors < Sinatra::Base
     erb(:moves)
   end
 
+  post '/choice' do
+    p params
+    $game.player_one.select_move(params[:select_move])
+    $game.computer_move
+    redirect 'result'
+  end
+
+  get '/result' do
+    $game.outcome($game.player_one)
+    erb(:result)
+  end
+
+  get '/play-again' do
+    $game.player_one.reset_move
+    redirect '/moves'
+  end
+
   get '/test' do
     'test page'
   end
