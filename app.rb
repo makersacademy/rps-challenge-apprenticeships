@@ -16,15 +16,19 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/play' do
-    @player_1 = session[:player_1]
-    @player_2 = session[:player_2]
-    if @player_2.empty?
-      @game = RPSGame.new(@player_1)
-    else
-      @game = RPSGame.new(@player_1, @player_2)
-    end
+    @game = create_game()
     erb(:play)
   end
 
   run! if app_file == $0
+
+  private
+
+  def create_game()
+    @player_1 = session[:player_1]
+    @player_2 = session[:player_2]
+    return RPSGame.new(@player_1) if @player_2.empty?
+    return RPSGame.new(@player_1, @player_2)
+  end
+
 end
