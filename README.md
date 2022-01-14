@@ -12,9 +12,9 @@ I started with the first user story and by writing a feature test around the exp
 
 * As per the Battle challange, I have used a global variable as we haven’t yet got to databases.
 
-* There's still scope for more refacting, in particular in app.rb as there’s a bit of repetition of ‘@game = $game’ but I ran out of time.
+* There's still scope for more refacting, in particular in `app.rb` as there’s a bit of repetition of `@game = $game` but I ran out of time.
 
-* I used extra feature tests in play_game_spec.rb to test for different outcomes of the game (with use of srand)
+* I used extra feature tests in `play_game_spec.rb` to test for different outcomes of the game (with use of srand)
 
 * Rubocop wasn’t happy with the initial code for checking who had won, so had to take inspiration from this [link](https://codereview.stackexchange.com/questions/179782/lets-play-rock-paper-scissors-with-ruby) to make it shorter and simpler. 
 
