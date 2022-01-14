@@ -49,15 +49,16 @@ body {
   display: block;
   padding: 8px 22px;
 }
-.player-one{
+.rock{
   top: 200px;
   left: 300px;
   position: absolute;
   color: #c9d1d9;
+  background-color: rgb(228, 228, 228);
   border: 2px solid;
   border-radius: 20px;
 }
-.player-one span{
+.rock span{
   display: block;
   padding: 8px 22px
 }
