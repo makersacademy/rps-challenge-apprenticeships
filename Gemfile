@@ -9,6 +9,10 @@ group :test do
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'sinatra'
+  gem 'webrick'
+  gem 'sinatra-contrib'
+  gem 'pry'
 end
 
 group :development, :test do
