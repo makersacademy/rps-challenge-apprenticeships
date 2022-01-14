@@ -1,5 +1,3 @@
-# No rspec file yet!
-# mapping out how a game outcome could work 
 
 class Game
   GAME_RULES ={
@@ -9,12 +7,11 @@ class Game
     }
 
   def initialize (compMove, playerMove)
-    @compMove = compMove
-    @playerMove = playerMove
+    @compMove = compMove.to_sym
+    @playerMove = playerMove.to_sym
   end
 
   def winner
-    GAME_RULES[@compMove.to_sym][@playerMove.to_sym]
+    GAME_RULES[@compMove][@playerMove]
   end
-
 end

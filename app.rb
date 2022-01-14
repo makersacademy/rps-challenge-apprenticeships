@@ -5,9 +5,6 @@ require_relative './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
 
-  # Session is a short-term information store that lives on the server
-  # Store basic information across multiple requests
-  # Sinatra sessions is hash so we need to assign a key when we store the value
   enable :sessions
 
   configure :development do 
@@ -29,22 +26,27 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_move' do
-    # redirect '/solution' 
     session[:PlayerMove] = params[:PlayerMove]
     @PlayerMove = params[:PlayerMove]
 
     @PlayerName = session[:PlayerName]
 
-    @Computer = Computer.new
-    @ComputerMove = @Computer.rps
-    # @Winner = @Computer.winner
-    # Winner.new(@PlayerMove)
-    erb(:player_move)
+    session[:ComputerMove]= Computer.new.rps
+    @ComputerMove = session[:ComputerMove]
+
+    session[:Winner]= Game.new(@ComputerMove, @PlayerMove).winner
+    redirect '/solution' 
   end
 
-  # get '/solution'do
-  #   erb(:solution)
-  # end
+  get '/solution'do
+    @Winner = session[:Winner]
+    erb(:solution)
+  end
+
+  get '/restart'do
+    @PlayerName = session[:PlayerName]
+    erb(:players)
+  end
 
   run! if app_file == $0
 end
