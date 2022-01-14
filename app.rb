@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/player'
+require_relative './lib/gameresult'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -24,6 +25,8 @@ class RockPaperScissors < Sinatra::Base
 
     @player1 = $Player1
     @player2 = $Player2
+    @result = session[:result]
+    session[:result] = nil
     erb :play
 
   end  
@@ -33,6 +36,8 @@ class RockPaperScissors < Sinatra::Base
     p params
     $Player1.decision(params[:p1])
     params[:p2] ?  $Player2.decision(params[:p2]) : ($Player2.rand)
+    @game = Gameresult.new
+    session[:result] = @game.calculate($Player1, $Player2)
     redirect "/game"
 
   end

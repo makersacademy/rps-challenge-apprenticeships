@@ -1,0 +1,11 @@
+
+
+@conditions = {“rock” => “scissors”, “paper” => “rock”, “scissors” => “paper”}
+        
+    if @conditions[@p1] == @p2
+      @result = player1.name
+    elsif @p1 == @p2
+      @result = “It’s a draw!”
+    else
+      @result = player2.name
+    end

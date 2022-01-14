@@ -11,7 +11,7 @@ class Player
   end
 
   def rand
-    @option = ["rock", "paper", "cissors"].sample
+    @option = ["rock", "paper", "scissors"].sample
   end
-  
+
 end
