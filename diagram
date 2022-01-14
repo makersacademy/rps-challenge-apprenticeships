@@ -1,0 +1,17 @@
+# https://playground.diagram.codes/d/sequence
+
+alias user="Client"
+alias app="Server"
+alias game="Game"
+
+user->app:"get: /"
+app->user:"name form"
+user->app:"post: /name"
+app->user:"redirect: /play"
+user->app:"post: /move/<move>"
+app->game:"decide_move"
+game->app:"move"
+game->app:"player_wins?"
+game->app:"player_score"
+app->user:"301: /result"
+user->app:"get: /play" 
