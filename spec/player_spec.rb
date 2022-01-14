@@ -1,9 +1,7 @@
 require 'player'
 
 describe Player do 
-  subject(:adam) { Player.new("Adam", "rock") }
-
-
+  subject(:adam) { Player.new("Adam",) }
 
   describe '#name' do 
     it "returns the username of the player" do 
@@ -13,7 +11,8 @@ describe Player do
 
   describe '#choice' do 
   it "returns the choice  of the player" do 
-    expect(adam.choice).to eq "rock"
+    adam.choice("rock")
+    expect(adam.show_choice).to eq "rock"
   end
 end
 

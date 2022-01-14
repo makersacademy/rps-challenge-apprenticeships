@@ -1,1 +1,11 @@
-<h1> Welcome to the game Adam! </h1>
+<h1> Welcome to the game <%= $Game.first.name %>! </h1>
+<br>
+<br>
+<br>
+<h2> Please choose Rock Paper or Scissors to play. </h2>
+
+<form action="/choice" method="post">
+  <input type="text" name="choice" >
+  <input type='submit' value="Submit">
+</form>
+ 
