@@ -15,3 +15,15 @@
   <label for="scissors">SCISSORS</label><br><br>
   <input type="submit" value="Submit">
 </form>
+<br>
+<br>
+<% if @player1.option %>
+<h3> <%= @player1.name %> choosed <%=@player1.option %> </h3><br>
+<% end %> 
+
+<% if @player2.option && @player1.option %>
+<h3> <%= @player2.name %> choosed <%=@player2.option %> </h3><br>
+<% end %> 
+<br>
+<br>
+

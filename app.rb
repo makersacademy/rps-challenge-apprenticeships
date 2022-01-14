@@ -25,13 +25,16 @@ class RockPaperScissors < Sinatra::Base
     @player1 = $Player1
     @player2 = $Player2
     erb :play
+
   end  
 
   post "/play" do
 
     p params
+    $Player1.decision(params[:p1])
+    params[:p2] ?  $Player2.decision(params[:p2]) : ($Player2.rand)
     redirect "/game"
-    
+
   end
 
   run! if app_file == $0
