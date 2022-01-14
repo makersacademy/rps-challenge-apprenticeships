@@ -36,6 +36,6 @@ feature 'Play the game' do
     select('scissors', from: 'player_choice')
     click_button 'Play'
     click_link 'Quit'
-    expect(page).to have_content 'Enter Name'
+    expect(page).to have_field :player_name
   end
 end
