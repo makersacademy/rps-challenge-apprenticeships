@@ -2,8 +2,9 @@ class Player
   attr_reader :name
   attr_reader :move
 
-  def initialize(name)
+  def initialize(name, robot)
     @name = name
+    @robot = robot
     @move = nil
   end
 
@@ -13,6 +14,14 @@ class Player
 
   def reset_move
     @move = nil
+  end
+
+  def robot?
+    @robot
+  end
+
+  def computer_move
+    @move = ["Rock", "Paper", "Scissors"].sample
   end
 
 end

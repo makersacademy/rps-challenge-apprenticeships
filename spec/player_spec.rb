@@ -1,11 +1,13 @@
 require 'player'
 
 describe Player do
-  subject { described_class.new("test_player_one") }
+  subject { described_class.new("test_player_one", nil) }
 
   it { is_expected.to respond_to (:name) }
   
   describe "#select_move" do
+    it { is_expected.to respond_to(:select_move).with(1).argument }
+
     it "updates the move variable" do
       expect { subject.select_move("Rock") }.to change { subject.move }.from(nil).to("Rock")
     end
