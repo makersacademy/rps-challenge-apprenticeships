@@ -1,12 +1,12 @@
-<h1> You chose <%= @player_choice %>, the game chose <%= @game_choice %> </h1>
+<h1> You chose <%= session[:player_choice] %>, the game chose <%= @game_choice %> </h1>
 
 <% if @outcome == 'draw' %>
 <h2> They're the same THING! It's a DRAW!!! </h2>
 
 <% elsif @outcome == 'lose' %>
-<h2> <%= @game_choice %> beats <%= @player_choice %>. You LOSE!!! </h2>
+<h2> <%= @game_choice %> beats <%= session[:player_choice] %>. You LOSE!!! </h2>
 
 <% elsif @outcome == 'win' %>
-<h2> <%= @player_choice %> beats <%= @game_choice %>. You WIN!!! </h2>
+<h2> <%= session[:player_choice] %> beats <%= @game_choice %>. You WIN!!! </h2>
 
 <% end %>
