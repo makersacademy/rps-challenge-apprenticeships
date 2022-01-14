@@ -1,0 +1,17 @@
+<h1> Welcome to Rock, Paper, Scissors </h1>
+<br>
+<br>
+<h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <%= @player1.name%> vs <%=@player2.name%> </h1><br><br>
+
+<p> Please choose an Option Player 1 &nbsp&nbsp <strong><%=@player1.name%></strong>  </p>
+<br>
+<br>
+<form action="/play" method="post"> 
+  <input type="radio" id="1" name="p1" value="rock">
+  <label for="rock">ROCK</label><br>
+  <input type="radio" id="2" name="p1" value="paper">
+  <label for="paper">PAPER</label><br>
+  <input type="radio" id="3" name="p1" value="scissors">
+  <label for="scissors">SCISSORS</label><br><br>
+  <input type="submit" value="Submit">
+</form>
