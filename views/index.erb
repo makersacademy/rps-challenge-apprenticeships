@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+        <title> "RPS Game" </title>
+        <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <div class="container">
+        <center>
+        <div class="menu">
+        <ul>
+          <li><h1>Rock, Paper, Scissors!</h1></li>
+        </ul>
+        </div>
+        <div class="app-text">
+            <form action="/name" method="post">
+              <p><label for="player_name">Your Name:</label></p><br>
+              <input type="text" id="player_name" name="name"><br><br><br>
+              <input type="submit" value=" Play ">
+        </div>
+        </center>
+      </div>
+  </body>
+</html>
