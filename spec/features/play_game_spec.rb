@@ -22,4 +22,20 @@ feature 'Play the game' do
     click_button 'Play'
     expect(page).to have_content 'Result: You Drew'
   end
+
+  scenario 'User plays again' do
+    sign_in_and_play
+    select('scissors', from: 'player_choice')
+    click_button 'Play'
+    click_link 'Play Again'
+    expect(page).to have_content 'Aadam vs Computer'
+  end
+
+  scenario 'User quits to let another player play' do
+    sign_in_and_play
+    select('scissors', from: 'player_choice')
+    click_button 'Play'
+    click_link 'Quit'
+    expect(page).to have_content 'Enter Name'
+  end
 end

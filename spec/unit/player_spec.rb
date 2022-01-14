@@ -15,9 +15,9 @@ describe Player do
     end
   end
 
-  describe '#set_choice' do
-    it 'can set a choice' do
-      player.set_choice('paper')
+  describe '#make_choice' do
+    it 'can make a choice' do
+      player.make_choice('paper')
       expect(player.choice).to eq 'paper'
     end
   end

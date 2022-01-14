@@ -4,7 +4,9 @@ class Game
   def initialize(player_choice, computer_choice)
     @player_choice = player_choice
     @computer_choice = computer_choice
-    @rules = { 'rock' => ['scissors', 'paper'], 'paper' => ['rock', 'scissors'], 'scissors' => ['paper', 'rock'] }
+    @rules = { 'rock' => ['scissors', 'paper'],
+               'paper' => ['rock', 'scissors'],
+               'scissors' => ['paper', 'rock'] }
   end
 
   def result

@@ -21,17 +21,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
-    session[:player].set_choice(params[:player_choice])
+    session[:player].make_choice(params[:player_choice])
     redirect '/result'
   end
 
   get '/result' do
     @player = session[:player]
-    @computer_choice = session[:computer_choice]
-    @result = Game.new(@player.choice, Computer.choice).result
+    @computer_choice = Computer.choice
+    @result = Game.new(@player.choice, @computer_choice).result
     erb :result
   end
-
-
+  
   run! if app_file == $0
 end
