@@ -26,3 +26,7 @@ Run with rackup from your Terminal and open http://127.0.0.1:9292 in your browse
 Running RSpec in Terminal
 
 `rspec`
+
+## Design
+
+Application Design is strongly leaning on https://www.youtube.com/watch?v=3ENJ_xd625s and https://getbootstrap.com/docs/5.1/examples/sign-in/
