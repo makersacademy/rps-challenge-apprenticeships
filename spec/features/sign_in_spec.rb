@@ -2,9 +2,7 @@ feature 'sign in with your name' do
 
   context 'when single player mode' do
     scenario 'will set up a game showing the username vs computer' do
-      visit('/')
-      fill_in('Player 1', with: 'Freddy')
-      click_button('Start')
+      sign_in_and_start_singleplayer
       expect(page).to have_content('Freddy vs. Computer')
     end
   end

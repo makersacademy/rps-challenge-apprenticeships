@@ -1,6 +1,7 @@
 class RPSGame
 
   attr_reader :player_1, :player_2
+  SELECTION = ['Rock', 'Paper', 'Scissors']
 
   def initialize(player1, player2 = "Computer")
     @player_1 = player1
@@ -8,6 +9,9 @@ class RPSGame
   end
 
   def play(player_1_choice, player_2_choice = computer_choice() )
+    raise 'Invalid Input by Player' if !SELECTION.include?(player_1_choice)
+    raise 'Invalid Input by Player 2' if !SELECTION.include?(player_2_choice)
+
     return 'Draw' if player_1_choice == player_2_choice
     return winner(player_1_choice + player_2_choice)
   end
@@ -27,7 +31,7 @@ class RPSGame
   end
 
   def computer_choice()
-    rand = ['Rock', 'Paper', 'Scissors'].sample
+    rand = SELECTION.sample
     return rand
   end
 

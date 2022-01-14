@@ -20,7 +20,7 @@ RSpec.describe RPSGame do
   end
 
   describe '#play' do
-    context 'when multiplayer' do
+    context 'when two players' do
       it 'Rock beats scissors' do
         expect(multiplayer_game.play('Rock', 'Scissors')).to eq('Freddy')
       end
@@ -39,12 +39,18 @@ RSpec.describe RPSGame do
       it 'Paper loses against scissors' do
         expect(multiplayer_game.play('Paper', 'Scissors')).to eq('Jason')
       end
+      it 'raises an error when input not allowed' do
+        expect { multiplayer_game.play('Rock', 'weiurasdfjc') }.to raise_error('Invalid Input by Player 2')
+      end
     end
-    context 'when singleplayer' do
+    context 'when single player' do
       it 'Paper draws Paper' do
         game = singleplayer_game
         allow(game).to receive(:computer_choice) { 'Paper' }
         expect(game.play('Paper')).to eq('Draw')
+      end
+      it 'raises an error when input not allowed' do
+        expect { singleplayer_game.play('weiurasdfjc') }.to raise_error('Invalid Input by Player')
       end
     end
 
