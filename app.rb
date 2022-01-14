@@ -54,16 +54,6 @@ class RockPaperScissors < Sinatra::Base
     redirect '/og-play'
   end
 
-  get '/one-choose' do
-    @name = session[:player]
-    erb(:onechoose)
-  end
-
-  # post '/choice-1' do
-  #   session[:choice] = params[:choice]
-  #   redirect "/two-choose"
-  # end
-
   get '/two-choose' do
     @name = session[:player_two]
     erb(:twochoose)
