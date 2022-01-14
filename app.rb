@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require_relative 'lib/game'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -25,19 +27,9 @@ class RockPaperScissors < Sinatra::Base
   get '/result' do
     @user_choice = session[:user_choice]
     @computer_choice = session[:computer_choice]
+    @result = Game.new(@user_choice, @computer_choice).result
 
-    rules = { 'rock' => ['scissors', 'paper'], 'paper' => ['rock', 'scissors'], 'scissors' => ['paper', 'rock'] }
-
-    if @computer_choice == rules[@user_choice][0]
-      @result = 'Result: You Won'
-      erb :result
-    elsif @computer_choice == rules[@user_choice][1]
-      @result = 'Result: You Lost'
-      erb :result
-    elsif @computer_choice == @user_choice
-      @result = 'Result: You Drew'
-      erb :result
-    end
+    erb :result
   end
 
 
