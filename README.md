@@ -20,9 +20,11 @@ I started with the first user story and by writing a feature test around the exp
 
 * I haven't done any of the Bonus levels done; however I tried to consider the multiplayer option while I was writing the main user stories and I think it would be relatively simple to implement. Both the human player and computer player are an instance of the Player class. I made a Decide class for the computer to pick an attack, which could by skipped over with an if statement if the second player was also human etc.
 
-## To Do
-* Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
+## Diagram
 
+As per the task, below is a _diagram_ of how the browser interacts with a server from this challenge.
+
+![Diagram](https://github.com/alicegray33/rps-challenge-apprenticeships/blob/main/docs/diagram.png?raw=true)
 
 ## Task
 
