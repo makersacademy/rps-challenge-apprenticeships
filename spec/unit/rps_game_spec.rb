@@ -12,7 +12,7 @@ RSpec.describe RPSGame do
         expect(singleplayer_game.player_2).to eq("Computer")
       end
     end
-    context 'when multiplayer player' do
+    context 'when two players' do
       it 'stores the second players name' do
         expect(multiplayer_game.player_2).to eq("Jason")
       end
