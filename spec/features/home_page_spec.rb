@@ -5,8 +5,7 @@ feature 'home page' do
   end
 
   scenario 'user can enter their name' do 
-    visit '/'
-    fill_in "Your Name", with: "Megan"
-    click_button "Play"
+    enter_name_and_start
+    expect(page).to have_content "Megan, make your choice"
   end
 end
