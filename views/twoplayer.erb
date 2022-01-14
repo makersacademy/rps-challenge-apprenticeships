@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title></title>
-        <title> "RPS Game" </title>
-        <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
-      <div class="container">
-        <center>
-        <div class="menu">
-        <ul>
-          <li><h1>Rock, Paper, Scissors!</h1></li>
-        </ul>
-        </div>
+  <style>
+  a:link, a:visited {
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a:hover, a:active {
+    color: #fd00da;
+  }
+</style>
+<meta charset="utf-8">
+<title></title>
+    <title> "RPS Game" </title>
+    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="container">
+  <div class="menu">
+  <ul>
+    <li><a href="/" id="home">Home</a></li>
+  </ul>
+  </div>
+    <center>
         <div class="app-text">
+            <h1> <font color="#fd00da";>Welcome! </font></h1>
             <p> You have selected two player mode! Each of you will get a chance to enter your play (don't let the other person see the screen!).</p>
             <br>
             <p> When you're ready to begin - enter your names below and hit <font color="#fd00da";>Play</font></p>

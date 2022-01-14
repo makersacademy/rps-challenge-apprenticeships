@@ -37,7 +37,11 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     session[:choice] = params[:choice]
-    redirect '/result'
+    if session[:player_two].nil?
+      redirect '/result'
+    else
+      redirect '/two-choose'
+    end
   end
 
   get '/two-player' do
@@ -47,7 +51,7 @@ class RockPaperScissors < Sinatra::Base
   post '/names' do
     session[:player] = params[:player_one]
     session[:player_two] = params[:player_two]
-    redirect '/one-choose'
+    redirect '/og-play'
   end
 
   get '/one-choose' do
@@ -55,10 +59,10 @@ class RockPaperScissors < Sinatra::Base
     erb(:onechoose)
   end
 
-  post '/choice-1' do
-    session[:choice] = params[:choice]
-    redirect "/two-choose"
-  end
+  # post '/choice-1' do
+  #   session[:choice] = params[:choice]
+  #   redirect "/two-choose"
+  # end
 
   get '/two-choose' do
     @name = session[:player_two]
@@ -77,7 +81,7 @@ class RockPaperScissors < Sinatra::Base
       @round = RPS.new(session[:choice], Opponent.new.generate_choice)
     else
       @player_two_name = session[:player_two]
-      @round = RPS.new(session[:choice], session[:p2_choice])
+      @round = RPS.new(session[:choice], session[:p2_choice].downcase)
     end
     erb(:result)
   end
