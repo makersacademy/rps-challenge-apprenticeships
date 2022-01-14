@@ -1,12 +1,13 @@
 class Computer
 
-  attr_reader :choices
+  attr_reader :choices, :computers_choice
 
   def initialize
     @choices = ["Rock", "Paper", "Scissors"]
+    $computers_choice = computers_choice
   end
 
-  def computers_choice
-    @computers_choice = choices.sample
+  def computer_choice
+    $computers_choice = choices.sample
   end
 end

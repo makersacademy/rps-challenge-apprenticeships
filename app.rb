@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/computer'
+require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base
   get '/' do
@@ -17,8 +18,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/selection' do
-    @players_choice = params[:options]
     @name = $name
+    $players_choice = params[:options]
+    $computers_choice = Computer.new.computer_choice
+    @winner = Game.new.result($players_choice, $computers_choice)
     erb :results
   end
 
