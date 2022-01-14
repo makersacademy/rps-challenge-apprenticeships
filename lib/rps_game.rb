@@ -7,7 +7,7 @@ class RPSGame
     @player_2 = player2
   end
 
-  def play(player_1_choice, player_2_choice)
+  def play(player_1_choice, player_2_choice = computer_choice() )
     return 'Draw' if player_1_choice == player_2_choice
     return winner(player_1_choice + player_2_choice)
   end
@@ -25,4 +25,10 @@ class RPSGame
     }
     return game_logic[search_winner]
   end
+
+  def computer_choice()
+    rand = ['Rock', 'Paper', 'Scissors'].sample
+    return rand
+  end
+
 end

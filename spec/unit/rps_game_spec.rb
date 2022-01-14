@@ -24,14 +24,27 @@ RSpec.describe RPSGame do
       it 'Rock beats scissors' do
         expect(multiplayer_game.play('Rock', 'Scissors')).to eq('Freddy')
       end
-      it 'Paper beats rock' do 
+      it 'Rock loses against paper' do 
         expect(multiplayer_game.play('Rock', 'Paper')).to eq('Jason')
       end
       it 'Scissors beats papers' do
         expect(multiplayer_game.play('Scissors', 'Paper')).to eq('Freddy')
       end
-      it 'Scissors draws scissors' do
-        expect(multiplayer_game.play('Scissors', 'Scissors')).to eq('Draw')
+      it 'Scissors loses against rock' do
+        expect(multiplayer_game.play('Scissors', 'Rock')).to eq('Jason')
+      end
+      it 'Paper beats rock' do
+        expect(multiplayer_game.play('Paper', 'Rock')).to eq('Freddy')
+      end
+      it 'Paper loses against scissors' do
+        expect(multiplayer_game.play('Paper', 'Scissors')).to eq('Jason')
+      end
+    end
+    context 'when singleplayer' do
+      it 'Paper draws Paper' do
+        game = singleplayer_game
+        allow(game).to receive(:computer_choice) { 'Paper' }
+        expect(game.play('Paper')).to eq('Draw')
       end
     end
 
