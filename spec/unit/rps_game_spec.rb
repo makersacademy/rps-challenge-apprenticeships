@@ -19,4 +19,26 @@ RSpec.describe RPSGame do
     end
   end
 
+  describe '#play' do
+    context 'when multiplayer' do
+      it 'Rock beats scissors' do
+        subject = RPSGame.new("Freddy", "Jason")
+        expect(subject.play('Rock', 'Scissors')).to eq('Freddy')
+      end
+      it 'Paper beats rock' do 
+        subject = RPSGame.new("Freddy", "Jason")
+        expect(subject.play('Rock', 'Paper')).to eq('Jason')
+      end
+      it 'Scissors beats papers' do
+        subject = RPSGame.new("Freddy", "Jason")
+        expect(subject.play('Scissors', 'Paper')).to eq('Freddy')
+      end
+      it 'Scissors draws scissors' do
+        subject = RPSGame.new("Freddy", "Jason")
+        expect(subject.play('Scissors', 'Scissors')).to eq('Draw')
+      end
+    end
+
+  end
+
 end
