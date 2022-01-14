@@ -1,3 +1,38 @@
+# This is Rock, Paper, Scissors
+### (and sometimes Lizard, Spock too)
+
+## Motivation
+This project enables a user to play Rock, Paper, Scissors, as well as the variant Rock, Paper, Scissors, Lizard, Spock, both against another player and against a CPU opponent. It also allows for CPU v CPU match-ups.
+
+## Features
+Users can select usernames, and choose between the standard and 'Spock' variants of the game. At the end of a game, users can reset the program, or play another round, with the option of switching between the standard and Spock variants.
+
+## How to Use
+
+#### Home Page
+Users input both player names, and check boxes to determine whether players are CPU-controlled. They can also check a box to select the Spock variant. Click 'Ready!' to begin.  
+![ScreenShot](homepage_screenshot.png)  
+
+#### Input selection
+When it is a user's turn, they must choose one of the move option - Rock, Paper or Scissors (plus Lizard or Spock in the Spock variant). When all players (including CPU-controlled players) have made their moves, the game advances to the results screen.  
+![ScreenShot](p1_move_screenshot.png)
+
+#### Results
+The game's outcome is revealed. Players have the opportunity to play again with existing names, or to reset the program. They can also choose between playing the normal and Spock variants.  
+![ScreenShot](results_screenshot.png)
+
+## Project Diagram
+![ScreenShot](project_diagram.jpg)
+
+
+
+
+
+
+
+
+
+
 # RPS Challenge
 
 ## Instructions
