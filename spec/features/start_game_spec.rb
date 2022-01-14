@@ -3,8 +3,9 @@ feature 'Start game:' do
     visit('/')
     expect(page).to have_content 'Rock, Paper, Scissors!'
     expect(page).to have_content 'Start new game'
-    expect(page).to have_field('name')
-    expect(page).to have_button('Start')
+    expect(page).to have_field 'name'
+    expect(page).to have_button 'Start'
+    expect(page).to have_title 'Rock, Paper, Scissors'
   end
   scenario '(2) Allows a player to enter their name' do
     @player_name = "Radagast"
@@ -12,8 +13,9 @@ feature 'Start game:' do
     fill_in :name, with: @player_name
     click_button 'Start'
     expect(page).to have_content "#{@player_name}, choose your attack:"
-    expect(page).to have_button('Rock')
-    expect(page).to have_button('Paper')
-    expect(page).to have_button('Scissors')
+    expect(page).to have_button 'Rock'
+    expect(page).to have_button 'Paper'
+    expect(page).to have_button 'Scissors'
+    expect(page).to have_title 'Rock, Paper, Scissors - Choose your attack'
   end
 end
