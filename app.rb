@@ -40,6 +40,10 @@ class RockPaperScissors < Sinatra::Base
     @player = session[:player]
     erb :scissors
   end
+
+  get'/answer' do
+    @computer = ["Rock", "Paper", "Scissors"].sample
     
   run! if app_file == $0
+end
 end
