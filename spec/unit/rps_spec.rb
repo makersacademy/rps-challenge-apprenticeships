@@ -1,7 +1,7 @@
 require 'rps'
 
 describe RPS do 
-  subject(:game) { described_class.new("rock", opponent)}
+  subject(:game) { described_class.new("rock", opponent) }
   let(:opponent) { double :opponent, generate_choice: "paper" }
 
   it 'knows the choice the user made' do
@@ -12,4 +12,12 @@ describe RPS do
     expect(subject.opponent).to eq "paper"
   end
 
+  it 'can tell if the user won or not' do
+    expect(subject.result).to eq "lose"
+  end
+
+  it 'can tell if there is a draw' do
+    draw_game = RPS.new("paper", opponent)
+    expect(draw_game.result).to eq "draw"
+  end
 end
