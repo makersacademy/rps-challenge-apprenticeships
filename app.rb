@@ -17,5 +17,14 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post '/attack' do
+    # something that works out who wins
+    redirect '/result'
+  end
+
+  get '/result' do
+    erb :result
+  end
+
   run! if app_file == $0
 end

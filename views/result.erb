@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Rock, Paper, Scissors - Result</title>
+  </head>
+  <body>
+    <p>
+      <%= @player.name %> attacks with <%= @player.attack %>
+    </p>
+    <p>
+      <%= @computer.name %> attacks with <%= @computer.attack %>
+    </p>
+    <h1>
+      The winner is: <%= @game.winner.name %>
+    </h1>
+  </body>
+</html>
