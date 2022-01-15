@@ -3,6 +3,7 @@ feature 'Sign in' do
     visit('/')
     fill_in :player_name, with: 'Pilly'
     click_button 'Start Game!'
-    expect(page).to have_content 'Pilly'
+     expect(page).to have_content "Hello Pilly, choose your bet:"
+
   end
 end
