@@ -45,3 +45,7 @@ Running RSpec in Terminal
 
 Application Design is strongly leaning on https://www.youtube.com/watch?v=3ENJ_xd625s and https://getbootstrap.com/docs/5.1/examples/sign-in/
 
+## Next steps
+
+- minor extension of game logic and buttons to allow RPS + Lizard + Spock
+- reduce views turn1.erb and turn2.erb to one input view, by extracting the logic of whoms turn it is into the RPSGame class
