@@ -48,8 +48,6 @@ class RockPaperScissors < Sinatra::Base
     erb(:winner)
   end
 
-  run! if app_file == $0
-
   private
 
   def create_game
@@ -67,5 +65,7 @@ class RockPaperScissors < Sinatra::Base
     player_2_choice = session[:player_2_choice]
     return @game.play(player_1_choice, player_2_choice)
   end
+
+  run! if app_file == $0
 
 end

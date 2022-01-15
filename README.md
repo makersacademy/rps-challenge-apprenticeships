@@ -21,6 +21,14 @@ Run with rackup from your Terminal and open http://127.0.0.1:9292 in your browse
 
 `rackup` 
 
+or define the port you want to run it on by setting it with flag -p http://127.0.0.1:1337/
+
+`rackup -p 1337` 
+
+or run it vie ruby command from Terminal http://127.0.0.1:4567
+
+`ruby app.rb` 
+
 ## Running tests
 
 Running RSpec in Terminal
