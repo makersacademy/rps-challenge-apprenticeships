@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require 'sinatra/reloader'
 require_relative './lib/game'
 
 class RockPaperScissors < Sinatra::Base

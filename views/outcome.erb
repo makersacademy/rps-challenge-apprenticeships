@@ -1,30 +1,25 @@
-<style>
-  .normal { 
-    border-style: solid;
-    border-color: black;
-    border-width: 5px;
-    text-align: center;
-    background-color:powderblue;     
-  }
-</style>
+<head>
+<link href="/stylesheet2.css" rel="stylesheet" type="text/css">
+<title>Result</title>
+</head>
 
 <body class="normal">
-<h1 style="font-family:verdana" ><%= @player_name %>, you picked: <%= @player_choice %></h1>
-<h1 style="font-family:verdana">Your opponent picked: <%= @game_choice %></h1>
+<h1 ><%= @player_name %>, you picked: <%= @player_choice %></h1>
+<h1>Your opponent picked: <%= @game_choice %></h1>
 
 <% if @player_choice == @game_choice %>
-  <h3 style="font-family:verdana">it's a draw!</h3>
+  <h3>it's a draw!</h3>
 <% end %>
 
 <% if @score == 1%>
-  <h3 style="font-family:verdana">You win!</h3>
+  <h3>You win!</h3>
 <% end %>
 
 <% if @score == 0%>
-  <h3 style="font-family:verdana">You lose!</h3>
+  <h3>You lose!</h3>
 <% end %>
 
-<p style="font-family:verdana">play again?</p>
+<p>play again?</p>
 <a href="/play">
  <button type="button">Yes!</button> 
 </a>
