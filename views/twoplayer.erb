@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <style>
+  a:link, a:visited {
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  a:hover, a:active {
+    color: #fd00da;
+  }
+</style>
+<meta charset="utf-8">
+<title></title>
+    <title> "RPS Game" </title>
+    <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="container">
+  <div class="menu">
+  <ul>
+    <li><a href="/" id="home">Home</a></li>
+  </ul>
+  </div>
+    <center>
+        <div class="app-text">
+            <h1> <font color="#fd00da";>Welcome! </font></h1>
+            <p> You have selected two player mode! Each of you will get a chance to enter your play (don't let the other person see the screen!).</p>
+            <br>
+            <p> When you're ready to begin - enter your names below and hit <font color="#fd00da";>Play</font></p>
+            <br> <br>
+            <form action="/names" method="post">
+              <label for="player_name">Player One:</label>
+              <input type="text" id="player_one_name" name="player_one">
+              <label for="player_name">Player Two:</label>
+              <input type="text" id="player_two_name" name="player_two">
+              <br><br><br>
+              <input type="submit" value=" Play ">
+        </div>
+        </center>
+      </div>
+  </body>
+</html>

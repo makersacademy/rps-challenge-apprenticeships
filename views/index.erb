@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+        <title> "RPS Game" </title>
+        <link href="<%= url('/style.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+      <div class="container">
+        <center>
+        <div class="menu">
+        <ul>
+          <li><h1>Rock, Paper, Scissors!</h1></li>
+        </ul>
+        </div>
+        <div class="app-text">
+            <p> The rules are simple:</p><br>
+            <font color="#fd00da";>
+            <p>Rock beats Scissors</p>
+            <p>Scissors beats Paper</p>
+            <p>Paper beats Rock</p>
+            </font>
+            <br><br>
+            <p> This game can be played with one or two players</p>
+            <p> When you're ready, please make your choice!
+            <br> <br>
+            <form action="/mode" method="post">
+              <select name ="mode" id="mode">
+                <option value="one-player">One Player</option>
+                <option value="two-player">Two Player</option>
+              </select>
+            <input type="submit" value=" Load ">
+        </div>
+        </center>
+      </div>
+  </body>
+</html>
