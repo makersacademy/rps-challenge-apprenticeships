@@ -12,6 +12,7 @@ group :test do
   gem 'sinatra-reloader'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem 'bootstrap', '~> 5.1.3'
 end
 
 group :development, :test do
