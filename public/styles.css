@@ -1,9 +1,28 @@
 body {
   background-color: powderblue;
+  text-align: center;
+  margin-top: 100px;
 }
 h1 {
   color: blue;
+  font-family: "Mochiy Pop P One", sans-serif;
+  font-size: 6em;
 }
-p {
-  color: red;
+
+h2 {
+  font-family: "Mochiy Pop P One", sans-serif;
+  font-size: 3em;
+  color: orangered;
+}
+
+#orange-form {
+  padding: 0px;
+  padding-left: 0px;
+}
+
+input {
+  font-size: 2em;
+}
+#input {
+  padding-left: 2em;
 }

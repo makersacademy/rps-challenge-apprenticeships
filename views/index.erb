@@ -3,21 +3,24 @@
 <html>
  <head>
    <link rel="stylesheet" href="styles.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
  </head>
 
 
  <body>
 
-  <h1>Rock, Paper, Scissors ?</h1>
+  <h1>Rock  Paper  Scissors </h1>
    <br>
-  <p>PLAY THE GAME</p>
+  <h2>PLAY THE GAME</h2>
 
 <br>
 
  <div id='login'>
-  <form action="/names" method="post">
-    <input type="text" name="player_name">
-    <input type="submit" value="Enter your name">
+  <form id="orange-form" action="/names" method="post">
+    <input type="text" id="input" name="player_name" style="height:50px; width:200px">
+    <input type="submit" id="buttom" value="Enter name" style="color:orangered" style="height:50px; width:150px">
    </form>
 </div>
 
