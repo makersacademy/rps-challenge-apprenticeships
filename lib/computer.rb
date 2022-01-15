@@ -1,6 +1,6 @@
 class Computer
-   COMPUTER_CHOICE = [rock, paper, scissors]
+   WEAPONS = [rock, paper, scissors]
   def computer_choice
-    COMPUTER_CHOICE.sample
+    WEAPONS.sample
   end 
   do 
