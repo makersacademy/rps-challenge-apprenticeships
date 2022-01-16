@@ -1,20 +1,33 @@
-<h1> Welcome to Rock, Paper, Scissors </h1>
+<h1> &nbsp Welcome to Rock, Paper, Scissors </h1>
 <br>
 <br>
-<h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp <%= @player1.name%> vs <%=@player2.name%> </h1><br><br>
+<h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<%= @player1.name%> vs <%=@player2.name%> </h1><br><br>
 
-<p> Please choose an Option Player 1 &nbsp&nbsp <strong><%=@player1.name%></strong>  </p>
-<br>
-<br>
+<p> <strong><%=@player1.name%></strong> choose :  </p>
+
 <form action="/play" method="post"> 
   <input type="radio" id="1" name="p1" value="rock">
   <label for="rock">ROCK</label><br>
   <input type="radio" id="2" name="p1" value="paper">
   <label for="paper">PAPER</label><br>
   <input type="radio" id="3" name="p1" value="scissors">
-  <label for="scissors">SCISSORS</label><br><br>
+  <label for="scissors">SCISSORS</label><br>
+  
+
+  
+  <% if session["twoplayer"] == "true" %> 
+  <p> <strong><%=@player2.name%></strong> choose :  </p>  
+  <input type="radio" id="4" name="p2" value="rock">
+  <label for="rock">ROCK</label><br>
+  <input type="radio" id="5" name="p2" value="paper">
+  <label for="paper">PAPER</label><br>
+  <input type="radio" id="6" name="p2" value="scissors">
+  <label for="scissors">SCISSORS</label>
+  <% end %> 
+  <br>
+  <br>
   <input type="submit" value="Submit">
-</form>
+  </form>
 <br>
 <br>
 <% if @player1.option %>
@@ -26,7 +39,8 @@
 <% end %> 
 <br>
 <br>
-
-<h2> The winner is.... <%=@result%> </h2>
+<% if @game.result %>
+<h2> The winner is.... <%=@game.result%> </h2>
+<% end %> 
 
 

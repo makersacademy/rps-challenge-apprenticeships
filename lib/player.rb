@@ -4,6 +4,7 @@ class Player
 
   def initialize(name)
     @name = name
+    reset
   end
 
   def decision(option)
@@ -13,5 +14,8 @@ class Player
   def rand
     @option = ["rock", "paper", "scissors"].sample
   end
-
+  
+  def reset
+    @option = nil
+  end
 end
