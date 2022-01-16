@@ -8,10 +8,16 @@ feature 'playing a game' do
     click_button 'Submit'
   end
 
-  scenario 'pick a move in order to play' do
-    expect(page).to have_content 'Rock'
-    expect(page).to have_content 'Paper'
-    expect(page).to have_content 'Scissors'
+    scenario 'pick a move in order to play' do
+      expect(page).to have_button 'Rock'
+      expect(page).to have_button 'Paper'
+      expect(page).to have_button 'Scissors'
+    end
   end
-  end
+
+    scenario 'choose a move' do
+      click_button 'Paper'
+      expect(page).to have_content 'You chose Paper'
+    end
+
 end
