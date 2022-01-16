@@ -1,9 +1,13 @@
 Hello, welcome to Rock Paper Scissors! <%= @name %>!
 
 <form method="POST" action="/play">
-  <input type="submit" name="move" value="Rock" />
-  <input type="submit" name="move" value="Paper" />
-  <input type="submit" name="move" value="Scissors" />
+  <input type="submit" name="player_move" value="Rock" />
+  <input type="submit" name="player_move" value="Paper" />
+  <input type="submit" name="player_move" value="Scissors" />
 </form>
 
-You chose <%= @move %>!
+You chose <%= @player_move %>!
+
+<div id="opponent">
+  Opponent chose <%= @opponent_player_move.to_s.capitalize %>!
+</div>

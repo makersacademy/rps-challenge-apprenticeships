@@ -14,12 +14,14 @@ class RockPS < Sinatra::Base
 
   get '/play' do
     @name = session[:name]
-    @move = session[:move]
+    @player_move = session[:player_move]
+    @opponent_player_move = session[:opponent_player_move]
     erb :play
   end
 
   post '/play' do
-    session[:move] = params[:move]
+    session[:player_move] = params[:player_move]
+    session[:opponent_player_move] = :rock
     redirect '/play'
   end
 
