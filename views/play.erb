@@ -1,0 +1,16 @@
+<body style = 'background-color: DeepSkyBlue;'>
+<br><br><br><br><br>
+<center><h1>Hi <%= @name %></center>
+
+<center>
+<form style = font-size:30px action='/selection' method="post">
+<label for="options">Rock, Paper, Scissors?</label>
+<select id="options" name="options">
+<option value="Rock">Rock</option> 
+<option value="Paper">Paper</option>
+<option value="Scissors">Scissors</option>
+</select>
+<input type="submit" value="submit">
+</form>
+</center>
+</body>
