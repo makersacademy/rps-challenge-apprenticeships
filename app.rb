@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+require './lib/computer'
 # require '.lib/game/'
 
 class RockPaperScissors < Sinatra::Base
@@ -22,6 +23,13 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player_1 = $player_1
     erb :play
+  end
+
+  post '/player_move' do
+    @player_1 = $player_1
+    @player_1_move = params[:player_1_move]
+    @computer_move = (Computer.new).move
+    erb :player_move
   end
 
   get '/test' do

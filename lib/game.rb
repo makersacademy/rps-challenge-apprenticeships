@@ -1,9 +1,9 @@
-class Game
+# class Game
 
-  attr_reader :player_1
+#   attr_reader :player_1
 
-  def initialize(player_1)
-    @player_1 = player_1
-  end
+#   def initialize(player_1)
+#     @player_1 = player_1
+#   end
 
-end
+# end
