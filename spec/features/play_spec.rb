@@ -1,5 +1,5 @@
 feature 'Play' do
-  scenario 'Choise of three weapon's do
+  scenario 'Choise of three weapon' do
     visit('/')
     fill_in :player_name, with: 'Charlotte'
     click_button 'Submit'
