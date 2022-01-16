@@ -1,13 +1,13 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
+# require '.lib/game/'
 
 class RockPaperScissors < Sinatra::Base
-  # configure :development do
-  #   register Sinatra::Reloader
-  # end
-
   enable :sessions
+  configure :development do
+    register Sinatra::Reloader
+  end
 
   get '/' do
     erb :index
