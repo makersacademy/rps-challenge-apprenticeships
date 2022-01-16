@@ -1,8 +1,16 @@
 feature 'Play' do
-  scenario 'Choose your weapon' do
+  scenario 'Choise of three weapon's do
     visit('/')
-    expect(page).to have_xpath('href="/stylesheet.css" rel="style.css" type="text/css"')
-
+    fill_in :player_name, with: 'Charlotte'
+    click_button 'Submit'
+     expect(page).to have_button("Rock")
+    expect(page).to have_button("Paper")
+    expect(page).to have_button("Scissors")
   end
+
+    scenario 'choose your weapon' do
+    sign_in
+    click_button 'Rock'
+    expect(page).to have_content 'Rock'
   end
 end
