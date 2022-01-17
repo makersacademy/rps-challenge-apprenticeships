@@ -9,8 +9,8 @@ class RPSGame
   end
 
   def play(player_1_choice, player_2_choice = computer_choice)
-    raise 'Invalid Input by Player' unless SELECTION.include?(player_1_choice)
-    raise 'Invalid Input by Player 2' unless SELECTION.include?(player_2_choice)
+    raise "Invalid Input by #{@player1}" unless SELECTION.include?(player_1_choice)
+    raise "Invalid Input by #{@player2}" unless SELECTION.include?(player_2_choice)
 
     return 'Draw' if player_1_choice == player_2_choice
     return winner(player_1_choice, player_2_choice)
