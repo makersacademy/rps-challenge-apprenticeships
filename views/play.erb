@@ -1,0 +1,14 @@
+<body style="background-color:black;">
+<h1 style="color:gold;"> Hi <%= @player %>, lets play Rock, Paper, Scissors</h1>
+
+<form action='/choserock' method="post"> 
+<input type="submit" value ='Rock!' name="rock">
+</form>
+
+<form action='/chosepaper' method="post"> 
+  <input type="submit" value ='Paper!' name="paper">
+  </form>
+
+  <form action='/chosescissors' method="post"> 
+  <input type="submit" value ='Scissors!' name="scissors">
+  </form>
