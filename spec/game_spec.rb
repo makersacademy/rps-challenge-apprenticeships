@@ -10,7 +10,6 @@ describe Game do
   let (:lizard) { double :player, name: "lizard", move: "Lizard" }
   let (:spock) { double :player, name: "Spock", move: "Spock" }
 
-
   subject { described_class.new(player_one, player_two, nil) }
 
   it { is_expected.to respond_to(:player_one) }

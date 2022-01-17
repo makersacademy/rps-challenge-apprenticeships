@@ -26,16 +26,9 @@ class RockPaperScissors < Sinatra::Base
     end
   end
 
-  get '/spock-moves' do
-    if $game.current_turn.robot?
-      redirect '/next-move'
-    else
-      erb(:spock_moves)
-    end
-  end
-
   get '/moves' do
     if $game.current_turn.robot?
+      $game.current_turn.computer_move
       redirect '/next-move'
     else
       erb(:moves)
@@ -49,20 +42,27 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/next-move' do
-    if $game.current_turn.robot?
-      if $game.spock_game?
-        $game.current_turn.spock_move
-      else
-        $game.current_turn.computer_move
-      end
-    end
     $game.switch_turn
     if $game.current_turn.move.nil?
-      if $game.spock_game?
-        redirect '/spock-moves'
-      else
-        redirect '/moves'
-      end
+      redirect '/moves'
+    else
+      redirect '/result'
+    end
+  end
+
+  get '/spock-moves' do
+    if $game.current_turn.robot?
+      $game.current_turn.spock_move
+      redirect '/next-move'
+    else
+      erb(:spock_moves)
+    end
+  end
+
+  get '/next-spock-move' do
+    $game.switch_turn
+    if $game.current_turn.move.nil?
+      redirect '/spock-moves'
     else
       redirect '/result'
     end
