@@ -1,6 +1,6 @@
 class Computer
    WEAPONS = [rock, paper, scissors]
-  def computer_choice
-    WEAPONS.sample
+  def initialze (computer_choice)
+    @computer_choice = WEAPONS.sample
   end 
   do 

@@ -1,4 +1,11 @@
 feature 'Play' do
+
+  before do
+    visit('/')
+    fill_in :player_name, with: 'Pilly'
+    click_button 'Enter name'
+  do 
+
   scenario 'Choise of three weapon' do
     visit('/')
     fill_in :player_name, with: 'Charlotte'
@@ -13,4 +20,9 @@ feature 'Play' do
     click_button 'Rock'
     expect(page).to have_content 'Rock'
   end
+
 end
+
+
+ scenario "computer choose its weapon" do
+ end 

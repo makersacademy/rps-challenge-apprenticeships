@@ -18,7 +18,16 @@ class RockPaperScissors < Sinatra::Base
 
   get '/play' do
   @player_name = session[:player_name]
+  @emoji = session[:emoji]
+  @computer_emoji = session[:computer_emoji]
+  p params
   erb :play
+  end
+
+  post '/play' do
+    session[:emoji] = params [:emoji]
+    session[:computer_emoji] = params [:computer_emoji]
+    redirect '/play'
   end
 
 
