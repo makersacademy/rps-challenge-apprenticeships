@@ -1,0 +1,16 @@
+<h1> You chose <%= session[:player_choice].downcase %>, the game chose <%= @game_choice.downcase %> </h1>
+
+<% if @outcome == 'draw' %>
+<h2> They're the same THING! It's a DRAW!!! </h2>
+
+<% elsif @outcome == 'lose' %>
+<h2> <%= @game_choice %> beats <%= session[:player_choice].downcase %>. You LOSE!!! </h2>
+
+<% elsif @outcome == 'win' %>
+<h2> <%= session[:player_choice] %> beats <%= @game_choice.downcase %>. You WIN!!! </h2>
+
+<% end %>
+
+<form action='/play' method='get'>
+  <input type='submit' value='Play again'>
+</form>
