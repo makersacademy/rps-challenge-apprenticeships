@@ -1,0 +1,36 @@
+body { 
+  border-style: solid;
+  border-color: black;
+  border-width: 5px;
+  text-align: center;
+  background-color:powderblue;     
+}
+
+h1 {
+  font-family: verdana;
+}
+
+h2 {
+  font-family: sans-serif;
+}
+
+h3 {
+  font-family: verdana;
+}
+
+p {
+  font-family: verdana;
+}
+
+button {
+  color:rgb(0, 0, 0);
+  background-color:rgb(30, 70, 90);
+  padding: 12px 28px;
+  border-radius: 12px;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: #ffffff; 
+  color: rgb(0, 0, 0);
+}

@@ -1,0 +1,15 @@
+<head>
+<link href="/stylesheet.css" rel="stylesheet" type="text/css">
+<title>Play</title>
+</head>
+
+<body>
+<h1><%= @player_name %></h1><br>
+<div><br>
+<form action="/player_choice" method="post">
+  <button name="player_choice" type="submit" value="Rock">Rock</button> 
+  <button name="player_choice" type="submit" value="Paper">Paper</button> 
+  <button name="player_choice" type="submit"value="Scissors">Scissors</button> 
+</form>
+</div>
+</body>
