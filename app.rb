@@ -2,7 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/computer'
-# require '.lib/game/'
+require './lib/game/'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -26,10 +26,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player_move' do
+    p params
     @player_1 = $player_1
     @player_1_move = params[:player_1_move]
     @computer_move = (Computer.new).move
+    @game_result = (Game.new(@player_1_move, @computer_move)).game_result
     erb :player_move
+  end
+
+  get '/play_again' do
+    @player_1 = $player_1
+    redirect '/play'
   end
 
   get '/test' do

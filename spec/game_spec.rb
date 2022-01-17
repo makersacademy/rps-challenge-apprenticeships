@@ -1,12 +1,23 @@
-# require 'game'
+require 'game'
 
-# describe Game do
-#   subject(:olivia){Player.new('Olivia')}
+describe Game do
+  
 
-#   describe '#name' do
-#     it 'returns the player name' do
-#       expect(olivia.name).to eq 'Olivia'
-#     end
-#   end
+  describe '#result' do
+    it 'calculates the result of the game as a win' do
+      game = Game.new("Rock", "Scissors")
+      expect(game.game_result).to eq "Congrats Olivia, you've won!"
+    end
 
-# end
+    it 'calculates the result of the game as a player loss' do
+      game = Game.new("Scissors", "Rock")
+      expect(game.game_result).to eq "Sorry Olivia, but the computer won!"
+    end
+
+    it 'calculates the result of the game as a draw' do
+      game = Game.new("Scissors", "Scissors")
+      expect(game.game_result).to eq "It's a draw"
+    end
+  end
+
+end
