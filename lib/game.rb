@@ -1,4 +1,9 @@
-class Game 
+class Game
+  
+  def initialize(player1)
+    @players = []
+    @players = player1
+  end
 
   def calculate_winner(player1, cpu)
     

@@ -3,7 +3,7 @@ require 'game'
 
 describe Game do 
 
-  subject(:game) { described_class.new }
+  subject(:game) { described_class.new(adam) }
   let(:adam) { double(Player, name: 'Adam', show_choice: 'rock') }
   let(:cpu) { double(Player, name: 'CPU', show_choice: 'scissors') }
 

@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
 require_relative './lib/choice.rb'
-require_relative './lib/game.rb'
+require_relative './lib/choice.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
   end 
 
   post "/name" do 
+    $Round_1 = Game.new(Player.new(params[:username]))
     $Game = [Player.new(params[:username])]
     redirect '/game'
   end 
@@ -26,7 +27,6 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do 
-    game_1  = Game.new()
     $Game << game_1.calculate_winner($Game[0], $Game[1])
     erb :result
   end 
