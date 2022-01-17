@@ -1,0 +1,8 @@
+<h1><u><%= @player_1.name %> vs. Computer</u></h1>
+<h2>Let's begin, <%= @player_1.name %>!</h2>
+<h3>Please take your turn!<h3>
+<form action="/player_move" method="post">
+  <input type="submit" value="Rock" name="player_1_move">
+  <input type="submit" value="Paper" name="player_1_move">
+  <input type="submit" value="Scissors" name="player_1_move">
+</form>
