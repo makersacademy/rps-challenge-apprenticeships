@@ -13,12 +13,12 @@ class RPSGame
     raise 'Invalid Input by Player 2' unless SELECTION.include?(player_2_choice)
 
     return 'Draw' if player_1_choice == player_2_choice
-    return winner(player_1_choice + player_2_choice)
+    return winner(player_1_choice, player_2_choice)
   end
 
   private
 
-  def winner(search_winner)
+  def winner(player_1_choice, player_2_choice)
     game_logic = {
       "RockScissors" => @player1,
       "RockPaper" => @player2,
@@ -27,7 +27,7 @@ class RPSGame
       "ScissorsRock" => @player2,
       "ScissorsPaper" => @player1
     }
-    return game_logic[search_winner]
+    return game_logic[player_1_choice + player_2_choice]
   end
 
   def computer_choice
