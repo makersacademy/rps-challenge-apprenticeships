@@ -53,10 +53,16 @@ class RockPaperScissors < Sinatra::Base
   get '/spock-moves' do
     if $game.current_turn.robot?
       $game.current_turn.spock_move
-      redirect '/next-move'
+      redirect '/next-spock-move'
     else
       erb(:spock_moves)
     end
+  end
+
+  post '/spock-choice' do
+    p params
+    $game.current_turn.select_move(params[:select_move])
+    redirect '/next-spock-move'
   end
 
   get '/next-spock-move' do
