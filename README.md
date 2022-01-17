@@ -1,98 +1,51 @@
 # RPS Challenge
 
-## Instructions
+Implementation of a web-application of Rock-Paper-Scissors. Can be run as Single Player (against Computer) or in Multiplayer against another player.
 
-* Challenge time: until the end of the day
-* Feel free to use google, your notes, books etc but please work on your own
-* Please raise a pull request when you start this challenge, and keep pushing updates as and when you make commits throughout the day
-* Please submit a _diagram_ of how the browser interacts with a server from either your battle challenge or this challenge. This can be a photo of a pen/paper picture or a computer diagram.
-* There is _no expectation_ to finish all or any of the user stories, please use this time to reflect on where you feel you are with the skill and what may support your learning.
-* If you get blocked, please reflect on what blocked you and any strategies you adopted that helped you make progress.
-
-## Set up
-
-```bash
-$ bundle install
-$ rspec
-# You should output that includes:
-# 1 example, 0 failures
-```
-
-## Task
-
-Knowing how to build web applications is getting us almost there as web developers!
-
-The Makers Academy Marketing Array ( **MAMA** ) have asked us to provide a game for them. Their daily grind is pretty tough and they need time to steam a little.
-
-Your task is to provide a _Rock, Paper, Scissors_ game for them so they can play on the web with the following user stories:
-
-```
-As a marketeer
-So that I can see my name in lights
-I would like to register my name before playing an online game
-
-As a marketeer
-So that I can enjoy myself away from the daily grind
-I would like to be able to play rock/paper/scissors
-```
-
-Hints on functionality
-
-- the marketeer should be able to enter their name before the game
-- the marketeer will be presented the choices (rock, paper and scissors)
-- the marketeer can choose one option
-- the game will choose a random option
-- a winner will be declared
-
-As usual please start by:
-
-* Forking this repo
-* Test-driving development of your app
-
-## Resources
-
-* [HTML forms](https://www.w3schools.com/html/html_forms.asp)
-* [Capybara cheatsheet](https://devhints.io/capybara)
-* [Twitter bootstrap css library](https://getbootstrap.com/)
-* [Hosting on heroku](https://heroku.com)
-
-## Bonus level 1: Multiplayer
-
-Change the game so that two marketeers can play against each other ( _yes there are two of them_ ).
-
-## Bonus level 2: Rock, Paper, Scissors, Spock, Lizard
-
-Use the _special_ rules ( _you can find them here http://en.wikipedia.org/wiki/Rock-paper-scissors-lizard-Spock_)
-
-## Basic Rules
-
+Basic rules:
 - Rock beats Scissors
-- Scissors beats Paper
 - Paper beats Rock
+- Scissors beat Paper
 
-In code review we'll be hoping to see:
+## Getting started
 
-* All tests passing
-* High [Test coverage](https://github.com/makersacademy/course/blob/master/pills/test_coverage.md) (>95% is good)
-* The code is elegant: every class has a clear responsibility, methods are short etc.
-* Commits and short and scoped
+Clone the repository to your local maschine and install GEMs with bundle from top level folder in Terminal
 
-Reviewers will potentially be using this [code review rubric](docs/review.md).  Referring to this rubric in advance may make the challenge somewhat easier.  You should be the judge of how much challenge you want this weekend.
+`git clone https://github.com/michael-zwickler/takeaway-challenge`
 
-## Notes on test coverage
+`bundle install`
 
-Please ensure you have the following **AT THE TOP** of your `spec/spec_helper.rb` in order to have test coverage stats generated on your pull request:
+## Usage
 
-```ruby
-require 'simplecov'
-require 'simplecov-console'
+Run with rackup from your Terminal and open http://127.0.0.1:9292 in your browser. Use CTRL + C to kill the local server
 
-SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
-  SimpleCov::Formatter::Console,
-  # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
-])
-SimpleCov.start
-```
+`rackup` 
 
-You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+or define the port you want to run it on by setting it with flag -p http://127.0.0.1:1337/
+
+`rackup -p 1337` 
+
+or run it vie ruby command from Terminal http://127.0.0.1:4567
+
+`ruby app.rb` 
+
+![image](https://user-images.githubusercontent.com/76103162/149616308-cc267550-e4e3-4439-af0b-3ef7e6bf7f9e.png)
+
+![image](https://user-images.githubusercontent.com/76103162/149616319-2c4c175b-696f-4bf1-9157-c05ef3225d72.png)
+
+![image](https://user-images.githubusercontent.com/76103162/149616324-2dea52e9-463b-4812-8faa-12c7e6c10e1f.png)
+
+## Running tests
+
+Running RSpec in Terminal
+
+`rspec`
+
+## Design
+
+Application Design is strongly leaning on https://www.youtube.com/watch?v=3ENJ_xd625s and https://getbootstrap.com/docs/5.1/examples/sign-in/
+
+## Next steps
+
+- minor extension of game logic and buttons to allow RPS + Lizard + Spock
+- reduce views turn1.erb and turn2.erb to one input view, by extracting the logic of whoms turn it is into the RPSGame class

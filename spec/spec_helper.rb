@@ -1,11 +1,13 @@
 require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
+require 'rps_game'
+require 'features/web_helpers'
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
-  # SimpleCov::Formatter::HTMLFormatter
+  SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
 
