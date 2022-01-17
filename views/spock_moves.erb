@@ -1,0 +1,23 @@
+<style>
+  #body {
+    text-align: center;
+  }
+</style>
+
+<div id="body">
+  <div>
+  <h1 style="font-family: helvetica"> <%=$game.current_turn.name%>, make your move! </h1>
+  <% unless $game.opponent.robot? %>
+  <h1 style="font-family: helvetica"> <%=$game.opponent.name%>, look away now!</h1>
+  <% end %>
+  </div>
+  <div id="rock/paper/scissors/lizard/spock">
+    <form action='/spock-choice' method='post'>
+      <input type="submit" name="select_move" value="Rock">
+      <input type="submit" name="select_move" value="Paper">
+      <input type="submit" name="select_move" value="Scissors">
+      <input type="submit" name="select_move" value="Lizard">
+      <input type="submit" name="select_move" value="Spock">
+    </form>
+  </div>
+</div>

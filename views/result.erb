@@ -1,0 +1,43 @@
+<style>
+  #body {
+    text-align: center;
+  }
+</style>
+
+<div id="body">
+  <div id="heading">
+    <h1 style="font-family: helvetica">Drum roll please... <%=$game.player_one.name%>, you chose <%=$game.player_one.move%>.
+    <%=$game.player_two.name%>, you chose <%=$game.player_two.move%>.</h1>
+  </div>
+
+  <div id="win conditions">
+    <% if $game.result == $game.player_one %>
+    <h1 style="font-family: helvetica"> <%= $game.player_one.name %> wins!</h1>
+      <%if $game.player_one.robot?%>
+      <h1 style="font-family: helvetica">Beaten by a robot!? The machines are getting stronger every day...</h1>
+      <% end %>
+    <% elsif $game.result == $game.player_two%>
+    <h1 style="font-family: helvetica"><%= $game.player_two.name %> wins!</h1>
+      <%if $game.player_two.robot?%>
+      <h1 style="font-family: helvetica">Beaten by a robot!? The machines are getting stronger every day...</h1>
+      <% end %>
+    <% elsif $game.result == "Draw"%>
+    <h1 style="font-family: helvetica">It's a tie!</h1>
+    <% else %>
+    <h1 style="font-family: helvetica">Something's gone wrong here...</h1>
+    <% end %>
+  </div>
+
+  <div id="end of game options">
+    <form action="/play-again" method="post">
+      <div>
+        <input type="checkbox" id="spock_game" name="spock_game" value="true">
+        <label for="spock_game">Rock, Paper, Scissors, Lizard, Spock?</label>
+      </div>
+      <input type="submit" value="Play Again">
+    </form>
+    <form action="/">
+      <input type="submit" value="Reset">
+    </form>
+  </div>
+</div>

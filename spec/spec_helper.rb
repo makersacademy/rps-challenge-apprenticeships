@@ -1,4 +1,3 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -14,6 +13,10 @@ SimpleCov.start
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+
+require 'capybara/rspec'
+require 'features/web_helpers'
+
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
