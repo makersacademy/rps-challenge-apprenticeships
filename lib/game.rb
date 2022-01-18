@@ -1,8 +1,10 @@
 class Game
   
+  attr_reader :players
+
   def initialize(player1)
-    @players = []
-    @players = player1
+    @players = [Player.new(player1)]
+    
   end
 
   def calculate_winner(player1, cpu)

@@ -1,7 +1,7 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
 require_relative './lib/choice.rb'
-require_relative './lib/choice.rb'
+require_relative './lib/game.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -13,21 +13,24 @@ class RockPaperScissors < Sinatra::Base
   end 
 
   post "/name" do 
-    $Round_1 = Game.new(Player.new(params[:username]))
-    $Game = [Player.new(params[:username])]
+    $round_1 = Game.new((params[:username]))
     redirect '/game'
   end 
 
   post '/choice' do 
-    $Game.first.choice((params[:choice]))
+    #put the choice as an attribute of one of the players.
+    $round_1.players[0].choice((params[:choice]))
     cpu = Player.new("CPU")
     cpu.choice
-    $Game << cpu
+    $round_1.players << cpu
+    p "****************************************"
+    p $round_1
+    p "****************************************"
     redirect '/result'
   end
 
   get '/result' do 
-    $Game << game_1.calculate_winner($Game[0], $Game[1])
+    @result = $round_1.calculate_winner($round_1.players[0], $round_1.players[1])
     erb :result
   end 
 

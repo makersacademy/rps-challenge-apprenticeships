@@ -1,9 +1,9 @@
-<h1> <%= $Game[0].name %> chose <%= $Game.first.show_choice %> </h1>
+<h1> <%= $round_1.players[0].name %> chose <%= $round_1.players[0].show_choice %> </h1>
 <br>
 <br>
 <br>
 
-<h1> The CPU chose <%= $Game[1].show_choice %> </h1>
+<h1> The CPU chose <%= $round_1.players[1].show_choice %> </h1>
 
 
-<h1> <%= $Game.last %> </h1>
+<h1> <%= @result %> </h1>
