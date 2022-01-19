@@ -1,11 +1,24 @@
-<h1> Welcome to the game <%= $round_1.players[0].name %>! </h1>
-<br>
-<br>
-<br>
-<h2> Please choose Rock Paper or Scissors to play. </h2>
+<!doctype html>
 
-<form action="/choice" method="post">
-  <input type="text" name="choice" >
-  <input type='submit' value="Submit">
-</form>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title> Welcome to the game <%= $round_1.players[0].name %>! </title>
+</head>
+
+<body>
+  <h1> Welcome to the game <%= $round_1.players[0].name %>! </h1>
+
+  <h2> Please choose Rock Paper or Scissors to play. </h2>
+
+  <form action="/choice" method="post">
+    <input type="submit" name="choice"  value='rock'>
+    <input type="submit" name="choice"  value='paper'>
+    <input type="submit" name="choice"  value='scissors'>
+  </form>
+
+</body>
+
+</html>
  

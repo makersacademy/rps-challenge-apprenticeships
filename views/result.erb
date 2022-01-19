@@ -1,9 +1,23 @@
-<h1> <%= $round_1.players[0].name %> chose <%= $round_1.players[0].show_choice %> </h1>
-<br>
-<br>
-<br>
+<!doctype html>
 
-<h1> The CPU chose <%= $round_1.players[1].show_choice %> </h1>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <title> The Winner is  </title>
+</head>
+
+  <body>
+    <h1> <%= $round_1.players[0].name %> chose <%= $round_1.players[0].show_choice %> </h1>
+    <br>
+    <br>
+    <br>
+
+    <h1> The CPU chose <%= $round_1.players[1].show_choice %> </h1>
 
 
-<h1> <%= @result %> </h1>
+    <h3> <%= @result %> </h3>
+
+  </body>
+
+  </html>
