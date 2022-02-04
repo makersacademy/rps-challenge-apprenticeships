@@ -6,6 +6,7 @@ feature 'plays the game correctly' do
   end
   scenario 'can select rock, paper or scissors and have it to show the correct selection' do
     click_button "rock"
+    within("result")
     expect(page).to have_content "You selected rock!"
     click_button "paper"
     expect(page).to have_content "You selected paper!"
