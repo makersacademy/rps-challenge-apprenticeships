@@ -9,10 +9,6 @@ describe Game do
     expect(game.players).to include(player)
   end
 
-  it 'can decide a winner' do
-    player = double(:player, :name => "player")
-    allow(game).to receive(:rps).and_return("Rock")
-    expect(game.winner?("Scissors")).to eq("player wins!")
-  end
+  it { is_expected.to respond_to(:winner?).with(1).argument }
 
 end
