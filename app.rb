@@ -23,6 +23,12 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/game' do
+    session[:player_weapon] = params[:player_weapon]
+    # this is the point where we need to take our param to logic
+    "You Won"
+  end
+
   get '/test' do
     'test page'
   end

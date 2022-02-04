@@ -6,10 +6,15 @@ feature 'User visits app page' do
   end
 
   scenario 'user enters name and clicks to play' do
-    visit ('/')
-    fill_in 'player_name', with: 'Yossarian'
-    click_button 'Start Game'
+    enter_name_and_play
     expect(page).to have_content("Choose your weapon Yossarian")
+  end
+
+  scenario 'user selects a weapon and the game starts' do
+    visit ('/play')
+    fill_in 'player_weapon', with: 'rock'
+    click_button 'Submit Choice'
+    expect(page).to have_content("You Won")
   end
 
 end
