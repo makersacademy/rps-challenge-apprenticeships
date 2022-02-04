@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -7,12 +9,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/names' do
-    session[:player_name] = params[:player_name]
+    session[:player_name] = Player.new(params[:player_name])
     redirect '/play'
   end
 
   get '/play' do
-    @player_name = session[:player_name]
+    @player_name = session[:player_name].name
     erb(:play)
   end
 
