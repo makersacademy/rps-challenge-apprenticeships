@@ -1,5 +1,6 @@
-require 'sinatra/base'
-require 'sinatra/reloader' if development?
+require 'sinatra'
+require "sinatra/reloader" if development?
+
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
