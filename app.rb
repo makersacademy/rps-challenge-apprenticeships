@@ -35,7 +35,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/set_game_choice" do
-    session[:player_choice] = params[:player_choice]
+    session[:player_choice] = params[:player_choice].downcase
     session[:computer_choice] = ["rock", "paper", "scissors"].sample
     redirect :result
   end
@@ -43,8 +43,22 @@ class RockPaperScissors < Sinatra::Base
   get "/result" do
     @player_choice = session[:player_choice]
     @computer_choice = session[:computer_choice]
+    @result = check_result(@player_choice, @computer_choice)
     erb :result
   end
 
   run! if app_file == $0
+end
+
+
+def check_result(player_choice, computer_choice)
+  return "draw" if player_choice == computer_choice
+  case player_choice
+  when "rock"
+    computer_choice == "paper" ? "lose" : "win"
+  when "paper"
+    computer_choice == "scissors" ? "lose" : "win"
+  when "scissors"
+    computer_choice == "rock" ? "lose" : "win"
+  end
 end
