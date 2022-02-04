@@ -1,0 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 90%vh;
+  width: 90%vw;
+  background-color: grey;
+}
+
+.form_styling {
+  width: 90%;
+}
