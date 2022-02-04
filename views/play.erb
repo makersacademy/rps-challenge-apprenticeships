@@ -1,4 +1,9 @@
-<center><h1>Rock, Paper, Scissors!</h1></center>
-<hr>
+<h1>Rock, Paper, Scissors!</h1>
 Welcome <%= @player_name %>!
 Choose Rock, Paper or Scissors:
+
+<form action="/battle" method="post">
+<input type="submit" name="button1" value="Rock">
+<input type="submit" name="button2" value="Paper">
+<input type="submit" name="button3" value="Scissors">
+</form>

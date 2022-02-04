@@ -22,6 +22,12 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
+  post '/battle' do
+    @player_name = session[:player_name]
+    @player_choice = params[:button1] || params[:button2] || params[:button3]
+    erb :battle
+  end
+
   run! if app_file == $0
 
 end
