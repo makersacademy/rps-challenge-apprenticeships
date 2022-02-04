@@ -1,0 +1,10 @@
+<%if !@name%>
+<h1> What's your name? </h1>
+<%else%>
+<h1> Welcome <%=@name%>!</h1>
+<%end%>
+
+<form action='/play' method='post'>
+  <input type ='text' id ='name' name='name'>
+  <input type = 'submit' id = 'submit' value ='Submit'>
+</form>
