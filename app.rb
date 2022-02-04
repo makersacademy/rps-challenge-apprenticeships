@@ -34,7 +34,15 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
-  post "/set_game_choise" do
+  post "/set_game_choice" do
+    session[:player_choice] = params[:player_choice]
+    session[:computer_choice] = ["rock", "paper", "scissors"].sample
+    redirect :result
+  end
+
+  get "/result" do
+    @player_choice = session[:player_choice]
+    @computer_choice = session[:computer_choice]
     erb :result
   end
 
