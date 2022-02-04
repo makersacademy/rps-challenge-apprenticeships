@@ -4,5 +4,13 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
 
+  get "/" do
+    redirect "login"
+  end
+
+  get "/login" do
+    erb :login
+  end
+
   run! if app_file == $0
 end
