@@ -6,6 +6,8 @@ require 'sinatra/reloader' if development?
 
 class RockPaperScissors < Sinatra::Base
 
+  enable :sessions
+
   configure :development do
     register Sinatra::Reloader
   end
@@ -23,10 +25,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post "/set_name" do
+    session[:player_name] = params[:player_name]
     redirect "game"
   end
 
   get "/game" do
+    @player_name = session[:player_name]
     erb :game
   end
 
