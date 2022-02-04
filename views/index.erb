@@ -5,12 +5,17 @@
     <title>Rock, paper and scissors game</title>
   </head>
   <body>
-    <h1 style="text-align:center">Hello there!</h1>
+    <h1 style="text-align:center">Welcome to rock, paper and scissors game!</h1>
     <br>
-    <form action="/name" id="theform" method="post">
-      <p><h2>What's your name?</h2></p>
-      <input id="align_middle" type="text" name="name"><br>
-      <input id="align_middle" type="submit" value="submit">
-    </form>
+    <div id="div1">
+      <form action="/name" method="post">
+        <p><h2 style="text-align:center">Please enter both player names</h2></p>
+        <label for="name1">Player 1:</label>
+        <input id="align_middle" type="text" name="name1"><br>
+        <label for="name2">Player 2:</label>
+        <input id="align_middle" type="text" name="name2"><br>
+        <input id="align_middle" type="submit" value="submit"><br>
+      </form>
+    </div>
   </body>
 </html>

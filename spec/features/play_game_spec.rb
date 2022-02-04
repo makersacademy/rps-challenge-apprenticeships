@@ -1,7 +1,8 @@
 feature 'plays the game correctly' do
   before(:all) do
     visit '/'
-    fill_in "name", with: "Jaabir"
+    fill_in "name1", with: "Jaabir"
+    fill_in "name2", with: "Yusuf"
     click_button "submit"
   end
   scenario 'can select rock, paper or scissors and have it to show the correct selection' do

@@ -1,5 +1,6 @@
 require 'sinatra'
 require "sinatra/reloader" if development?
+require_relative './lib/game'
 
 
 class RockPaperScissors < Sinatra::Base
@@ -13,14 +14,24 @@ class RockPaperScissors < Sinatra::Base
   end 
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:name1] = params[:name1]
+    session[:name2] = params[:name2]
+    session[:player1_turn] = true
     redirect to '/play'
   end
 
   get '/play' do
-    p session[:name]
-    @name = session[:name]
-    @rps_message = rps(params[:result])
+    @name1 = session[:name1]
+    @name2 = session[:name2]
+    
+    puts session[:player1_turn]
+    if session[:player1_turn] == true
+      @player = @name1
+    else
+      @player = @name2
+    end
+
+    @message = game(params[:result])
     erb :play
   end
 
@@ -31,15 +42,3 @@ class RockPaperScissors < Sinatra::Base
   run! if app_file == $0
 end
 
-def rps(result)
-  case result
-  when "rock"
-    return "You selected rock!"
-  when "paper"
-    return "You selected paper!"
-  when "scissors"
-    return "You selected scissors!"
-  else
-    return ""
-  end
-end
