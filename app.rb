@@ -27,5 +27,15 @@ class RockPaperScissors < Sinatra::Base
     erb :singleplayer
   end
 
+  get '/multiplayer' do
+    erb :multiplayer
+  end
+
+  post '/multiplayer' do
+    @choice1 = params[:choice1]
+    @choice2 = params[:choice2]
+    erb :multiplayer
+  end
+
   run! if app_file == $0
 end

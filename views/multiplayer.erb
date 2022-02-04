@@ -1,0 +1,40 @@
+<%if !@choice1%>
+<h1> Player 1. Rock, Paper or Scissors? </h1>
+<form action='/multiplayer' method='post'>
+<label for="choice">Choose an option:</label>
+<select name="choice1" id="choice1">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+
+<h1> Player 2. Rock, Paper or Scissors? </h1>
+<label for="choice">Choose an option:</label>
+<select name="choice2" id="choice2">
+  <option value="Rock">Rock</option>
+  <option value="Paper">Paper</option>
+  <option value="Scissors">Scissors</option>
+</select>
+<input type='submit' id = 'submit' value = 'Submit'>
+</form>
+<%end%>
+
+
+
+<%if @choice1%>
+<%choice_value_hash = {'Rock': 1, 'Paper': 2, 'Scissors': 3}%>
+<%player1_choice = choice_value_hash[@choice1.to_sym]%>
+<%player2_choice = choice_value_hash[@choice2.to_sym]%>
+
+<%if (player2_choice + 1) % 3 == player1_choice %>
+  <h1> Player1 wins! </h1>
+<%elsif player2_choice == player1_choice %>
+  <h1> It's a draw </h1>
+<%else %>
+  <h1> Player2 wins! </h1>
+<%end %>
+<%end %>
+
+
+
+

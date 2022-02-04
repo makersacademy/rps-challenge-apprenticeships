@@ -28,5 +28,21 @@ feature 'Forms work' do
     click_button 'submit'
     expect(page).to have_content("You chose Rock")
   end
-end
 
+  scenario 'can visit multiplayer page' do
+    visit '/'
+    click_button 'submit'
+    click_button 'submit_multiplayer'
+    expect(page).to have_content("Player 2")
+  end
+
+  scenario 'can play mutliplayer game' do
+    visit '/multiplayer'
+    select "Rock", :from => "choice1"
+    select "Paper", :from => "choice2"
+    click_button 'submit'
+
+    expect(page).to have_content("Player2 wins!")
+  end
+
+end
