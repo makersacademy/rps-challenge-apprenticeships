@@ -15,12 +15,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    player_1 = Player.new(params[:player_1_name])
+    session[:player1_name] = params[:player1_name]
     redirect '/play'
   end
 
   get '/play' do
-    @player1_name = player_1
+    @player1_name = session[:player1_name]
     erb :play
   end
 
