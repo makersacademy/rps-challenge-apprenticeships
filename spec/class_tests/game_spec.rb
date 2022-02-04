@@ -1,9 +1,8 @@
 require 'game'
 
-
 describe Game do
   before(:example) do
-        allow(subject).to receive(:rand) { 2 }
+    allow(subject).to receive(:rand) { 2 }
   end
   
   it "lets you make a move" do

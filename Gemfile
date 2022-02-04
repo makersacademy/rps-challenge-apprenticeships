@@ -7,6 +7,7 @@ gem 'webrick'
 
 group :test do
   gem 'capybara'
+  gem 'capybara-rspec'
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
