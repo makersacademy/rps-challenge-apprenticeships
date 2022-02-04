@@ -1,4 +1,9 @@
-feature 'test page' do
+feature 'Forms work' do
+  scenario 'test page works' do
+    visit '/test'
+    expect(page).to have_content("test page")
+  end
+
   scenario 'visit test page' do
     visit '/'
     expect(page).to have_content("What's your name?")
@@ -8,6 +13,20 @@ feature 'test page' do
     visit '/'
     fill_in 'name', :with => 'Fred'
     click_button 'submit'
-    expect(page).to have_content("Welcome Fred!")
+    expect(page).to have_content("Welcome to Rock Paper Scissors, Fred!")
+  end
+
+  scenario 'can visit singleplayer page' do
+    visit '/'
+    click_button 'submit'
+    click_button 'submit_singleplayer'
+    expect(page).to have_content("Rock, Paper or Scissors?")
+  end
+
+  scenario 'player can make a singleplayer choice' do
+    visit '/singleplayer'
+    click_button 'submit'
+    expect(page).to have_content("You chose Rock")
   end
 end
+

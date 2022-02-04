@@ -1,10 +1,20 @@
 <%if !@name%>
 <h1> What's your name? </h1>
-<%else%>
-<h1> Welcome <%=@name%>!</h1>
-<%end%>
-
 <form action='/play' method='post'>
   <input type ='text' id ='name' name='name'>
   <input type = 'submit' id = 'submit' value ='Submit'>
 </form>
+<%else%>
+<h1> Welcome to Rock Paper Scissors, <%=@name%>!</h1>
+<h2> Singleplayer or mutliplayer? </h2>
+<form action ='/singleplayer' method ='get'>
+<input type ='submit' id = 'submit_singleplayer' value = 'Singleplayer'>
+</form>
+<%end%>
+
+
+
+
+
+
+
