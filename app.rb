@@ -6,9 +6,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:index)
   end
 
-  post '/game' do
+  post '/play' do
     @name = params['name']
-    erb(:game)
+    erb(:play)
   end
 
   run! if app_file == $0
