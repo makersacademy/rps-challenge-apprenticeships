@@ -30,5 +30,9 @@ class RockPaperScissors < Sinatra::Base
     erb :game
   end
 
+  post "/set_game_choise" do
+    erb :result
+  end
+
   run! if app_file == $0
 end
