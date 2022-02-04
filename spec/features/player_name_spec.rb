@@ -6,6 +6,6 @@ feature 'Enter name' do
 
     save_and_open_page
 
-    expect(page).to have_content 'Good luck, Lauren!'
+    expect(page).to have_content 'Lauren, please choose your weapon!'
   end
-endgit 
+end
