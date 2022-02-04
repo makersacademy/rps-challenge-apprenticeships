@@ -13,6 +13,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/play' do
     @name = params[:name]
+    @rps_message = rps(params[:result])
     erb :play
   end
 
@@ -21,4 +22,17 @@ class RockPaperScissors < Sinatra::Base
   end
 
   run! if app_file == $0
+end
+
+def rps(result)
+  case result
+  when "rock"
+    return "You selected rock!"
+  when "paper"
+    return "You selected paper!"
+  when "scissors"
+    return "You selected scissors!"
+  else
+    return ""
+  end
 end

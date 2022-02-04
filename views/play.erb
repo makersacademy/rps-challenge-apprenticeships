@@ -5,9 +5,16 @@
     <title>Rock, paper and scissors game</title>
   </head>
   <body>
-
     <h1 style="text-align:center">Hello <%= @name %>!</h1>
-      </div>
-    </form>
+    <div id="div1">
+      <h1 style="text-align:center">Please select rock, paper or scissors</h1>
+      <br>
+      <form action="/play" method="post">
+      <input type="submit" name="result" value="rock" id="align_middle"><br>
+      <input type="submit" name="result" value="paper" id="align_middle"><br>
+      <input type="submit" name="result" value="scissors" id="align_middle"><br>
+      </form>
+    </div>
+    <h1 id="result" style="text-align:center"><%= @rps_message %></h1>
   </body>
 </html>
