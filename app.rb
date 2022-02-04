@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'sinatra/base'
 require 'sinatra/reloader' if development?
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -25,8 +26,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game' do
     session[:player_weapon] = params[:player_weapon]
-    # this is the point where we need to take our param to logic
-    "You Won"
+    redirect to '/result'
+  end
+
+  get '/result' do
+    @player_weapon = session[:player_weapon]
+    @game = Game.new(@player_weapon)
+    erb :result
   end
 
   get '/test' do

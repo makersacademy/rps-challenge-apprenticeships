@@ -11,9 +11,8 @@ feature 'User visits app page' do
   end
 
   scenario 'user selects a weapon and the game starts' do
-    visit ('/play')
-    fill_in 'player_weapon', with: 'rock'
-    click_button 'Submit Choice'
+    enter_name_and_play
+    pick_your_weapon
     expect(page).to have_content("You Won")
   end
 
