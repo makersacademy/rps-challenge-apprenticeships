@@ -96,3 +96,15 @@ SimpleCov.start
 ```
 
 You can see your test coverage when you run your tests. If you want this in a graphical form, uncomment the `HTMLFormatter` line and see what happens!
+
+PLANNING:
+
+register(verb) name(attr) before playing(verb) an online game(obj/class?)
+
+presented the choices (rock, paper and scissors), choose one
+
+play(verb) rock/paper/scissors(game/class)
+
+game will choose random option (rand)
+
+a winner will be declared (print winner or draw)
