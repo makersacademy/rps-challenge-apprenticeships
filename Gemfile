@@ -5,8 +5,6 @@ ruby '3.0.2'
 gem 'sinatra'
 gem 'webrick'
 gem 'sinatra-reloader'
-gem 'rspec'
-gem 'capybara'
 gem 'launchy'
 
 group :test do
