@@ -10,10 +10,10 @@ feature 'User visits app page' do
     expect(page).to have_content("Choose your weapon Yossarian")
   end
 
-  scenario 'user selects a weapon and the game starts' do
+  scenario 'user selects a weapon and the game plays' do
     enter_name_and_play
     pick_your_weapon
-    expect(page).to have_content("You Won")
+    page.has_content?("You won" || "The computer beat you" || "It's a draw")
   end
 
 end

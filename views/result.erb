@@ -11,9 +11,9 @@
   <link href="<%= url('/styles.css') %>" type="text/css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-    <h1> <%= @game.play_game %> </h1>
-  <div class="row">
+  <div class="container mt-5 p-3">
+    <h1 class="text-center"> <%= @game.play_game %> </h1>
+  <div class="row m-3">
     <div class="col-md-4 position-relative">
       <img src="./images/rock-and-roll.png" class="img-thumbnail" alt="Rock">
     </div>
@@ -25,14 +25,10 @@
     </div>
   </div>
     
-    <button><a href="/play">Play Again</a></button>
-    <button><a href="/">Quit</a></button>
+    <button class="btn-light btn-lg mx-auto"><a href="/play">Play Again</a></button>
+    <button class="btn-light btn-lg mx-auto"><a href="/">Quit</a></button>
 
   </div>
   
-  <footer>
-
-  <a href="https://www.flaticon.com/free-icons/concert" title="concert icons">Concert icons created by Smashicons - Flaticon</a>
-  </footer>
 </body>
 </html>

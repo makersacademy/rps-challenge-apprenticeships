@@ -4,10 +4,7 @@ require 'sinatra/reloader' if development?
 require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
-  configure :development do
-    register Sinatra::Reloader
-  end
-
+  
   enable :sessions
 
   get '/' do

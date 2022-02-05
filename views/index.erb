@@ -9,9 +9,9 @@
   <link href="<%= url('/styles.css') %>" type="text/css" rel="stylesheet">
 </head>
 <body>
-  <div class="container">
-  <h1>Rock, Paper, Scissors</h1>
-  <div class="row">
+  <div class="container mt-5 p-3">
+  <h1 class="text-center">Rock, Paper, Scissors</h1>
+  <div class="row m-3">
     <div class="col-md-4 position-relative">
       <img src="./images/rock-and-roll.png" class="img-thumbnail" alt="...">
     </div>
@@ -23,15 +23,12 @@
     </div>
   </div>
 
-  <h3>Welcome traveller, what is your name?</h3>
-  <form action="/names" method="post" class="form_styling">
-    <input type="text" id="player_name" class="form-control" name="player_name" placeholder="Name">
-    <input type="submit" id="start_game" value="Start Game">
+  <h3 class="text-center">Welcome, what's your name?</h3>
+  <form action="/names" method="post" class="form_styling mx-auto">
+    <input type="text" id="player_name" class="form-control m-2" name="player_name" placeholder="Name">
+    <input type="submit" id="start_game" value="Play" class="btn-light btn-lg mx-auto">
   </form>
   </div>
 
-  <footer>
-  <a href="https://www.flaticon.com/free-icons/concert" title="concert icons">Concert icons created by Smashicons - Flaticon</a>
-  </footer>
 </body>
 </html>
