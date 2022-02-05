@@ -25,6 +25,7 @@ class RockPaperScissors < Sinatra::Base
   post '/battle' do
     @player_name = session[:player_name]
     @player_choice = params[:button1] || params[:button2] || params[:button3]
+    @cpu_choice = ["Rock", "Paper", "Scissors"].sample
     erb :battle
   end
 
