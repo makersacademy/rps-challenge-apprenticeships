@@ -1,4 +1,4 @@
-My attempt to respond to the [Rock Paper Scissors challenge!](challenge_README.md)
+My attempt to respond to the [Rock Paper Scissors challenge!](Challenge_README.md)
 
 
 # Browsers Interaction with Server
