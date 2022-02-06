@@ -1,0 +1,10 @@
+Player choice: Rock<br>
+Computer choice: <%= @comp_choice %><br>
+
+<% if @comp_choice == "Paper" %>
+  Computer wins!
+<% elsif @comp_choice == "Rock" %>
+  It's a draw!
+<% else %>
+  Player 1 wins!
+<% end %>
