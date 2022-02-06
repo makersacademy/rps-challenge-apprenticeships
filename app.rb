@@ -4,9 +4,11 @@ class RockPaperScissors < Sinatra::Base
   
   get '/' do 
     # "button linking to players page to go here"
-    '<form method="get" action="/playersnames">
+    '<form method="get" action="/playersnames"
+    color: "red">
       <button type="submit"> ENTER </button>
     </form>'
+   
     
   end
 
