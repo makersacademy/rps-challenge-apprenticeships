@@ -3,9 +3,9 @@ class RockPaperScissors < Sinatra::Base
   enable :sessions
   
   get '/' do 
-    "button linking to players page to go here"
+    # "button linking to players page to go here"
     '<form method="get" action="/playersnames">
-      <button type="submit"> Lets Game</button>
+      <button type="submit"> ENTER </button>
     </form>'
     
   end
@@ -16,7 +16,6 @@ class RockPaperScissors < Sinatra::Base
 
   post '/players' do
     session[:player1] = params[:player1]
-    # session[:player2] = params[:player2]
     redirect '/play'
   end
 
@@ -24,6 +23,17 @@ class RockPaperScissors < Sinatra::Base
     @player1 = session[:player1]
     @player2 = session[:player2]
     erb(:new)
+    
+
+  end
+
+  get '/pick-weapon' do
+    erb(:weaponschoice)
+  end
+
+  post '/rock' do 
+    
+    erb(:rock)
   end
 
   get '/test' do
