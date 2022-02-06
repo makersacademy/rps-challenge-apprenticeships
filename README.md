@@ -1,4 +1,4 @@
-** Rock Paper Scissors Webapp **
+## Rock Paper Scissors Webapp
 
 # Project Description
 
