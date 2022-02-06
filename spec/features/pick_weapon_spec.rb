@@ -14,10 +14,10 @@ feature 'Pick weapon' do
   end
 end
 
-# feature 'Pick weapon' do 
-#   scenario 'user picks between rock paper scissors' do 
-#     visit('/pick-weapon')
-#     click_button 'SCISSORS'
-#     expect(page).to have_content 'YOU PICKED SCISSORS'
-#   end
-# end
+feature 'Pick weapon' do 
+  scenario 'user picks between rock paper scissors' do 
+    visit('/pick-weapon')
+    click_button 'SCISSORS'
+    expect(page).to have_content 'YOU PICKED SCISSORS'
+  end
+end

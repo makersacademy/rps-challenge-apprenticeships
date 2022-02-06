@@ -39,6 +39,9 @@ class RockPaperScissors < Sinatra::Base
     erb(:paper)
   end
 
+  post '/scissors' do 
+    erb(:scissors)
+  end
 
   get '/test' do
     'test page'
