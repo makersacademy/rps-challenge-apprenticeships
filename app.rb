@@ -32,9 +32,13 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/rock' do 
-    
     erb(:rock)
   end
+
+  post '/paper' do 
+    erb(:paper)
+  end
+
 
   get '/test' do
     'test page'
