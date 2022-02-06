@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/winner'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -26,6 +27,10 @@ class RockPaperScissors < Sinatra::Base
     @player_name = session[:player_name]
     @player_choice = params[:button1] || params[:button2] || params[:button3]
     @cpu_choice = ["Rock", "Paper", "Scissors"].sample
+    @battle = Winner.new(@player_choice, @cpu_choice)
+    # @battle.convert_player
+    # @battle.convert_cpu
+    # @battle.score
     erb :battle
   end
 

@@ -15,7 +15,19 @@ feature 'battle' do
       page.has_content?('CPU chose Paper') || 
       page.has_content?('CPU chose Scissors')
     }
-    
+
+  end
+
+  scenario 'the game will declare a winner or draw' do
+    sign_in
+    click_button 'Rock'
+
+    expect(page).to satisfy {
+      page.has_content?('CPU is the winner!') || 
+      page.has_content?('You are the winner!') ||
+      page.has_content?('It is a draw!')
+    }
+
   end
 
 end
