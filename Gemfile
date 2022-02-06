@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
-
 ruby '3.0.2'
-
 gem 'sinatra'
-
-
 group :test do
   gem 'capybara'
   gem 'rspec'
@@ -13,7 +9,6 @@ group :test do
   gem 'webrick'
   gem 'launchy'
 end
-
 group :development, :test do
   gem 'rubocop', '1.20'
 end
