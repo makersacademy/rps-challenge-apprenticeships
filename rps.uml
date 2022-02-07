@@ -1,0 +1,128 @@
+
+       ┌─┐
+       ║"│
+       └┬┘
+       ┌┼┐
+        │                                           ┌───────┐                                   ┌──────────┐                ┌─────┐                          ┌─────┐
+       ┌┴┐                                          │Browser│                                   │Controller│                │Views│                          │Model│
+      User                                          └───┬───┘                                   └────┬─────┘                └─────┘                          └──┬──┘
+       │              go to localhost:port/             │                                            │                         │                                │
+       │ ───────────────────────────────────────────────>                                            │                         │                                │
+       │                                                │                                            │                         │                                │
+       │                                                │               REQUEST GET '/'              │                         │                                │
+       │                                                │ ───────────────────────────────────────────>                         │                                │
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │   route function @ '/'  │                                │
+       │                                                │                                            │ ────────────────────────>                                │
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │ return file (index.erb) │                                │
+       │                                                │                                            │ <────────────────────────                                │
+       │                                                │                                            │                         │                                │
+       │                                                │         RESPONSE ./views/index.erb         │                         │                                │
+       │                                                │ <───────────────────────────────────────────                         │                                │
+       │                                                │                                            │                         │                                │
+       │ can see index.erb in browser at localhost:port/│                                            │                         │                                │
+       │ <───────────────────────────────────────────────                                            │                         │                                │
+       │                                                │                                            │                         │                                │
+       │           Enter + Submit name params           │                                            │                         │                                │
+       │ ───────────────────────────────────────────────>                                            │                         │                                │
+       │                                                │                                            │                         │                                │
+       │                                                │ REQUEST POST params to localhost:port/names│                         │                                │
+       │                                                │ ───────────────────────────────────────────>                         │                                │
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │              assign param to Game.name data              │
+       │                                                │                                            │ ─────────────────────────────────────────────────────────>
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │                         │ state update in ./views/rps.erb│
+       │                                                │                                            │                         │ <───────────────────────────────
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │                Model state change success                │
+       │                                                │                                            │ <─────────────────────────────────────────────────────────
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │ re-route GET to '/game' │                                │
+       │                                                │                                            │ ────────────────────────>                                │
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │  return file (rps.erb)  │                                │
+       │                                                │                                            │ <────────────────────────                                │
+       │                                                │                                            │                         │                                │
+       │                                                │        RESPONSE GET ./views/rps.erb        │                         │                                │
+       │                                                │ <───────────────────────────────────────────                         │                                │
+       │                                                │                                            │                         │                                │
+       │        sees name at localhost:port/game        │                                            │                         │                                │
+       │ <───────────────────────────────────────────────                                            │                         │                                │
+       │                                                │                                            │                         │                                │
+       │                 Clicks on R/P/S                │                                            │                         │                                │
+       │ ───────────────────────────────────────────────>                                            │                         │                                │
+       │                                                │                                            │                         │                                │
+       │                                                │    REQUEST POST params to Game dataclass   │                         │                                │
+       │                                                │ ───────────────────────────────────────────>                         │                                │
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │            passes param to Game.play function            │
+       │                                                │                                            │ ─────────────────────────────────────────────────────────>
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │                         │  state update ./views/rps.erb  │
+       │                                                │                                            │                         │ <───────────────────────────────
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │                Model state change success                │
+       │                                                │                                            │ <─────────────────────────────────────────────────────────
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │ re-route GET to '/game' │                                │
+       │                                                │                                            │ ────────────────────────>                                │
+       │                                                │                                            │                         │                                │
+       │                                                │                                            │ return updated (rps.erb)│                                │
+       │                                                │                                            │ <────────────────────────                                │
+       │                                                │                                            │                         │                                │
+       │                                                │        RESPONSE GET ./views/rps.erb        │                         │                                │
+       │                                                │ <───────────────────────────────────────────                         │                                │
+       │                                                │                                            │                         │                                │
+       │ Sees updated game, you lose / win / play again │                                            │                         │                                │
+       │ <───────────────────────────────────────────────                                            │                         │                                │
+      User                                          ┌───┴───┐                                   ┌────┴─────┐                ┌─────┐                          ┌──┴──┐
+       ┌─┐                                          │Browser│                                   │Controller│                │Views│                          │Model│
+       ║"│                                          └───────┘                                   └──────────┘                └─────┘                          └─────┘
+       └┬┘
+       ┌┼┐
+        │
+       ┌┴┐
+
+@startuml
+
+actor User
+
+boundary Browser
+
+control Controller
+
+collections Views
+
+database Model
+
+User -> Browser : go to localhost:port/
+Browser -> Controller : REQUEST GET '/'
+Controller -> Views : route function @ '/'
+Views -> Controller : return file (index.erb)
+Controller -> Browser : RESPONSE ./views/index.erb
+Browser -> User : can see index.erb in browser at localhost:port/
+
+User -> Browser : Enter + Submit name params
+Browser -> Controller : REQUEST POST params to localhost:port/names
+Controller -> Model : assign param to Game.name data
+Model -> Views : state update in ./views/rps.erb
+Model -> Controller : Model state change success
+Controller -> Views : re-route GET to '/game'
+Views -> Controller : return file (rps.erb)
+Controller -> Browser : RESPONSE GET ./views/rps.erb
+Browser -> User : sees name at localhost:port/game
+
+User -> Browser : Clicks on R/P/S
+Browser -> Controller : REQUEST POST params to Game dataclass
+Controller -> Model : passes param to Game.play function
+Model -> Views : state update ./views/rps.erb
+Model -> Controller : Model state change success
+Controller -> Views : re-route GET to '/game'
+Views -> Controller : return updated (rps.erb)
+Controller -> Browser : RESPONSE GET ./views/rps.erb
+Browser -> User : Sees updated game, you lose / win / play again
+
+@enduml
+
