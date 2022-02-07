@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a:link {
+  text-decoration: none;
+  color: black;
+}
+
+h1, h3 {
+  color: white;
+}
+
+.container {
+  height: 90%vh;
+  width: 90%vw;
+  background-color: black;
+}
+
+.form_styling {
+  width: 40%;
+}
