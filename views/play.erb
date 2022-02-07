@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" href="/style.css">
+    <title>Rock, paper and scissors game</title>
+  </head>
+  <body>
+    <h1 style="text-align:center">It's <%= @player %>'s turn!</h1>
+    <div id="div1">
+      <h1 style="text-align:center">Please select rock, paper or scissors</h1>
+      <br>
+      <form action="/play">
+      <input type="submit" name="result" value="rock" id="align_middle"><br>
+      <input type="submit" name="result" value="paper" id="align_middle"><br>
+      <input type="submit" name="result" value="scissors" id="align_middle"><br>
+      </form>
+    </div>
+    <h1 id="result" style="text-align:center"><%= @message %></h1>
+  </body>
+</html>

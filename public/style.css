@@ -1,0 +1,30 @@
+html, body {
+  height: 100%;
+}
+
+html {
+  display: table;
+  margin: auto;
+}
+
+body {
+  background-color: skyblue;
+  display: table-cell;
+  vertical-align: top;
+}
+
+#theform {
+  border: 3px solid black;
+  padding: 100px;
+}
+
+#div1 {
+  border: 3px solid black;
+  padding: 100px;
+  padding-bottom: 100px;
+}
+
+#align_middle {
+  display: block;
+  margin: 0 auto;
+}
