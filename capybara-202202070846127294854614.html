@@ -1,8 +1,9 @@
 <body style="background-color: lightblue;">
-<img src="https://image.shutterstock.com/image-vector/welcome-poster-spectrum-brush-strokes-260nw-1146069941.jpg" alt="welcome" width="460" height="345">
-<h1> <%= @player_1_name %> </h1>
+<h2> Welcome </h2>
+<img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1120w,f_auto,q_auto:best/newscms/2016_11/1016196/rock-paper-scissors-today-tease-160317.jpg" alt="Flowers in Chania" width="460" height="345">
+<h1> Sapna </h1>
 <form action="/option" method="post">
-<input type="hidden" name="player_1_name" value="<%= @player_1_name %>">
+<input type="hidden" name="player_1_name" value="Sapna">
 <label for="rps">Choose one:</label>
 <select id="rps" name="rps">
   <option value="Rock">Rock</option>
@@ -12,6 +13,3 @@
  <input type="submit" value="Submit">
 </form>
 </body>
-
-
-
