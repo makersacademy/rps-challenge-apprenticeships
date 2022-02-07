@@ -1,10 +1,12 @@
 Player choice: Paper<br>
-Computer choice: <%= @comp_choice %><br>
+Computer choice: <%= @comp_choice %><br><br>
 
 <% if @comp_choice == "Scissors" %>
-  Computer wins!
+  <b>Computer wins!</b><br><br>
 <% elsif @comp_choice == "Paper" %>
-  It's a draw!
+  <b>It's a draw!</b><br><br>
 <% else %>
-  Player 1 wins!
+  <b>Player 1 wins!</b><br><br>
 <% end %>
+
+<a href="/begin">Play again!</a>
