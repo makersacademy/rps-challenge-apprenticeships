@@ -35,6 +35,15 @@ After I had my routes working I then moved to the logic of the app. I diagrammed
 
 I have a basic working model now at this point.
 
+COVERAGE:  97.01% -- 65/67 lines in 6 files
+
++----------+-------------+-------+--------+---------+
+| coverage | file        | lines | missed | missing |
++----------+-------------+-------+--------+---------+
+|  90.91%  | lib/game.rb | 11    | 1      | 16      |
+|  96.15%  | app.rb      | 26    | 1      | 8       |
++----------+-------------+-------+--------+---------+
+4 file(s) with 100% coverage not shown
 # Features still to implement
 
 I did not fully finish the challenge in the time given so I have improvements and enhancements I would like to make:
