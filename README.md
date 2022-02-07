@@ -14,3 +14,5 @@ I am going to approach this challenge by creating a diagram of how the browser i
 
 ![Plan](https://imgur.com/oRfRPNF)
 ![Diagram](https://imgur.com/4K1wl4b)
+<img width="497" alt="Screenshot 2022-02-07 at 10 24 03" src="https://user-images.githubusercontent.com/95872492/152770782-5236b05c-8770-437d-a52a-86bd10726a39.png">
+<img width="495" alt="Screenshot 2022-02-07 at 10 24 14" src="https://user-images.githubusercontent.com/95872492/152770788-78721fd4-12aa-4bbc-a050-2bd1ffd3f041.png">
