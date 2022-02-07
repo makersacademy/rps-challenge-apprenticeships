@@ -6,5 +6,3 @@ feature 'homepage' do
     expect(page).to have_content 'Welcome Mighty Wigglesworth'
   end
 end
-
-
