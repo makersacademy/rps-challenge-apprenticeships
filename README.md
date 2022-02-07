@@ -12,3 +12,5 @@ I would like to be able to play rock/paper/scissors
 
 I am going to approach this challenge by creating a diagram of how the browser interacts with the server and doing a simple plan which I will include. 
 
+![Plan](https://imgur.com/oRfRPNF)
+![Diagram](https://imgur.com/4K1wl4b)
