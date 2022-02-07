@@ -7,8 +7,30 @@
 <body>
   <h1>Welcome Mighty <%= @player_name %></h1>
   <br>
-  <button type="button" class="rock">Rock</button>
-  <button type="button" class="paper">Paper</button>
-  <button type="button" class="scissors">Scissors</button>
+  <!--
+  <button type="submit" class="rock" formaction="/run">Rock</button>
+  <button type="submit" class="paper" formaction="/run">Paper</button>
+  <button type="submit" class="scissors" formaction="/run">Scissors</button>
+  -->
+  <h3>Choose Your Fate</h3>
+  <br>
+  
+
+  <form action="/run" method="post">
+    <input type="radio" id="rock" name="choice" value="Rock">
+    <label for="rock">Rock</label>
+    <br>
+    <input type="radio" id="paper" name="choice" value="Paper">
+    <label for="paper">Paper</label>
+    <br>
+    <input type="radio" id="scissors" name="choice" value="Scissors">
+    <label for="scissors">Scissors</label>
+    <br>
+      <button type="submit">Submit</button>
+    <br>
+  </form>
+    <% if @result %>
+      <%= "#{@player_name}, you chose #{@userchoice}, whilst the computer chose #{@cmpchoice}. #{@result}!" %>
+    <% end %>
 </body>
 </html>
