@@ -1,0 +1,14 @@
+Game: <br>
+<br>
+Welcome <%= @player_name %>
+<br>
+Rock, paper or scissors?
+<form action="set_game_choice" method="post">
+  <input type="input" name="player_choice" >
+  <input type="submit" value="submit" name = "submit_button">
+</form>
+<br>
+
+<% if @error %>
+  Error, please enter rock, paper or scissors
+<% end %>
