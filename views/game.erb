@@ -7,3 +7,8 @@ Rock, paper or scissors?
   <input type="input" name="player_choice" >
   <input type="submit" value="submit" name = "submit_button">
 </form>
+<br>
+
+<% if @error %>
+  Error, please enter rock, paper or scissors
+<% end %>
