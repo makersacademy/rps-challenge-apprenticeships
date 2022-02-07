@@ -2,7 +2,7 @@ feature 'User visits app page' do
   scenario 'there is a form to enter name and start game' do
     visit ('/')
     find_field('player_name').value
-    find_button('Start Game').click
+    find_button('Play').click
   end
 
   scenario 'user enters name and clicks to play' do

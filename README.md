@@ -35,24 +35,25 @@ After I had my routes working I then moved to the logic of the app. I diagrammed
 
 I have a basic working model now at this point.
 
-COVERAGE:  97.01% -- 65/67 lines in 6 files
+COVERAGE:  98.55% -- 68/69 lines in 6 files
 
 +----------+-------------+-------+--------+---------+
 | coverage | file        | lines | missed | missing |
 +----------+-------------+-------+--------+---------+
-|  90.91%  | lib/game.rb | 11    | 1      | 16      |
-|  96.15%  | app.rb      | 26    | 1      | 8       |
+|  93.75%  | lib/game.rb | 16    | 1      | 23      |
 +----------+-------------+-------+--------+---------+
-4 file(s) with 100% coverage not shown
+5 file(s) with 100% coverage not shown
+
+
 # Features still to implement
 
 I did not fully finish the challenge in the time given so I have improvements and enhancements I would like to make:
-[ ] I realised that the game would still start if the submit button was pressed without entering a name. I will need to find out how to implement and error if this field is blank
-[ ] I would like the 'Rock', 'Paper', and 'Scissors' images on the play page to act as buttons to make choice instead of having a text input field to enter choice
-[ ] I did not progress the stretch goals so would like to implement an option for a two player game, extracting the players to a new class
-[ ] I would like to refactor the code in the model to remove the bulky if/else statement if possible
-[ ] I would like to extract a module to hold the variables for the outcomes and weapons
-[ ] Keep the README updated with changes and include more examples of my planning and implementation
+[ ] I realised that the game would still start if the submit button was pressed without entering a name. I will need to find out how to implement and error if this field is blank\n
+[ ] I would like the 'Rock', 'Paper', and 'Scissors' images on the play page to act as buttons to make choice instead of having a text input field to enter choice\n
+[ ] I did not progress the stretch goals so would like to implement an option for a two player game, extracting the players to a new class\n
+[ ] I would like to refactor the code in the model to remove the bulky if/else statement if possible'\n
+[ ] I would like to extract a module to hold the variables for the outcomes and weapons\n
+[ ] Keep the README updated with changes and include more examples of my planning and implementation\n
 
 # How to run the app
 

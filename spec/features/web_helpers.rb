@@ -1,7 +1,7 @@
 def enter_name_and_play 
   visit ('/')
   fill_in 'player_name', with: 'Yossarian'
-  click_button 'Start Game'
+  click_button 'Play'
 end
 
 def pick_your_weapon
