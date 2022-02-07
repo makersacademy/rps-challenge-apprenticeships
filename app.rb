@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require_relative './lib/game'
+
 class RockPaperScissors < Sinatra::Base
   
   $game = Game.new
@@ -19,8 +20,7 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
-    @result = get_result(params.keys[0])
-    erb(:result)
+    @result = get_result(params['choice'])
   end
 
   run! if app_file == $0
