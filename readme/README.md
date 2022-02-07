@@ -18,3 +18,5 @@ The client will input a choice form a form, requested to the server.
 The server will pick a random response from an array and then calaculate the winner.
 
 It will then respond that back to the Client's browser.
+
+Could not finish.
