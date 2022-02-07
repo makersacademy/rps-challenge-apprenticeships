@@ -11,6 +11,8 @@ group :test do
   gem 'simplecov-console', require: false
   gem 'webrick'
   gem 'launchy'
+  gem 'sinatra'
+  gem 'sinatra-contrib'
 end
 
 group :development, :test do
