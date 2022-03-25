@@ -2,6 +2,7 @@ require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/player'
 require './lib/game'
+require './lib/cpu'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -31,6 +32,8 @@ class RockPaperScissors < Sinatra::Base
 
   get '/showdown' do
     @game = $game
+    @winner = @game.winner
+    erb :showdown
   end
 
   run! if app_file == $0
