@@ -1,9 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>RPS GAME</title>
+  <link href="<%= src='/styles.css' %>" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="container">
+
 <h1>Welcome to Rock, Paper and Scissors Game!</h1>
 
-<form action="/gamemode" method="post">
+<form action="/gamemode" method="post" class="row">
+<div> 
   <input type="radio" name="mode" value="single_player">
   <label for="single_player">Play against the computer! (Single Player)</label>
-  <input type="radio" name="mode" value="multiplayer">
-  <label for="multiplayer">Play against another player! (Multiplayer)</label>
-  <button type="submit" value="submit">Play Now!</button>
+</div>
+
+<div> 
+<input type="radio" name="mode" value="multiplayer">
+<label for="multiplayer">Play against another player! (Multiplayer)</label>
+</div>
+
+<div> 
+<button type="submit" value="submit" class="button-53" role="button">Play Now!</button>
+</div>
 </form>
+
+</body>
+<footer>
+  By Khushnood Asif
+</footer>
