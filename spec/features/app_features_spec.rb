@@ -18,4 +18,15 @@ feature 'user submits player name', type: :feature do
   
     expect(page).to have_content('John Doe vs. Computer')
   end
+
+  feature 'selects choice', type: :feature do
+    it 'shows you your choice' do
+      visit '/play'
+      within("form") do
+        find_by_id("rock").click
+      end
+
+      expect(page).to have_content("rock")
+    end
+  end
 end
