@@ -38,10 +38,12 @@ class RockPaperScissors < Sinatra::Base
   end
   
   get '/pvp-play-2' do
+    $player_one.choose(params)
     @player_two = $player_two
     erb :pvp_play_two
   end
 
+  # need to get this working with a second player's choices now
   get '/result' do
     @player_one = $player_one
     @player_one.choose(params)
