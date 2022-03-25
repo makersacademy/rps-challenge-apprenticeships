@@ -29,9 +29,13 @@ class RockPaperScissors < Sinatra::Base
     erb :choice
   end
 
-  post '/outcome' do
-    @player_name = $player.name
+  post '/choice_form' do
     $player.choice = params[:RPS]
+    redirect '/outcome'
+  end
+
+  get '/outcome' do
+    @player_name = $player.name
     @player_choice = $player.choice
     erb :outcome
   end
