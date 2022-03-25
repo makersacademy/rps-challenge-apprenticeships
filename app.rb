@@ -1,4 +1,5 @@
 require 'sinatra/base'
+
 class RockPaperScissors < Sinatra::Base
   enable :sessions
   
@@ -18,13 +19,14 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     session[:user_choice] = params[:user_choice]
-    redirect '/game'
+    session[:computer_choice] = ["ROCK", "PAPER", "SCISSORS"].sample
+    redirect :game
   end
 
   get '/game' do
     @user_name = session[:user_name]
     @user_choice = session[:user_choice]
-    session[:computer_choice] = ["rock", "paper", "scissors"].sample
+    @computer_choice = session[:computer_choice]
     erb :game
   end
 
