@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'lib/player'
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -20,6 +21,12 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player_one = $player_one
     erb :play
+  end
+
+  post '/result' do
+    $player_one.choose(params)
+    Game.run_vs_ai($player_one)
+    erb :result
   end
 
   run! if app_file == $0

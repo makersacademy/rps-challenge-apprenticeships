@@ -1,1 +1,16 @@
-<h1>Welcome to the game, <%= @player_one.name%></h1>
+<h1>Welcome to the game, <%= @player_one.name %></h1>
+<br />
+<form action='/result' method='post'>
+<input type='hidden' name='rock'>
+  <input type='submit' value='rock'>
+</form>
+
+<form action='/result' method='post'>
+<input type='hidden' name='paper'>
+  <input type='submit' value='paper'>
+</form>
+
+<form action='/result' method='post'>
+<input type='hidden' name='scissors'>
+  <input type='submit' value='scissors'>
+</form>
