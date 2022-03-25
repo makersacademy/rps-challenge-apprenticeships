@@ -1,8 +1,10 @@
-<% if @result == 0 %>
+<h1><% if @result == 0 %>
   Draw!
 <% else %>
   <%= @result == 1 ? @p1_name : @p2_name %> wins!
-<% end %>
-<%= @p1_name %> played <%= @p1_move %>
-<%= @p2_name %> played <%= @p2_move %>
+  <% end %></h1>
+<ul>
+  <li><%= @p1_name %> played <span class="move"><%= @p1_move %></span></li>
+  <li><%= @p2_name %> played <span class="move"><%= @p2_move %></span></li>
+</ul>
 <button onclick="window.location.href='/'">Play again</button>
