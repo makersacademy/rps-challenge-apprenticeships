@@ -3,13 +3,13 @@
     <%= @name %></span>! 
   Please make your choice!</p>
 
-<form action="/results" method="get">
+<form action="/game" method="post">
   
-  <input type="radio" id="rock" name="choice" value="Rock">
+  <input type="radio" id="rock" name="selection" value="Rock">
   <label for="rock">Rock</label><br>
-  <input type="radio" id="paper" name="choice" value="Paper">
+  <input type="radio" id="paper" name="selection" value="Paper">
   <label for="paper">Paper</label><br>
-  <input type="radio" id="scissors" name="choice" value="Scissors">
+  <input type="radio" id="scissors" name="selection" value="Scissors">
   <label for="scissors">Scissors</label><br>
   <br>
   <input type="submit" value="I made my choice!">
