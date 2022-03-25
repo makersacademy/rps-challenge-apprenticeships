@@ -1,4 +1,3 @@
-require 'capybara/rspec'
 require 'simplecov'
 require 'simplecov-console'
 
@@ -8,6 +7,9 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   # SimpleCov::Formatter::HTMLFormatter
 ])
 SimpleCov.start
+
+require 'capybara/rspec'
+require 'features/web_helpers'
 
 # For accurate test coverage measurements, require your code AFTER 'SimpleCov.start'
 
