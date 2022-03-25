@@ -1,4 +1,5 @@
 require "sinatra/base"
+require_relative "./lib/game"
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
@@ -21,9 +22,14 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
-  post "/result" do
-    weapon = params[:weapon]
-    "You chose #{weapon}"
+  post "/selection" do
+    $game = Game.new(params[:weapon])
+    redirect to("/result")
+  end
+
+  get "/result" do
+    $game.play
+    erb(:result)
   end
   
 
