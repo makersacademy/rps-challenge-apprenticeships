@@ -1,1 +1,10 @@
 <h1>Game result</h1>
+
+<p>You chose <%= @player_one.choice%></p>
+<p>The AI chose <%= @game.ai_choice%></p>
+
+<p><%= @result %></p>
+
+<form action='/play'>
+  <input type='submit' value='Play again'>
+</form>

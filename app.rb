@@ -23,9 +23,11 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-  post '/result' do
-    $player_one.choose(params)
-    Game.run_vs_ai($player_one)
+  get '/result' do
+    @player_one = $player_one
+    @player_one.choose(params)
+    @game = Game.new(@player_one)
+    @result = @game.run_vs_ai
     erb :result
   end
 

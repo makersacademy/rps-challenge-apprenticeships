@@ -4,7 +4,7 @@ class Player
   end
 
   def choose(choice)
-    @choice = choice
+    choice.each { |_key, value| @choice = value }
   end
 
   attr_reader :name, :choice

@@ -6,8 +6,7 @@ describe Game do
   
   describe '#make_ai_choice returns a random choice' do
     it 'returns a random choice' do
-      ai_choice = Game.new(player_one).make_ai_choice
-      expect(["rock", "paper", "scissors"]).to include(ai_choice)
+      expect(["rock", "paper", "scissors"]).to include(Game.new(player_one).ai_choice)
     end
   end
   
