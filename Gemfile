@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 ruby '3.0.2'
 
 gem 'sinatra'
+gem "webrick", "~> 1.7"
+gem "sinatra-contrib", "~> 2.1"
 
 group :test do
   gem 'capybara'
