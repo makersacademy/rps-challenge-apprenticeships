@@ -11,3 +11,13 @@ feature 'main page' do
     expect(page).to have_content('Welcome to RPS! Please enter your name')
   end
 end
+
+feature 'new game' do
+  scenario 'display new game page with name entered' do
+    visit '/'
+    fill_in 'name', with: 'Victoria'
+    click_button "Submit"
+    expect(page).to have_content('Hi Victoria! Please make your choice!')
+  end
+  
+end

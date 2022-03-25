@@ -6,7 +6,13 @@ class RockPaperScissors < Sinatra::Base
 
   get '/' do
     erb(:index)
-  end  
+  end
+
+  post '/choices' do
+    @name = params[:name]
+    erb(:select)
+
+  end
 
   run! if app_file == $0
 end
