@@ -10,19 +10,26 @@
 
 <body class="container">
 
+<form action="/">
+<button type="submit" value="submit" class="button-52" role="button">🔙 Go to Start!</button>
+</form>
+
 <h1><%= @game.player_one.name.capitalize %> VS <%= @game.player_two.name.capitalize %></h1>
 
 <form action="/player_one_move" method="post" class="row">
   <div>
+  <label>
     <input type="radio" name="move" value="Rock">
-    <label for="Rock">Rock</label>
-   
+    <span for="Rock">Rock</span>
+  </label> 
+  <label>
     <input type="radio" name="move" value="Paper">
-    <label for="Paper">Paper</label>
-    
+    <span for="Paper">Paper</span>
+  </label> 
+  <label>
     <input type="radio" name="move" value="Scissor">
-    <label for="Scissor">Scissor</label>
-    
+    <span for="Scissor">Scissor</span>
+  </label> 
     <button type="submit" value="submit" class="button-53" role="button"><%= @game.player_one.name.capitalize %> Confirm Selection</button>
   </div>
 </form>
@@ -30,14 +37,18 @@
 <% if @game_mode == 'multiplayer' && !@game.player_two.move %>
 <form action="/player_two_move" method="post" class="row">
   <div>
+  <label>
     <input type="radio" name="move" value="Rock">
-    <label for="Rock">Rock</label>
-   
+    <span for="Rock">Rock</span>
+  </label>
+  <label>
     <input type="radio" name="move" value="Paper">
-    <label for="Paper">Paper</label>
-    
+    <span for="Paper">Paper</span>
+  </label>
+  <label>  
     <input type="radio" name="move" value="Scissor">
-    <label for="Scissor">Scissor</label>
+    <span for="Scissor">Scissor</span>
+  </label>
     <button type="submit" value="submit" class="button-52" role="button"><%= @game.player_two.name.capitalize %> Confirm Selection</button>
   </div>
 </form>

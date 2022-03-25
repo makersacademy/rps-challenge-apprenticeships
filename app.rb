@@ -40,4 +40,9 @@ class RockPaperScissors < Sinatra::Base
     @game.player_one.make_move(params[:move])
     redirect '/play'
   end
+
+  post '/player_two_move' do
+    @game.player_two.make_move(params[:move])
+    redirect '/play'
+  end
 end
