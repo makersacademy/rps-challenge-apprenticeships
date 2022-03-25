@@ -21,6 +21,6 @@ describe 'rock-paper-scissors calculator' do
   }
 
   it('throws when an invalid input is given') {
-    expect {RockPaperScissors.find_winner('invalid', 'invalid') }.to raise_error
+    expect {RockPaperScissors.find_winner('invalid', 'invalid') }.to raise_error ArgumentError
   }
 end
