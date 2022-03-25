@@ -1,8 +1,11 @@
-<h1> Welcome <%= @user_name %> :)</h1>
-<h3><STRONG>Please pick one</STRONG></h3>
+<h1> <%= @user_name %> vs Computer! </h1>
+<h3><STRONG> <%= @user_name %>, please select one: </STRONG></h3>
 <form action="/choice" method="post">
-<INPUT TYPE="radio" NAME="choice" VALUE="rock">Rock
-<INPUT TYPE="radio" NAME="choice" VALUE="paper">Paper
-<INPUT TYPE="radio" NAME="choice" VALUE="scissors">Scissors
+<INPUT type="radio" name="user_choice" value="rock" id="rock">ROCK
+<INPUT type="radio" name="user_choice" value="paper" id="paper">PAPER
+<INPUT type="radio" name="user_choice" value="scissors" id="scissors">SCISSORS
+<br>
+<br>
+<input type="submit" value="Submit" name = "submit_button">
 </form>
-<a href="/game">OK</a>
+

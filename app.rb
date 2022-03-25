@@ -17,13 +17,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/choice' do
-    session[:user_choice] =  params[:user_choice]
+    session[:user_choice] = params[:user_choice]
     redirect '/game'
   end
 
   get '/game' do
     @user_name = session[:user_name]
     @user_choice = session[:user_choice]
+    session[:computer_choice] = ["rock", "paper", "scissors"].sample
     erb :game
   end
 
