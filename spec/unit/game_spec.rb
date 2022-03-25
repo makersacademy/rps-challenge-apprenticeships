@@ -1,6 +1,6 @@
 require 'game'
 
-RSpec.describe do
+RSpec.describe Game do
   it 'returns the user input' do
     game = Game.new("Rock")
     result = game.user_answer

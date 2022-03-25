@@ -1,7 +1,8 @@
 <head>
 <link rel="stylesheet" href="<%= url('/style.css') %>">
 </head>
-
+<body class='background_2'>
+<div class=Contents>
 <h1>Welcome, <%= @player %>! </h1>
 <h2>Please select an option</h2>
 <form action='/result' method='post'>
@@ -13,3 +14,5 @@
   </select>  
   <input type="submit" value="GO!"/>
 </form>
+</div>
+</body>
