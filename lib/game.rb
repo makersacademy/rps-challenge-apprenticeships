@@ -1,4 +1,5 @@
 class Game
+  attr_reader :player
 
 RULES = { rock: :scissors,
   paper: :rock,
@@ -7,7 +8,7 @@ RULES = { rock: :scissors,
 WEAPONS = [:rock, :paper, :scissors]
 
   def initialize(player)
-    @players = player
+    @player = player
   end
 
   def player_choice=(weapon)
@@ -15,7 +16,7 @@ WEAPONS = [:rock, :paper, :scissors]
     @player_choice = weapon
   end
 
-  def result
-    RULES[player_choice][computer.choice()] ? :win : :lose
-  end
+  # def result
+  #   RULES[player_choice][computer.choice()] ? :win : :lose
+  # end
 end

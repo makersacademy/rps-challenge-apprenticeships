@@ -34,7 +34,6 @@ class RockPaperScissors < Sinatra::Base
 
   get '/result' do
     @game = $game
-    @player_choice = session[:choice]
     erb :result
   end
 
