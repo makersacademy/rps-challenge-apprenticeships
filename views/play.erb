@@ -1,4 +1,4 @@
-<h1>Welcome to the game, <%= @player_one.name %></h1>
+<h1><%= @player_one.name %>, make your choice</h1>
 <br />
 <form action='/result'>
 <input type='hidden' name='rock' value='rock'>
@@ -7,10 +7,10 @@
 
 <form action='/result'>
 <input type='hidden' name='paper' value ='paper'>
-  <input type='submit' value='paper'>
+  <input type='submit' value='paper1'>
 </form>
 
 <form action='/result'>
 <input type='hidden' name='scissors' value='scissors'>
-  <input type='submit' value='scissors'>
+  <input type='submit' value='scissors1'>
 </form>
