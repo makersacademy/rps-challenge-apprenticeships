@@ -1,7 +1,7 @@
-def sign_in_and_play
+def sign_in_and_play_vs_ai
   visit('/')
+  click_button 'Play vs AI'
   fill_in 'player_one', with: 'Homer'
-  fill_in 'player_one', with: 'Marge'
   click_button 'Submit'
 end
 

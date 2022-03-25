@@ -15,7 +15,12 @@ class RockPaperScissors < Sinatra::Base
 
   get '/names' do
     $player_one = Player.new(params[:player_one])
+    $player_two = Player.new(params[:player_two])
     redirect to('/play')
+  end
+  
+  get '/vs-ai-name' do
+    erb :vs_ai_name
   end
 
   get '/play' do
