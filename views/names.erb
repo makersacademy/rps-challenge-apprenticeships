@@ -1,12 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>RPS GAME</title>
+  <link href="<%= src='/styles.css' %>" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="container">
+
 <% if session[:gamemode] == "single_player" %>
 <h1>Welcome to Single Player Game!</h1>
-<p> Enter your name </p>
+<p class="row"> Enter Your Name </p>
 <% elsif session[:gamemode] == "multiplayer" %>
 <h1>Welcome to Multiplayer Game!</h1>
-<p> Enter player names </p>
+<p class="row"> Enter Player Names Below! </p>
 <% end %>
 
-<form action="/setnames" method="post">
+<form action="/setnames" method="post" class="row">
   <div>
     <label for="Player 1">Player 1:</label>
     <input type="text" name="player_one">
@@ -16,6 +28,11 @@
     <input type="text" name="player_two">
     <% end %>
     
-    <button type="submit" value="submit">Begin Play!</button>
+    <button type="submit" value="submit" class="button-53" role="button">Begin Play!</button>
   </div>
 </form>
+
+</body>
+<footer>
+  By Khushnood Asif
+</footer>

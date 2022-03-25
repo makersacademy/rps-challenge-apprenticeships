@@ -1,6 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>RPS GAME</title>
+  <link href="<%= src='/styles.css' %>" rel="stylesheet" type="text/css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Satisfy&family=Zen+Kurenaido&display=swap"
+    rel="stylesheet">
+</head>
+
+<body class="container">
+
 <h1><%= @game.player_one.name.capitalize %> VS <%= @game.player_two.name.capitalize %></h1>
 
-<form action="/player_one_move" method="post">
+<form action="/player_one_move" method="post" class="row">
   <div>
     <input type="radio" name="move" value="Rock">
     <label for="Rock">Rock</label>
@@ -11,12 +23,12 @@
     <input type="radio" name="move" value="Scissor">
     <label for="Scissor">Scissor</label>
     
-    <button type="submit" value="submit"><%= @game.player_one.name.capitalize %> Confirm Selection</button>
+    <button type="submit" value="submit" class="button-53" role="button"><%= @game.player_one.name.capitalize %> Confirm Selection</button>
   </div>
 </form>
 
 <% if @game_mode == 'multiplayer' && !@game.player_two.move %>
-<form action="/player_two_move" method="post">
+<form action="/player_two_move" method="post" class="row">
   <div>
     <input type="radio" name="move" value="Rock">
     <label for="Rock">Rock</label>
@@ -26,7 +38,7 @@
     
     <input type="radio" name="move" value="Scissor">
     <label for="Scissor">Scissor</label>
-    <button type="submit" value="submit"><%= @game.player_two.name.capitalize %> Confirm Selection</button>
+    <button type="submit" value="submit" class="button-52" role="button"><%= @game.player_two.name.capitalize %> Confirm Selection</button>
   </div>
 </form>
 <% end %>
@@ -34,33 +46,49 @@
 <% if @game_mode == 'single_player' && !!@game.player_one.move %>
 <% @game.player_two.make_move if @game.player_two.name == 'Computer' %>
 
+<ul class="row-2">
 <br><%= @game.player_one.name.capitalize %> played <%= @game.player_one.move.capitalize %>
 <br><%= @game.player_two.name.capitalize %> played <%= @game.player_two.move.capitalize %>
+</ul>
 
 <% @winner = @game.player_one.name if Results.new.check(@game.player_one.move, @game.player_two.move) == "Player 1" %>
 <% @winner = @game.player_two.name if Results.new.check(@game.player_one.move, @game.player_two.move) == "Player 2" %>
 <% @winner = "Nobody" if Results.new.check(@game.player_one.move, @game.player_two.move) == "Nobody" %>
 
+<ul class="row-3">
 <br><%= @winner %> wins!
+</ul>
 
 <% @game.player_one.move = nil; @game.player_two.move %>
 
-<form action="/play" method="get">
-<button type="submit" value="submit">Play Again?</button>
+<form action="/play" method="get" class="row">
+<button type="submit" value="submit" class="button-51" role="button">Play Again?</button>
 </form>
 <% end %>
 
 <% if @game_mode == 'multiplayer' && !!@game.player_one.move && !!@game.player_two.move %>
 <% @game.player_two.make_move if @game.player_two.name == 'Computer' %>
 
-<br><%= @game.player_one.name %> played <%= @game.player_one.move %>
-<br><%= @game.player_two.name %> played <%= @game.player_two.move %>
+<ul class="row-2">
+<br><%= @game.player_one.name.capitalize %> played <%= @game.player_one.move.capitalize %>
+<br><%= @game.player_two.name.capitalize %> played <%= @game.player_two.move.capitalize %>
+</ul>
+
 <% @winner = @game.player_one.name if Results.new.check(@game.player_one.move, @game.player_two.move) == "Player 1" %>
 <% @winner = @game.player_two.name if Results.new.check(@game.player_one.move, @game.player_two.move) == "Player 2" %>
 <% @winner = "Nobody" if Results.new.check(@game.player_one.move, @game.player_two.move) == "Nobody" %>
+
+<ul class="row-3">
 <br><%= @winner %> wins!
+</ul>
+
 <% @game.player_one.move = nil; @game.player_two.move = nil %>
 <form action="/play" method="get">
-<button type="submit" value="submit">Play again</button>
+<button type="submit" value="submit" class="button-51" role="button">Play Again?</button>
 </form>
 <% end %>
+
+</body>
+<footer>
+  By Khushnood Asif
+</footer>
