@@ -1,8 +1,9 @@
 feature 'Register name' do 
     scenario 'submitting name' do 
-    sign_in_and_play
-    save_and_open_page
+        visit('/')
+        fill_in :player_name, with: 'Jenny'
+        click_button 'Submit'
 
-    expect(page).to have_content 'Welcome Jenny! Ready to play Rock, Paper, Scissors? Make your move:'
+        expect(page).to have_content 'Welcome Jenny! Ready to play Rock, Paper, Scissors? Make your move:'
     end
 end
