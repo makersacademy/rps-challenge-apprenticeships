@@ -1,2 +1,8 @@
-<h1> Welcome <%= @user_name %></h1>
-<h2>Let's play!</h2>
+<h1> Welcome <%= @user_name %> :)</h1>
+<h3><STRONG>Please pick one</STRONG></h3>
+<form action="/choice" method="post">
+<INPUT TYPE="radio" NAME="choice" VALUE="rock">Rock
+<INPUT TYPE="radio" NAME="choice" VALUE="paper">Paper
+<INPUT TYPE="radio" NAME="choice" VALUE="scissors">Scissors
+</form>
+<a href="/game">OK</a>
