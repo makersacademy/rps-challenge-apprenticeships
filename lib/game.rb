@@ -1,5 +1,4 @@
 class Game
-    attr_reader :name
 
     def initialize(player_item, computer_item)
         @player_item = player_item
