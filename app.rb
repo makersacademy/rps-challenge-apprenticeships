@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require './lib/player.rb'
 require './lib/game.rb'
+require './lib/cpu_player.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -11,10 +12,17 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/names' do
+  get '/cpu' do
+    erb :cpu
+  end
+
+  # get '/two-player' do
+  #   erb :two_player
+  # end
+
+  post '/name' do
     player_1 = Player.new(params[:player_name])
-    player_2 = Player.new('cpu')
-    player_2.weapon=(:scissors)
+    player_2 = CpuPlayer.new('cpu')
     $game = Game.new(player_1, player_2)
     redirect '/play'
   end
@@ -26,6 +34,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/choice' do
     $game.player_1.weapon=(params[:choice].to_sym)
+    $game.player_2.choose
     redirect '/result'
   end
 
@@ -33,6 +42,6 @@ class RockPaperScissors < Sinatra::Base
     @game = $game
     erb :result
   end
-  
+
   run! if app_file == $0
 end
