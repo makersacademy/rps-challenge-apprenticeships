@@ -12,8 +12,7 @@ describe Game do
   
   describe 'player chooses rock, ai chooses scissors, ' do
     it 'player wins' do
-      srand(1)
-      srand(3)
+      randomise
       expect(Game.run_vs_ai(player_one)).to eq "#{player_one.name} wins!"
     end
   end
@@ -21,8 +20,7 @@ describe Game do
   describe 'player chooses scissors, ai chooses scissors, ' do
     let(:player_one) { double :player, choice: "scissors" }
     it "it's a draw" do
-      srand(1)
-      srand(3)
+      randomise
       expect(Game.run_vs_ai(player_one)).to eq "It's a draw!"
     end
   end
@@ -30,8 +28,7 @@ describe Game do
   describe 'player chooses paper, ai chooses scissors, ' do
     let(:player_one) { double :player, choice: "paper" }
     it "it's a draw" do
-      srand(1)
-      srand(3)
+      randomise
       expect(Game.run_vs_ai(player_one)).to eq "You lose!"
     end
   end
