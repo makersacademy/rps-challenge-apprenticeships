@@ -1,5 +1,5 @@
 class Game
-  attr_reader :player
+  attr_reader :player, :player_choice
 
 RULES = { rock: :scissors,
   paper: :rock,
@@ -11,9 +11,11 @@ WEAPONS = [:rock, :paper, :scissors]
     @player = player
   end
 
-  def player_choice=(weapon)
-    fail 'not a possible weapon' unless WEAPONS.includes? weapon
-    @player_choice = weapon
+  def make_player_choice(weapon)
+    weapon_sym = weapon.to_sym
+    if WEAPONS.include? weapon_sym
+      @player_choice = weapon_sym
+    end
   end
 
   # def result
