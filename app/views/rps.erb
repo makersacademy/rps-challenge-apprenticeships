@@ -1,3 +1,25 @@
 <h1>Welcome to Rock Paper Scissors!</h1>
 
 <h2>What item would you like to select?</h2>
+
+<form action="/game-result" method="post">
+    <div>
+        <input type="radio" id="rock" name="rps" value="Rock">
+        <label for="rock">Rock</label>
+    </div>
+
+    <div>
+        <input type="radio" id="paper" name="rps" value="Paper">
+        <label for="paper">Paper</label>
+    </div>
+
+    <div>
+        <input type="radio" id="scissors" name="rps" value="Scissors">
+        <label for="scissors">Scissors</label>
+    </div>
+
+    <div>
+        <input type="submit" value="OK">
+    </div>
+</form>
+

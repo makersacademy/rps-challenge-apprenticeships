@@ -19,5 +19,10 @@ class RockPaperScissors < Sinatra::Base
     erb :rps
   end
 
+  post '/game-result' do
+    @player_item = params[:rps]
+    erb :game_result
+  end
+
   run! if app_file == $0
 end
