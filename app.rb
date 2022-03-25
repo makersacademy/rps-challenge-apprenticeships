@@ -4,6 +4,7 @@ require 'capybara/rspec'
 require 'rspec'
 
 class RockPaperScissors < Sinatra::Base
+  enable :sessions
   get '/test' do
     'test page'
   end
@@ -13,7 +14,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name_page' do
-    @player_name = params[:player_name]
+    session[:player_name] = params[:player_name]
+    redirect '/play'
+  end
+
+  get '/play' do
+    @player_name = session[:player_name]
     erb :play
   end
 
