@@ -19,13 +19,23 @@ class RockPaperScissors < Sinatra::Base
     redirect to('/play')
   end
   
+  get '/pvp-names' do
+    erb :pvp_names
+  end
+
   get '/vs-ai-name' do
     erb :vs_ai_name
   end
 
   get '/play' do
     @player_one = $player_one
-    erb :play
+    @player_two = $player_two
+
+    if @player_two.name == 'computer'
+      erb :play
+    else
+      erb :pvp_play
+    end
   end
 
   get '/result' do
