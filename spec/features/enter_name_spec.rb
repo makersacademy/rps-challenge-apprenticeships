@@ -1,10 +1,10 @@
 feature 'enter name' do
-  it 'displays message' do
+  scenario 'when loaded it displays message' do
     visit ('/')
     expect(page).to have_content 'Please enter your name:'
   end
-  scenario 'submitting name' do
-    visit ('/')
-    fill_in :player_name, with: 'Ken' 
+  scenario 'lets user enter their name' do
+    sign_in_and_play
+    expect(page).to have_content "Ken"
   end
 end
