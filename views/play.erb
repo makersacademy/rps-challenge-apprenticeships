@@ -1,0 +1,11 @@
+<h1><%= @game.player_one.name %> VS <%= @game.player_two.name %></h1>
+
+<form action="/gamemode" method="post">
+    <label for="Rock">ROCK</label>
+    <input type="radio" name="move" value="Rock">
+    <label for="Paper">PAPER</label>
+    <input type="radio" name="move" value="Paper">
+    <label for="Scissor">SCISSOR</label>
+    <input type="radio" name="move" value="Scissor">
+    <button type="submit" value="submit"><%= @game.player_one.name %>'s move</button>
+</form>
