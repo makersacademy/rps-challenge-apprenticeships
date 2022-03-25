@@ -1,5 +1,7 @@
 require 'sinatra/base'
 require './lib/player'
+require './lib/game'
+
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -21,6 +23,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/game-result' do
     @player_item = params[:rps]
+    @computer_item = ["Rock", "Paper", "Scissors"].sample
+    @game = Game.new(@player_item, @computer_item)
     erb :game_result
   end
 
