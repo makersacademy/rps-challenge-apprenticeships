@@ -5,6 +5,10 @@ describe Game do
     let(:bob) { double :player, name: 'Bob', weapon: 'rock' }
     let(:cpu) { double :player, name: 'cpu', weapon: 'scissors' }
 
+    subject(:game_2) { described_class.new(bill, cpu) }
+    let(:bill) { double :player, name: 'Bill', weapon: 'scissors' }
+    let(:cpu) { double :player, name: 'cpu', weapon: 'scissors' }
+
   describe '#player_1' do
     it 'returns player 1' do
       expect(game.player_1).to eq bob
@@ -17,9 +21,15 @@ describe Game do
     end
   end
 
-  describe '#winner' do
+  describe '#result' do
     it 'returns the winner' do
-      expect(game.winner).to eq bob
+      expect(game.result).to eq bob
+    end
+
+    context 'there is no winner' do
+      it 'returns tie' do
+        expect(game_2.result).to eq 'tie'
+      end
     end
   end
 end

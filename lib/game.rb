@@ -17,9 +17,10 @@ class Game
     @players.last
   end
 
-  def winner
+  def result
     return player_1 if is_winner?(player_1, player_2)
     return player_2 if is_winner?(player_2, player_1)
+    return 'tie'
   end
   
   private
