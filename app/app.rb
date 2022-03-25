@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -9,9 +10,13 @@ class RockPaperScissors < Sinatra::Base
     erb :index
   end
 
-  post '/name' do
-    @player_name = params[:player_name]
-    erb :waiting_room
+  post '/playroom' do
+    @player = Player.new(params[:player_name])
+    erb :playroom
+  end
+
+  get '/play-rps' do
+    erb :rps
   end
 
   run! if app_file == $0
