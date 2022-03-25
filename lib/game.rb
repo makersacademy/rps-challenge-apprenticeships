@@ -7,7 +7,7 @@ RULES = { rock: :scissors,
 WEAPONS = [:rock, :paper, :scissors]
 
   def initialize(player)
-    @player = player
+    @players = player
   end
 
   def player_choice=(weapon)
