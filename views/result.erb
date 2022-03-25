@@ -1,0 +1,21 @@
+<body>
+  <div>
+
+  <% if @rock %>
+    <h2> You have chosen <%= @rock %> and Computer has chosen <%= @computer %> </h2>
+    <h1><%= @result.play(@rock, @computer) %></h1>
+  <% end %>
+  <% if @scissor %>
+   <h2> You have chosen <%= @scissor %> and Computer has chosen <%= @computer %> </h2>
+    <h1><%= @result.play(@scissor, @computer) %></h1>
+  <% end %> 
+  <% if @paper %>
+    <h2> You have chosen <%= @paper %> and Computer has chosen <%= @computer %> </h2>
+    <h1><%= @result.play(@paper, @computer) %></h1>
+  <% end %>
+
+  <form action="/play">
+    <input type="submit" value="Try again">
+  </form>
+  </div>
+</body>

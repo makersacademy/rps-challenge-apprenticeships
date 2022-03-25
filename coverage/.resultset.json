@@ -1,0 +1,109 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/philipcarr/Makers2/rps-challenge/rps-challenge-apprenticeships/spec/computer_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/philipcarr/Makers2/rps-challenge/rps-challenge-apprenticeships/spec/features/choosing_attack_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/philipcarr/Makers2/rps-challenge/rps-challenge-apprenticeships/spec/features/entering_name_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/philipcarr/Makers2/rps-challenge/rps-challenge-apprenticeships/spec/features/try_again_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/philipcarr/Makers2/rps-challenge/rps-challenge-apprenticeships/spec/features/view_options_spec.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/philipcarr/Makers2/rps-challenge/rps-challenge-apprenticeships/spec/game_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/philipcarr/Makers2/rps-challenge/rps-challenge-apprenticeships/spec/player_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1648224785
+  }
+}
