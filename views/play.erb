@@ -1,0 +1,11 @@
+<h1>Welcome, <%= @player_name %>!</h1>
+<form action="/result" method=post>
+  <p>Choose your weapon:</p>
+  <input type=radio id="rock" name="weapon" value="Rock">
+  <label for="rock">Rock</label><br>
+  <input type=radio id="paper" name="weapon" value="Paper">
+  <label for="paper">Paper</label><br>
+  <input type=radio id="scissors" name="weapon" value="Scissors">
+  <label for="scissors">Scissors</label><br><br>
+  <input type=submit value="Submit">
+</form>
