@@ -9,6 +9,6 @@ RSpec.describe Game do
         expect(game2.define_winner).to eq "It's a tie!!!"
 
         game3 = Game.new("Scissors", "Paper")
-        expect(game3.define_winner).to eq "Player wins!!!"
+        expect(game3.define_winner).to eq "You win!!!"
     end
 end

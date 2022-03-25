@@ -12,7 +12,7 @@ class Game
         elsif (@player_item == 'Rock' && @computer_item == 'Scissors') ||
             (@player_item == 'Scissors' && @computer_item == 'Paper') ||
             (@player_item == 'Paper' && @computer_item == 'Rock')
-            "Player wins!!!"
+            "You win!!!"
         else
             "Computer wins!!!"
         end
