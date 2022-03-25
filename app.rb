@@ -1,5 +1,5 @@
 require 'sinatra/base'
-class RockPaperScissors < Sinatra::Base
+class RockPaperScissorsApp < Sinatra::Base
   get '/test' do
     'test page'
   end
