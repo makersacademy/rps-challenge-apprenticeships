@@ -7,5 +7,12 @@ RSpec.describe Game do
       game = Game.new(player)
       expect(game.player).to eq player
     end
+
+    it 'initializes a CPU instance' do
+      cpu = double :cpu
+      player = double :player
+      game = Game.new(player)
+      expect(game.cpu_move).to eq "Rock"  
+    end
   end
 end

@@ -1,1 +1,7 @@
-Select a move <%= @player.name %>!
+Select a move <%= @game.player.name %>!
+
+<form action="/moves" method="post">
+  <input type="submit" value="Rock" name="choice">
+  <input type="submit" value="Paper" name="choice">
+  <input type="submit" value="Scissors" name="choice">
+</form>
