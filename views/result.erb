@@ -1,1 +1,10 @@
-<h1><%= @choice %></h1>
+<h1><%=@player%>, you choose: <%=@choice%></h1>
+<h1>The PC choose: <%=@pc_choice%></h1>
+
+<% if @winner == @player %>
+  <h1>CONGRATULATIONS! <%= @player %> you win!</h1>
+<% elsif @winner == "pc" %>
+  <h1>BOO! The PC won :'(</h1>
+<% else %>
+  <h1>Not quite, it's a draw...</h1>
+<% end %>

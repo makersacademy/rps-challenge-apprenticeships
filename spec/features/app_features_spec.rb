@@ -28,5 +28,14 @@ feature 'user submits player name', type: :feature do
 
       expect(page).to have_content("rock")
     end
+
+    it 'shows you your choice' do
+        visit '/play'
+        within("form") do
+          find_by_id("paper").click
+        end
+  
+        expect(page).to have_content("paper")
+      end
   end
 end

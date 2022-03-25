@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './models/rps.rb'
 
 class RockPaperScissors < Sinatra::Base
   get '/test' do
@@ -22,7 +23,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/result' do
+    @player = session[:name]
     @choice = params.key("")
+    game = RPS.new(@choice)
+    @pc_choice = game.pc_choice
+    @winner = game.calculate
+    @winner = @player if @winner == "player"
     erb :result
   end
 
