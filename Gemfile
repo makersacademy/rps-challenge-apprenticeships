@@ -14,3 +14,9 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
+# gem 'thin'
+gem 'puma'
+gem 'reel'
+gem 'http'
+gem 'webrick'
