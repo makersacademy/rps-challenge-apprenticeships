@@ -30,12 +30,16 @@ class RockPaperScissors < Sinatra::Base
   get '/play' do
     @player_one = $player_one
     @player_two = $player_two
-
     if @player_two.name == 'computer'
       erb :play
     else
       erb :pvp_play
     end
+  end
+  
+  get '/pvp-play-2' do
+    @player_two = $player_two
+    erb :pvp_play_two
   end
 
   get '/result' do
