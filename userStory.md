@@ -60,32 +60,17 @@ Include the initializer and public methods with all parameters and return values
 Make a list of examples of how the class will behave in different situations.
 
 # 1
-todo_list = TodoList.new
-todo_list.list # return an empty array []
+
 
 # 2
-todo_list = TodoList.new
-todo_list.add("Walk the dog")
-todo_list.list # returns ["Walk the dog"]
+
 
 # 3
-todo_list = TodoList.new
-todo_list.add("Walk the dog")
-todo_list.add("Buy milk")
-todo_list.list # returns ["Walk the dog", "Buy milk"]
+
 
 # 4
-todo_list = TodoList.new
-todo_list.add("Walk the dog")
-todo_list.add("Buy milk")
-todo_list.complete("Walk the dog")
-todo_list.list # returns ["Buy milk"]
+
 
 # 5
-todo_list = TodoList.new
-todo_list.add("Walk the dog")
-todo_list.add("Buy milk")
-todo_list.complete("Pay bills") # fails "This task does exist."
-
 
 ## 4. Implement the Behaviour
