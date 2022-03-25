@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Game time </title>
+</head>
+<body>
+
+    <p>Hi <%= @player_name %>, choose rock, paper or scissors.</p>
+    <form action="/round" method="post">
+        <p>Choose your attack:</p>
+        <input type="radio" name="attack" id="rock" value="rock">
+            <label for="rock"> Rock </label>
+        <input type="radio" name="attack" id="paper" value="paper">
+            <label for="rock"> Paper </label>
+        <input type="radio" name="attack" id="scissors" value="scissors">
+            <label for="rock"> Scissors </label>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
