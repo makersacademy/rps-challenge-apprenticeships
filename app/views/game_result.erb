@@ -1,0 +1,9 @@
+<h1><%= @player_name%>: <%= @player_item %>
+<br>
+Computer: <%= @computer_item %>
+<br>
+<%= @game.define_winner %></h1>
+
+<form action="/play-rps" method="get">
+    <input type="submit" value="Play again">
+</form>
