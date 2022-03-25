@@ -20,16 +20,41 @@ class RockPaperScissors < Sinatra::Base
     erb(:select)
   end
 
-  post '/game' do
+  post '/match' do
+   
     @player_choice = params[:selection]
     computer = Computer.new
     @computer_choice = computer.choice
     game = Game.new(@player_choice, @computer_choice)
-    puts game.compare
+    @final = game.compare
+    puts @final
+    # redirect '/result'
+
+    if @final == "You Won!"
+      redirect '/winner'
+    elsif @final == "You Lose!"
+      redirect '/loser'
+    else
+      redirect '/draw'
+    end
 
   end
 
+  # get '/result' do
+  #   erb(:final)
+  # end
 
+  get '/winner' do
+    erb(:winner)
+  end
+
+  get '/loser' do
+    erb(:loser)
+  end
+
+  get '/draw' do
+    erb(:draw)
+  end
 
   run! if app_file == $0
 end
