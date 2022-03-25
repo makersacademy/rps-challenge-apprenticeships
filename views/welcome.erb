@@ -1,0 +1,11 @@
+Welcome <%= @player %>!<br>
+Ready to play Rock, Paper, Scissors?<br>
+<form action="/outcome" method="post">
+    <label for="choices">Make your move:</label><br>
+    <select name="choices">
+        <option value="rock">rock</option>
+        <option value="paper">paper</option>
+        <option value="scissors">scissors</option>
+        <input type="submit" value="Submit">
+    </select>
+</form>
