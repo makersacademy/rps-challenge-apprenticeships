@@ -4,8 +4,8 @@ class Player
   end
 
   def choose(choice)
-    choice
+    @choice = choice
   end
 
-  attr_reader :name
+  attr_reader :name, :choice
 end

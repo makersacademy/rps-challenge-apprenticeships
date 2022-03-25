@@ -1,34 +1,39 @@
 require 'game'
 
 describe Game do
-  let(:player_one) { double :player, choose: "rock", name: "Homer" }
-  let(:player_two) { double :player, choose: "scissors", name: "Marge" }
-  subject(:game) { described_class.new(player_one, player_two) }
-
-  describe '#initialize' do
-    it 'creates a new game' do
-      expect(game).to be_an_instance_of(Game)
+  let(:player_one) { double :player, choice: "rock", name: "Homer" }
+  # let(:player_two) { double :player, choice: "scissors", name: "Marge" }
+  
+  describe '#make_ai_choice returns a random choice' do
+    it 'returns a random choice' do
+      ai_choice = Game.new(player_one).make_ai_choice
+      expect(["rock", "paper", "scissors"]).to include(ai_choice)
     end
   end
-
-  describe '#make_choices' do
-    it 'returns an array of two choices' do
-      expect(game.make_choices).to be_an_instance_of(Array)
-      expect(game.make_choices.length).to eq(2)
+  
+  describe 'player chooses rock, ai chooses scissors, ' do
+    it 'player wins' do
+      srand(1)
+      srand(3)
+      expect(Game.run_vs_ai(player_one)).to eq "#{player_one.name} wins!"
     end
   end
-
-  describe '#run' do
-    it 'returns the winner of the game' do
-      expect(game.run).to be_an_instance_of(String)
+  
+  describe 'player chooses scissors, ai chooses scissors, ' do
+    let(:player_one) { double :player, choice: "scissors" }
+    it "it's a draw" do
+      srand(1)
+      srand(3)
+      expect(Game.run_vs_ai(player_one)).to eq "It's a draw!"
     end
   end
-
-  describe 'player one wins when choosing rock' do
-    let(:player_one) { double :player, choose: "rock", name: "Homer" }
-    let(:player_two) { double :player, choose: "scissors", name: "Marge" }
-    it 'returns player one wins' do
-      expect(game.run).to eq("#{player_one.name} wins!")
+  
+  describe 'player chooses paper, ai chooses scissors, ' do
+    let(:player_one) { double :player, choice: "paper" }
+    it "it's a draw" do
+      srand(1)
+      srand(3)
+      expect(Game.run_vs_ai(player_one)).to eq "You lose!"
     end
   end
 end
