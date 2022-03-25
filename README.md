@@ -1,5 +1,7 @@
 # ROCK PAPER SCISSORS WEB APP
 
+### <p align="center"> [CHECK OUT THE RPS APP!](https://rps-makers.netlify.app/) <p>
+  
 ## Installing locally
 
 ```ruby
