@@ -1,4 +1,4 @@
-require 'computer'
+require_relative 'computer'
 
 class Player
   attr_reader :name
@@ -8,7 +8,7 @@ class Player
     @name = name
   end
 
-  def make_move(move)
+  def make_move(move = nil)
     @move = move if @name != 'Computer'
     @move = Computer.new.move if @name == 'Computer'
   end

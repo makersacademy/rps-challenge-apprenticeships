@@ -1,9 +1,9 @@
 class Computer
   def move
-    random_number = rand(1..3)
-    @move = 'ROCK' if random_number <= 1
-    @move = 'PAPER' if random_number == 2
-    @move = 'SCISSORS' if random_number == 3
+    random_num = rand(1..2)
+    @move = 'Rock' if random_num  == 1
+    @move = 'Paper' if random_num == 2
+    @move = 'Scissor' if random_num == 3
     @move
   end
 end

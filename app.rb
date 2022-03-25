@@ -1,8 +1,8 @@
 require 'sinatra/base'
-require './lib/computer'
-require './lib/game.rb'
-require './lib/player.rb'
-
+require_relative './lib/computer'
+require_relative './lib/game'
+require_relative './lib/player'
+require_relative './lib/results'
 
 class RockPaperScissors < Sinatra::Base
 
@@ -17,18 +17,27 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/gamemode' do
-    sessions[:gamemode] = params[:mode]
-    redirect '/names'
+    session[:gamemode] = params[:mode]
+    redirect '/getnames'
   end
 
-  get '/names' do
+  get '/getnames' do
     erb :names
+  end
+
+  post '/setnames' do
+    Game.start_game(params[:player_one], params[:player_two]) if params[:player_two] != nil
+    Game.start_game(params[:player_one]) if params[:player_two].nil?
+    redirect '/play'
   end
 
   get '/play' do
     @game_mode = session[:gamemode]
-    erb(:play)
+    erb :play
   end
-  
-  run! if app_file == $0
+
+  post '/player_one_move' do
+    @game.player_one.make_move(params[:move])
+    redirect '/play'
+  end
 end
