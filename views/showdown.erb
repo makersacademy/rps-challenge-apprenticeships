@@ -1,0 +1,9 @@
+<% if @game.winner == "Draw" %> 
+It's a draw!!
+<% else %>
+<%= @game.winner %> Wins!!!
+<% end %>
+
+<form action="/" method="get">
+  <input type="submit" value="Play Again">
+</form>
