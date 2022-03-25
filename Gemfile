@@ -7,6 +7,11 @@ gem 'sinatra'
 group :test do
   gem 'capybara'
   gem 'rspec'
+  gem 'thin'
+  gem 'puma'
+  gem 'reel'
+  gem 'http'
+  gem 'webrick'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
 end
