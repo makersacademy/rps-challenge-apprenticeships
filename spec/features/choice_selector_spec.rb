@@ -8,7 +8,24 @@ feature 'choice_selector' do
   scenario 'player can select rock' do
     enter_name_and_play
     click_button 'Start'
-    click_button 'Rock'
-    expect(page).to have_content "Luci picked ROCK!"
+    choose 'Rock', allow_label_click: true
+    click_button 'Submit'
+    expect(page).to have_content "Luci picked Rock!"
+  end
+
+  scenario 'player can select paper' do
+    enter_name_and_play
+    click_button 'Start'
+    choose 'Scissors', allow_label_click: true
+    click_button 'Submit'
+    expect(page).to have_content "Luci picked Scissors!"
+  end
+
+  scenario 'player can select rock' do
+    enter_name_and_play
+    click_button 'Start'
+    choose 'Paper', allow_label_click: true
+    click_button 'Submit'
+    expect(page).to have_content "Luci picked Paper!"
   end
 end

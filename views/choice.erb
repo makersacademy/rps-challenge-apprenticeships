@@ -2,7 +2,13 @@
 <h2>Make your choice.</h2>
 
 <div>
-  <form action='/rock'>
-    <input type='submit' value="Rock"/>
+  <form action='/outcome' method=post>
+    <label for='Rock'>ROCK</label>
+    <input type='radio' value="Rock" name='RPS' id="Rock"/>
+    <label for='Paper'>PAPER</label>
+    <input type='radio' value="Paper" name='RPS' id="Paper">
+    <label for='Scissors'>SCISSORS</label>
+    <input type='radio' value="Scissors" name='RPS' id="Scissors"/>
+    <input type="submit" value="Submit"/> 
   </form>
 </div>
