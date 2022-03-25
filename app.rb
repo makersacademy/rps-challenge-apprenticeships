@@ -1,6 +1,8 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
 require './lib/game'
+require './lib/player'
+require './lib/multiplayer'
 
 class RockPaperScissors < Sinatra::Base
   configure :development do
@@ -18,18 +20,42 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/name' do
-    session[:name] = params[:name]
+    session[:first_player_name] = params[:first_player_name]
+    session[:second_player_name] = params[:second_player_name]
     redirect '/welcome'
   end
 
   get '/welcome' do
-    @name = session[:name]
-    erb :play
+    @first_player_name = session[:first_player_name]
+    @second_player_name = session[:second_player_name]
+    erb :player_one
   end
 
-  post '/play-game' do
-    session[:game] = params[:game]
-    redirect '/result'
+  post '/player-1' do
+    session[:first_player_game] = params[:first_player_game]
+    redirect '/second'
+  end
+
+  get '/second' do
+    @first_player_name = session[:first_player_name]
+    @second_player_name = session[:second_player_name]
+    erb :player_two
+  end
+
+  post '/player-2' do
+    session[:second_player_game] = params[:second_player_game]
+    redirect '/multiplayer-result'
+  end
+
+  get '/multiplayer-result' do
+    @first_player_name = session[:first_player_name]
+    @second_player_name = session[:second_player_name]
+    @first_player_game = session[:first_player_game]
+    @second_player_game = session[:second_player_game]
+    @first_player = Player.new(@first_player_name, @first_player_game)
+    @second_player = Player.new(@second_player_name, @second_player_game)
+    @new_multiplayer = Multiplayer.new(@first_player, @second_player)
+    erb :multiplayer_result
   end
 
   get '/result' do

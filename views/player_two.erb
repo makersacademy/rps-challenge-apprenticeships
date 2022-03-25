@@ -1,0 +1,13 @@
+<h2>Welcome <%= @first_player_name %>!</h2>
+<h2>Welcome <%= @second_player_name %>!</h2>
+<h3>Time to play Rock, Paper, Scissors </h3>
+<h4><%= @second_player_name %> select one option:</h4>
+<form action='/player-2' method='post'>
+  <input type='radio' name='second_player_game' value='Rock'>
+  <label for='Rock'>Rock</label><br>
+  <input type='radio' name='second_player_game' value='Paper'>
+  <label for='Paper'>Paper</label><br>
+  <input type='radio' name='second_player_game' value='Scissors'>
+  <label for='Scissors'>Scissors</label><br>
+  <input type='submit' value='Play!'>
+</form>
