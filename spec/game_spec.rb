@@ -8,6 +8,12 @@ RSpec.describe Game do
       expect(game.player).to eq player
     end
 
+    it 'returns players move' do
+      player = double :player, move: "Rock"
+      game = Game.new(player)
+      expect(game.player.move).to eq "Rock"
+    end
+
     xit 'initializes a CPU instance' do
       cpu = double :cpu, move: "Rock"
       player = double :player

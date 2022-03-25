@@ -1,7 +1,11 @@
 class Cpu 
-  attr_reader :name, :move
+  attr_reader :name
   def initialize
     @name = "CPU"
-    @move = ["Rock", "Paper", "Scissors"].sample
+    @moves = ["Rock", "Paper", "Scissors"]
+  end
+
+  def move
+    @moves[rand(0..2)]
   end
 end

@@ -15,7 +15,8 @@ class RockPaperScissors < Sinatra::Base
 
   post '/name' do
     player = Player.new(params[:player_name])
-    $game = Game.new(player)
+    cpu = Cpu.new
+    $game = Game.new(player, cpu)
     redirect('/play')
   end
 
@@ -26,7 +27,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/moves' do
     @game = $game
-    @game.player.choose_move(params[:choice])
+    @game.player_1.choose_move(params[:choice])
     redirect('/showdown')
   end
 
