@@ -7,4 +7,6 @@ class RPS
         return @computer_attack.sample
     end
 
+    def who_wins
+        if @attack == 
 end
