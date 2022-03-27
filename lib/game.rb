@@ -1,5 +1,3 @@
-#require './app.rb'
-
 class Game 
   WEAPONS = ["Rock", "Paper", "Scissors"]
 
@@ -15,21 +13,11 @@ class Game
     return Game::WEAPONS[2]
   end
 
-  # RULES = { :Rock=>:Scissors,
-  #           :Scissors=>:Paper,
-  #           :Paper=>:Rock }
-
-#   RULES = {
-#   :rock     => {:rock => :draw, :paper => :loose, :scissors => :win},
-#   :paper    => {:rock => :win, :paper => :draw, :scissors => :loose},
-#   :scissors => {:rock => :loose, :paper => :win, :scissors => :draw}
-# }
- 
   def result(player_weapon,computer_weapon)
-    #RULES[@player_weapon][@computer_weapon]
-    p " player weapon #{player_weapon}"
-    p " PC weapon #{computer_weapon}"
-    p "weapon 1 is #{Game::rock}"
+    #p "player weapon #{player_weapon}"
+    #p "PC weapon #{computer_weapon}"
+    #p "weapon 1 is #{Game::rock}"
+    
     if player_weapon == computer_weapon
       :draw
     elsif
@@ -38,17 +26,7 @@ class Game
       (player_weapon == Game::scissors && computer_weapon == Game::paper)
         :win
     else
-        :loose
+        :lose
     end
   end
 end
-    
-
-    # unless @player_weapon == @computer_weapon  
-    #   #RULES[@player_weapon][@computer_weapon] ? :win :loose
-    #   RULES[:Rock][:Paper] ? :win :loose
-    #   #else
-    #   #:draw
-    # #end
-
-
