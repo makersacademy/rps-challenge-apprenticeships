@@ -1,9 +1,16 @@
-<h2> Let's start <%= @player_name %>! </h2>
+<div style= "font-family: Tahoma, sans-serif; background: rgb(238,213,174);
+background: radial-gradient(circle, rgba(238,213,174,1) 9%, rgba(162,148,233,1) 97%)">
 </br>
-<h2> Select your weapon </h2>
-
+<center>
+<h2>Let's start <%= @player_name %></h2>
+<h3> Select your weapon </h3>
+</br>
 <form action='/result' method='post'>
   <input type='submit' value=<%=@weapon_1 %> name='weapon'>
   <input type='submit' value=<%=@weapon_2 %> name='weapon'>
   <input type='submit' value=<%=@weapon_3 %> name='weapon'>
 </form>
+<h2> 🪨     📃     ✂️ </h2>
+</center>
+</br>
+</div>

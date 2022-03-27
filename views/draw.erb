@@ -1,2 +1,14 @@
+<div style= "font-family: Tahoma, sans-serif; background: rgb(238,213,174);
+background: radial-gradient(circle, rgba(238,213,174,1) 9%, rgba(162,148,233,1) 97%)">
+</br>
+<center>
 <h2> <%= @player_weapon %> vs <%= @computer_weapon %> </h2>
 <h2> The result is: A draw.. Try again! </h2>
+</br>
+<form action='/weapon' method="post">
+  <input type="submit" value="Play again">
+</form>
+</br>
+</center>
+</br>
+</div>
