@@ -17,16 +17,19 @@ class Game
     @players.last
   end
 
-  def result
-    return player_1 if is_winner?(player_1, player_2)
-    return player_2 if is_winner?(player_2, player_1)
-    return 'tie'
+  def tie?
+    player_2.weapon.to_sym == player_1.weapon.to_sym
+  end
+
+  def winner
+    return player_1 if winner?(player_1, player_2)
+    return player_2
   end
   
   private
 
-  def is_winner?(player_1, player_2)
-    player_2.weapon.to_sym == DEFEATED_BY[player_1.weapon.to_sym]
+  def winner?(p_1, p_2)
+    p_2.weapon.to_sym == DEFEATED_BY[p_1.weapon.to_sym]
   end
 
 end

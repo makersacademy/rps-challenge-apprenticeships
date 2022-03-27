@@ -1,13 +1,13 @@
 require 'game'
 
 describe Game do
-  subject(:game) { described_class.new(bob, cpu) }
+  subject(:game) { described_class.new(bob, cpu_1) }
     let(:bob) { double :player, name: 'Bob', weapon: 'rock' }
-    let(:cpu) { double :player, name: 'cpu', weapon: 'scissors' }
+    let(:cpu_1) { double :cpu_player, name: 'cpu', weapon: 'scissors' }
 
-    subject(:game_2) { described_class.new(bill, cpu) }
+  subject(:game_2) { described_class.new(bill, cpu_2) }
     let(:bill) { double :player, name: 'Bill', weapon: 'scissors' }
-    let(:cpu) { double :player, name: 'cpu', weapon: 'scissors' }
+    let(:cpu_2) { double :cpu_player, name: 'cpu2', weapon: 'scissors' }
 
   describe '#player_1' do
     it 'returns player 1' do
@@ -17,19 +17,27 @@ describe Game do
 
   describe '#player_2' do
     it 'returns player_2' do
-      expect(game.player_2).to eq cpu
+      expect(game.player_2).to eq cpu_1
     end
   end
 
-  describe '#result' do
-    it 'returns the winner' do
-      expect(game.result).to eq bob
+  describe '#tie?' do
+    context 'there is a winner' do
+      it 'returns false' do
+        expect(game.tie?).to eq false
+      end
     end
 
     context 'there is no winner' do
-      it 'returns tie' do
-        expect(game_2.result).to eq 'tie'
+      it 'returns true' do
+        expect(game_2.tie?).to eq true
       end
+    end
+  end
+
+  describe '#winner' do
+    it 'returns the winner' do
+      expect(game.winner).to eq bob
     end
   end
 end
