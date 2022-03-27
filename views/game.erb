@@ -1,3 +1,20 @@
 
-<h2><%= @user_name %> selected:  <%= @user_choice %> </h2>
-<h2> Computer selected: <%= @computer_choice %> </h2>
+<h3><%= @user_name %> selected:  <%= @user_choice %> </h3>
+<h3> Computer selected: <%= @computer_choice %> </h3>
+<h3>
+<% if @user_choice == "ROCK" && @computer_choice == "SCISSORS" %>
+<%= @user_name %> wins!
+<% elsif @user_choice == "SCISSORS" && @computer_choice == "PAPER" %>
+<%= @user_name %> wins!
+<% elsif @user_choice == "PAPER" && @computer_choice == "ROCK" %>
+<%= @user_name %> wins!
+<% elsif @computer_choice == "ROCK" && @user_choice == "SCISSORS" %>
+Computer wins!
+<% elsif @computer_choice == "SCISSORS" && @userr_choice == "PAPER" %>
+Computer wins!
+<% elsif @computer_choice == "PAPER" && @user_choice == "ROCK" %>
+Computer wins!
+<% else %>
+It's a draw!
+<% end %>
+</h3>
