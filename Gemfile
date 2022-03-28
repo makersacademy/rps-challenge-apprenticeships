@@ -9,6 +9,10 @@ group :test do
   gem 'rspec'
   gem 'simplecov', require: false
   gem 'simplecov-console', require: false
+  gem "rack", "~> 2.2"
+  gem "webrick", "~> 1.7"
+  gem "selenium", "~> 0.2.11"
+  gem "launchy", "~> 2.5"
 end
 
 group :development, :test do
