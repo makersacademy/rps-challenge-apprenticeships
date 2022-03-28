@@ -1,0 +1,16 @@
+<h2>Welcome, <%= @game.player %> </h2>
+<br>
+<br>
+<div class="option">
+  <form action='/game_result' method="post">
+    <input type='submit' value='rock' name="player_option">
+  </form>
+
+  <form action='/game_result' method="post">
+    <input type='submit' value='paper' name="player_option">
+  </form>
+
+  <form action='/game_result' method="post">
+    <input type='submit' value='scissors' name="player_option">
+  </form>
+</div>
