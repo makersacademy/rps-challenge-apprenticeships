@@ -12,7 +12,7 @@ class Game
   def computer
     @computers_answer
   end
-  
+
   def computers_answer
     @answers.sample
   end
@@ -24,7 +24,7 @@ class Game
   def get_result(computer)
     if @answer == computer
       return "Draw"
-    elsif @answers[@answers.index(@answer) - 1] == computer
+    elsif @answers[@answers.index(@answer) - 1] == computer #computer answer is my answer -1, then I win
       return "You win!"
     else
       "You lose!"

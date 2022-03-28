@@ -1,3 +1,20 @@
 
+body {
 
-https://wallpapercave.com/wp/wp8121936.jpg
+  background-image: url("https://wallpapercave.com/wp/wp8121936.jpg");
+  background-position: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  padding: 50px;
+
+}
+label {
+  text-align:right;
+  padding-right:20px;
+  display:inline-block;
+  min-width:150px;
+}
+

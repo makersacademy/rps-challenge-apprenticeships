@@ -22,7 +22,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/result' do 
     @answer = params[:answer]
-    @game = Game.new(@answer)
+    @game = Game.new(params[:answer])
     @computer = @game.computer
     @result = @game.result
     erb(:result)
