@@ -3,7 +3,6 @@ require 'simplecov'
 require 'simplecov-console'
 require 'features/web_helpers'
 
-
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
   SimpleCov::Formatter::Console,
   # Want a nice code coverage website? Uncomment this next line!
@@ -16,10 +15,23 @@ SimpleCov.start
 ENV['RACK_ENV'] = 'test'
 
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
+class Game
+
+  def comp_choice
+    return 'rock'
+  end
+  
+end
+
+class RockPaperScissors
+  @@game = Game
+end
+
 Capybara.app = RockPaperScissors
 
 RSpec.configure do |config|
   config.after(:suite) do
+
     puts
     puts "\e[33mHave you considered running rubocop? It will help you improve your code!\e[0m"
     puts "\e[33mTry it now! Just run: rubocop\e[0m"
