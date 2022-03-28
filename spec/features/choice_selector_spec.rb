@@ -13,7 +13,7 @@ feature 'choice_selector' do
     expect(page).to have_content "Luci picked Rock!"
   end
 
-  scenario 'player can select paper' do
+  scenario 'player can select scissors' do
     enter_name_and_play
     click_button 'Start'
     choose 'Scissors', allow_label_click: true
@@ -21,7 +21,7 @@ feature 'choice_selector' do
     expect(page).to have_content "Luci picked Scissors!"
   end
 
-  scenario 'player can select rock' do
+  scenario 'player can select paper' do
     enter_name_and_play
     click_button 'Start'
     choose 'Paper', allow_label_click: true

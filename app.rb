@@ -3,6 +3,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require './lib/player'
+require './lib/game'
 
 
 class RockPaperScissors < Sinatra::Base
@@ -12,10 +13,11 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/' do
+    $game = Game.new
     erb :index
   end
 
-  post '/name_page' do
+  post '/name_input' do
     $player = Player.new(params[:player_name])
     redirect '/play'
   end
@@ -37,6 +39,8 @@ class RockPaperScissors < Sinatra::Base
   get '/outcome' do
     @player_name = $player.name
     @player_choice = $player.choice
+    $computer_choice = $game.cpu_choice
+    $winner = $game.find_winner($player, $game)
     erb :outcome
   end
 

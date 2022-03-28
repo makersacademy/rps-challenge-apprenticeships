@@ -10,7 +10,7 @@ describe Player do
   end
 
   describe '#choice' do
-    it 'returns the choice of rock' do
+    it 'returns the player choice' do
       luci.choice = "Rock"
       expect(luci.choice).to eq "Rock"
     end
