@@ -1,0 +1,16 @@
+
+<h1><%= @player %> pick between these 3 options:<h1>
+
+<form action="/result" method="POST">
+  <input type="hidden" name="choice" value="scissors" />
+  <input type="submit" value="scissors"/>
+</form>
+<form action="/result" method="POST">
+  <input type="hidden" name="choice" value="paper" />
+  <input type="submit" value="paper"/>
+</form>
+<form action="/result" method="POST">
+  <input type="hidden" name="choice" value="rock" />
+  <input type="submit" value="rock"/>
+</form>
+
