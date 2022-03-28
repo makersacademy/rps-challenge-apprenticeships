@@ -1,0 +1,18 @@
+<div>
+  <%= @player_name %>
+</div>
+<br>
+<br>
+<div class="option">
+  <form action='/game' method="post">
+    <input type='submit' value='Rock' name="player_option">
+  </form>
+
+  <form action='/game' method="post">
+    <input type='submit' value='Paper' name="player_option">
+  </form>
+
+  <form action='/game' method="post">
+    <input type='submit' value='Scissors' name="player_option">
+  </form>
+</div>

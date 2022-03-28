@@ -1,16 +1,9 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
-ruby '3.0.2'
+source "https://rubygems.org"
 
+gem 'rspec'
 gem 'sinatra'
+gem 'capybara'
 
-group :test do
-  gem 'capybara'
-  gem 'rspec'
-  gem 'simplecov', require: false
-  gem 'simplecov-console', require: false
-end
-
-group :development, :test do
-  gem 'rubocop', '1.20'
-end
+# gem "rails"
