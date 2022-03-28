@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-    <p>Juliana(You) chose <%= @attack %> </p>
+    <p> ==> Juliana(You) chose <%= @attack %> </p>
 
-    <p> Computer chose <%= @computer %> </p>
+    <p> ==> Computer chose <%= @game_1.show %> </p>
+
+    <%= @game_1.who_wins(@attack) %> 
 </body>
 </html>
 

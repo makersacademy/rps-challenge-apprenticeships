@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require './rps.rb'
+require './model/rps.rb'
 class RockPaperScissors < Sinatra::Base
   get '/test' do
     'test page'
@@ -17,8 +17,7 @@ class RockPaperScissors < Sinatra::Base
 
   post '/round' do
     @attack = params[:attack]
-    game_1 = RPS.new
-    @computer = game_1.computer_choice
+    @game_1 = RPS.new
     erb :round
   end
 
