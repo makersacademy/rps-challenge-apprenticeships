@@ -1,0 +1,15 @@
+<!-- in views/play.erb -->
+<center>
+<br>
+<h2><%= @player_1_name %> vs. RPS bot</h2>
+
+</br></br><form method="post" action="/attack">
+  <label for="activity"> <%= @player_1_name %> your move:</label>
+  <select id="activity" name="activity">
+    <option value="rock">Rock</option>
+    <option value="paper">Paper</option>
+    <option value="scissors">Scissors</option>
+    <input type="submit">
+  </select>
+</form>
+</center>
