@@ -1,0 +1,12 @@
+<body style='text-align:center; margin-top: 150px'>
+<h1> Welcome to Rock Paper Scissors</h1> <br>
+<h1> Player name: <%= @player_name %></h1> <br>
+<form action="/choice" method="post">
+    <label for="choice">
+    Enter choice:
+    <input type="text" name="choice">
+    </label>
+    <input type="submit" value="Submit">
+</form>
+</body>
+ 
