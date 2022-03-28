@@ -38,4 +38,13 @@ feature 'user submits player name', type: :feature do
         expect(page).to have_content("paper")
       end
   end
+
+  feature "game play" do
+    it "displays who's won" do
+        visit '/play'
+        
+
+        expect(page).to have_content("CONGRATULATIONS")
+    end
+  end
 end
