@@ -1,0 +1,11 @@
+<h1> <%= @user_name %> vs Computer! </h1>
+<h3><%= @user_name %>, please select one: </h3>
+<form action="/choice" method="post">
+<INPUT type="radio" name="user_choice" value="ROCK" id="rock">ROCK
+<INPUT type="radio" name="user_choice" value="PAPER" id="paper">PAPER
+<INPUT type="radio" name="user_choice" value="SCISSORS" id="scissors">SCISSORS
+<br>
+<br>
+<input type="submit" value="Submit" name = "submit_button">
+</form>
+
