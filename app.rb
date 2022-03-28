@@ -1,9 +1,9 @@
 require 'sinatra/base'
 require 'sinatra/reloader'
+require_relative 'lib/game'
 
 class RockPaperScissors < Sinatra::Base
   enable :sessions
-
   get '/' do
     erb :index
   end
@@ -18,6 +18,28 @@ class RockPaperScissors < Sinatra::Base
     erb :move
   end
 
+  post '/choice' do
+    $player_choice = Game.new(params[:choice])
+
+    redirect '/result'
+  end
+
+  get '/result' do
+    # @winner = "player"
+    @result = $player_choice.result
+    @player_name = session[:player_name]
+    if @result == 'player wins'
+      # @winner = "#{@player_name} wins"
+      erb :player_wins
+    elsif @result == 'comp wins'
+      # @winner = "Computer wins"
+      erb :computer_wins
+    else
+      # @winner == "It was a draw"
+      erb :draw
+    end
+    # erb :result
+  end
   get '/test' do
     'test page'
   end
