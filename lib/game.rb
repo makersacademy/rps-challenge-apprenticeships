@@ -1,9 +1,14 @@
-Class Game
+class Game
 
     def initialize(choice)
         @choice = choice
+        
+        comp_choice
+    end
+
+    def comp_choice
         comp = ['rock', 'paper', 'scissors']
-        comp_choice = comp.sample
+        @comp_choice = comp.sample
     end
 
     def result
@@ -23,5 +28,4 @@ Class Game
             return 'comp wins'
         end
     end
-        
 end
