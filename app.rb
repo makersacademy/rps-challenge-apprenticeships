@@ -8,8 +8,6 @@ class RPS < Sinatra::Base
     register Sinatra::Reloader
   end
 
-  enable :sessions
-
   get '/' do
     erb :index
   end
@@ -25,15 +23,15 @@ class RPS < Sinatra::Base
     erb :play
   end
 
-  post '/game-result' do
+  post '/game_result' do
     @game = $game
     @game.player_choice(params[:player_option])
     redirect '/game_result'
   end
 
-  get '/game-result' do
+  get '/game_result' do
     @game = $game
-    @game.com_choice
+    @game.computer_choice
     erb :game_result
   end
 
