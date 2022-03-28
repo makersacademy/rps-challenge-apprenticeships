@@ -1,6 +1,6 @@
 # ROCK PAPER SCISSORS WEB APP
 
-### <p align="center"> [CHECK OUT THE RPS APP!](https://rps-makers.netlify.app/) <p>
+### <p align="center"> [CHECK OUT THE RPS APP!](https://rps-makers-app.herokuapp.com/) <p>
   
 ## Installing locally
 
