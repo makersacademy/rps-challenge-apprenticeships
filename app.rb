@@ -1,19 +1,28 @@
 require 'sinatra/base'
+require './lib/game'
 class App < Sinatra::Base
+
+
   get '/' do
-    erb :player_reg 
+    erb :form
   end
 
-  post '/player_reg' do
+  post '/player_weapon' do
     p params
     @player_name = params[:player_name]
-    erb:vspage
+    erb :player_weapon
   end
 
-post '/choice' do
-    
-end
+
+
+  post '/result' do
+    $game = Game.new(:player_weapon)
+    @score = $game.result
+    erb :result
+  end
+  
+
 
   run! if app_file == $0
 end
-x
+
