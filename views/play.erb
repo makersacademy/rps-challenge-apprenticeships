@@ -1,0 +1,32 @@
+
+<head>
+  <link rel="stylesheet" href="<%= url('/style.css') %>">
+</head>
+<body class="background">
+  <div class="content">
+    <table class="resulttable">
+      <tr>
+        <td><h1><%= @name %> chose:</h1></td>
+        <td><h1>Computer chose:</h1></td>
+      </tr>
+      <tr>
+        <td><h1><%= @answer %></h1></td>
+        <td><h1><%= @opponent_answer %></h1></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td colspan=2></td>
+      </tr>
+      <tr>
+        <td colspan=2><h1>You <%= @result %>!</h1></td>
+      </tr>
+      <tr>
+        <td colspan=2>
+          <form action='/'>
+            <input type="submit" value="Play Again">
+          </form>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
