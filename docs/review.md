@@ -201,7 +201,7 @@ RULES = { rock: :scissors,
 or for RPSLS:
 
 ```ruby
-RULES = { rock: [scissors, lizard],
+RULES = { rock: [:scissors, :lizard],
           paper: [:rock, :spock],
           scissors: [:paper, :lizard],
           lizard: [:paper, :spock],
@@ -218,7 +218,7 @@ class Weapon
   end
 
   def beats?(other)
-    RULES[type][other.type]
+    RULES[type].include?(:rock) # for RPSLS
   end
 end
 
