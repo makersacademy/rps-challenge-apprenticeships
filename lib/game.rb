@@ -3,7 +3,7 @@ class Game
 
   def initialize(player_choice)
     @player_choice = player_choice
-		@computer_move = ["rock", "paper", "scissors"].sample
+	@computer_move = ["rock", "paper", "scissors"].sample
   end
 
   def play
