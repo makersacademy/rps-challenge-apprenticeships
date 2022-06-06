@@ -1,0 +1,21 @@
+<h1>Rock Paper Scissors</h1>
+<button onclick="setIsTwoPlayers(false)">One Player</button>
+<button onclick="setIsTwoPlayers(true)">Two Players</button>
+
+<form id="names" action="/play" method="post"></form>
+
+<script>
+    function setIsTwoPlayers(isTwoPlayers) {
+        document.getElementById("names").innerHTML = `
+<input type="hidden" name="player_count" value="${isTwoPlayers + 1}">
+<label>
+    Player 1 name
+    <input type="text" name="p1_name" placeholder="Player 1 name" required>
+  </label>
+  ${isTwoPlayers ? `<label>
+    Player 2 name
+    <input type="text"  name="p2_name" placeholder="Player 2 name" required>
+  </label>` : ''}
+<input type="submit" value="Submit">`
+    }
+</script>

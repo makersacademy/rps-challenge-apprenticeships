@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock Paper Scissors</title>
+  <style>
+    * {
+        text-align: center;
+    }
+    button, input[type=submit] {
+        border: none;
+        background-color: grey;
+        color: white;
+        font-size: 1.25em;
+        padding: 0.25em 0.5em;
+        border-radius: 5px;
+        margin: 0.5em;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        margin: 1em;
+    }
+    span.move {
+        font-weight: bold;
+        text-transform: lowercase;
+    }
+  </style>
+</head>
+<body>
+  <%= yield :content %>
+</body>
+</html>
