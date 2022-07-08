@@ -16,3 +16,5 @@ group :development, :test do
 end
 
 gem 'webrick'
+
+gem 'launchy'
