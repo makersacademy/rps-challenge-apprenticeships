@@ -19,6 +19,9 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @name = session[:first_name]
+    session[:button] = params[:button]
+    @button = session[:button]
     erb(:result)
   end
 
