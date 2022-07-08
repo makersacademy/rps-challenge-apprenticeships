@@ -4,5 +4,9 @@ class RockPaperScissors < Sinatra::Base
     'this is your homepage'
   end
 
+  get '/cheeky-route' do
+    'added another cheeky route'
+  end
+
   run! if app_file == $0
 end
