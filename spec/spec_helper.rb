@@ -16,6 +16,8 @@ ENV['RACK_ENV'] = 'test'
 require File.join(File.dirname(__FILE__), '../lib', 'app.rb')
 Capybara.app = RockPaperScissors
 
+require './spec/features/web_helpers'
+
 RSpec.configure do |config|
   config.after(:suite) do
     puts
