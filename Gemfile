@@ -16,3 +16,5 @@ group :development, :test do
 end
 
 gem "webrick", "~> 1.7"
+
+gem "rspec-expectations", "~> 3.11"

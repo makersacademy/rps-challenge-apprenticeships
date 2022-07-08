@@ -23,12 +23,13 @@ class RockPaperScissors < Sinatra::Base
 
   post '/record-action' do
     session[:player].choose_action(params[:action])
-    redirect '/display-action'
+    redirect '/result'
   end
 
-  get '/display-action' do
+  get '/result' do
     @player_action = session[:player].action
-    erb :display_action
+    @computer_action = RandomAction.new.action
+    erb :result
   end
 
   run! if app_file == $0

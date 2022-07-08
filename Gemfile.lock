@@ -90,6 +90,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   rspec
+  rspec-expectations (~> 3.11)
   rubocop (= 1.20)
   simplecov
   simplecov-console
