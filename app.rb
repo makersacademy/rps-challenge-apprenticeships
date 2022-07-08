@@ -1,7 +1,8 @@
 require 'sinatra/base'
+# require 'sinatra'
 class RockPaperScissors < Sinatra::Base
   get '/' do
-    'this is the homepage'
+    erb(:index)
   end
 
   run! if app_file == $0
