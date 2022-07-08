@@ -16,5 +16,6 @@ class RockPaperScissors < Sinatra::Base
     erb :gameplay
   end
 
+
   run! if app_file == $0
 end
