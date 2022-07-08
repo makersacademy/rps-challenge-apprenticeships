@@ -8,5 +8,9 @@ class RockPaperScissors < Sinatra::Base
     'added another cheeky route'
   end
 
+  get '/derp' do
+    'derp'
+  end
+
   run! if app_file == $0
 end
