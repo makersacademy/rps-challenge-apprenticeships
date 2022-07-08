@@ -2,9 +2,6 @@
 
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
-  get '/test' do
-    'test page'
-  end
 
   get '/' do
     erb(:index)
@@ -17,11 +14,6 @@ class RockPaperScissors < Sinatra::Base
     p @player_move
     erb(:index)
   end
-
-  # get 'the_game.rb' do
-  #   erb(:the_game)
-  # end
-
 
   run! if app_file == $0
 end
