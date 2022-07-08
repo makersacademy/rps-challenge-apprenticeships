@@ -1,0 +1,10 @@
+<!-- in views/results.erb -->
+<h1>ROCK PAPER SCISSORS!</h1>
+<h2> <%=session["player_name"]%>, let's play! Choose your weapon:</h2>
+<form action="/results>
+  <input type="text" name="name" method ="post">
+  <input type="button" value="ROCK">
+  <input type="button" value="PAPER">
+  <input type="button" value="SCISSORS">
+</form>
+
