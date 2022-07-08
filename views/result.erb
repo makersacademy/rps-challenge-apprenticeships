@@ -5,5 +5,11 @@
     <body>
         <h2><%=$player.name%> played <%=@button.downcase%></h2><br>
         <h2>The computer played <%=$game.guess%></h2>
+
+        <%if @button.downcase == $game.guess %>
+        <%= $player.name %> wins!
+       <% else %>
+            Computer wins!
+       <% end %>
     </body>
   </html>
