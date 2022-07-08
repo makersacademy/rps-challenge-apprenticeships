@@ -1,15 +1,18 @@
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
-  get '/test' do
-    'visit test page'
-  end
+  enable :sessions
 
   get '/' do
     erb :index
   end
 
   post '/names' do
-    @player_1_name = params[:player_1_name]
+    session[:player_1_name] = params[:player_1_name]
+    redirect '/gameplay'
+  end
+
+  get '/gameplay' do
+    @player_1_name = session[:player_1_name]
     erb :gameplay
   end
 
