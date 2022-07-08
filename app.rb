@@ -25,20 +25,27 @@ class RockPaperScissors < Sinatra::Base
   # end
 
   get '/rock' do
-    'You chose rock'
     player = Player.new
     $pc_plays = player.pc_plays
+    $player_plays = "rock"
+    $result = player.rock
     erb(:rock)
   end
 
   get '/paper' do
-    "you chose paper"
-    # erb(:paper)
+    player = Player.new
+    $pc_plays = player.pc_plays
+    $player_plays = "paper"
+    $result = player.paper
+    erb(:rock)
   end
 
   get '/scissors' do
-    "you chose scissors"
-    # erb(:scissors)
+    player = Player.new
+    $pc_plays = player.pc_plays
+    $player_plays = "scissors"
+    $result = player.scissors
+    erb(:rock)
   end
 
   run! if app_file == $0

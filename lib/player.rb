@@ -4,14 +4,43 @@ class Player
     return @pc_plays
   end
 
-  # def game(rps)
-    
-    # if rps == "rock" && @computer_plays == "paper"
-      
-    # elsif
+  def rock 
+    if $pc_plays == "scissors"
+      $gameplay = "You win!"
+      return $gameplay
+    elsif $pc_plays == "paper"
+      $gameplay = "You lose!"
+      return $gameplay
+    elsif $pc_plays == "rock"
+      $gameplay = "It's a tie!"  
+      return $gameplay
+    end
+  end
 
-    # elsif
+  def scissors
+    if $pc_plays == "scissors"
+      $gameplay = "It's a tie!"
+      return $gameplay
+    elsif $pc_plays == "paper"
+      $gameplay = "You win!"
+      return $gameplay
+    elsif $pc_plays == "rock"
+      $gameplay = "You lose! :("  
+      return $gameplay
+    end
+  end
 
-    # elsif 
+  def paper
+    if $pc_plays == "scissors"
+      $gameplay = "You lose!"
+      return $gameplay
+    elsif $pc_plays == "paper"
+      $gameplay = "You win!"
+      return $gameplay
+    elsif $pc_plays == "rock"
+      $gameplay = "You lose! :("  
+      return $gameplay
+    end
+  end
 
 end
