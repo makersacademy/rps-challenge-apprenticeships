@@ -14,3 +14,7 @@ end
 group :development, :test do
   gem 'rubocop', '1.20'
 end
+
+gem "webrick", "~> 1.7"
+
+gem "rspec-expectations", "~> 3.11"

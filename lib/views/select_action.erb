@@ -1,0 +1,18 @@
+<h2>Greetings, <%= @player_name %>!</h2>
+
+<div>Choose Rock, Paper or Scissors</div><br>
+
+<form action="/record-action" method="post">
+  <input type="hidden" name="action" value="rock"/>
+  <input type="submit" value="Rock"/>
+</form>
+
+<form action="/record-action" method="post">
+  <input type="hidden" name="action" value="paper"/>
+  <input type="submit" value="Paper"/>
+</form>
+
+<form action="/record-action" method="post">
+  <input type="hidden" name="action" value="scissors"/>
+  <input type="submit" value="Scissors"/>
+</form>
