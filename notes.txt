@@ -1,0 +1,3 @@
+Next steps:
+- review existing codebase
+- set up test infrastructure
