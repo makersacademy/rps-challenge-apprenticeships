@@ -18,9 +18,13 @@ class RockPaperScissors < Sinatra::Base
     erb(:play)
   end
 
+  post '/played' do
+    session[:button] = params[:button]
+    redirect '/result'
+  end
+
   get '/result' do
     @name = session[:first_name]
-    session[:button] = params[:button]
     @button = session[:button]
     erb(:result)
   end

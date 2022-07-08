@@ -4,7 +4,7 @@
     </head>
     <body>
         <h1><%= @name %>'s turn to play</h1>
-        <form action='/result'>
+        <form action='/played' method="post">
             <input type="submit" value="Rock" name="button">
             <input type="submit" value="Paper" name="button">
             <input type="submit" value="Scissors" name="button">
