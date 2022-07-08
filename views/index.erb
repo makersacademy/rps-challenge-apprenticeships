@@ -1,0 +1,50 @@
+<%# As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game %>
+
+<%# This will be a home page where the user is prompted to register their name before playing the game. %>
+
+<% if (@player_name.nil? or @player_name == "") && @player_move.nil? %>
+
+<p> Hello, please enter your player name...</p>
+<form action="/" method="post">
+    <label for="name">Name:</label>
+    <input type="text" name="name">
+    <button type="submit">Send your message</button>
+
+</form>
+
+<% end %>
+
+<% if (@player_name && @player_name != "") && @player_move.nil? %>
+
+<h1> Hello <%= "#{@player_name}"%>, welcome to the game! Please choose your move.</h1>
+
+<form action="/" method="post">
+    <input type="hidden" name="move" value="rock">
+    <input type="hidden" name="name" value="<%= "#{@player_name}"%>">
+    <button type="submit">Rock</button>
+</form>
+
+<form action="/" method="post">
+    <input type="hidden" name="move" value="paper">
+    <input type="hidden" name="name" value="<%= "#{@player_name}"%>">
+    <button type="submit">Paper</button>
+</form>
+
+<form action="/" method="post">
+    <input type="hidden" name="move" value="scissors">
+    <input type="hidden" name="name" value="<%= "#{@player_name}"%>">
+    <button type="submit">Scissors</button>
+</form>
+
+<% end %>
+
+<% if @player_move && @player_name && @player_name != "" %>
+
+Winner page! <%= "#{@player_name}"%>
+Winning move! <%= "#{@player_move}"%>
+
+
+
+<% end %>
