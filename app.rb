@@ -6,5 +6,9 @@ class RockPaperScissors < Sinatra::Base
     'test page'
   end
 
+  get '/' do
+    "hello world"
+  end
+
   run! if app_file == $0
 end
