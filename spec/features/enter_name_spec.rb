@@ -10,9 +10,16 @@ feature 'homepage' do
       visit '/'
       expect(page).to have_button('Submit')
   end
-  
+
   scenario 'to fill in the form' do
     visit '/'
     expect(page.fill_in 'Name', with: 'Miranda')
-end
   end
+
+  scenario 'form to post content on /play page' do
+    visit '/'
+    page.fill_in 'Name', with: 'Miranda'
+    page.click_on 'Submit'
+    expect(page).to have_content 'Miranda\'s turn to play'
+  end
+end
