@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/player'
 # require "sinatra/reloader" if development?
 class RockPaperScissors < Sinatra::Base
 
@@ -9,23 +10,35 @@ class RockPaperScissors < Sinatra::Base
   # end
 
   get '/' do
-    # session["player_name"] = params["player_name"]
     erb(:index)
-    # redirect '/submit-name'
   end
 
   post '/submit-name' do
-
     session["player_name"] = params["player_name"]
-    @player_name = session["player_name"]
-    # erb (:submitted-name)
     erb(:results)
   end
 
-  get '/results' do
-    @player_name = session["player_name"]
+  # get '/results' do
+  #   @player_name = session["player_name"]
 
-    erb(:results)
+  #   erb(:results)
+  # end
+
+  get '/rock' do
+    'You chose rock'
+    player = Player.new
+    $pc_plays = player.pc_plays
+    erb(:rock)
+  end
+
+  get '/paper' do
+    "you chose paper"
+    # erb(:paper)
+  end
+
+  get '/scissors' do
+    "you chose scissors"
+    # erb(:scissors)
   end
 
   run! if app_file == $0
