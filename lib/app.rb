@@ -27,8 +27,10 @@ class RockPaperScissors < Sinatra::Base
   end
 
   get '/result' do
+    @player_name = session[:player].name
     @player_action = session[:player].action
     @computer_action = RandomAction.new.action
+    @result = Game.new.result(@player_action, @computer_action)
     erb :result
   end
 

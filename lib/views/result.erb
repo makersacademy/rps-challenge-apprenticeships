@@ -1,1 +1,13 @@
-<div><%= @player_action.capitalize %> vs. <%= @computer_action.capitalize %></div>
+<div><%= @player_name %> chose <%= @player_action %>...</div><br>
+
+<div>...the computer chose <%= @computer_action %>...</div><br>
+
+<div><%= @player_action.capitalize %> vs. <%= @computer_action.capitalize %></div><br>
+
+<% if @result == "win" %>
+  <div>You won!</div>
+<% elsif @result == "draw" %>
+  <div>It's a draw!</div>
+<% elsif @result == "loss" %>
+  <div>You lost!</div>
+<% end %>
