@@ -12,22 +12,22 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/register-name' do
-    session[:player_name] = params[:player_name]
+    session[:player] = Player.new(params[:player_name])
     redirect '/select-action'
   end
 
   get '/select-action' do
-    @player_name = session[:player_name]
+    @player_name = session[:player].name
     erb :select_action
   end
 
   post '/record-action' do
-    session[:player_action] = params[:action]
+    session[:player].choose_action(params[:action])
     redirect '/display-action'
   end
 
   get '/display-action' do
-    @player_action = session[:player_action]
+    @player_action = session[:player].action
     erb :display_action
   end
 
