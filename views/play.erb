@@ -5,9 +5,13 @@
     <body>
       <%= @player_name %> vs. Computer
 
+    <p>Make your selection: Rock, Paper or Scissors</p>  
+
+      <form action="/result">
+        <input type="submit" value="Rock">
+        <input type="submit" value="Paper">            
+        <input type="submit" value="Scissors">
+      </form>
       
-      <%# <a href="/play">Play</a> %>
-
-
     </body>
   </html>

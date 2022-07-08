@@ -21,7 +21,11 @@ class RockPaperScissors < Sinatra::Base
     erb :play
   end
 
-
+	get '/result' do
+		@player_name = session[:player_name] 
+    @computer_play = ["Rock", "Paper", "Scissors"].sample
+		erb :result
+	end
 
   run! if app_file == $0
 end
