@@ -1,7 +1,7 @@
 feature 'select player action' do
   scenario 'display available actions to user' do
     enter_name
-    expect(page).to have_content('Rock').and have_content('Paper').and have_content('Scissors')
+    expect(page).to have_content('Choose Rock, Paper or Scissors')
   end
 
   context 'when user selects Rock' do
