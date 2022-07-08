@@ -1,7 +1,7 @@
 require 'sinatra/base'
 class RockPaperScissors < Sinatra::Base
   get '/test' do
-    'test page'
+    'testing testing'
   end
 
   run! if app_file == $0
