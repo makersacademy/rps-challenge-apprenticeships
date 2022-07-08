@@ -16,7 +16,7 @@ feature 'rock paper scissors buttons' do
 	
 	scenario 'click on paper button' do
 		visit '/'
-    page.fill_in 'Name', with: 'Miranda'
+    page.fill_in 'Enter your name', with: 'Miranda'
     page.click_on 'Submit'
 		page.click_on 'Paper'
 		expect(page).to have_content "Miranda played paper"
@@ -24,7 +24,7 @@ feature 'rock paper scissors buttons' do
 
 	scenario 'click on rock button' do
 		visit '/'
-    page.fill_in 'Name', with: 'Miranda'
+    page.fill_in 'Enter your name', with: 'Miranda'
     page.click_on 'Submit'
 		page.click_on 'Rock'
 		expect(page).to have_content "Miranda played rock"
@@ -32,7 +32,7 @@ feature 'rock paper scissors buttons' do
 
 	scenario 'click on scissors button' do
 		visit '/'
-    page.fill_in 'Name', with: 'Miranda'
+    page.fill_in 'Enter your name', with: 'Miranda'
     page.click_on 'Submit'
 		page.click_on 'Scissors'
 		expect(page).to have_content "Miranda played scissors"

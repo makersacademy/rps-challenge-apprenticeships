@@ -13,12 +13,12 @@ feature 'homepage' do
 
   scenario 'to fill in the form' do
     visit '/'
-    expect(page.fill_in 'Name', with: 'Miranda')
+    expect(page.fill_in 'Enter your name', with: 'Miranda')
   end
 
   scenario 'form to post content on /play page' do
     visit '/'
-    page.fill_in 'Name', with: 'Miranda'
+    page.fill_in 'Enter your name', with: 'Miranda'
     page.click_on 'Submit'
     expect(page).to have_content 'Miranda\'s turn to play'
   end
