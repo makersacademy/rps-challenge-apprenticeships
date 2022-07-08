@@ -13,9 +13,7 @@ feature 'rock paper scissors buttons' do
 		visit '/play'
 		expect(page).to have_button('Scissors')
 	end
-
-
-
+	
 	scenario 'click on paper button' do
 		visit '/'
     page.fill_in 'Name', with: 'Miranda'
