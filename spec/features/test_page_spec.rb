@@ -18,19 +18,19 @@ feature 'Display reasults' do
   scenario 'choose rock' do
     sign_in_and_play
     click_button 'Rock'
-    expect(page).to have_content 'Hannah, you chose Rock.'
+    expect(page).to have_content 'Hannah, the results are in!'
   end
 
   scenario 'choose paper' do
     sign_in_and_play
     click_button 'Paper'
-    expect(page).to have_content 'Hannah, you chose Paper.'
+    expect(page).to have_content 'Hannah, the results are in!'
   end
 
   scenario 'choose scissors' do
     sign_in_and_play
     click_button 'Scissors'
-    expect(page).to have_content 'Hannah, you chose Scissors.'
+    expect(page).to have_content 'Hannah, the results are in!'
   end
 end
 
