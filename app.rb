@@ -8,11 +8,11 @@ class RockPaperScissors < Sinatra::Base
   get '/' do
     erb :index
   end
-  # post '/register-name' do
-  #   p params
+  post '/action_page' do
+     p params
   #   session[:player] = Player.new(params[:player_name])
   #   redirect '/select-action'
-  # end
+  end
 
   # get '/select-action' do
   #   @player_name = session[:player].name
