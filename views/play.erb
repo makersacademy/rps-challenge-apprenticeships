@@ -1,0 +1,18 @@
+<h1>
+    <%=" Hello, #{@player} let's play RPS" %>
+</h1>
+
+<form action="/record-action" method="post">
+  <input type="hidden" name="action" value="Rock"/>
+  <input type="submit" value="Rock"/>
+</form>
+
+<form action="/record-action" method="post">
+  <input type="hidden" name="action" value="Paper"/>
+  <input type="submit" value="Paper"/>
+</form>
+
+<form action="/record-action" method="post">
+  <input type="hidden" name="action" value="Scissors"/>
+  <input type="submit" value="Scissors"/>
+</form>

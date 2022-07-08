@@ -1,3 +1,5 @@
+
+require 'simplecov'
 feature 'test page' do
   scenario 'visit test page' do
     visit '/test'
