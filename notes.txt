@@ -1,0 +1,11 @@
+To do:
+- reformat HTML, and add styling
+- add error handling
+    e.g. user leaves name field blank,
+      or navigates to /result directly
+
+Additional features:
+- track results
+    e.g. "You've won 2 out of 5 games"
+- track player action selection
+    e.g. "You choose Rock 40% of the time"
