@@ -4,6 +4,12 @@ ruby '3.0.2'
 
 gem 'sinatra'
 
+# I've added
+gem 'webrick'
+gem 'capybara'
+gem 'launchy'
+# END
+
 group :test do
   gem 'capybara'
   gem 'rspec'

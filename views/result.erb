@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+    </head>
+    <body>
+        <%computer_guess = $game.guess%>
+        <h2><%=$player.name%> played <%=@button.downcase%></h2><br>
+        <h2>The computer played <%=computer_guess%></h2>
+        <br>
+        <h1>
+            <%if @button.downcase == 'scissors' && computer_guess == 'rock' %>
+                Computer wins!
+            <% elsif @button.downcase == 'scissors' && computer_guess == 'paper' %>
+                <%= $player.name %> wins!
+            <% elsif @button.downcase == 'paper' && computer_guess == 'rock' %>
+                <%= $player.name %> wins!
+            <% elsif @button.downcase == 'paper' && computer_guess == 'scissors' %>
+                Computer wins!
+            <% elsif @button.downcase == 'rock' && computer_guess == 'scissors' %>
+            <%= $player.name %> wins!
+            <% elsif @button.downcase == 'rock' && computer_guess == 'paper' %>
+                Computer wins!
+            <% else %>
+                It's a draw!
+            <% end %>
+       </h1>
+    </body>
+  </html>
