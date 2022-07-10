@@ -19,23 +19,16 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/find-winner' do
-    @move = params["move"]#store player move
-    p @move
+    move = params["move"]#store player move
+    $game.assign_move(move)
+    p move
     redirect '/result'
   end
 
   get '/result' do
+    binding.irb
     erb(:result)
   end
-
-
-  # post '/' do
-  #   @player_name = params["name"]
-  #   @player_move = params["move"]
-  #   p params
-  #   p @player_move
-  #   erb(:index)
-  # end
 
   run! if app_file == $0
 end
