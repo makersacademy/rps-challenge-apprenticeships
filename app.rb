@@ -18,8 +18,13 @@ class RockPaperScissors < Sinatra::Base
     erb(:game)
   end
 
-  post '/result' do
-    p params
+  post '/find-winner' do
+    @move = params["move"]#store player move
+    p @move
+    redirect '/result'
+  end
+
+  get '/result' do
     erb(:result)
   end
 
