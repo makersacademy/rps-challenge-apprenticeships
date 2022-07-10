@@ -16,6 +16,8 @@ GEM
     childprocess (4.1.0)
     diff-lcs (1.4.4)
     docile (1.4.0)
+    launchy (2.5.0)
+      addressable (~> 2.7)
     mini_mime (1.1.1)
     mini_portile2 (2.6.1)
     mustermann (1.1.1)
@@ -106,6 +108,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  launchy
   puma
   rspec
   rubocop (= 1.20)

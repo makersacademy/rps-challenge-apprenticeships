@@ -1,0 +1,61 @@
+<%# As a marketeer
+So that I can see my name in lights
+I would like to register my name before playing an online game %>
+
+<%# This will be a home page where the user is prompted to register their name before playing the game. %>
+
+<% if (@player_name.nil? or @player_name == "") && @player_move.nil? %>
+
+    <p> Hello, please enter your player name...</p>
+    <form action="/" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <button type="submit">Submit</button>
+
+    </form>
+
+<% elsif (@player_name && @player_name != "") && @player_move.nil?  %>
+
+    <h1> Hello <%= "#{@player_name}"%>, welcome to the game! Please choose your move.</h1>
+
+    <form action="/" method="post">
+        <input type="hidden" name="move" value="rock">
+        <input type="hidden" name="name" value="<%= "#{@player_name}"%>">
+        <button type="submit">Rock</button>
+    </form>
+
+    <form action="/" method="post">
+        <input type="hidden" name="move" value="paper">
+        <input type="hidden" name="name" value="<%= "#{@player_name}"%>">
+        <button type="submit">Paper</button>
+    </form>
+
+    <form action="/" method="post">
+        <input type="hidden" name="move" value="scissors">
+        <input type="hidden" name="name" value="<%= "#{@player_name}"%>">
+        <button type="submit">Scissors</button>
+    </form>
+
+<% elsif @player_move && @player_name && @player_name != "" %>
+
+    <% moves = {
+        "rock" => "scissors",
+        "paper" =>  "rock",
+        "scissors" => "paper"
+        } 
+    %>
+
+    <% @computers_move = ["rock", "paper", "scissors"].sample %>
+
+    <% if @player_move == @computers_move %>
+        <%="#{@player_name} played #{@player_move} and the computer also played #{@computers_move}." %>
+        We have a draw!
+
+    <% elsif moves[@player_move] == @computers_move %>
+        <%="#{@player_name} wins! The computer played #{moves[@player_move]}. #{@player_name} played #{@player_move}!" %>
+
+    <% else %>
+        Computer wins!
+
+    <% end %>
+<% end %>

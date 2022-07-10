@@ -1,0 +1,59 @@
+Build Rock Paper Scissors With Classes;
+
+
+~ How many views/pages will there be?
+~ What classes to use, is Game & Player enough?
+~ How will I implement sessions in the app.rb?
+~ Make sure I right tests, start with this first, test drive the thing!
+~ From previous challenge Battle,  heck how the use of a global variable (Bad idea irw) effects the game?
+
+# Use model/controller set up. Will need a lib folder for class files. This means keep logic in the class aka models and less code in the controller aka app.rb file.  
+
+
+
+1. Go to / and present user with username box and greeting - x
+2. When player name is entered, do something ~ a redirect? To a page greeting the player with Hello #{player.name}
+
+
+
+Class Game
+
+  def initiliaze(Player) #probably only takes one player as arg for now, the other player is the computer...
+    @player1 = player1
+  end
+
+end
+
+
+~ Need to consider which class stores the move? Probably the main game class.
+
+Class Player
+
+  def initiliaze(name)
+    @name = name
+  end
+
+end
+
+
+The game logic;
+
+
+if @player_move && @player_name && @player_name != ""
+  moves = {
+    "rock" => "scissors",
+    "paper" =>  "rock",
+    "scissors" => "paper"
+    } 
+
+  @computers_move = ["rock", "paper", "scissors"].sample
+
+    if @player_move == @computers_move %>
+        "#{@player_name} played #{@player_move} and the computer also played #{@computers_move}. We have a draw"
+
+    elsif moves[@player_move] == @computers_move
+        "#{@player_name} wins! The computer played #{moves[@player_move]}. #{@player_name} played #{@player_move}!"
+    else
+        Computer wins!
+      end
+end

@@ -5,6 +5,8 @@ ruby '3.0.2'
 gem 'sinatra'
 gem 'puma'
 gem 'webdrivers', '~> 5.0', require: false
+gem "launchy"
+gem "capybara"
 
 group :test do
   gem 'capybara'
