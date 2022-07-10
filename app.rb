@@ -10,14 +10,19 @@ class RockPaperScissors < Sinatra::Base
 
   post '/player-greet' do
     player = Player.new(params["player_name"]) #captures player name entered on index page form
-    p player
-    $game = Game.new(player)
+    $game = Game.new(player) #creates instance of game class with the player
     redirect '/game'
   end
 
   get '/game' do
     erb(:game)
   end
+
+  post '/result' do
+    p params
+    erb(:result)
+  end
+
 
   # post '/' do
   #   @player_name = params["name"]

@@ -16,6 +16,8 @@ Build Rock Paper Scissors With Classes;
 3. Implement a player class that creates itself using the playername captured from index page params. - x
 4. Implement a game class that takes a player as arg and can return that players name. - x
 5. Create a web helper that will auto fill a name in the html form
+6. Implement test/feature for rock, paper, scissors buttons on game page
+
 
 
 
