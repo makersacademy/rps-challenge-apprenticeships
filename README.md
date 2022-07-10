@@ -1,5 +1,8 @@
 # RPS Challenge
 
+## Request/Response Diagram
+![Diagram](./docs/diagram.png "Title")
+
 ## Instructions
 
 * Challenge time: until the end of the day
