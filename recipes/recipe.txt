@@ -23,7 +23,12 @@ Things to do in some sort of order;
   7.1 Move is passed into logic within the game.erb page? (what if I have multiple players, is this rubbish in that case?)
   7.2 Move is added as an attribute to the player or game class? (with more than 1 human player this would make sense)
 8. Have opted to got with 7.2, for now only have the game class set up to handle a single player, will work on second player later...
+9. Now what!?... implement game winner logic in the game class. 
+10. Integrate game winner logic from game class on the /result page output
+  10.1 Before redirecting to /result, find out who the winner is
+  10.2 Once winner determined, pass this through to /result page content
 
+  
 
 
 
