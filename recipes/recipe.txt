@@ -12,7 +12,8 @@ Build Rock Paper Scissors With Classes;
 
 
 1. Go to / and present user with username box and greeting - x
-2. When player name is entered, do something ~ a redirect? To a page greeting the player with Hello #{player.name}
+2. When player name is entered, do something ~ a redirect? To a page greeting the player with Hello #{player.name} - x
+3. Impletment a player class that creates itself using the playername captured from index page params.
 
 
 
