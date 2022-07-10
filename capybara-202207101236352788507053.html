@@ -1,19 +1,19 @@
-<h1> Hello <%= "#{$game.player_name}"%>, welcome to the game! Please choose your move.</h1>
+<h1> Hello Marlon, welcome to the game! Please choose your move.</h1>
 
   <form action="/" method="post">
       <input type="hidden" name="move" value="rock">
-      <input type="hidden" name="name" value="<%= "#{@player}"%>">
+      <input type="hidden" name="name" value="">
       <button type="submit">Rock</button>
   </form>
 
   <form action="/" method="post">
       <input type="hidden" name="move" value="paper">
-      <input type="hidden" name="name" value="<%= "#{@player}"%>">
+      <input type="hidden" name="name" value="">
       <button type="submit">Paper</button>
   </form>
 
   <form action="/" method="post">
       <input type="hidden" name="move" value="scissors">
-      <input type="hidden" name="name" value="<%= "#{@player}"%>">
+      <input type="hidden" name="name" value="">
       <button type="submit">Scissors</button>
   </form>

@@ -5,5 +5,5 @@ class Player
 
   def name
     return @name
-  ends
+  end
 end
