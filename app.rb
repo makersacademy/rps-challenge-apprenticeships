@@ -21,6 +21,8 @@ class RockPaperScissors < Sinatra::Base
   post '/find-winner' do
     $game.assign_move(params["move"])
     p $game.player.get_player_move
+    $game.set_computer_move
+    $game.find_winner
     redirect '/result'
   end
 

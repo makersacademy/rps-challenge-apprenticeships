@@ -27,8 +27,9 @@ Things to do in some sort of order;
 10. Integrate game winner logic from game class on the /result page output
   10.1 Before redirecting to /result, find out who the winner is
   10.2 Once winner determined, pass this through to /result page content
+11. Game winner logic works, tests work too. Now need to implement result page html content based on the find_winner method result. 
 
-  
+
 
 
 

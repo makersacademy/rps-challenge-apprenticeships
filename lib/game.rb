@@ -7,6 +7,7 @@ class Game
       "Paper" =>  "Rock",
       "Scissors" => "Paper"
       } 
+    @winner = nil
   end
 
   def player
@@ -22,7 +23,7 @@ class Game
   end
 
   def set_computer_move(move = nil)
-    potential_moves = ["rock", "paper", "scissors"]
+    potential_moves = ["Rock", "Paper", "Scissors"]
     if move == nil
       @computer_move = potential_moves.sample
     else 
@@ -36,12 +37,19 @@ class Game
 
   def find_winner
     if @computer_move == @player.get_player_move
+      @winner = "Draw"
       return "Draw"
     elsif @moves[@player.get_player_move] == @computer_move
+      @winner = "Player wins"
       return "Player wins"
     else
+      @winner = "Computer wins"
       return "Computer wins"
     end
+  end
+
+  def winner
+    return @winner
   end
   
 end
