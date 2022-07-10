@@ -2,10 +2,10 @@ require 'sinatra/base'
 
 class RockPaperScissors < Sinatra::Base
   
-  get '/nameform' do
+  get '/start' do
     erb :name_form
   end
-  
+
   post '/yourname' do
     p params
     @name = params[:name]
