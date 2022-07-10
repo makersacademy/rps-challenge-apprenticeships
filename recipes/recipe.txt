@@ -13,7 +13,9 @@ Build Rock Paper Scissors With Classes;
 
 1. Go to / and present user with username box and greeting - x
 2. When player name is entered, do something ~ a redirect? To a page greeting the player with Hello #{player.name} - x
-3. Impletment a player class that creates itself using the playername captured from index page params.
+3. Implement a player class that creates itself using the playername captured from index page params. - x
+4. Implement a game class that takes a player as arg and can return that players name. - x
+5. Create a web helper that will auto fill a name in the html form
 
 
 

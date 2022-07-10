@@ -1,4 +1,6 @@
 require 'sinatra/base'
+require './lib/player'
+require './lib/game'
 class RockPaperScissors < Sinatra::Base
   enable :sessions
 
@@ -7,9 +9,14 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/player-greet' do
-    @player = params["player_name"] #captures player name entered on index page form
-    p @player
+    player = Player.new(params["player_name"]) #captures player name entered on index page form
+    p player
+    $game = Game.new(player)
     redirect '/game'
+  end
+
+  get '/game' do
+    erb(:game)
   end
 
   # post '/' do
