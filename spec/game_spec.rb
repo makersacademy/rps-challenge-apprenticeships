@@ -29,4 +29,21 @@ describe Game do
       expect(game.get_computer_move).to eq "Paper"
     end
   end
+
+  describe '#find_winner' do
+    it 'Reports a draw when player and computer play same move' do
+      game.assign_move("Paper")
+      game.set_computer_move("Paper") #how can I mock this? Not sure how to predefine a set value for comp move.
+      expect(game.find_winner).to eq "Draw"
+    end
+  end
+
+  describe '#find_winner' do
+    it 'Reports a win when player choose winning move' do
+      game.assign_move("Paper")
+      game.set_computer_move("Rock") #how can I mock this? Not sure how to predefine a set value for comp move.
+      expect(game.find_winner).to eq "Player wins"
+    end
+  end
+
 end
