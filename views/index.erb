@@ -1,0 +1,39 @@
+<% if @player_name.nil? %>
+  <p> Please enter your name </p>
+  <form action="/" method="post"> 
+    <input type="text" name="name">
+    <input type="submit" value="Submit">
+  </form>
+
+<% elsif @player_name %>
+
+  <h1> Greetings and salutations <%= @player_name %> </h1>
+
+  <p> Choose your weapon! </p>
+  <form action="/" method="post"> 
+    <input type="hidden" name="move" value="rock">
+    <button type="submit">rock</button> 
+  </form>
+
+  <form action="/" method="post"> 
+    <input type="hidden" name="move" value="paper">
+    <button type="submit">paper</button> 
+  </form>
+
+  <form action="/" method="post"> 
+  <input type="hidden" name="move" value="scissors">
+  <button type="submit">scissors</button> 
+</form>
+
+<% elsif @player_move = "rock" %>
+<h1> You chose </h1>
+
+<% end %>
+
+
+
+<img src='/download.jpeg' />
+
+ 
+
+
