@@ -22,8 +22,7 @@ Things to do in some sort of order;
 7. Decide how and where to caputre the moves from the button submissions 
   7.1 Move is passed into logic within the game.erb page? (what if I have multiple players, is this rubbish in that case?)
   7.2 Move is added as an attribute to the player or game class? (with more than 1 human player this would make sense)
-8. I'm going to implement 7.1 first, storing the players moves in the route for /result ~ not sure if this will  work...
-
+8. Have opted to got with 7.2, for now only have the game class set up to handle a single player, will work on second player later...
 
 
 

@@ -19,14 +19,12 @@ class RockPaperScissors < Sinatra::Base
   end
 
   post '/find-winner' do
-    move = params["move"]#store player move
-    $game.assign_move(move)
-    p move
+    $game.assign_move(params["move"])
+    p $game.player.get_player_move
     redirect '/result'
   end
 
   get '/result' do
-    binding.irb
     erb(:result)
   end
 
