@@ -23,5 +23,5 @@ $ rspec
 
 ## How To Play!
 
-Visit localhost:PortNumber in your webrowser. Reference the output in terminal after you run rackup to find the port number to use.
+Visit localhost:PortNumber in your web browser. Reference the output in terminal after you run rackup to find the port number to use.
 
