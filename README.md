@@ -5,11 +5,12 @@
 
 ## Instructions
 
+```
 $ git clone https://github.com/Marlon-Buckley/rps-challenge-apprenticeships
 $ cd rps-challenge
 $ bundle
 $ rackup
-
+```
 
 ## Set up
 
