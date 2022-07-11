@@ -20,3 +20,8 @@ $ rspec
 # You should output that includes:
 # 1 example, 0 failures
 ```
+
+## How To Play!
+
+Visit localhost:PortNumber in your webrowser. Reference the output in terminal after you run rackup to find the port number to use.
+
