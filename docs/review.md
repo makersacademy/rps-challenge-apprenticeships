@@ -383,7 +383,7 @@ end
 
 class RPSWeb < Sinatra::Application
   get '/choose' do
-    @player1_choice = params[:choice]
+    @@player_weapon_choice = params[:choice]
     @game = Game.current_game(session[:game_id])
     erb :result
   end
@@ -392,7 +392,7 @@ end
 
 ```html
 <h1>
-<% @game.player1_choice(@player1_choice) %>
+<% @game.@player_weapon_choice(@@player_weapon_choice) %>
 <% if @game.result == :win %>
   Congratulations - you won
 <% else %>
@@ -412,7 +412,7 @@ end
 
 class RPSWeb < Sinatra::Application
   get '/choose' do
-    @game.player1_choice(params[:choice])
+    @game.@player_weapon_choice(params[:choice])
     erb @game.result
   end
 end
@@ -464,7 +464,7 @@ end
 
 class RPSWeb < Sinatra::Application
   get '/play' do
-    @game.player1_choice = params[:choice]
+    @game.@player_weapon_choice = params[:choice]
     erb @game.result
   end
 end
