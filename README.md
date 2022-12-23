@@ -70,8 +70,6 @@ I did not fully finish the challenge in the time given so I have improvements an
   $ ruby app.rb
   $ visit 'localhost:4567' in browser
   ```
-I have also deployed the app on Heroku at:
-https://rps-challenge-apprenticeships.herokuapp.com/
 
 # Technologies used
 
