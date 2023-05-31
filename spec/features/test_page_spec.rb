@@ -1,6 +1,6 @@
-feature 'test page' do
-  scenario 'visit test page' do
-    visit '/test'
-    expect(page).to have_content('test page')
+feature 'entering names' do
+  scenario 'Welcome screen' do
+    visit '/'
+    expect(page).to have_content('Welcome to Rock, Paper, Scissors')
   end
 end
